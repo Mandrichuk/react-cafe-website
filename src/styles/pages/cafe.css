@@ -1,5 +1,11 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 header {
   height: 400px;
+  width: 100%;
 
   color: white;
   font-size: .7rem;
@@ -38,14 +44,13 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
 }
 
 .info-container {
   border: 1px solid white;
   border-top: none;
   padding: 15px;
-
+  
   transition: background-color .15s color .15s opacity .15;
 }
 
@@ -57,7 +62,7 @@ header {
 
 .introduction-container {
   margin-top: 100px;
-  margin-left: 200px;
+  margin-left: 25%;
 }
 
 .welcome-container {
@@ -75,12 +80,10 @@ header {
   font-size: 1rem;
 }
 
-
-
 main {
   font-size: 1rem;
   color: white;
-
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -92,21 +95,25 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  
   width: 100%;
   height: 830px;
-
+  
   margin-bottom: 60px;
 }
 
 .about-container {
   height: 600px;
-
+  width: 70%;
+  
+  max-width: 650px;
+  min-width: 500px;
+  
   position: absolute;
   top: 270px;
-
+  
   background: linear-gradient(to bottom, #022418, #021c13, #01110b);
-
+  
   margin-left: 60px;
   margin-right: 60px;
 }
@@ -140,6 +147,11 @@ main {
 }
 
 .meal-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 100%;
   position: absolute;
   top: 680px;
 }
@@ -178,10 +190,18 @@ main {
 
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.6);
   border-radius: calc(100% / 2);
+
+  cursor: pointer;;
 }
 
+
 .product-image {
-  width: 70%;
+  width: 60%;
+  transition: width .2s;
+}
+
+.product-image:hover {
+  width: 80%;
 }
 
 .white-circle-container-1 {
@@ -192,15 +212,21 @@ main {
   height: 200px;
 }
 
+.product-image-1:hover {
+  width: 70%;
+  transition: width .2s;
+}
+
 .white-circle-container-2 {
   top: 1100px;
   right: 350px;
 }
 
+
 .white-circle-container-3 {
   top: 1000px;
   left: 10px;
-
+  
   width: 140px;
   height: 140px;
 }
@@ -208,16 +234,33 @@ main {
 .white-circle-container-4 {
   top: 1100px;
   left: 80px;
-
+  
   width: 170px;
   height: 170px;
+}
+
+.white-circle-container-5 {
+  top: 1200px;
+  right: 80px;
+  
+  width: 115px;
+  height: 115px;
+}
+
+.product-image-5 {
+  width: 35%;
+  transition: width .2s;
+}
+
+.product-image-5:hover {
+  width: 45%;
 }
 
 .main-second-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-
+  
   width: 100%;
   height: 1000px;
 }
@@ -236,6 +279,7 @@ main {
 }
 
 .menu-container {
+  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -246,9 +290,15 @@ main {
   width: 160px;
   height: 300px;
 
+  cursor: pointer;
+
   border-radius: 5px;
 
   margin-right: 15px;
+}
+
+.menu-container:hover {
+  color: rgb(187, 187, 187);
 }
 
 .lower-menu-container {
@@ -277,21 +327,401 @@ main {
 }
 
 .menu-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   width: 100%;
 }
 
-.info-container {
+.info-separation-container {
+  display: flex;
+  align-items: center;
+  flex-direction: center;
+  
   position: relative;
   background-color: black;
-  height: 400px;
+  height: 550px;
   width: 100%;
-
-  margin-top: 250px;
+  
+  margin-top: 240px;
 }
 
-.info-container:hover {
+.location-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+
+  position: relative;
+
+  width: 100%;
+  height: 100%; 
+}
+
+.location-image {
+  max-width: 50%;
+  max-height: 50%;
+  
+  margin-right: 250px;
+  margin-top: 80px;
+  object-fit: cover;
+}
+
+.cutaway-holder-container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+
+  position: absolute;
+
+  width: 100%;
+  height: 100%; 
+}
+
+.cutaway-container {
   background-color: black;
+  width: 70%;
+  height:60%; 
+
+  max-width: 600px; 
+  margin-top: 80px;
+  margin-left: 200px;
+  object-fit: cover;
+
+  border-right: 1px solid white;
+  border-top: 1px solid white;
 }
 
-/* !TODO find a problem why info-container has no background if you hover  */
+
+.cutaway-info-container {
+  margin: 5%;
+}
+
+.cutaway-info-container > .name-container {
+  font-size: 4rem;
+  margin: 0;
+}
+
+
+.cutaway-info-container > .tagline-container {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.contacts-location-container {
+  border-top: 2px solid white;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+
+  margin-bottom: 20px;
+}
+
+.contacts-container,
+.location-text-container {
+  font-size: .9rem;
+}
+
+.location-text-container {
+  margin-top: 20px;
+}
+
+.third-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  height: 200px;
+  
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.nav__logo-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+}
+
+.nav__logo-image {
+  width: 150px;
+  object-fit: cover;
+}
+
+.links-buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+  margin-top: 60px;
+}
+
+.nav__general-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-right: 25px;
+  margin-bottom: 30px;
+}
+
+.nav__link {
+  margin-right: 25px;
+}
+
+.sosial-buttons-container {
+  margin-left: 35%;
+}
+
+.telegram-btn,
+.instagram-btn {
+  border: 2px solid black;
+  border-radius: 7px;
+
+  background-color: white;
+  
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 13px 15px;
+  
+  margin-right: 15px;
+
+  cursor: pointer;
+}
+
+.telegram-btn {
+  transition: background-color 1s;
+
+}
+
+.telegram-btn:hover {
+  background-color: #0088cc;
+  color: white;
+
+  border-color: white;
+
+}
+
+.instagram-btn {
+  background-color: black;
+  color: white;
+
+  transition: background 1s;
+}
+
+.instagram-btn:hover  {
+  background: linear-gradient(to bottom right, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
+
+  color: white;
+  border-color: white;
+}
+
+/* * @media  */
+
+
+@media (max-width: 720px) {
+
+  .about-container {
+    max-width: 650px;
+    width: 400px;
+  }
+
+  .header__nav {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .introduction-container {
+    margin-top: 100px;
+    margin-left: 10%;
+  }
+
+  .mission-container {
+    margin-left: 40px;
+  }
+
+  .mission-article-container {
+    margin-left: 50px;
+  }
+
+  .left-section-container {
+    margin-right: 15px;
+  }
+
+  .white-circle-container-1 {
+    top: 1050px;
+    right: 10px;
+  }
+  
+  .white-circle-container-2 {
+    top: 1230px;
+    right: 280px;
+  }
+  
+  .white-circle-container-3 {
+    top: 1050px;
+    left: 10px;
+  
+  }
+  
+  .white-circle-container-4 {
+    top: 1120px;
+    left: 95px;
+  }
+  
+  .white-circle-container-5 {
+    top: 1230px;
+    right: 30px;
+  }
+
+  .main-second-section {
+    margin-top: 100px;
+  }
+
+  .menu-container {
+    width: 20%;
+    height: 300px;
+  
+    border-radius: 5px;
+  
+    margin-right: 15px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+
+  .about-container {
+    height: 600px;
+    width: 100%;
+  }
+
+  .cutaway-container {
+    width: 65%; 
+    height: 50%; 
+    margin-left: 10px;
+    max-width: none; 
+  }
+  
+  .cutaway-info-container > .name-container {
+    font-size: 2rem;
+  }
+
+  .cutaway-info-container > .tagline-container {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  } 
+
+  .contacts-container,
+  .location-text-container {
+  font-size: .6rem;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    justify-content: left;
+
+    width: 80%;
+    height: 500px;
+
+    margin-top: 50px;
+  }
+
+  .nav__logo-container {
+    margin-left: 0;
+    margin-top: 25px;
+  }
+
+  .links-buttons-container {
+    margin-top: 10px;
+  }
+
+  .nav__general-links {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5rem;
+  
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  
+  .nav__link {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+
+  .sosial-buttons-container {
+    margin-left: 0;
+  }
+  
+  .telegram-btn,
+  .instagram-btn {
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 17px 19px;
+  }
+
+}
+
+@media (max-width: 1100px) { 
+  .meal-image-container {
+    top: 750px;
+  }
+
+  .meal-image {
+    width: 480px;
+    height: 300px;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 1050px) { 
+  .meal-image-container {
+    top: 750px;
+  }
+
+  .meal-image {
+    width: 480px;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .nav__general-links {
+    font-size: 1.5rem;
+  
+    margin-right: 10px;
+    margin-bottom: 30px;
+  }
+
+  .telegram-btn,
+  .instagram-btn {
+    font-size: 1rem;
+    padding: 18px 21px;
+    margin-left: 30px;
+  }
+
+  .links-buttons-container {
+    margin-left: 40px;
+  }
+
+}

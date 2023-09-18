@@ -173,7 +173,7 @@ main {
   object-fit: cover;
 }
 
-.circules-container {
+.circles-container {
   width: 100%;
 }
 
@@ -200,21 +200,12 @@ main {
   transition: width .2s;
 }
 
-.product-image:hover {
-  width: 80%;
-}
-
 .white-circle-container-1 {
   top: 950px;
   right: 80px;
 
   width: 200px;
   height: 200px;
-}
-
-.product-image-1:hover {
-  width: 70%;
-  transition: width .2s;
 }
 
 .white-circle-container-2 {
@@ -250,10 +241,6 @@ main {
 .product-image-5 {
   width: 35%;
   transition: width .2s;
-}
-
-.product-image-5:hover {
-  width: 45%;
 }
 
 .main-second-section {
@@ -301,6 +288,7 @@ main {
   color: rgb(187, 187, 187);
 }
 
+
 .lower-menu-container {
   margin-top: 100px;
 }
@@ -311,8 +299,13 @@ main {
   object-fit: cover;
 
   border-radius: 5px;
+
+  transition: width .3s;
 }
 
+.menu-container:hover > .dish-image {
+  width: 110%;
+}
 .menu-name-container {
   display: flex;
   flex-direction: column;
@@ -722,6 +715,16 @@ main {
 
   .links-buttons-container {
     margin-left: 40px;
+  }
+
+  .white-circle-container-3 {
+    top: 1000px;
+    left: 30px;
+  }
+  
+  .white-circle-container-4 {
+    top: 1100px;
+    left: 100px;
   }
 
 }

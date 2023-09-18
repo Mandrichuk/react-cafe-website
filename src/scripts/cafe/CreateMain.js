@@ -1,5 +1,32 @@
 import React from "react";
 
+import circlesData from "../../data/cafe/circlesData.js";
+import Circle from "./materials/CreateCircles.js";
+
+
+import menuData from "../../data/cafe/menuData.js";
+import Menu from "./materials/CreateMenu.js";
+
+
+
+const circlesHTML = (
+  circlesData.map(circleData => {
+    return <Circle
+      key={circleData.id} 
+      {...circleData}
+    />
+  })
+);
+
+
+const menuHTML = (
+  menuData.map(positionData => {
+    return <Menu 
+      key={positionData.id}
+      {...positionData}
+    />
+  })
+);
 
 export default function CreateMain() {
   const main = (
@@ -29,26 +56,7 @@ export default function CreateMain() {
         </div>
 
         <div className="circules-container">
-
-          <div className="white-circle-container white-circle-container-1">
-            <img className="product-image product-image-1" src="images/decorations/hamburger.png"/>
-          </div>
-
-          <div className="white-circle-container white-circle-container-2">
-            <img className="product-image product-image-2" src="images/decorations/beer-glass.png"/>
-          </div>
-
-          <div className="white-circle-container white-circle-container-3">
-            <img className="product-image product-image-3" src="images/decorations/donut.png"/>
-          </div>
-
-          <div className="white-circle-container white-circle-container-4">
-            <img className="product-image product-image-4" src="images/decorations/hotdog.png"/>
-          </div>
-
-          <div className="white-circle-container white-circle-container-5">
-            <img className="product-image product-image-5" src="images/decorations/milkshake.png"/>
-          </div>
+          {circlesHTML}
         </div>
       </div>
 
@@ -63,40 +71,14 @@ export default function CreateMain() {
             Перегляньте наше меню
           </div>
 
-          <div className="all-menu-container">
-
-            <div className="menu-container">
-              <img className="dish-image" src="images/decorations/chicken.jpg" />
-              <div className="menu-name-container">
-                <p className="menu-text-name">Головні</p> 
-                <p className="menu-text-name">страви</p>
-              </div>
-            </div>
-            <div className="menu-container lower-menu-container">
-              <img className="dish-image" src="images/decorations/cocktails.jpg" />
-              <div className="menu-name-container">
-                <p className="menu-text-name">Алкогольні</p> 
-                <p className="menu-text-name">напої</p>
-              </div>
-            </div>
-            <div className="menu-container">
-              <img className="dish-image" src="images/decorations/puncakes.jpg" />
-              <div className="menu-name-container">
-                <p className="menu-text-name">Десерні</p> 
-                <p className="menu-text-name">страви</p>
-              </div>
-            </div>
-            <div className="menu-container lower-menu-container">
-              <img className="dish-image" src="images/decorations/milkshake.jpg" />
-              <div className="menu-name-container">
-                <p className="menu-text-name">Без алкогольні</p> 
-                <p className="menu-text-name">напої</p>
-              </div>
-            </div>
+        <div className="all-menu-container">
+          {menuHTML}
         </div>
 
         <div className="location-container">
-          <img className="location-image" src="images/decorations/location.jpg" />
+          <a className="maps-link" href="link-to-location">
+            <img className="location-image" src="images/decorations/location.jpg" />
+          </a>
 
           <div className="cutaway-holder-container">
 

@@ -2,37 +2,14 @@ import React from "react";
 
 import circlesData from "../../data/cafe/circlesData.js";
 import Circle from "./materials/CreateCircles.jsx";
-
 import menuData from "../../data/cafe/menuData.js";
 import Menu from "./materials/CreateMenu.jsx";
-
-import infoBar from "./materials/CreateInfoBar.jsx";
-
-import storyData from "../../data/cafe/storyData.js";
-import CreateStory from "./materials/CreateStory.jsx";
-
-import locationData from "../../data/cafe/locationData.js";
-import CreateLocation from "./materials/CreateLocation.jsx";
+import InfoBar from "./materials/CreateInfoBar.jsx";
+import Story from "./materials/CreateStory.jsx";
+import Location from "./materials/CreateLocation.jsx";
+import Scroller from "./materials/CreateScroller.jsx";
 
 
-
-const locationHTML = (
-  <CreateLocation
-    key={locationData.id}
-    {...locationData}
-  />
-);
-
-const StoryHTML = (
-  <CreateStory 
-    key={storyData.id}
-    {...storyData} 
-  />
-);
-
-const infoBarHTML = (
-  infoBar()
-);
 
 const circlesHTML = (
   circlesData.map(circleData => {
@@ -57,8 +34,21 @@ const menuHTML = (
 export default function CreateMain() {
   const main = (
     <main>
-      <div className="main-first-section">
-        {StoryHTML}
+      <p className="text-black font-bold text-[2rem] mt-[30px] mb-[10px]">Топ продаж</p>
+
+      <div className="media-scroller snaps-inline">
+        {<Scroller />}
+        {<Scroller />}
+        {<Scroller />}
+
+      </div>
+
+      
+
+
+
+      <div className="main-first-section flex flex-col justify-center items-center w-[100%] h-[830px] mb-[60px]">
+        {<Story />}
 
         <div className="meal-image-container">
           <img className="meal-image" src="images/background/hotdogs.jpg"/>
@@ -73,7 +63,7 @@ export default function CreateMain() {
         </div>
       </div>
 
-      <div className="main-second-section">
+      <div className="main-second-section flex flex-col items-center w-[100%] h-[1000px]">
 
         <div className="info-separation-container">
         
@@ -88,10 +78,10 @@ export default function CreateMain() {
           {menuHTML}
         </div>
 
-        {locationHTML}
+        {<Location />}
         
-        <div className="third-section-container">
-          {infoBarHTML} 
+        <div className="flex flex-col items-center w-[100%] mb-[100px] mt-[50px]">
+          {<InfoBar />} 
         </div>
 
       </div>

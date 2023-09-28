@@ -1,10 +1,8 @@
 import React from "react";
 
 
-export default function CreateLocation(props) {
-  const { name, tagline, location, contacts } = props;
-
-  const locationHTML = (
+export default function CreateLocation() {
+  return (
 
     <div className="location-container">
     <a className="maps-link" href="link-to-location">
@@ -17,18 +15,18 @@ export default function CreateLocation(props) {
         <div className="cutaway-info-container">
 
           <div className="name-container">
-            {name}
+            Drink&Food
           </div>
           <div className="tagline-container">
-            {tagline}
+            Де люди приходять поїсти
           </div>
 
           <div className="contacts-location-container">
             <div className="location-text-container">
-              {location}
+              Пр. Соборний 4-б
             </div>
             <div className="contacts-container">
-              {contacts}
+              Номер
             </div>
           </div>
         </div>
@@ -36,6 +34,4 @@ export default function CreateLocation(props) {
     </div>
   </div>
   );
-
-  return locationHTML;
 }

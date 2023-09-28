@@ -1,5 +1,5 @@
 import React from "react";
-
+import { FaBars } from 'react-icons/fa';
 
 export default function CreateHeader() {
   const header = (
@@ -10,6 +10,9 @@ export default function CreateHeader() {
           <img className="logo-img" src="images/icons/drink-food-logo.png"/>
         </div>
         <div className="general-info-container">
+          <div className="tribar hidden text-[1.5rem]">
+            {<FaBars />}
+          </div>
           <div className="contact-phone-container info-container">
             Номер
           </div>

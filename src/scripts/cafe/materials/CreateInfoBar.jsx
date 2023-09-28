@@ -3,7 +3,7 @@ import React from "react";
 
 export default function CreateInfoBar() {
 
-  const infoBar = (
+  return (
     <div className="nav-container">
       <div className="nav__logo-container">
         <img className="nav__logo-image" src="images/icons/brand-logo.png"/>
@@ -57,6 +57,4 @@ export default function CreateInfoBar() {
 
     </div>
   );
-
-  return infoBar;
 }

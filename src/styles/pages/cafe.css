@@ -41,6 +41,11 @@ header {
 .logo-img {
   width: 120px;
   object-fit: cover;
+  margin-top: 10px;
+}
+
+.fabar {
+  margin-top: 5px;
 }
 
 .general-info-container {
@@ -72,6 +77,7 @@ header {
 .welcome-container {
   font-size: .8rem;
   margin-bottom: 3px;
+  padding-top: 50px;
 }
 
 .name-container {
@@ -269,6 +275,7 @@ main {
 
 .menu-container:hover {
   color: rgb(187, 187, 187);
+  /* width: 22%; */
 }
 
 .lower-menu-container {
@@ -282,11 +289,11 @@ main {
 
   border-radius: 5px;
 
-  transition: width .3s;
+  transition: transform .3s;
 }
 
-.menu-container:hover > .dish-image {
-  width: 110%;
+.menu-container:hover .dish-image {
+  transform: scale(1.05); 
 }
 
 .menu-name-container {
@@ -548,6 +555,22 @@ main {
   margin: 10px
 }
 
+.fullscreen-settings-fixed {
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+}
+
+
+
 /* * @media  */
 
 
@@ -582,7 +605,7 @@ main {
   }
 
   .main-first-section {
-    height: 100px;
+    /* height: 100px; */
   }
 
   .media-scroller {
@@ -653,9 +676,6 @@ main {
     right: 30px;
   }
 
-  .main-second-section {
-    margin-top: 100px;
-  }
 
   .menu-container {
     width: 20%;
@@ -744,6 +764,26 @@ main {
   }
 
 }
+
+@media (min-width: 768px) {
+  .welcome-container {
+    font-size: 1.1rem;
+    padding-top: 50px;
+  }
+
+  .name-container {
+    font-size: 4rem;
+  }
+
+  .tagline-container {
+    font-size: 1.3rem;
+  }
+
+  .about-container {
+    top: 320px;
+  }
+}
+
 
 @media (max-width: 1100px) { 
   .meal-image-container {

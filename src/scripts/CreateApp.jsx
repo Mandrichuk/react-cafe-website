@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import "../styles/pages/cafe.css";
 
@@ -7,13 +7,16 @@ import Main from "./cafe/CreateMain.jsx";
 import Footer from "./cafe/CreateFooter.jsx";
 
 export default function CreateApp() {
-  const app = (
+  const [isMenu, setIsMenu] = useState(true);
+
+  return (
     <>
-      <Header />
+      <Header 
+        
+      />
       <Main />
       <Footer />
     </>
   );
 
-  return app;
 }

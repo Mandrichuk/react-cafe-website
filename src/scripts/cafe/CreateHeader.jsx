@@ -1,29 +1,13 @@
 import React from "react";
 import { FaBars } from 'react-icons/fa';
+import Header from "../shared/CreateHeader.jsx";
+
 
 export default function CreateHeader() {
   const header = (
     <header>
+      {<Header />}
 
-      <nav className="header__nav">
-        <div className="logo-container">
-          <img className="logo-img" src="images/icons/drink-food-logo.png"/>
-        </div>
-        <div className="general-info-container">
-          <div className="tribar hidden text-[1.5rem]">
-            {<FaBars />}
-          </div>
-          <div className="contact-phone-container info-container">
-            Номер
-          </div>
-          <div className="contact-phone-container info-container">
-            Пр. Соборний 4-б
-          </div>
-          <div className="contact-phone-container info-container">
-            Меню
-          </div>
-        </div>
-      </nav>
 
       <div className="introduction-container">
         <div className="welcome-container">Ласкаво просимо</div>

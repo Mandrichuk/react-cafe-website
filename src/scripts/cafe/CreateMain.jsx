@@ -7,7 +7,6 @@ import Menu from "./materials/CreateMenu.jsx";
 import InfoBar from "./materials/CreateInfoBar.jsx";
 import Story from "./materials/CreateStory.jsx";
 import Location from "./materials/CreateLocation.jsx";
-import Scroller from "./materials/CreateScroller.jsx";
 
 
 
@@ -34,15 +33,6 @@ const menuHTML = (
 export default function CreateMain() {
   const main = (
     <main>
-
-      <p className="text-black font-bold text-[2rem] mt-[30px] mb-[10px]">Топ продаж</p>
-
-      <div className="media-scroller snaps-inline">
-        {<Scroller />}
-        {<Scroller />}
-        {<Scroller />}
-
-      </div>
 
       <div className="main-first-section flex flex-col justify-center items-center w-[100%] h-[750px]">
         {<Story />}
@@ -77,7 +67,7 @@ export default function CreateMain() {
 
         {<Location />}
         
-        <div className="flex flex-col items-center w-[100%] mb-[100px] mt-[30px]">
+        <div className="infobar-space-container flex flex-col items-center w-[100%] mb-[100px] mt-[30px]">
           {<InfoBar />} 
         </div>
 

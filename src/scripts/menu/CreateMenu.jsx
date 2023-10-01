@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../styles/pages/menu.css";
+import "../../styles/pages/menu.module.css";
 
 import Header from "./CreateHeader.jsx";
 import Main from "./CreateMain.jsx";
@@ -10,6 +10,8 @@ export default function CreateMenu() {
   return (
     <>
       <Header />
+      <Main />
+      <Footer />
     </>
   )
 }

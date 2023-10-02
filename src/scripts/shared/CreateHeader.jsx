@@ -54,13 +54,13 @@ export default function CreateHeader() {
           <div className="mb-[10px] mt-[10px] text-[#1f4739d9]">
             Соціальні мережи
           </div>
-          <div className="text-info setting-text text-[1.3rem] mt-[2px]">
+          <div className="text-info setting-text text-[1.3rem] mt-[2px] ">
             <a target="_blank" href="https://t.me/Drink_Food_zp"  className="text-info text-black">
               Telegram
             </a>
           </div>
-          <div className="text-info setting-text text-[1.3rem] mt-[2px]mb-[15px]">
-            <a target="_blank" href="https://www.instagram.com/ drink.food.zp/?igshid=MzRlODBiNWFlZA%3D%3D"  className="text-info text-black">
+          <div className="text-info setting-text text-[1.3rem] mt-[2px] mb-[15px] ">
+            <a target="_blank" href="https://www.instagram.com/drink.food.zp/?igshid=MzRlODBiNWFlZA%3D%3D"  className="text-info text-black">
               Instagram
             </a>
           </div>

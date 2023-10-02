@@ -5,8 +5,8 @@ import Menu from "../scripts/menu/CreateMenu.jsx";
 export default function CreateApp() {
   return (
     <>
-      {/* <Cafe /> */}
-      <Menu />
+      <Cafe />
+      {/* <Menu /> */}
     </>
   );
 }

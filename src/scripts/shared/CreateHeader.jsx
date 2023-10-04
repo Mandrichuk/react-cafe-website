@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import '../../styles/shared/header.css';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -23,7 +24,7 @@ export default function CreateHeader() {
   return (
     <div className="header flex flex-row items-center h-[70px] w-[100%] bg-black justify-between">
       <div className="logo-container w-[200px] ml-[30px]">
-        <img src="images/icons/drink-food-logo.png" className=" h-[25px] object-cover"/>
+      <Link to="/" className="text-white"><img src="images/icons/drink-food-logo.png" className=" h-[25px] object-cover"/></Link>
       </div>
         
 
@@ -71,13 +72,13 @@ export default function CreateHeader() {
       <div className="options-container mr-[30px] flex flex-row items-center">
 
         <div className="text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
-          Меню 
+          <Link to="/menu" className="text-white">Меню</Link> 
         </div>
         <div className="text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
-          Войти
+          <Link to="/login" className="text-white">Увійти</Link> 
         </div>
         <div className="text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
-          Корзина
+          <Link to="/cart" className="text-white">Кошик</Link> 
         </div>
       </div>
       

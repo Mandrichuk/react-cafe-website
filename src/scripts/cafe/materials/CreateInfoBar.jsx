@@ -1,12 +1,12 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 
 export default function CreateInfoBar() {
 
   return (
     <div className="nav-container">
       <div className="nav__logo-container">
-        <img className="nav__logo-image" src="images/icons/brand-logo.png"/>
+        <Link to="/" className="text-black"><img className="nav__logo-image" src="images/icons/brand-logo.png"/></Link>
       </div>
 
       <div className="links-buttons-container">
@@ -16,27 +16,27 @@ export default function CreateInfoBar() {
 
           <a href="#" className="nav__link nav__link-home">
             <div className="nav__link-container">
-              Головна
+              <Link to="/" className="text-black">Головна</Link>
             </div>
           </a>
           <a href="#" className="nav__link nav__link-about">
             <div className="nav__link-container">
-              Про нас
+              <Link to="/about" className="text-black">Про нас</Link>
             </div>
           </a>
           <a href="#" className="nav__link nav__link-menu">
             <div className="nav__link-container">
-              Меню
+              <Link to="/menu" className="text-black">Меню</Link>
             </div>
           </a>
           <a href="#" className="nav__link nav__link-location">
             <div className="nav__link-container">
-              Локація
+              <Link to="/menu" className="text-black">Локація</Link>
             </div>
           </a>
           <a href="#" className="nav__link nav__link-contacts">
             <div className="nav__link-container">
-              Контакти
+            <Link to="/contacts" className="text-black">Контакти</Link>
             </div>
           </a>
 

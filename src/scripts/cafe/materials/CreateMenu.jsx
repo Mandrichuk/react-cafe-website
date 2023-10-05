@@ -10,15 +10,15 @@ export default function CreateMenu(props) {
   const separatedName = name.split(" ");
 
   const menu = (
-    <Link to={`/menu/${linkName}`} className="text-white">
-      <div className={`menu-container ${lowerStyle} ${noMargin}`}>
+    <div className={`menu-container ${lowerStyle} ${noMargin}`}>
+        <Link to={`/menu/${linkName}`} className="text-white w-[100%] h-[100%]">
         <img className="dish-image" src={`images/decorations/${imageSrc}`} />
         <div className="menu-name-container">
           <p className="menu-text-name">{separatedName[0]}</p>
           <p className="menu-text-name">{separatedName[1]}</p>
         </div>
+        </Link>
       </div>
-    </Link>
   );
 
   return menu;

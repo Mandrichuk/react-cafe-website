@@ -207,7 +207,7 @@ main {
 }
 
 .white-circle-container-2 {
-  top: 1100px;
+  top: 1050px;
   right: 300px;
 }
 
@@ -275,7 +275,6 @@ main {
 
 .menu-container:hover {
   color: rgb(187, 187, 187);
-  /* width: 22%; */
 }
 
 .lower-menu-container {
@@ -605,6 +604,10 @@ main {
     margin-right: 15px;
   }
 
+  .white-circle-container {
+    display: none;
+  }
+
   .white-circle-container-1 {
     top: 1050px;
     right: 20px;
@@ -739,6 +742,19 @@ main {
   }
 }
 
+@media (max-width: 820px) {
+  .white-circle-container {
+    display: none;
+  }
+
+  .main-first-section {
+    height: 650px;
+  }
+
+  .separation-container {
+    margin-top: 370px;
+  }
+}
 
 @media (max-width: 1100px) { 
   .meal-image-container {

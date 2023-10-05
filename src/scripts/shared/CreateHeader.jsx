@@ -23,8 +23,10 @@ export default function CreateHeader() {
 
   return (
     <div className="header flex flex-row items-center h-[70px] w-[100%] bg-black justify-between">
-      <div className="logo-container w-[200px] ml-[30px]">
-      <Link to="/" className="text-white"><img src="images/icons/drink-food-logo.png" className=" h-[25px] object-cover"/></Link>
+      <div className="logo-container w-[120px] ml-[30px] mr-[20px]">
+        <Link to="/" className="text-white w-[100%] ">
+          <img src="images/icons/drink-food-logo.png" className=" h-[25px] object-cover"/>
+        </Link>
       </div>
         
 
@@ -41,13 +43,13 @@ export default function CreateHeader() {
             Основні
           </div>
           <div className="text-info text-[1.3rem] mt-[2px]">
-            Меню
+            <Link to="/menu" className="text-black">Меню</Link> 
           </div>
           <div className="text-info text-[1.3rem] mt-[2px]">
-            Войти
+            <Link to="/login" className="text-black">Увійти</Link> 
           </div>
           <div className="text-info text-[1.3rem] mt-[2px] mb-[15px]">
-            Корзина
+            <Link to="/cart" className="text-black">Кошик</Link>
           </div>
         </div>
 

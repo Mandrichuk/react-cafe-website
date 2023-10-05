@@ -12,7 +12,6 @@
   position: fixed;
   top: 0;
   z-index: 101;
-  /* border-bottom: 1.5px solid white; */
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -46,6 +45,23 @@
 }
 
 @media (max-width: 520px) {
+  .menu-info-container {
+    margin-right: 5px, 5px;
+  }
+
+  .menu-container {
+    display: flex;
+    align-items: center;
+    width: 22%;
+    margin-right: 5px;
+  }
+
+  .menu-text-name {
+    margin-left: 10%;
+    width: 100%;
+    font-size: 1rem;
+  }
+
   .tribar {
     display: block;
   }

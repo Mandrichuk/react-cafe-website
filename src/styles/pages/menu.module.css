@@ -58,10 +58,6 @@ body, * {
   border-top: 4px solid rgb(6, 113, 6); 
 }
 
-.logoImg {
-  
-}
-
 
 @media (max-width: 1300px) {
   .menuGrid {

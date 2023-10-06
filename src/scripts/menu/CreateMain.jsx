@@ -4,13 +4,13 @@ import MenuItem from "./materials/CreateMenuItem.jsx";
 import styles from "../../styles/pages/menu.module.css";
 import menuData from "../../data/menu/menuData.js";
 
-export default function CreateHeader() {
+export default function CreateMain() {
   return (
-    <header className={`${styles.main}`}>
-      <div className={`${styles.menuGrid} w-[500px]`}>
+    <main className={`${styles.main}`}>
+      <ul className={`${styles.accordion}`}>
         {MenuItems(menuData)}
-      </div>
-    </header>
+      </ul>
+    </main>
   );
 }
 

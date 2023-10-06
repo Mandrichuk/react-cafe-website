@@ -38,16 +38,6 @@ body, * {
 }
 
 
-.menuGrid {
-  display: grid;
-  grid-template-rows: repeat(2, 340px);
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1em;
-  grid-row-gap: 1.5em;
-
-  width: 90%;
-  margin: 0 auto;
-}
 
 .menuItem:hover .menuItemImg {
   transform: scale(1.1);
@@ -60,24 +50,12 @@ body, * {
 
 
 @media (max-width: 1300px) {
-  .menuGrid {
-    grid-template-columns: repeat(3, 1fr);
-    width: 80%;
-  }
-  
   .headerSection {
     margin-top: 70px;
   }
 }
 
 @media (max-width: 850px) {
-  .menuGrid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 250px);
-    gap:0;
-    grid-row-gap: .8em;
-    width: 86%;
-  }
   
   .headerSection {
     margin-bottom: 50px;
@@ -99,11 +77,6 @@ body, * {
 }
 
 @media (max-width: 950px) {
-  .menuGrid {
-    grid-row-gap: .8em;
-    width: 93%;
-  }
-
   .header {
     height: 150px;
     margin-bottom: 70px;

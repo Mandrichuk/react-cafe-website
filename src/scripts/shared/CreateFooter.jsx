@@ -6,7 +6,7 @@ import styles from "../../styles/shared/footer.module.css";
 
 export default function CreateFooter() {
   return (
-    <footer className={`${styles.footer} mt-[200px] relative w-[100%] h-[300px]`}>
+    <footer className={`${styles.footer} mt-[100px] relative w-[100%] h-[300px]`}>
       <div className={`${styles.footerMainContainer} flex flex-col m-[4%] mt-[50px]`}>
         <div className={`${styles.logoContainer} w-[100%] h-[100px] mb-[30px]`}>
           <img className={`${styles.logoImg} w-[100px] object-cover`} src="images/icons/brand-logo.png"/>

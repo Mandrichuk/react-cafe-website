@@ -4,7 +4,6 @@ import circlesData from "../../data/cafe/circlesData.js";
 import Circle from "./materials/CreateCircles.jsx";
 import menuData from "../../data/cafe/menuData.js";
 import Menu from "./materials/CreateMenu.jsx";
-import InfoBar from "./materials/CreateInfoBar.jsx";
 import Story from "./materials/CreateStory.jsx";
 import Location from "./materials/CreateLocation.jsx";
 
@@ -64,13 +63,7 @@ export default function CreateMain() {
         <div className="all-menu-container">
           {menuHTML}
         </div>
-
         {<Location />}
-        
-        <div className="infobar-space-container flex flex-col items-center w-[100%] mb-[100px] mt-[30px]">
-          {<InfoBar />} 
-        </div>
-
       </div>
       </div>
 

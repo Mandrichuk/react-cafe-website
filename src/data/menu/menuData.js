@@ -3,7 +3,7 @@ export default [
     id: 1,
     name: "Кава",
     image: "coffee-image.png",
-    productы: [
+    products: [
       {
         name: "Еспресо",
         price: 30,

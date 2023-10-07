@@ -20,6 +20,7 @@ const MenuItems = (data) =>  {
       key={item.id}
       name={item.name}
       image={item.image}
+      {...item}
     />
   });
   return menuItems;

@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../../styles/shared/header.css';
+
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
+import { BsTelegram } from "react-icons/bs";
+import { SiInstagram } from "react-icons/si";
+
 
 
 export default function CreateHeader() {
@@ -86,10 +90,10 @@ export default function CreateHeader() {
       
       <div className="extra-options flex-row items-center mr-[20px] p-[10px] hidden">
         <a target="_blank" href="https://t.me/Drink_Food_zp" className="social-media-link text-white underline mr-[15px]">
-          Telegram
+          <BsTelegram className="text-[2rem]" />
         </a>
         <a target="_blank" href="https://www.instagram.com/drink.food.zp/?igshid=MzRlODBiNWFlZA%3D%3D" className="social-media-link text-white underline">
-          Instagram
+          <SiInstagram className="text-[2rem]" />
         </a>
       </div>
     </div>

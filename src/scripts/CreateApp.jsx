@@ -5,6 +5,8 @@ import Cafe from "../scripts/cafe/CreateCafe.jsx";
 import Menu from "../scripts/menu/CreateMenu.jsx";
 
 export default function CreateApp() {
+  const [cart, setCart] = useState();
+
   return (
     <Router>
       <Routes>

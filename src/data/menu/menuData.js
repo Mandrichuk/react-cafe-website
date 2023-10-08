@@ -3,6 +3,7 @@ export default [
     id: 1,
     name: "Кава",
     image: "coffee-image.png",
+    icon: "BiSolidCoffeeBean",
     products: [
       {
         name: "Еспресо",
@@ -52,6 +53,7 @@ export default [
     id: 2,
     name: "Чай",
     image: "tea-image.png",
+    icon: "PiCoffeeFill",
     products: [
       {
         name: "Чай Малина",
@@ -91,70 +93,71 @@ export default [
     id: 3,
     name: "Охолоджені напої",
     image: "lemonade-image.png",
+    icon: "FaCocktail",
     products: [
       {
         name: "ICE Лате",
-        price: 500,
+        price: 50,
         grams: 60,
       },
       {
         name: "ICE Bambl",
-        price: 350,
+        price: 35,
         grams: 60,
       },
       {
         name: "ICE Какао",
-        price: 350,
+        price: 35,
         grams: 55,
       },
       {
         name: "Еспресо тонік",
-        price: 350,
+        price: 35,
         grams: 65,
       },
       {
         name: "Лимонад манго малина",
-        price: 500,
+        price: 50,
         grams: 68,
       },
       {
         name: "Лимонад апельсин лимон",
-        price: 500,
+        price: 50,
         grams: 68,
       },
       {
         name: "Лимонад малина лимон",
-        price: 500,
+        price: 50,
         grams: 68,
       },
       {
         name: "Лимонад полуниця малина",
-        price: 500,
+        price: 50,
         grams: 68,
       },
       {
         name: "Мілкшейк Classic",
-        price: 500,
+        price: 50,
         grams: 80,
       },
       {
         name: "Мілкшейк Ягідний",
-        price: 500,
+        price: 50,
         grams: 80,
       },
       {
         name: "Мілкшейк Карамель",
-        price: 500,
+        price: 50,
         grams: 80,
       },
       {
         name: "Мілкшейк Орео-банан",
-        price: 500,
+        price: 50,
         grams: 95,
       },
       {
         name: "Мілкшейк манго",
-        price: 500,
+        price: 50,
         grams: 80,
       },
 
@@ -165,6 +168,7 @@ export default [
     id: 4,
     name: "Бургери",
     image: "burger-image.png",
+    icon: "PiHamburgerFill",
     products: [
       {
         name: "Бургер Яловичина",
@@ -214,6 +218,7 @@ export default [
     id: 5,
     name: "Млинці",
     image: "puncakes-image.png",
+    icon: "TbBrandCakephp",
     products: [
       {
         name: "Млинець Яловичина",
@@ -258,6 +263,7 @@ export default [
     id: 6,
     name: "Сендвічі",
     image: "sandwich-image.png",
+    icon: "LuSandwich",
     products: [
       {
         name: "Сендвіч курка",
@@ -277,6 +283,7 @@ export default [
     id: 7,
     name: "Хот-доги",
     image: "hotdog-image.png",
+    icon: "LiaHotdogSolid",
     products: [
       {
         name: "Хот-Дог Молочний",

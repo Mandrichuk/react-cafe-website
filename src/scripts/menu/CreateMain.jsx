@@ -18,8 +18,6 @@ const MenuItems = (data) =>  {
   const menuItems = data.map(item => {
     return <MenuItem 
       key={item.id}
-      name={item.name}
-      image={item.image}
       {...item}
     />
   });

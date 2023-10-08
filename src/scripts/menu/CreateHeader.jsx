@@ -4,7 +4,7 @@ import Header from "../shared/CreateHeader.jsx";
 import styles from "../../styles/pages/menu.module.css";
 import menuData from "../../data/menu/menuData.js";
 
-import { PiHamburgerFill } from 'react-icons/pi';
+import { ImSpoonKnife } from 'react-icons/im';
 
 
 export default function CreateHeader() {
@@ -17,7 +17,7 @@ export default function CreateHeader() {
         <div className={`${styles.headerTaglineContainer} w-[100%] h-[150px]`}>
           <div className="flex flex-row items-center">
           <div className={`${styles.menuText}`}>Меню</div>
-          <PiHamburgerFill className="text-[2rem] mb-[14px] ml-[10px]" />
+          <ImSpoonKnife className="text-[2rem] mb-[14px] ml-[10px]" />
           </div>
           <div className={`${styles.menuTaglineText}`}>Обертайте сторінку та обирайте, що смачного пригостити разом із нами!</div>
         </div>

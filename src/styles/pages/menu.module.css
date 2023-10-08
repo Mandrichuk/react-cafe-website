@@ -96,6 +96,19 @@ input[type="radio"] {
 }
 
 
+@media (max-width: 600px) {
+
+  .accordion .content {
+    padding: 0;
+  }
+
+  .accordion input[type="radio"]:checked + label + .content {
+    max-height: 1000px;
+    padding: 0px;
+  }
+}
+
+
 @media (min-width: 600px) {
   .accordion {
     width: 90%;
@@ -111,6 +124,12 @@ input[type="radio"] {
 @media (min-width: 1000px) {
   .accordion {
     width:76%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .accordion {
+    width:64%;
   }
 }
 

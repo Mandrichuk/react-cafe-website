@@ -4,7 +4,7 @@
 }
 
 .social-media-link:hover {
-  color: rgb(45, 148, 227);
+  color: rgb(195, 195, 195);
   cursor: pointer;
 }
 
@@ -43,6 +43,7 @@
   border-top: 1px solid black; 
   margin-top: 20px;
 }
+
 
 @media (max-width: 520px) {
   .menu-info-container {

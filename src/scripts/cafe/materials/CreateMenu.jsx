@@ -11,7 +11,7 @@ export default function CreateMenu(props) {
 
   const menu = (
     <div className={`menu-container ${lowerStyle} ${noMargin}`}>
-        <Link to={`/menu/${linkName}`} className="text-white w-[100%] h-[100%]">
+        <Link to={`/menu`} className="text-white w-[100%] h-[100%]">
         <img className="dish-image" src={`images/decorations/${imageSrc}`} />
         <div className="menu-name-container">
           <p className="menu-text-name">{separatedName[0]}</p>

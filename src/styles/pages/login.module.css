@@ -1,0 +1,57 @@
+.nameContainer {
+  background-color: rgb(251, 251, 244);
+}
+
+.nameContainer button:hover {
+  background-color: red;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .ImgContainer {
+    width: 35%;
+  }
+
+  .loginContainer {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1250px) {
+  .ImgContainer {
+    width: 30%;
+  }
+
+  .loginContainer {
+    width: 70%;
+  }
+
+  .phoneInput {
+    font-size: 2rem;
+    width: 300px;
+  }
+
+  .phoneInputLabel {
+    font-size: 1.4rem;
+  }
+
+  .nameContainer {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .ImgContainer {
+    width: 0%;
+  }
+
+  .loginContainer {
+    width: 100%;
+  }
+}

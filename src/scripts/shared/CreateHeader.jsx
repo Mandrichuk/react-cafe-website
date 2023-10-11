@@ -37,7 +37,7 @@ export default function CreateHeader() {
       <div className="tribar hidden text-[1.5rem] mr-[35px]"
       onClick={handleChange}
       >
-        {screenSettings ? <AiOutlineClose className="cursor-pointer"/> : <FaBars className="cursor-pointer"/>}
+        {screenSettings ? <AiOutlineClose className="cursor-pointer text-white"/> : <FaBars className="cursor-pointer text-white"/>}
       </div>
 
       {screenSettings &&

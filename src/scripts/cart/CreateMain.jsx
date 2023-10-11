@@ -22,7 +22,7 @@ export default function CreateMain() {
           Загальна сума замовлення: 100грн
         </div>
 
-        <button className={`${styles.totalCost} bg-green-800  text-white p-[10px] mb-[40px]`}>
+        <button className={`${styles.totalCost} bg-custom-green text-white p-[10px] mb-[40px]`}>
           Оформити замовлення
         </button>
       </div>

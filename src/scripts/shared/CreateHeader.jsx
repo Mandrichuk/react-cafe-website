@@ -47,6 +47,9 @@ export default function CreateHeader() {
             Основні
           </div>
           <div className="text-info text-[1.3rem] mt-[2px]">
+            <Link to="/" className="text-black">Головна</Link> 
+          </div>
+          <div className="text-info text-[1.3rem] mt-[2px]">
             <Link to="/menu" className="text-black">Меню</Link> 
           </div>
           <div className="text-info text-[1.3rem] mt-[2px]">
@@ -77,6 +80,9 @@ export default function CreateHeader() {
 
       <div className="options-container mr-[30px] flex flex-row items-center">
 
+        <div className="home-page-container text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
+          <Link to="/" className="text-white">Головна</Link> 
+        </div>
         <div className="text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
           <Link to="/menu" className="text-white">Меню</Link> 
         </div>

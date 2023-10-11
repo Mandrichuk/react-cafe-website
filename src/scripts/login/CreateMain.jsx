@@ -10,12 +10,15 @@ export default function CreateMain() {
       
       <div className={`${styles.loginContainer} w-[55%] h-[100vh] flex flex-col justify-center items-center pl-[5%] pr-[5%]`}>
 
-        <div className={`${styles.nameContainer} p-[5px] mb-[30px] text-[3rem] `}>
+        <div className={`${styles.nameContainer} p-[5px] text-[3rem] `}>
         <p className={`font-bold`}>Drink&Food</p>
         </div>
 
+        <div className={`${styles.tagline}  text-[1rem] mb-[40px] text-gray-500`}>
+          Реєструйтесь та отримуй 5% бонусних накопичень з кожної покупки!
+        </div>
 
-        <div className={`${styles.enterPhoneContainer} flex flex-col  mb-[50px]`}>
+        <div className={`${styles.enterPhoneContainer} flex flex-col  mb-[40px]`}>
           <label htmlFor="phone" className={`${styles.phoneInputLabel} text-[1.1rem]`}>Номер телефону:</label>
           <input
             type="tel"
@@ -26,7 +29,7 @@ export default function CreateMain() {
             placeholder="+380.."
             required
           />
-          <button className={`${styles.getCodeBtn, styles.btn} p-[10px] border bg-green-700 text-white transition-all `}>
+          <button className={`${styles.getCodeBtn, styles.btn} p-[10px] border text-white transition-all `}>
             Отримати код
           </button>
         </div>
@@ -42,7 +45,7 @@ export default function CreateMain() {
             placeholder="####"
             required
           />
-          <button className={`${styles.loginBtn, styles.btn} p-[10px] border bg-green-700 text-white transition-all `}>
+          <button className={`${styles.loginBtn, styles.btn} p-[10px] border text-white transition-all `}>
             Увійти
           </button>
         </div>

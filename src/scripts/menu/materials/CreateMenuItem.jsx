@@ -23,14 +23,13 @@ const iconMap = {
 export default function CreateMenuItem(props) {
   const IconComponent = iconMap[props.icon];
 
-
   return ( 
     <li>
       <input type="radio" name="accordion" id={props.id}/>
       <label for={props.id} className={`flex items-center justify-between`}>
         <MdOutlineKeyboardArrowDown className={`${styles.downArrow} text-black text-[2rem]`}/>
         {props.name} 
-        <IconComponent className={`text-[1.8rem] ml-[10px] text-green-900`}/> 
+        <IconComponent className={`text-[1.8rem] ml-[10px] text-custom-green`}/> 
       </label>
 
       <div className={`${styles.content}`}>

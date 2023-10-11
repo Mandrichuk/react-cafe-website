@@ -6,6 +6,10 @@
   background-color: red;
 }
 
+.btn {
+  background-color: #05442e;
+}
+
 .btn:hover {
   opacity: 0.8;
 }
@@ -20,6 +24,14 @@
 
   .loginContainer {
     width: 65%;
+  }
+}
+
+
+@media (min-width: 600px) {
+  .tagline {
+    margin-left: 10%;
+    font-size: 1.2rem;
   }
 }
 
@@ -44,14 +56,47 @@
   .nameContainer {
     font-size: 4rem;
   }
+
+  .btn {
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+
 }
 
 @media (max-width: 450px) {
+
+
   .ImgContainer {
     width: 0%;
   }
 
   .loginContainer {
     width: 100%;
+  }
+
+  .nameContainer {
+    font-size: 3.5rem;
+  }
+
+  .tagline {
+    margin-left: 5%;
+    font-size: 1.1rem;
+  }
+
+  .phoneInputLabel {
+    font-size: 1.5rem;
+  }
+
+  .phoneInput {
+    font-size: 1.5rem;
+    width: 250px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .btn {
+    padding: 15px;
+    font-size: 1.3rem;
   }
 }

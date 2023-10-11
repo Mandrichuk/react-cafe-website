@@ -69,6 +69,12 @@
   }
 }
 
+@media (max-width: 800px) {
+  .home-page-container {
+    display: none;
+  }
+}
+
 @media (min-width: 800px) {
   .text-info {
     font-size: 1.3rem;

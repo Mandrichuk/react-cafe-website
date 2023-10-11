@@ -5,6 +5,8 @@ import Cafe from "../scripts/cafe/CreateCafe.jsx";
 import Menu from "../scripts/menu/CreateMenu.jsx";
 import Login from "../scripts/login/CreateLogin.jsx";
 import Cart from "../scripts/cart/CreateCart.jsx";
+import Profile from "../scripts/profile/CreateProfile.jsx";
+
 
 export default function CreateApp() {
   const [cart, setCart] = useState();
@@ -16,6 +18,7 @@ export default function CreateApp() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/login" element={<Login />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </Router>
   );

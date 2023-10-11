@@ -20,6 +20,8 @@ const iconMap = {
   LiaHotdogSolid,
 };
 
+
+
 export default function CreateMenuItem(props) {
   const IconComponent = iconMap[props.icon];
 
@@ -39,6 +41,8 @@ export default function CreateMenuItem(props) {
   );
 }
 
+
+
 function CreateProducts(products) {
   if (!products) {
     return null;
@@ -48,24 +52,16 @@ function CreateProducts(products) {
     return (
       <div key={item.id} className={`flex flex-row items-center justify-between pb-[20px] text-[1.3rem] pr-[10px] pl-[10px]`}>
         {item.name}
-
       <div className="flex flex-row items-center">
-
       <div className={`${styles.priceAndGrams} flex flex-col text-[1rem] font-bold text-black`}>
-        <div>
-        {item.grams}гм
-        </div>
-        <div>
-        {item.price}грн 
-        </div>
+        <div>{item.grams}гм</div>
+        <div>{item.price}грн </div>
       </div>
-
         <div>
-          <HiOutlinePlusCircle className="text-[2rem] text-black cursor-pointer hover:text-gray-500 transition-all transition-200 ml-[15px]" />
+          <HiOutlinePlusCircle className="text-[2.3rem] text-black cursor-pointer hover:text-gray-500 transition-all transition-200 ml-[15px]" />
         </div>
       </div>
       </div>
-      
     );
   });
 

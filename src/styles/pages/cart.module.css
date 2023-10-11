@@ -1,0 +1,31 @@
+@media (max-width: 500px) {
+
+  .mainContainer {
+    width: 100%;
+  }
+
+  .mealNameContainer,
+  .amountBtn,
+  .priceContainer,
+  .amoutText {
+    height: 44px;
+    font-size: 1.4rem;
+  }
+  
+  .priceContainer {
+    width: 80px;
+    font-size: 1.3rem;
+  }
+
+  .orderContainer {
+    width: 90%;
+  }
+
+  .orderCommentInput {
+    font-size: 1.2rem;
+  }
+
+  .totalCost {
+    font-size: 1.4rem;
+  }
+}

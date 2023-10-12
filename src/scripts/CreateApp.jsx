@@ -9,16 +9,19 @@ import Profile from "../scripts/profile/CreateProfile.jsx";
 
 
 export default function CreateApp() {
-  const [cart, setCart] = useState();
+  const [cart, setCart] = useState({});
+  const [isLoggined, setIsLoggined] = useState(false);
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Cafe />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/menu" element={<Menu cart={`TODO`}/>} />
+        {isLoggined ? 
+          <Route path="/login" element={<Profile />} /> :
+          <Route path="/login" element={<Login />} />
+        }
+        <Route path="/cart" element={<Cart />} /> 
       </Routes>
     </Router>
   );

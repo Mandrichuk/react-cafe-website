@@ -12,11 +12,16 @@ export default function CreateApp() {
   const [cart, setCart] = useState({});
   const [isLoggined, setIsLoggined] = useState(false);
 
+  function handleCartChange(mealID) {
+      console.log(mealID);
+  }
+
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Cafe />} />
-        <Route path="/menu" element={<Menu cart={`TODO`}/>} />
+        <Route path="/menu" element={<Menu cart={cart} handleCartChange={handleCartChange}/>} />
         {isLoggined ? 
           <Route path="/login" element={<Profile />} /> :
           <Route path="/login" element={<Login />} />

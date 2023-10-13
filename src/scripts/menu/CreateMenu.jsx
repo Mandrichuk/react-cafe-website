@@ -6,11 +6,12 @@ import Header from "./CreateHeader.jsx";
 import Main from "./CreateMain.jsx";
 import Footer from "./CreateFooter.jsx";
 
-export default function CreateMenu() {
+export default function CreateMenu(props) {
+
   return (
     <>
       <Header />
-      <Main />
+      <Main {...props}/>
       <Footer />
     </>
   )

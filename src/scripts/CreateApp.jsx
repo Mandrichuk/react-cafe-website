@@ -9,24 +9,63 @@ import Profile from "../scripts/profile/CreateProfile.jsx";
 
 
 export default function CreateApp() {
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState([]);
   const [isLoggined, setIsLoggined] = useState(false);
 
-  function handleCartChange(mealID) {
-      console.log(mealID);
+  function handleCartChange(mealId) {
+    const existingCartItem = cart.find(item => item.id === mealId);
+    if (existingCartItem) {
+      setCart(cart => (
+        cart.map(item =>
+          item.id === mealId ? { ...item, amount: item.amount + 1 } : item
+        )
+      ));
+    } else {
+      setCart(cart => [ ...cart, { id: mealId, amount: 1 }]);
+    }
   }
 
+  function handleAmountChange(id, amount, sign) {
+    if (sign) {
+      setCart(cart => {
+        return cart.map(item => {
+          return item.id === id ? { ...item, amount: item.amount + 1 } : item;
+        });
+      });
+    }
+    else {
+      let isZero = 0;
+      
+      setCart(cart => {
+        return cart.map(item => {
+          if (item.amount > 0) {
+            isZero = 1;
+          }
+          return item.id === id ? { ...item, amount: item.amount - isZero } : item;
+        });
+      });
+    }
+
+    validAmount();
+  }
+
+  function validAmount() {
+    setCart(cart => {
+      const newCart = cart.filter(item => item.amount > 0);
+      return newCart;
+    })  
+  }
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Cafe />} />
-        <Route path="/menu" element={<Menu cart={cart} handleCartChange={handleCartChange}/>} />
+        <Route path="/menu" element={<Menu cart={cart} handleCartChange={handleCartChange} />} />
         {isLoggined ? 
           <Route path="/login" element={<Profile />} /> :
           <Route path="/login" element={<Login />} />
         }
-        <Route path="/cart" element={<Cart />} /> 
+        <Route path="/cart" element={<Cart cart={cart} handleAmountChange={handleAmountChange} />} /> 
       </Routes>
     </Router>
   );

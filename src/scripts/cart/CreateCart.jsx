@@ -4,12 +4,12 @@ import styles from "../../styles/pages/cart.module.css";
 import Header from "../shared/CreateHeader";
 import Main from "./CreateMain.jsx";
 
-export default function CreateCart() {
+export default function CreateCart(props) {
 
   return (
     <>
       <Header />
-      <Main />
+      <Main {...props} />
     </>
   );
 }

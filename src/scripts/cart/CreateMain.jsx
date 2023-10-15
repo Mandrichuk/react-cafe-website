@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+
 import styles from "../../styles/pages/cart.module.css";
 
 import Meal from "./materials/CreateMeal.jsx";
@@ -20,7 +22,10 @@ export default function CreateMain(props) {
     <main>
       <div className={`${styles.emptyCartContainer} text-black h-[400px] mt-[80px] w-[100%] flex flex-col justify-center items-center text-[2rem]`}>
         <div>
-          Кошик пустий, оберіть щось в&nbsp;<span className="text-blue-700 underline cursor-pointer">меню</span>
+
+
+          Кошик пустий, оберіть щось в&nbsp;<Link to="/menu" className="text-blue-700 underline cursor-pointer">меню</Link>
+
         </div>
         <SiInstacart className="ml-[10px] "/>
       </div>

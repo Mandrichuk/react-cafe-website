@@ -80,18 +80,26 @@ export default function CreateHeader() {
 
       <div className="options-container mr-[30px] flex flex-row items-center">
 
-        <div className="home-page-container text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
-          <Link to="/" className="text-white">Головна</Link> 
-        </div>
-        <div className="text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
-          <Link to="/menu" className="text-white">Меню</Link> 
-        </div>
-        <div className="text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
-          <Link to="/login" className="text-white">Увійти</Link> 
-        </div>
-        <div className="text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
-          <Link to="/cart" className="text-white">Кошик</Link> 
-        </div>
+        <Link to="/" className="text-white">
+          <div className="home-page-container text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
+              Головна
+          </div>
+        </Link> 
+        <Link to="/menu" className="text-white">
+          <div className="text-info p-[10px] pb-[15px] pt-[15px] text-[1rem] max-w-[100px] transition-all duration-100">
+              Меню
+          </div>
+        </Link> 
+        <Link to="/login" className="text-white">
+          <div className="text-info p-[10px] pb-[15px] pt-[15px] text-[1rem] max-w-[100px] transition-all duration-100">
+              Увійти
+          </div>
+        </Link> 
+        <Link to="/cart" className="text-white">
+          <div className="text-info p-[10px] pb-[15px] pt-[15px] text-[1rem] max-w-[100px] transition-all duration-100">
+              Кошик
+          </div>
+        </Link> 
       </div>
       
       <div className="extra-options flex-row items-center mr-[20px] p-[10px] hidden">

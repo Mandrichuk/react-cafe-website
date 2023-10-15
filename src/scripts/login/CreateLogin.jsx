@@ -4,11 +4,11 @@ import styles from "../../styles/pages/login.module.css";
 import Header from "../shared/CreateHeader.jsx";
 import Main from "./CreateMain";
 
-export default function CreateLogin() {
+export default function CreateLogin(props) {
   return (
     <>
       <Header />
-      <Main />
+      <Main {...props}/>
     </>
   );
 }

@@ -1,7 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "../../styles/pages/login.module.css";
 
-export default function CreateMain() {
+export default function CreateMain(props) {
+  const [phoneNumber, setPhoneNumber] = useState("");
+
+  function handleChange(event) {
+    setPhoneNumber(event.target.value);
+  }
+
+  function handleSubmit() {
+    props.phoneNumberValid(phoneNumber);
+  }
+
   return (
     <div className={`${styles.mainContainer} flex flex-row items-center justify-center h-[90%]`}>
       <div className={`${styles.ImgContainer} w-[45%] h-[100vh]`}>
@@ -20,16 +30,21 @@ export default function CreateMain() {
 
         <div className={`${styles.enterPhoneContainer} flex flex-col  mb-[40px]`}>
           <label htmlFor="phone" className={`${styles.phoneInputLabel} text-[1.1rem]`}>Номер телефону:</label>
+          <div className="text-[1.3rem] flex flex-row items-center justify-center mb-[20px]">
+
           <input
             type="tel"
             id="phone"
             name="phone"
-            className={`${styles.phoneInput} text-[1.3rem] w-[170px] border border-gray-200 mb-[20px] pl-[5px]`}
+            value={phoneNumber}
+            onChange={handleChange}
+            className={`${styles.phoneInput} text-[1.3rem] w-[170px] border border-gray-200 pl-[5px]`}
             pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
             placeholder="+380.."
             required
           />
-          <button className={`${styles.getCodeBtn, styles.btn} p-[10px] border text-white transition-all `}>
+          </div>
+          <button onClick={handleSubmit} className={`${styles.getCodeBtn, styles.btn} p-[10px] border text-white transition-all `}>
             Отримати код
           </button>
         </div>

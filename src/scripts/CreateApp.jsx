@@ -12,49 +12,38 @@ export default function CreateApp() {
   const [cart, setCart] = useState([]);
   const [isLoggined, setIsLoggined] = useState(false);
 
+  function phoneNumberValid(number) {
+    number = number.replace(/\s/g, "");
+    if (number.length === 13 && number.startsWith("+380")) {
+      return true;
+    } 
+    return false;
+  }
+
   function handleCartChange(mealId) {
     const existingCartItem = cart.find(item => item.id === mealId);
-    if (existingCartItem) {
-      setCart(cart => (
-        cart.map(item =>
-          item.id === mealId ? { ...item, amount: item.amount + 1 } : item
-        )
-      ));
-    } else {
-      setCart(cart => [ ...cart, { id: mealId, amount: 1 }]);
-    }
+    setCart(cart => {
+      if (existingCartItem) {
+      return cart.map(item => 
+          item.id === mealId ? {...item, amount: item.amount + 1} : item);
+      }
+      else return [...cart, {id: mealId, amount: 1}];
+    });
   }
 
   function handleAmountChange(id, amount, sign) {
-    if (sign) {
-      setCart(cart => {
-        return cart.map(item => {
-          return item.id === id ? { ...item, amount: item.amount + 1 } : item;
-        });
-      });
-    }
-    else {
-      let isZero = 0;
-      
-      setCart(cart => {
-        return cart.map(item => {
-          if (item.amount > 0) {
-            isZero = 1;
-          }
-          return item.id === id ? { ...item, amount: item.amount - isZero } : item;
-        });
-      });
-    }
-
+    setCart(cart => {
+      return cart.map(item => item.id === id ? {...item, amount: item.amount + (sign ? 1 : -1)} : item); 
+    });
     validAmount();
   }
 
   function validAmount() {
     setCart(cart => {
-      const newCart = cart.filter(item => item.amount > 0);
-      return newCart;
+      return cart.filter(item => item.amount > 0);
     })  
   }
+
 
   return (
     <Router>
@@ -63,7 +52,7 @@ export default function CreateApp() {
         <Route path="/menu" element={<Menu cart={cart} handleCartChange={handleCartChange} />} />
         {isLoggined ? 
           <Route path="/login" element={<Profile />} /> :
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login phoneNumberValid={phoneNumberValid} />} />
         }
         <Route path="/cart" element={<Cart cart={cart} handleAmountChange={handleAmountChange} />} /> 
       </Routes>

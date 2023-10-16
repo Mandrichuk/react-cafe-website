@@ -7,7 +7,7 @@ import menuData from "../../../data/menu/menuData.js";
 
 
 export default function CreateMeal(props) {
-  const mealPrice = getMealPrice(props.id, props.amount, menuData);
+  const mealPrice = getMealPrice(props.id, props.amount);
 
   let currentMeal;
 
@@ -45,7 +45,7 @@ export default function CreateMeal(props) {
   );
 } 
 
-function getMealPrice(id, amount, menuData) {
+function getMealPrice(id, amount) {
   let mealPrice = 0;
   menuData.forEach(item => {
     item.products.forEach(menuMeal => {

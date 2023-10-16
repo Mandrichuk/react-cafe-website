@@ -4,7 +4,7 @@ import styles from "../../styles/pages/profile.module.css";
 import History from "./materials/CreateHistory.jsx";
 
 
-export default function CreateProfile() {
+export default function CreateMain(props) {
   return (
     <main className={`${styles.mainContainer} mt-[100px] text-black`}> 
       <div className={`${styles.allInfoContainer} max-w-[600px] w-[60%] flex flex-col items-center justify-center`}>
@@ -19,7 +19,12 @@ export default function CreateProfile() {
         </div>
       </div>
 
-      {<History />}
+      {CreateHistory(props.history)}
     </main>
   );
+}
+
+function CreateHistory(history) {
+  if (history) return history.map(historyItem => <History history={historyItem} />);
+
 }

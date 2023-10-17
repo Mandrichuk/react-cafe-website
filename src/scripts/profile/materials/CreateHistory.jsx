@@ -5,25 +5,23 @@ import getMealName from "../../shared/getMealName.jsx";
 import getTotalPrice from "../../shared/getTotalPrice.jsx";
 
 export default function CreateHistory(props) {
-  const totalPrice = getTotalPrice(props.history);
-
+  const totalPrice = getTotalPrice(props.history.cart);
+  
   return (
     <div className={`${styles.orderContainer} flex flex-col items-center mb-[30px] w-[50%]`}>
-
       <div className={`${styles.dateAndPriceContainer} flex flex-row items-center mb-[10px] w-[100%]`}>
         <div className={`${styles.dateContainer} flex items-center justify-center  w-[50%] p-[5px] pr-[10px] pl-[10px] text-[1.2rem] border  `}>
-          Дата
+          {props.history.date}
         </div>
         <div className={`${styles.priceContainer} flex items-center justify-center w-[50%] p-[5px] pr-[10px] pl-[10px] text-[1.2rem] border  `}>
           {totalPrice}грн
         </div>
       </div>
 
-      { props.history && props.history.map(meal => {
+      { props.history.cart && props.history.cart.map(meal => {
         return <CreateHistoryItem meal={meal}/>
       })
       }
-
     </div>
   );
 }
@@ -44,5 +42,4 @@ function CreateHistoryItem(props) {
     </div>
     </>
   );
-
 }

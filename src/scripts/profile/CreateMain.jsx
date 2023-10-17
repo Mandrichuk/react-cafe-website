@@ -19,12 +19,7 @@ export default function CreateMain(props) {
         </div>
       </div>
 
-      {CreateHistory(props.history)}
+      {props.history.reverse().map(historyItem => <History history={historyItem} />)}
     </main>
   );
-}
-
-function CreateHistory(history) {
-  if (history) return history.map(historyItem => <History history={historyItem} />);
-
 }

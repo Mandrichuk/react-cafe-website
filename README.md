@@ -2,7 +2,7 @@
 
 Language - HTML, CSS, JavaScript (Vanilla)
 
-JS Framework - ReactJs
+JS Library - ReactJs (Redux)
 
 CSS Framework - Tailwind CSS 
 

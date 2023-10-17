@@ -14,7 +14,15 @@ export default function CreateApp() {
   const [history, setHistory] = useState([]);
 
   function handleHistoryAdd(comment) {
-    setHistory(history => [...history, cart]);
+    const today = new Date();
+    const formattedDate = `${today.getDate() < 10 ? '0' + today.getDate() : today.getDate()}/${today.getMonth()+1 < 10 ? '0' + today.getMonth()+1 : today.getMonth()+1}/${today.getFullYear()}`;
+    
+    const newHistoryEntry = {
+      date: formattedDate,
+      cart: cart
+    };
+
+    setHistory(history => [...history, newHistoryEntry]);
     setCart([]);
   }
  

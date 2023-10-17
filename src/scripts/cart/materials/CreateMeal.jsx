@@ -4,21 +4,12 @@ import styles from "../../../styles/pages/cart.module.css";
 
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"; 
 import menuData from "../../../data/menu/menuData.js";
-
+import getMealPrice from "../../shared/getMealPrice.jsx";
+import getMealName from "../../shared/getMealName.jsx";
 
 export default function CreateMeal(props) {
   const mealPrice = getMealPrice(props.id, props.amount);
-
-  let currentMeal;
-
-  menuData.forEach(item => {
-    item.products.forEach(meal => {
-      if (meal.id === props.id) {
-        currentMeal =  meal;
-      }
-    })
-  })
-
+  const currentMeal = getMealName(props.id);
 
   return (
     <div className={`${styles.mainContainer} text-black flex flex-row items-center justify-center mb-[10px] w-[80%]`}>
@@ -45,14 +36,3 @@ export default function CreateMeal(props) {
   );
 } 
 
-function getMealPrice(id, amount) {
-  let mealPrice = 0;
-  menuData.forEach(item => {
-    item.products.forEach(menuMeal => {
-      if (id === menuMeal.id) {
-        mealPrice = menuMeal.price * amount;
-      }
-    })
-  });
-  return mealPrice;
-}

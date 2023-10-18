@@ -1,0 +1,15 @@
+.nameContainer {
+  background-color: rgb(251, 251, 244);
+}
+
+.nameContainer button:hover {
+  background-color: red;
+}
+
+.btn {
+  background-color: #05442e;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}

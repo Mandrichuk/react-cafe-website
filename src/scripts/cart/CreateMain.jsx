@@ -37,9 +37,11 @@ export default function CreateMain(props) {
         <div className={`${styles.totalCost} border-b-[1px] border-black black p-[10px] mb-[80px]`}>
           Загальна сума замовлення: {totalPrice}грн
         </div>
-        <button onClick={() => props.handleHistoryAdd("comment")} className={`${styles.totalCost} bg-custom-green text-white p-[10px] mb-[40px]`}>
-          Оформити замовлення
-        </button>
+        <Link to="/order" className="flex items-center justify-center">
+          <button onClick={() => props.handleHistoryAdd("comment")} className={`${styles.totalCost} bg-custom-green text-white p-[10px] mb-[40px]`}>
+            Оформити замовлення
+          </button>
+        </Link>
       </div>
     </main>
     }

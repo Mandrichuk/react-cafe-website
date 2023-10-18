@@ -6,9 +6,13 @@ import Menu from "../scripts/menu/CreateMenu.jsx";
 import Login from "../scripts/login/CreateLogin.jsx";
 import Cart from "../scripts/cart/CreateCart.jsx";
 import Profile from "../scripts/profile/CreateProfile.jsx";
+import Order from "./order/CreateOrder.jsx";
+import getTotalPrice from "./shared/getTotalPrice.jsx";
+
 
 
 export default function CreateApp() {
+
   const [isLoggined, setIsLoggined] = useState(true);
   const [cart, setCart] = useState([]);
   const [history, setHistory] = useState([]);
@@ -16,9 +20,10 @@ export default function CreateApp() {
   function handleHistoryAdd(comment) {
     const today = new Date();
     const formattedDate = `${today.getDate() < 10 ? '0' + today.getDate() : today.getDate()}/${today.getMonth()+1 < 10 ? '0' + today.getMonth()+1 : today.getMonth()+1}/${today.getFullYear()}`;
-    
+
     const newHistoryEntry = {
       date: formattedDate,
+      price: getTotalPrice(cart),
       cart: cart
     };
 
@@ -60,6 +65,7 @@ export default function CreateApp() {
           <Route path="/login" element={<Login />} />
         }
         <Route path="/cart" element={<Cart cart={cart} handleAmountChange={handleAmountChange} handleHistoryAdd={handleHistoryAdd} />} /> 
+        <Route path="/order" element={<Order history={history}/>} /> 
       </Routes>
     </Router>
   );

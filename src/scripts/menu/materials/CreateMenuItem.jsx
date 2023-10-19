@@ -71,8 +71,8 @@ function CreateProducts(products, cart, handleCartChange) {
           <div>{item.grams}гм</div>
           <div>{item.price}грн </div>
         </div>
-          <div className="w-[45px] h-[45px] flex items-center justify-center border-[2px] ml-[20px]"> 
-            <MdOutlineExposurePlus1 className="text-[1.8rem] text-black cursor-pointer hover:text-gray-500 transition-all transition-200"   onClick={() => { handleCartChange(item.id); handleBoolChange(); }}/>
+          <div onClick={() => { handleCartChange(item.id); handleBoolChange(); }} className="w-[45px] h-[45px] flex items-center justify-center border-[2px] ml-[20px] cursor-pointer"> 
+            <MdOutlineExposurePlus1 className="text-[1.8rem] text-black hover:text-gray-500 transition-all transition-200"/>
           </div>
         </div>
         {isAdded && <div className="bottom-[50px] fixed left-0 right-0 z-30 flex items-center justify-center">

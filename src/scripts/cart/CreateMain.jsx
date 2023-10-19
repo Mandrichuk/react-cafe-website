@@ -13,6 +13,8 @@ import { SiInstacart } from "react-icons/si";
 export default function CreateMain(props) {
   const totalPrice = getTotalPrice(props.cart);
 
+  console.log(props.isLoggined)
+
   return (
     <>
     { props.cart.length === 0 ?
@@ -37,11 +39,20 @@ export default function CreateMain(props) {
         <div className={`${styles.totalCost} border-b-[1px] border-black black p-[10px] mb-[80px]`}>
           Загальна сума замовлення: {totalPrice}грн
         </div>
-        <Link to="/order" className="flex items-center justify-center">
-          <button onClick={() => props.handleHistoryAdd("comment")} className={`${styles.totalCost} bg-custom-green text-white p-[10px] mb-[40px]`}>
+
+        {props.isLoggined ? 
+        <Link to="/success" className="flex items-center justify-center">
+          <button className={`${styles.totalCost} bg-custom-green text-white p-[10px] mb-[40px]`}>
             Оформити замовлення
           </button>
-        </Link>
+        </Link> :
+
+        <Link to="/order" className="flex items-center justify-center">
+        <button className={`${styles.totalCost} bg-custom-green text-white p-[10px] mb-[40px]`}>
+          Оформити замовлення
+        </button>
+      </Link>} 
+
       </div>
     </main>
     }

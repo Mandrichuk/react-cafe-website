@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import '../../styles/shared/header.css';
+import '../../../styles/shared/header.css';
 
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsTelegram } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
 
+import Chapter from "./materials/CreateChapter.jsx";
 
 
-export default function CreateHeader() {
+export default function CreateHeader(props) {
+  const chapterNamesArr = [
+    {link: "/", name: "Головна"}, 
+    {link: "/menu", name: "Меню"},
+    {link: "/login", name: props.isLoggined ? "Профіль" : "Увійти"}, 
+    {link: "/cart", name: "Кошик"}
+  ];
+  
   let [screenSettings, setScreenSettings] = useState(false);
-
   useEffect(() => {
     window.addEventListener("resize", () => {
       if (window.innerWidth > 520) {
@@ -53,7 +60,7 @@ export default function CreateHeader() {
             <Link to="/menu" className="text-black">Меню</Link> 
           </div>
           <div className="text-info text-[1.3rem] mt-[2px]">
-            <Link to="/login" className="text-black">Увійти</Link> 
+            <Link to="/login" className="text-black">{props.isLoggined ? "Профіль" : "Увійти" }</Link> 
           </div>
           <div className="text-info text-[1.3rem] mt-[2px] mb-[15px]">
             <Link to="/cart" className="text-black">Кошик</Link>
@@ -79,27 +86,7 @@ export default function CreateHeader() {
 
 
       <div className="options-container mr-[30px] flex flex-row items-center">
-
-        <Link to="/" className="text-white">
-          <div className="home-page-container text-info p-[10px] text-[1rem] max-w-[100px] transition-all duration-100">
-              Головна
-          </div>
-        </Link> 
-        <Link to="/menu" className="text-white">
-          <div className="text-info p-[10px] pb-[15px] pt-[15px] text-[1rem] max-w-[100px] transition-all duration-100">
-              Меню
-          </div>
-        </Link> 
-        <Link to="/login" className="text-white">
-          <div className="text-info p-[10px] pb-[15px] pt-[15px] text-[1rem] max-w-[100px] transition-all duration-100">
-              Увійти
-          </div>
-        </Link> 
-        <Link to="/cart" className="text-white">
-          <div className="text-info p-[10px] pb-[15px] pt-[15px] text-[1rem] max-w-[100px] transition-all duration-100">
-              Кошик
-          </div>
-        </Link> 
+        {chapterNamesArr.map(chapterName => <Chapter {...chapterName} {...props}/>)}
       </div>
       
       <div className="extra-options flex-row items-center mr-[20px] p-[10px] hidden">

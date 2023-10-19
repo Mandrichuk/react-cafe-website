@@ -12,8 +12,8 @@ export default function CreateFooter() {
     <footer className={`${styles.footer} mt-[100px] relative w-[100%] h-[240px] flex flex-col items-center justify-center`}>
 
     <div className={`${styles.contentContainer} w-[90%] flex flex-row items-center justify-between`}>
-     <div className={`${styles.logoContainer} w-[45%]`}>
-      <img className={`${styles.logoImg} w-[150px] object-cover`} src="images/icons/brand-logo.png"/>
+     <div className={`${styles.logoContainer} w-[40%]`}>
+      <img className={`${styles.logoImg} w-[120px] object-cover`} src="images/icons/brand-logo.png"/>
      </div>
 
     <div className={`${styles.textSosialContainer} flex flex-row justify-between flex-1`}>

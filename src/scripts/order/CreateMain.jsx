@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import {Link} from "react-router-dom";
 import styles from "../../styles/pages/order.module.css";
-import History from "./materials/CreateHistrory.jsx";
 
 export default function CreateMain(props) {
-
   const [phoneNumber, setPhoneNumber] = useState("");
 
+  function handleInputChange(event) {
+    setPhoneNumber(event.target.value);
+  }
+
   return (
-    <main className={`${styles.main} mt-[80px] text-black`}>
+    <main className={`${styles.main} text-black`}>
 
       <div className={`${styles.loginContainer} w-[55%] h-[100vh] flex flex-col justify-center items-center pl-[5%] pr-[5%]`}>
 
@@ -19,7 +22,6 @@ export default function CreateMain(props) {
         Підтвердіть ваше замовлення
       </div>
       <div className={`${styles} min-w-[400px] flex items-center justify-center flex-col`}>
-        {/* {props.history && props.history.map(item => <History {...item}/>)} */}
       </div>
 
       <div className={`${styles.enterPhoneContainer} flex flex-col  mb-[40px]`}>
@@ -31,17 +33,18 @@ export default function CreateMain(props) {
           id="phone"
           name="phone"
           value={phoneNumber}
+          onChange={handleInputChange}
           className={`${styles.phoneInput} text-[1.3rem] w-[170px] border border-gray-200 pl-[5px]`}
           pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
           placeholder="+380.."
           required
         />
         </div>
-        <button className={`${styles.getCodeBtn, styles.btn} p-[10px] border text-white transition-all `}>
+        <button onClick={() => props.handleLoggining(phoneNumber)} className={`${styles.getCodeBtn, styles.btn} p-[10px] border text-white transition-all `}>
           Отримати код
         </button>
       </div>
-      <div className={`${styles.enterPhoneContainer} flex flex-col`}>
+      <div className={`${styles.enterPhoneContainer} flex flex-col items-center justify-center w-[100%]`}>
         <label htmlFor="phone" className={`${styles.phoneInputLabel} text-[1.1rem]`}>Код з СМС:</label>
         <input
           type="tel"
@@ -51,10 +54,12 @@ export default function CreateMain(props) {
           pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
           placeholder="####"
           required
-        />
-        <button className={`${styles.loginBtn, styles.btn} p-[10px] border text-white transition-all `}>
-          Підтвердити
-        </button>
+          />
+        <Link to="/success" className="w-[170px] flex flex-col items-center justify-center">
+          <button className={`${styles.loginBtn, styles.btn} w-[100%] p-[10px] border text-white transition-all `}>
+            Підтвердити
+          </button>
+        </Link>
       </div>
 
       </div>

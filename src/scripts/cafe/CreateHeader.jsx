@@ -1,6 +1,6 @@
 import React from "react";
 import { FaBars } from 'react-icons/fa';
-import Header from "../shared/CreateHeader.jsx";
+import Header from "../shared/header/CreateHeader.jsx";
 
 
 export default function CreateHeader() {

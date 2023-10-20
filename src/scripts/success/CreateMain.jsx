@@ -17,7 +17,7 @@ export default function CreateMain(props) {
         <PiConfettiFill className={`${styles.successIcon} ml-[10px] text-custom-green`} />
       </div>
       <div className={`${styles.tagline} text-[1.4rem] max-w-[400px] mt-[10px] text-gray-500`}>
-        Ваше замовлення прийнято, ви можете переглянути його в своєму <Link to="/login" className={`${styles.profileLink} underline text-blue-700`}>профілі</Link>
+        Ваше замовлення прийнято, ви можете переглянути його в своєму <Link onClick={props.setCurrentLink} to="/login" className={`${styles.profileLink} underline text-blue-700`}>профілі</Link>
       </div>
     </main>
   );

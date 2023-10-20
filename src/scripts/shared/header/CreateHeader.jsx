@@ -23,7 +23,7 @@ export default function CreateHeader(props) {
     window.addEventListener("resize", () => {
       if (window.innerWidth > 520) {
         setScreenSettings(() => screenSettings = false)
-      }
+      } 
     });
   });
   

@@ -22,7 +22,7 @@ export default function CreateApp() {
   const [getCode, setGetCode] = useState({});
   const [cart, setCart] = useState([]);
   const [history, setHistory] = useState([]);
-  const [plusOne, setPlusOne] = useState(0);
+  const [currentLink, setCurrentLink] = useState(0);
 
 
   function handleLoggining(userInput) {
@@ -32,7 +32,7 @@ export default function CreateApp() {
   }
 
   function RerenderHeader() {
-    setPlusOne((plusOne) => plusOne + 1);
+    setCurrentLink((currentLink) => currentLink + 1);
   }
   function handleHistoryAdd(comment) {
     const today = new Date();
@@ -77,16 +77,22 @@ export default function CreateApp() {
     <Router>
       <Routes>
         <Route path="/" element={<Cafe />} />
+
         <Route path="/menu" element={<Menu cart={cart} handleCartChange={handleCartChange} />} />
+
         {isLoggined ? 
           <Route path="/login" element={<Profile history={history} />}  /> :
           <Route path="/login" element={<Login />} />
         }
-        <Route path="/cart" element={<Cart cart={cart} handleAmountChange={handleAmountChange} handleHistoryAdd={handleHistoryAdd} isLoggined={isLoggined}/>} /> 
-        <Route path="/order" element={<Order history={history} handleLoggining={handleLoggining} />} /> 
-        <Route path="success" element={<Success cart={cart}  handleHistoryAdd={handleHistoryAdd}/>}/>
+
+        <Route path="/cart" element={<Cart cart={cart} handleAmountChange={handleAmountChange} handleHistoryAdd={handleHistoryAdd} isLoggined={isLoggined} RerenderHeader={RerenderHeader} />} />
+
+        <Route path="/order" element={<Order history={history} handleLoggining={handleLoggining}  />} /> 
+
+        <Route path="success" element={<Success cart={cart}  handleHistoryAdd={handleHistoryAdd} setCurrentLink={setCurrentLink}  />}/>
+
       </Routes>
-      <SharedHeader isLoggined={isLoggined} RerenderHeader={RerenderHeader} plusOne={plusOne} />
+      <SharedHeader isLoggined={isLoggined} RerenderHeader={RerenderHeader} currentLink={currentLink} />
     </Router>
   );
 }

@@ -5,6 +5,7 @@ import Header from "../shared/header/CreateHeader";
 import Main from "./CreateMain.jsx";
 
 export default function CreateCart(props) {
+  // console.log(props)
   return (
     <>
       <Header />

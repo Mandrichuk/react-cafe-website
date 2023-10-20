@@ -11,9 +11,9 @@ import { SiInstacart } from "react-icons/si";
 
 
 export default function CreateMain(props) {
-  const totalPrice = getTotalPrice(props.cart);
+  console.log(props)
 
-  console.log(props.isLoggined)
+  const totalPrice = getTotalPrice(props.cart);
 
   return (
     <>
@@ -21,7 +21,7 @@ export default function CreateMain(props) {
     <main>
       <div className={`${styles.emptyCartContainer} text-black h-[400px] mt-[80px] w-[100%] flex flex-col justify-center items-center text-[2rem]`}>
         <div>
-          Кошик пустий, оберіть щось в&nbsp;<Link to="/menu" className="text-blue-700 underline cursor-pointer">меню</Link>
+          Кошик пустий, оберіть щось в&nbsp;<Link to="/menu" onClick={props.RerenderHeader} className="text-blue-700 underline cursor-pointer">меню</Link>
         </div>
         <SiInstacart className="ml-[10px] "/>
       </div>
@@ -41,13 +41,13 @@ export default function CreateMain(props) {
         </div>
 
         {props.isLoggined ? 
-        <Link to="/success" className="flex items-center justify-center">
+        <Link onClick={props.RerenderHeader} to="/success" className="flex items-center justify-center">
           <button className={`${styles.totalCost} bg-custom-green text-white p-[10px] mb-[40px]`}>
             Оформити замовлення
           </button>
         </Link> :
 
-        <Link to="/order" className="flex items-center justify-center">
+        <Link onClick={props.RerenderHeader} to="/order" className="flex items-center justify-center">
         <button className={`${styles.totalCost} bg-custom-green text-white p-[10px] mb-[40px]`}>
           Оформити замовлення
         </button>

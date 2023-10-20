@@ -8,15 +8,11 @@
   position: absolute;
   bottom: 12px;
   height: 3px;
-  width: 0;
-  background: rgb(139, 139, 139);
+  width: 76%;
+  background: white;
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  animation: underlineAnimation 1s forwards;
-}
-
-.current-page {
-  color: rgb(195, 195, 195);
+  animation: underlineAnimation .1s forwards;
 }
 
 @keyframes underlineAnimation {
@@ -25,10 +21,42 @@
   }
 }
 
-.text-info:hover {
-  color: rgb(195, 195, 195);
+
+.current-page {
+  color: white;
+}
+
+
+
+.not-current-page {
+  position: relative;
+  text-decoration: none;
+}
+
+
+.not-current-page:hover {
+  color: white;
   cursor: pointer;
 }
+
+.not-current-page::before {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  height: 3px;
+  width: 0%;
+  background: white;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  transition: width 0.3s;
+}
+
+.not-current-page:hover::before {
+  width: 76%;
+}
+
+
+
 
 .social-media-link:hover {
   color: rgb(195, 195, 195);

@@ -8,6 +8,7 @@ import { BsTelegram } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
 
 import Chapter from "./materials/CreateChapter.jsx";
+import ScreenChapter from "./materials/CreateScreenChapter.jsx";
 
 
 export default function CreateHeader(props) {
@@ -53,18 +54,8 @@ export default function CreateHeader(props) {
           <div className="mb-[10px] mt-[10px text-[#1f4739d9] ">
             Основні
           </div>
-          <div className="text-info text-[1.3rem] mt-[2px]">
-            <Link to="/" className="text-black">Головна</Link> 
-          </div>
-          <div className="text-info text-[1.3rem] mt-[2px]">
-            <Link to="/menu" className="text-black">Меню</Link> 
-          </div>
-          <div className="text-info text-[1.3rem] mt-[2px]">
-            <Link to="/login" className="text-black">{props.isLoggined ? "Профіль" : "Увійти" }</Link> 
-          </div>
-          <div className="text-info text-[1.3rem] mt-[2px] mb-[15px]">
-            <Link to="/cart" className="text-black">Кошик</Link>
-          </div>
+
+          {chapterNamesArr.map(chaterName => <ScreenChapter {...chaterName} {...props} handleChange={handleChange} />)}
         </div>
 
         <div className="main-settings flex flex-col items-center w-[80%] justify-center">
@@ -86,7 +77,7 @@ export default function CreateHeader(props) {
 
 
       <div className="options-container mr-[30px] flex flex-row items-center">
-        {chapterNamesArr.map(chapterName => <Chapter {...chapterName} {...props}/>)}
+        {chapterNamesArr.map(chapterName => <Chapter {...chapterName} {...props} />)}
       </div>
       
       <div className="extra-options flex-row items-center mr-[20px] p-[10px] hidden">

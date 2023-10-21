@@ -1,3 +1,32 @@
+.screen_current-page {
+  position: relative;
+  text-decoration: none;
+}
+
+.screen_current-page:before {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  height: 3px;
+  width: 75%;
+
+  background: black;
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  animation: underlineAnimationScreen .1s forwards;
+}
+
+@keyframes underlineAnimationScreen {
+  to {
+    width: 100%;
+  }
+}
+
+.screen_current-page-text {
+  color: black;
+}
+
+
 .current-page {
   position: relative;
   text-decoration: none;
@@ -25,8 +54,6 @@
 .current-page {
   color: white;
 }
-
-
 
 .not-current-page {
   position: relative;

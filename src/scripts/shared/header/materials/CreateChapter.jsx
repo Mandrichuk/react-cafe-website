@@ -14,9 +14,9 @@ export default function CreateChapter(props) {
 
   return (
     <Link onClick={props.RerenderHeader} to={props.link} className="text-custom-light-cream">
-    <div className={`${currentPageStyle} text-info  pb-[15px] pt-[15px] p-[10px] text-[1rem] max-w-[100px] transition-all duration-100`}>
-        {props.name}
-    </div>
+      <div className={`${currentPageStyle} text-info  pb-[15px] pt-[15px] p-[10px] text-[1rem] max-w-[100px] transition-all   duration-100`}>
+          {props.name}
+      </div>
   </Link> 
   );
 }

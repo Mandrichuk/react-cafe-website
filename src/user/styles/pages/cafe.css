@@ -14,7 +14,7 @@ header {
   color: white;
   font-size: .7rem;
 
-  background-image: url('../../../public/images/background/fire-burger.jpg');
+  background-image: url('../../../../public/images/background/fire-burger.jpg');
   background-size: cover; 
   background-repeat: no-repeat;
   background-position: center center;

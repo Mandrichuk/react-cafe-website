@@ -1,4 +1,4 @@
-import menuData from "../../data/menu/menuData.js";
+import menuData from "../../../data/menu/menuData.js";
 
 export default function mealById(id) {
   let currectMeal;

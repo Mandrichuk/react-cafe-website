@@ -5,7 +5,7 @@ import styles from "../../styles/pages/cart.module.css";
 
 import Meal from "./materials/CreateMeal.jsx";
 import getTotalPrice from "../shared/getTotalPrice.jsx";
-import menuData from "../../data/menu/menuData.js";
+import menuData from "../../../data/menu/menuData.js";
 
 import { SiInstacart } from "react-icons/si";
 

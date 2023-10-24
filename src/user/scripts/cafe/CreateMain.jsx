@@ -1,8 +1,8 @@
 import React from "react";
 
-import circlesData from "../../data/cafe/circlesData.js";
+import circlesData from "../../../data/cafe/circlesData.js";
 import Circle from "./materials/CreateCircles.jsx";
-import menuData from "../../data/cafe/menuData.js";
+import menuData from "../../../data/cafe/menuData.js";
 import Menu from "./materials/CreateMenu.jsx";
 import Story from "./materials/CreateStory.jsx";
 import Location from "./materials/CreateLocation.jsx";

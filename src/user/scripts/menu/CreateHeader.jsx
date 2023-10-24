@@ -2,8 +2,6 @@ import React from "react";
 import Header from "../shared/header/CreateHeader.jsx";
 
 import styles from "../../styles/pages/menu.module.css";
-import menuData from "../../data/menu/menuData.js";
-
 import { ImSpoonKnife } from 'react-icons/im';
 
 

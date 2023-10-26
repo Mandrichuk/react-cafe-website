@@ -2,9 +2,11 @@ import { current } from "@reduxjs/toolkit";
 import React, {useState, useEffect} from "react";
 import { Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 
+import SharedHeader from "./shared/header/CreateHeader";
 import Login from "./login/CreateLogin.jsx";
 import Navigation from "./navigation/CreateNavigation.jsx";
-import SharedHeader from "./shared/header/CreateHeader";
+import AdminSettings from "./adminSettings/CreateAdminSettings.jsx";
+
 
 export default function CreateApp() {
   const [isLoggined, setIsLoggined] = useState(false);
@@ -27,8 +29,9 @@ export default function CreateApp() {
       {currentLink.includes("admin") && <SharedHeader currentLink={currentLink}/>}
       <Routes>
 
-      <Route path="/admin/login" element={<Login />}/> 
-      <Route path="/superadmin" element={<Navigation />}/> 
+        <Route path="/admin/login" element={<Login />}/> 
+        <Route path="/superadmin" element={<Navigation />} />
+        <Route path="/superadmin/admin" element={<AdminSettings />} />
 
 
       </Routes>

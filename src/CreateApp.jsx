@@ -5,14 +5,11 @@ import CreateSuperAdminApp from "./super-admin/scripts/CreateApp.jsx";
 
 
 export default function CreateApp() {
-  console.log(window.location.href);
-
-  const [currentLink, setCurrentLink] = useState("");
 
   return (
     <>
-      <CreateUserApp />
-      <CreateSuperAdminApp />
+      <CreateUserApp/>
+      <CreateSuperAdminApp/>
     </>
   );
 } 

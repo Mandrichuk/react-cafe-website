@@ -6,6 +6,7 @@ import SharedHeader from "./shared/header/CreateHeader";
 import Login from "./login/CreateLogin.jsx";
 import Navigation from "./navigation/CreateNavigation.jsx";
 import AdminSettings from "./adminSettings/CreateAdminSettings.jsx";
+import MenuSettings from "./menuSettings/CreateMenuSettings.jsx";
 
 
 export default function CreateApp() {
@@ -32,6 +33,7 @@ export default function CreateApp() {
         <Route path="/admin/login" element={<Login />}/> 
         <Route path="/superadmin" element={<Navigation />} />
         <Route path="/superadmin/admin" element={<AdminSettings />} />
+        <Route path="/superadmin/menu" element={<MenuSettings />} />
 
 
       </Routes>

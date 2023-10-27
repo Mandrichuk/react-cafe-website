@@ -22,7 +22,7 @@ export default function CreateAdminSettings() {
       </div>
 
       <Link to="/superadmin" className="w-[40%] max-w-[300px] mr-[20px]">
-        <button className=" bg-custom-green text-white p-[20px] pt-[10px] pb-[10px] w-[100%]">Увійти</button>
+        <button className=" bg-custom-green text-white p-[20px] pt-[10px] pb-[10px] w-[100%]">Підтвердити</button>
       </Link>
 
     </div>

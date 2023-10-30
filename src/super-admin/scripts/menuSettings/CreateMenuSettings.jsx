@@ -31,8 +31,8 @@ export default function CreateMenuSettings() {
       </div>
 
       <div className="flex flex-col mb-[20px] mr-[20px] w-[40%] max-w-[300px]">
-        <label for="grams" className="text-[1.2rem] text-gray-600">Введіть грамовку страви</label>
-        <input placeholder="Грамовка" id="grams" className="border-[2px] border-l-[10px] p-[10px] pt-[5px] pb-[5px] border-black"/>
+        <label for="grams3" className="text-[1.2rem] text-gray-600">Введіть грамовку страви</label>
+        <input placeholder="Грамовка" id="grams3" className="border-[2px] border-l-[10px] p-[10px] pt-[5px] pb-[5px] border-black"/>
       </div>
 
 

@@ -1,0 +1,175 @@
+body, * {
+  margin: 0;
+  padding: 0;
+}
+
+.header, 
+.main{
+  background-image: none;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.header {
+  height: 200px;
+}
+
+.headerTaglineContainer {
+  background: linear-gradient(to bottom, #05442e, #01110b);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
+.menuText {
+  font-size: 2rem;
+  font-weight: bold;
+
+  margin-left: 5%;
+  margin-bottom: 15px; 
+}
+
+.menuTaglineText {
+  font-size: 1rem;
+  margin-left: 5%;
+}
+
+.menuItem:hover .menuItemImg {
+  transform: scale(1.1);
+  transition-duration: 300ms;
+}
+
+.footer {
+  border-top: 4px solid rgb(6, 113, 6); 
+}
+
+
+
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  color: black;
+  margin-right: 3%;
+}
+
+
+
+.accordion li {
+  list-style: none;
+  width: 100%;
+  margin: 7px;
+  padding: 10px;
+  border: 2px solid rgb(224, 224, 224);
+  border-radius: 3px;
+  box-shadow: 5px 5px 10px rgba(224, 216, 206, 0.6);
+}
+
+.accordion li label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.accordion .content {
+  color: #555;
+  padding: 0 10px;
+  line-height: 26px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s, padding 0.8s;
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+  max-height: 1000px;
+  padding: 10px;
+}
+
+
+@media (max-width: 600px) {
+
+  .accordion .content {
+    padding: 0;
+  }
+
+  .accordion input[type="radio"]:checked + label + .content {
+    max-height: 1000px;
+    padding: 0px;
+  }
+}
+
+
+@media (min-width: 600px) {
+  .accordion {
+    width: 90%;
+  }
+
+}
+@media (min-width: 800px) {
+  .accordion {
+    width: 86%;
+  }
+}
+
+@media (min-width: 1000px) {
+  .accordion {
+    width:76%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .accordion {
+    width:64%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .headerSection {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 850px) {
+  .accordion li {
+    margin: 5px;  
+  }
+
+  .headerSection {
+    margin-bottom: 50px;
+  }
+
+  .menuItemImg {
+    width: 65%;
+  }
+
+  .menuItemText {
+    margin-top: 13px;
+  }
+  
+  .footer {
+    display: flex;
+    flex-direction: row;
+    
+  }
+}
+
+@media (max-width: 950px) {
+  .header {
+    height: 150px;
+    margin-bottom: 70px;
+  }
+}

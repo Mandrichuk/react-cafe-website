@@ -16,26 +16,21 @@ export default function CreateApp() {
   const [passwordInput, setPasswordInput] = useState("");
 
   const { admin, superadmin } = loginsData.logins;
-  const loggins = useSelector((state) => state.loggins.value);
-
 
   function userDataValid() {
-
-    console.log(loginInput === superadmin.login);
-    console.log(superadmin.login);
-    console.log(loginInput);
-
     if (loginInput === admin.login && passwordInput === admin.password) {
+      dispatch(toggleSuperAdminLogin(false));
       dispatch(toggleAdminLogin(true));
       navigate("/admin");
     }
-    
+
     if (loginInput === superadmin.login && passwordInput === superadmin.password) {
+      dispatch(toggleAdminLogin(false));
       dispatch(toggleSuperAdminLogin(true));
       navigate("/superadmin");
-      console.log("hello");
     }
   }
+
 
   return (
     <div className="text-black flex flex-col items-center justify-center h-[80vh] text-[1.3rem]">

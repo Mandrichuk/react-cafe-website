@@ -1,3 +1,13 @@
+:root {
+  --main-size: 1.5rem;
+  --table-width: 400px;
+}
+
+input:focus {
+  background-color: #f0f8ff;
+  border-top-right-radius: 10px;
+}
+
 .categoryContainer {
   display: flex;
   flex-direction: row;
@@ -15,19 +25,21 @@
   justify-items: center;
 
   max-width: 500px;
-  width: 400px;
-  font-size: 2rem;
+  width: var(--table-width);
+  font-size: var(--main-size);
   padding: 5px 40px;
   border: 2px solid black;
 }
 
 .btnActions {
-  width: 400px;
+  justify-content: center;
+
+  width: var(--table-width);
   color: white;
-  font-size: 2.5rem;
+  font-size: var(--main-size);
   font-weight: bold;
   padding: 5px 40px;
-  background-color: grey;
+  background-color: rgb(66, 66, 66);
 }
 
 .deleteBtn {
@@ -36,5 +48,19 @@
 
 .saveBtn {
   background-color: #05442E;
-  width: 800px;
+  width: calc(var(--table-width) * 2);
+}
+
+.changeMealInput,
+.unitsSelect {
+  width: var(--table-width);
+  border: 2px solid black;
+  font-size: var(--main-size);
+  padding: 5px;
+  padding-left: 40px;
+}
+
+.unitsSelect {
+  padding: 6px;
+  padding-left: 40px;
 }

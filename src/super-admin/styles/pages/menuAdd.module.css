@@ -1,0 +1,66 @@
+:root {
+  --main-size: 1.5rem;
+  --table-width: 400px;
+}
+
+input:focus {
+  background-color: #f0f8ff;
+  border-top-right-radius: 10px;
+}
+
+.categoryContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+
+  margin-bottom: 20px;
+}
+
+.specificationContainer,
+.currentMealContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+
+  max-width: 500px;
+  width: var(--table-width);
+  font-size: var(--main-size);
+  padding: 5px 40px;
+  border: 2px solid black;
+}
+
+.btnActions {
+  justify-content: center;
+
+  width: var(--table-width);
+  color: white;
+  font-size: var(--main-size);
+  font-weight: bold;
+  padding: 5px 40px;
+  background-color: rgb(66, 66, 66);
+}
+
+.deleteBtn {
+  background-color: rgb(173, 19, 19);
+}
+
+.saveBtn {
+  background-color: #05442E;
+  width: var(--table-width);
+}
+
+.changeMealInput,
+.unitsSelect {
+  width: var(--table-width);
+  border: 2px solid black;
+  font-size: var(--main-size);
+  padding: 5px;
+  padding-left: 40px;
+}
+
+.unitsSelect {
+  padding: 6px;
+  padding-left: 40px;
+}

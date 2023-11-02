@@ -18,7 +18,8 @@ import NavigationSuperAdmin from "./super-admin/scripts/navigation/CreateNavigat
 import AdminSettingsSuperAdmin from "./super-admin/scripts/adminSettings/CreateAdminSettings.jsx";
 import MenuSettingsSuperAdmin from "./super-admin/scripts/menuSettings/CreateMenuSettings.jsx";
 import MealEdit from "./super-admin/scripts/mealEdit/CreateMealEdit.jsx";
-
+import MenuSuccess from "./super-admin/scripts/menuSuccess/CreateMenuSuccess.jsx";
+import MenuAdd from "./super-admin/scripts/menuAdd/CreateMenuAdd.jsx";
 
 import getTotalPrice from "./user/scripts/shared/getTotalPrice.jsx";
 
@@ -114,6 +115,8 @@ export default function CreateApp() {
         <Route path="/superadmin/admin" element={<AdminSettingsSuperAdmin />} />
         <Route path="/superadmin/menu" element={<MenuSettingsSuperAdmin />} />
         <Route path="/superadmin/menu/edit/meal/*" element={<MealEdit />} />
+        <Route path="/superadmin/menu/success" element={<MenuSuccess />} />
+        <Route path="/superadmin/menu/add/meal" element={<MenuAdd />} />
       </Routes>
       
 

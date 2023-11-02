@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../../../styles/pages/profile.module.css";
 
-import getMealName from "../../shared/getMeal.jsx";
-import getTotalPrice from "../../shared/getTotalPrice.jsx";
+import getMealName from "../../shared/getMeal.js";
+import getTotalPrice from "../../shared/getTotalPrice.js";
 
 export default function CreateHistory(props) {
   return (

@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import styles from "../../styles/pages/cart.module.css";
 
-import Header from "../shared/header/CreateHeader";
-import Main from "./CreateMain.jsx";
+import Header from "../shared/header/Header";
+import Main from "./Main.jsx";
 
 export default function CreateCart(props) {
-  // console.log(props)
   return (
     <>
       <Header />

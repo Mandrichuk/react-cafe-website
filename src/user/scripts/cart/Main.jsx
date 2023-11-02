@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import styles from "../../styles/pages/cart.module.css";
 
-import Meal from "./materials/CreateMeal.jsx";
-import getTotalPrice from "../shared/getTotalPrice.jsx";
+import Meal from "./materials/Meal.jsx";
+import getTotalPrice from "../shared/getTotalPrice.js";
 import menuData from "../../../data/menu/menuData.js";
 
 import { SiInstacart } from "react-icons/si";

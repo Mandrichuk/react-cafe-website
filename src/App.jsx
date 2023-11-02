@@ -2,26 +2,26 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 
 //* User Components
-import CafeUser from "./user/scripts/cafe/CreateCafe.jsx";
-import MenuUser from "./user/scripts/menu/CreateMenu.jsx";
-import LoginUser from "./user/scripts/login/CreateLogin.jsx";
-import CartUser from "./user/scripts/cart/CreateCart.jsx";
-import ProfileUser from "./user/scripts/profile/CreateProfile.jsx";
-import OrderUser from "./user/scripts/order/CreateOrder.jsx";
-import SuccessUser from "./user/scripts/success/CreateSuccess.jsx";
-import SharedHeaderUser from "./user/scripts/shared/header/CreateHeader.jsx";
+import CafeUser from "./user/scripts/cafe/Cafe.jsx";
+import MenuUser from "./user/scripts/menu/Menu.jsx";
+import LoginUser from "./user/scripts/login/Login.jsx";
+import CartUser from "./user/scripts/cart/Cart.jsx";
+import ProfileUser from "./user/scripts/profile/Profile.jsx";
+import OrderUser from "./user/scripts/order/Order.jsx";
+import SuccessUser from "./user/scripts/success/Success.jsx";
+import SharedHeaderUser from "./user/scripts/shared/header/Header.jsx";
 
 //* Super Admin Components
-import SharedHeaderSuperAdmin from "./super-admin/scripts/shared/header/CreateHeader.jsx";
-import LoginSuperAdmin from "./super-admin/scripts/login/CreateLogin.jsx";
-import NavigationSuperAdmin from "./super-admin/scripts/navigation/CreateNavigation.jsx";
-import AdminSettingsSuperAdmin from "./super-admin/scripts/adminSettings/CreateAdminSettings.jsx";
-import MenuSettingsSuperAdmin from "./super-admin/scripts/menuSettings/CreateMenuSettings.jsx";
-import MealEdit from "./super-admin/scripts/mealEdit/CreateMealEdit.jsx";
-import MenuSuccess from "./super-admin/scripts/menuSuccess/CreateMenuSuccess.jsx";
-import MenuAdd from "./super-admin/scripts/menuAdd/CreateMenuAdd.jsx";
+import SharedHeaderSuperAdmin from "./super-admin/scripts/shared/header/Header.jsx";
+import LoginSuperAdmin from "./super-admin/scripts/login/Login.jsx";
+import NavigationSuperAdmin from "./super-admin/scripts/navigation/Navigation.jsx";
+import AdminSettingsSuperAdmin from "./super-admin/scripts/adminSettings/AdminSettings.jsx";
+import MenuSettingsSuperAdmin from "./super-admin/scripts/menuSettings/MenuSettings.jsx";
+import MealEdit from "./super-admin/scripts/mealEdit/MealEdit.jsx";
+import MenuSuccess from "./super-admin/scripts/menuSuccess/MenuSuccess.jsx";
+import MenuAdd from "./super-admin/scripts/menuAdd/MenuAdd.jsx";
 
-import getTotalPrice from "./user/scripts/shared/getTotalPrice.jsx";
+import getTotalPrice from "./user/scripts/shared/getTotalPrice.js";
 
 
 

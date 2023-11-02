@@ -2,9 +2,9 @@ import React from "react";
 
 import "../../styles/pages/cafe.css";
 
-import Header from "./CreateHeader.jsx";
-import Main from "./CreateMain.jsx";
-import Footer from "../shared/CreateFooter.jsx";
+import Header from "./Header.jsx";
+import Main from "./Main.jsx";
+import Footer from "../shared/Footer.jsx";
 
 export default function CreateCafe() {
   return (

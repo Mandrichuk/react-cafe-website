@@ -1,7 +1,10 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import styles from "../../styles/pages/login.module.css";
 
-export default function CreateMain(props) {
+import Header from "../shared/header/Header.jsx";
+
+
+export default function CreateLogin(props) {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   function handleChange(event) {
@@ -12,8 +15,11 @@ export default function CreateMain(props) {
     props.phoneNumberValid(phoneNumber);
   }
 
+
   return (
-    <div className={`${styles.mainContainer} flex flex-row items-center justify-center h-[90%]`}>
+    <>
+      <Header />
+      <div className={`${styles.mainContainer} flex flex-row items-center justify-center h-[90%]`}>
       <div className={`${styles.ImgContainer} w-[45%] h-[100vh]`}>
         <img className={`${styles.bgImg} w-[100%] h-[100%] object-cover`} src="images/decorations/hot-dog-login.jpg" />
       </div>
@@ -67,5 +73,6 @@ export default function CreateMain(props) {
 
       </div>
     </div>
-  )
+    </>
+  );
 }

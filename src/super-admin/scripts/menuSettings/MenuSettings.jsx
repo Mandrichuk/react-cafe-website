@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "../../styles/pages/menu.module.css";
 
 import menuData from "../../../data/menu/menuData";
-import MenuItem from "./materials/CreateMenuItem";
+import MenuItem from "./materials/MenuItem";
 
 
 export default function CreateMenu(props) {

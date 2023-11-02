@@ -4,8 +4,8 @@ import styles from "../../../styles/pages/cart.module.css";
 
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"; 
 import menuData from "../../../../data/menu/menuData.js";
-import getMealPrice from "../../shared/getMealPrice.jsx";
-import getMealName from "../../shared/getMeal.jsx";
+import getMealPrice from "../../shared/getMealPrice.js";
+import getMealName from "../../shared/getMeal.js";
 
 export default function CreateMeal(props) {
   const mealPrice = getMealPrice(props.id, props.amount);

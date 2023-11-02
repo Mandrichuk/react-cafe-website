@@ -12,14 +12,14 @@ import SuccessUser from "./user/scripts/success/Success.jsx";
 import SharedHeaderUser from "./user/scripts/shared/header/Header.jsx";
 
 //* Super Admin Components
-import SharedHeaderSuperAdmin from "./super-admin/scripts/shared/header/Header.jsx";
-import LoginSuperAdmin from "./super-admin/scripts/login/Login.jsx";
-import NavigationSuperAdmin from "./super-admin/scripts/navigation/Navigation.jsx";
-import AdminSettingsSuperAdmin from "./super-admin/scripts/adminSettings/AdminSettings.jsx";
-import MenuSettingsSuperAdmin from "./super-admin/scripts/menuSettings/MenuSettings.jsx";
-import MealEdit from "./super-admin/scripts/mealEdit/MealEdit.jsx";
-import MenuSuccess from "./super-admin/scripts/menuSuccess/MenuSuccess.jsx";
-import MenuAdd from "./super-admin/scripts/menuAdd/MenuAdd.jsx";
+import SharedHeaderSuperAdmin from "./superadmin/scripts/shared/header/Header.jsx";
+import LoginSuperAdmin from "./superadmin/scripts/login/Login.jsx";
+import NavigationSuperAdmin from "./superadmin/scripts/navigation/Navigation.jsx";
+import AdminSettingsSuperAdmin from "./superadmin/scripts/adminSettings/AdminSettings.jsx";
+import MenuSettingsSuperAdmin from "./superadmin/scripts/menuSettings/MenuSettings.jsx";
+import MealEdit from "./superadmin/scripts/mealEdit/MealEdit.jsx";
+import MenuSuccess from "./superadmin/scripts/menuSuccess/MenuSuccess.jsx";
+import MenuAdd from "./superadmin/scripts/menuAdd/MenuAdd.jsx";
 
 import getTotalPrice from "./user/scripts/shared/getTotalPrice.js";
 
@@ -27,15 +27,12 @@ import getTotalPrice from "./user/scripts/shared/getTotalPrice.js";
 
 
 export default function CreateApp() {
-
   const [isLoggined, setIsLoggined] = useState(true);
-  const [getCode, setGetCode] = useState({});
   const [cart, setCart] = useState([]);
   const [history, setHistory] = useState([]);
   const [currentLink, setCurrentLink] = useState("/");
 
   const location = useLocation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     handleLinkChange();

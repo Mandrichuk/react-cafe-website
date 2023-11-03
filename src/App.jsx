@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
 
+import "./index.css";
+
 //* User Components
 import CafeUser from "./user/scripts/cafe/Cafe.jsx";
 import MenuUser from "./user/scripts/menu/Menu.jsx";
@@ -79,8 +81,6 @@ export default function CreateApp() {
       return cart.filter(item => item.amount > 0);
     });
   }
-
-
 
 
   return (

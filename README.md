@@ -18,3 +18,6 @@ Logins - OAuth
 Integration Google Maps API
 Integration Card API 
 Integration YouTube video src
+
+Require to install
+npm install --save @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons

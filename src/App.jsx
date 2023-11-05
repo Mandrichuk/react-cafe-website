@@ -84,10 +84,10 @@ export default function CreateApp() {
 
 
   return (
-    <div className="mt-[80px]">
-      {!currentLink.includes("admin") && 
+    <div className="mt-[70px]">
+      {/* {!currentLink.includes("admin") && 
         <SharedHeaderUser isLoggined={isLoggined} RerenderHeader={handleLinkChange} currentLink={currentLink} />
-      }
+      } */}
 
       {currentLink.includes("admin") && <SharedHeaderSuperAdmin currentLink={currentLink}/>}
       <Routes>

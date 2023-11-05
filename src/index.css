@@ -1,3 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --custom-green: #05442e;
+  --line-width: 175px;
+}
+
 body {
   font-family: Arial;
   margin: 0;
@@ -6,5 +16,19 @@ body {
 
 * {
   margin: 0;
+}
+
+.animatedLine {
+  width: 0; 
+  height: 7px; 
+  background-color: var(--custom-green); 
+  animation: fillAnimation 500ms forwards ease-in-out; 
+  border-top-right-radius: 10px;
+}
+
+@keyframes fillAnimation {
+  to {
+    width: var(--line-width);
+  }
 }
 

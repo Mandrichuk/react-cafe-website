@@ -1,11 +1,10 @@
 import React from "react";
 
-import "../../styles/pages/cafe.css";
+import styles from "../../styles/pages/cafe.module.css";
 
 import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";
 
-import Story from "./materials/Story.jsx";
 
 
 export default function CreateCafe() {
@@ -15,28 +14,44 @@ export default function CreateCafe() {
 
 
       <main>
-        <div className="cover-container">
 
-          <div className="introduction-container">
-            <div className="welcome-container">Ласкаво просимо</div>
-            <div className="name-container">Drink&Food</div>
-            <div className="tagline-container">Смачні страви та напої</div>
+        <div className={`${styles.coverContainer}`}>
+          <div className={`${styles.introductionContainer}`}>
+            <div className={`${styles.welcomeContainer}`}>Ласкаво просимо</div>
+            <div className={`${styles.nameContainer}`}>Drink&Food</div>
           </div>
         </div>
 
-      <div className="main-first-section flex flex-col justify-center items-center w-[100%] h-[750px]">
-        {<Story />}
 
-        <div className="meal-image-container">
-          <img className="meal-image" src="images/background/hotdogs.jpg"/>
-        </div>
+        <section className={`${styles.InfoSheet}`}>
+          <div className={`${styles.animatedLine} animatedLine`}></div>
+          <p className={`${styles.currentNewsText}`}>Актуальні новинки</p>
+          <div className={`${styles.gridInfo}`}>
 
-        <div className="separation-container">
-          <img className="separation-image" src="images/background/plates-on-table.jpg"/>
-        </div>
-      </div>
+            <div className={`${styles.infoContainer}`}>
+              <img src="images/background/hotdogs.jpg"/>
+              <p>new</p>
+            </div>
+            <div className={`${styles.infoContainer}`}>
+              <img src="images/background/hotdogs.jpg"/>
+              <p>new</p>
+            </div>
+            <div className={`${styles.infoContainer}`}>
+              <img src="images/background/hotdogs.jpg"/>
+              <p>new</p>
+            </div>
+
+          </div>
+        </section>
+
+        <section className={`${styles.location}`}>
+
+        </section>
+
 
       </main>
+
+
       <Footer />
     </>
   );

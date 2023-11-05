@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-width: 320px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  font-size: 1rem;
+  color: white;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.coverContainer {
+  height: 400px;
+  width: 100%;
+
+  color: white;
+
+  background-image: url('../../../../public/images/background/burger.jpg');
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  position: relative;
+}
+
+.introductionContainer {
+  margin-top: 50px;
+  margin-left: 10%;
+  font-weight: bold;
+}
+
+.welcomeContainer {
+  font-size: 2rem;
+  margin-bottom: 3px;
+  padding-top: 10px;
+}
+
+.nameContainer {
+  font-size: 4rem;
+}
+
+.currentNewsText {
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  width: var(--text-width);
+}
+
+.InfoSheet {
+  margin-top: 100px;
+  width: 90%;
+}
+
+.gridInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+}
+
+.infoContainer,
+.infoContainer > img {
+  position: relative;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.infoContainer {
+  overflow: hidden;
+}
+
+.infoContainer > img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms; 
+}
+
+.infoContainer > img:hover {
+  transform: scale(1.04);
+}
+
+
+.infoContainer > p {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+}
+

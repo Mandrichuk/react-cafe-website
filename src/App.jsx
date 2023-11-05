@@ -29,7 +29,7 @@ import getTotalPrice from "./user/scripts/shared/getTotalPrice.js";
 
 
 export default function CreateApp() {
-  const [isLoggined, setIsLoggined] = useState(true);
+  const [isLoggined, setIsLoggined] = useState(false);
   const [cart, setCart] = useState([]);
   const [history, setHistory] = useState([]);
   const [currentLink, setCurrentLink] = useState("/");

@@ -11,9 +11,9 @@ import { BsArrowLeftShort, BsArrowRightShort, BsInstagram } from "react-icons/bs
 
 
 export default function CreateCafe() {
-  const scrollImagesRef = React.useRef(null);
+  const scrollImagesRef = useRef(null);
 
-  const images = ["instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg"];
+  const images = ["instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg"];
 
   const scroll = (action) => {
     if (scrollImagesRef.current && action === "right") {
@@ -92,9 +92,10 @@ export default function CreateCafe() {
           <div className={`${styles.cover}`}>
             <div className={`${styles.scrollImages}`} ref={scrollImagesRef}>
               {images.map((image, index) => (
-                <div className={`${styles.child}`} key={`image-${index}`}>
+                <a target="_blank" href="https://www.instagram.com/drink.food.zp/" className={`${styles.child}`} key={`image-${index}`}>
                   <img className={`${styles.childImg}`} src={`images/instagram/${image}`} alt={`image-${index}`} />
-                </div>
+                  <BsInstagram className={`${styles.instagramIconAbsolute}`}/>
+                </a>
               ))}
             </div>
           </div>
@@ -106,10 +107,16 @@ export default function CreateCafe() {
         <div className={`${styles.instagramDetails}`}>
           <div className={`${styles.animatedLine} animatedLine`}></div>
           <div className={`${styles.titleText}`}> Ми в Iнстаграмі</div>
+          <a target="_black" href="https://www.instagram.com/drink.food.zp/" className={`${styles.instagramNameContainer}`}>
+            <BsInstagram className={`${styles.instagramIcon}`}/>
+            <a href="https://www.instagram.com/drink.food.zp/" className={`$  {styles.instagramName}`}> @drink.food.zp</a>
+          </a>
         </div>
         </div>
 
         </section>
+
+
 
         {/* <div className={`${styles.schedule} text-black`}>
           <div className={`${styles.sevenDaysText}`}>Працюемо 7 днів в неділю!</div>

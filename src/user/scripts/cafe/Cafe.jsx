@@ -39,34 +39,33 @@ export default function CreateCafe() {
 
         <section className={`${styles.InfoSheet}`}>
           <div className={`${styles.animatedLine} animatedLine`}></div>
-          <p className={`${styles.currentNewsText}`}>Актуальні новинки</p>
+          <p className={`${styles.titleText} text-black`}>Актуальні новинки</p>
           <div className={`${styles.gridInfo}`}>
 
             <div className={`${styles.infoContainer}`}>
               <img src="images/background/hotdogs.jpg"/>
-              <p>new</p>
+              <p className={`${styles.articleText}`}>new</p>
             </div>
             <div className={`${styles.infoContainer}`}>
               <img src="images/background/hotdogs.jpg"/>
-              <p>new</p>
+              <p className={`${styles.articleText}`}>new</p>
             </div>
             <div className={`${styles.infoContainer}`}>
               <img src="images/background/hotdogs.jpg"/>
-              <p>new</p>
+              <p className={`${styles.articleText}`}>new</p>
             </div>
 
           </div>
         </section>
 
+
         <section className={`${styles.location}`}>
           <div className={`${styles.locationDetails} text-black`}>
             <div className={`${styles.animatedLine} animatedLine`}></div>
             <div className={`${styles.titleText}`}> Наша геолокація</div>
-            <div className={`${styles.cityContainer}`}><IoLocationSharp className={`${styles.geoIcon}`}/> Запоріжжя</div>
-            <div className={`${styles.locationTextContainer}`}>Пр. Соборний 4-б</div>
+            <div className={`${styles.cityContainer} ${styles.articleText}`}><IoLocationSharp className={`${styles.geoIcon}`}/> Запоріжжя</div>
+            <div className={`${styles.locationTextContainer} ${styles.articleText}`}>Пр. Соборний 4-б</div>
           </div>
-
-
 
           <div className={`${styles.mapResponsive}`}>
             <iframe 
@@ -81,47 +80,78 @@ export default function CreateCafe() {
 
         </section>
 
+
         <section className={`${styles.instagramSection}`}>
 
-        <div className={`${styles.instagramGallery} text-black`}>
-          <div className={`${styles.buttonRightContainer}`}>
-            <button className={`${styles.icon}`} onClick={() => scroll("left")}>
-              <BsArrowLeftShort />
-            </button>
-          </div>
-          <div className={`${styles.cover}`}>
-            <div className={`${styles.scrollImages}`} ref={scrollImagesRef}>
-              {images.map((image, index) => (
-                <a target="_blank" href="https://www.instagram.com/drink.food.zp/" className={`${styles.child}`} key={`image-${index}`}>
-                  <img className={`${styles.childImg}`} src={`images/instagram/${image}`} alt={`image-${index}`} />
-                  <BsInstagram className={`${styles.instagramIconAbsolute}`}/>
-                </a>
-              ))}
+          <div className={`${styles.instagramGallery} text-black`}>
+            <div className={`${styles.buttonRightContainer}`}>
+              <button className={`${styles.icon}`} onClick={() => scroll("left")}>
+                <BsArrowLeftShort />
+              </button>
             </div>
+            <div className={`${styles.cover}`}>
+              <div className={`${styles.scrollImages}`} ref={scrollImagesRef}>
+                {images.map((image, index) => (
+                  <a target="_blank" href="https://www.instagram.com/drink.food.zp/" className={`${styles.child}`} key={`image-${index}`}>
+                    <img className={`${styles.childImg}`} src={`images/instagram/${image}`} alt={`image-${index}`} />
+                    <BsInstagram className={`${styles.instagramIconAbsolute}`}/>
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div className={`${styles.buttonLeftContainer}`}>
+              <button className={`${styles.icon}`} onClick={() => scroll("right")}>
+                <BsArrowRightShort />
+              </button>
+            </div>
+          <div className={`${styles.instagramDetails}`}>
+            <div className={`${styles.animatedLine} animatedLine`}></div>
+            <div className={`${styles.titleText}`}> Ми в Iнстаграмі</div>
+            <a target="_black" href="https://www.instagram.com/drink.food.zp/" className={`${styles.instagramNameContainer}`}>
+              <BsInstagram className={`${styles.instagramIcon}`}/>
+              <a href="https://www.instagram.com/drink.food.zp/" className={`${styles.articleText}`}> @drink.food.zp</a>
+            </a>
           </div>
-          <div className={`${styles.buttonLeftContainer}`}>
-            <button className={`${styles.icon}`} onClick={() => scroll("right")}>
-              <BsArrowRightShort />
-            </button>
           </div>
-        <div className={`${styles.instagramDetails}`}>
-          <div className={`${styles.animatedLine} animatedLine`}></div>
-          <div className={`${styles.titleText}`}> Ми в Iнстаграмі</div>
-          <a target="_black" href="https://www.instagram.com/drink.food.zp/" className={`${styles.instagramNameContainer}`}>
-            <BsInstagram className={`${styles.instagramIcon}`}/>
-            <a href="https://www.instagram.com/drink.food.zp/" className={`$  {styles.instagramName}`}> @drink.food.zp</a>
-          </a>
-        </div>
-        </div>
+
+        </section>
+
+        <section className={`${styles.bestBurgersSection}`}>
+
+          <div className={`${styles.imageContainer}`}>
+            <img className={`${styles.burgerImage}`} src="images/decorations/hamburger.png"/>
+          </div>
+
+          <div className={`${styles.burgersDetails} text-black`}>
+            <div className={`${styles.animatedLine} animatedLine`}></div>
+            <div className={`${styles.burgerTitle} ${styles.titleText}`}>Наші бургери</div>
+            <div className={`${styles.burgerDescription} ${styles.articleText}`}> - це справжні шедеври кулінарного мистецтва!</div>
+            <button className={`${styles.toMenuBtn} ${styles.articleText}`}>Переглянути в меню</button>
+          </div>
+
 
         </section>
 
 
+        <section className={`${styles.drinkAndBeerSection} text-white`}>
+          <div className={`${styles.decorationalVerticalContainer} ${styles.longVerticalContainer} ${styles.verticalContainerOne}`}></div>
+          <div className={`${styles.decorationalVerticalContainer} ${styles.longVerticalContainer} ${styles.verticalContainerTwo}`}></div>
+          <div className={`${styles.decorationalVerticalContainer} ${styles.longVerticalContainer} ${styles.verticalContainerThree}`}></div>
+          <section className={`${styles.beerMainSection}`}>
 
-        {/* <div className={`${styles.schedule} text-black`}>
-          <div className={`${styles.sevenDaysText}`}>Працюемо 7 днів в неділю!</div>
-          <div className={`${styles.weekdaysSchedule}`}>9:00–20:00</div>
-        </div> */}
+            <div className={`${styles.beerDetails}`}>
+              <div className={`${styles.titleText} ${styles.beerTitle}`}>Drink&Beer</div>
+              <div className={`${styles.preTitleText}`}>Файні алкогольні напої</div>
+              <div className={`${styles.articleText} ${styles.alcoholArticle}`}>Наш асортимент алкогольних напоїв - це вибір гурмана, де кожен келих - це справжній витвір мистецтва. Відберіть свій улюблений алкогольний напій і насолоджуйтеся багатогранністю смаку!</div>
+            </div>
+
+            <div className={`${styles.beerImageContainer}`}>
+              <img className={`${styles.beerImage}`} src="images/decorations/beer-mug.png" />
+            </div>
+
+          </section>
+        </section>        
+
 
       </main>
 

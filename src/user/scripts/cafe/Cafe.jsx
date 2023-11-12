@@ -5,6 +5,7 @@ import styles from "../../styles/pages/cafe.module.css";
 
 import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";
+import BurgersCanvas from "./materials/BurgersCanvas";
 
 import { IoLocationSharp } from "react-icons/io5";
 import { BsArrowLeftShort, BsArrowRightShort, BsInstagram } from "react-icons/bs";
@@ -118,9 +119,9 @@ export default function CreateCafe() {
 
         <section className={`${styles.bestBurgersSection}`}>
 
-          <div className={`${styles.imageContainer}`}>
-            <img className={`${styles.burgerImage}`} src="images/decorations/hamburger.png"/>
-          </div>
+          {/* <div className={`${styles.modelContainer} h-full`}> */}
+            <BurgersCanvas />
+          {/* </div> */}
 
           <div className={`${styles.burgersDetails} text-black`}>
             <div className={`${styles.animatedLine} animatedLine`}></div>
@@ -134,9 +135,6 @@ export default function CreateCafe() {
 
 
         <section className={`${styles.drinkAndBeerSection} text-white`}>
-          <div className={`${styles.decorationalVerticalContainer} ${styles.longVerticalContainer} ${styles.verticalContainerOne}`}></div>
-          <div className={`${styles.decorationalVerticalContainer} ${styles.longVerticalContainer} ${styles.verticalContainerTwo}`}></div>
-          <div className={`${styles.decorationalVerticalContainer} ${styles.longVerticalContainer} ${styles.verticalContainerThree}`}></div>
           <section className={`${styles.beerMainSection}`}>
 
             <div className={`${styles.beerDetails}`}>

@@ -8,7 +8,7 @@
   --title-font-size: 2rem;
   --pretitle-font-size: 1.2rem;
   --article-font-size: 1.1rem;
-  --section-margin: 100px;
+  --section-margin: 140px;
   --icon-size: 1.7rem;
 }
 
@@ -35,6 +35,7 @@ main {
 
 .preTitleText {
   font-size: var(--pretitle-font-size);
+  color: var(--custom-orange);
   font-weight: bold;
 }
 
@@ -331,30 +332,24 @@ main {
   margin-top: var(--section-margin);
   display: flex;
   flex-direction: row;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   width: var(--mutual-width);
-
+  height: 400px;
 }
 
+.bestBurgersSection section {
+  height: 100%;
+}
 
 .drinkAndBeerSection {
   display: flex;
   justify-content: center;
-  margin-top: calc(var(--section-margin));
+  /* margin-top: calc(var(--section-margin)); */
   width: 100%;
   height: 400px;
   background-color: var(--custom-green);
   position: relative;
-}
-
-.imageContainer {
-  margin-right: 15%;
-  margin-left: 5%;
-  width: 40%;
-  max-width: 450px;
-  min-width: 250px;
-  object-fit: cover;
 }
 
 .toMenuBtn {

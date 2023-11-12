@@ -8,7 +8,7 @@
   --title-font-size: 2rem;
   --pretitle-font-size: 1.2rem;
   --article-font-size: 1.1rem;
-  --section-margin: 140px;
+  --section-margin: 100px;
   --icon-size: 1.7rem;
 }
 
@@ -35,7 +35,6 @@ main {
 
 .preTitleText {
   font-size: var(--pretitle-font-size);
-  color: var(--custom-orange);
   font-weight: bold;
 }
 
@@ -192,18 +191,6 @@ main {
   z-index: 100;
 }
 
-.icon {
-  color: white;
-  background-color: var(--custom-green);
-  font-size: 3rem;
-  outline: none;
-  border: none;
-  padding: 0px 5px;
-  cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 100ms;
-}
-
 .icon:hover {
   background-color: rgb(16, 83, 59);
   transform: scale(1.02);
@@ -238,7 +225,7 @@ main {
   cursor: pointer;
   border: 1px solid rgba(207, 201, 201, .3);
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 5px;
   position: relative;
   transition: background-color 250ms;
 }
@@ -332,24 +319,34 @@ main {
   margin-top: var(--section-margin);
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
+  align-items: center;
   justify-content: space-between;
   width: var(--mutual-width);
-  height: 400px;
+
 }
 
-.bestBurgersSection section {
-  height: 100%;
-}
 
 .drinkAndBeerSection {
   display: flex;
   justify-content: center;
-  /* margin-top: calc(var(--section-margin)); */
+  margin-top: calc(var(--section-margin));
   width: 100%;
   height: 400px;
   background-color: var(--custom-green);
   position: relative;
+}
+
+.imageContainer {
+  margin-right: 15%;
+  margin-left: 5%;
+  min-width: 250px;
+  object-fit: cover;
+}
+
+.burgerImage {
+  width: 40%;
+  max-width: 450px;
+  min-width: 250px;
 }
 
 .toMenuBtn {
@@ -392,4 +389,144 @@ main {
 
 .beerTitle {
   margin-bottom: 20px;
+}
+
+
+
+@media (max-width: 765px) { 
+  :root {
+    --text-width: 320px;
+    --mutual-width: 80%;
+    --title-font-size: 2.2rem;
+    --pretitle-font-size: 1.3rem;
+    --article-font-size: 1.2rem;
+    --section-margin: 100px;
+    --icon-size: 1.7rem;
+  }
+
+
+  .gridInfo {
+    grid-template-columns: 1fr;
+  }
+
+  .location {
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+  }
+
+  .titleText {
+    margin: 0;
+  }
+
+  .locationDetails {
+    margin-bottom: 20px;
+  }
+
+  .mapResponsive {
+    padding-bottom: 60.25%;
+    min-height: 300px;
+  }
+
+  .instagramGallery {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cover {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bestBurgersSection {
+    flex-direction: column;
+    align-items: flex-start;
+    width: var(--mutual-width);
+  }
+
+  .burgersDetails {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 50px;
+  } 
+
+
+  .imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    margin-left: 0;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .burgerImage {
+    width: 100%;
+    max-width: 350px;
+    min-width: 250px;
+  }
+ 
+  .drinkAndBeerSection {
+    justify-content: center;
+    margin-top: calc(var(--section-margin));
+    width: 100%;
+    height: 650px;
+    background-color: var(--custom-green);
+    position: relative;
+  }
+
+  .beerMainSection {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .beerDetails {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    margin-top: 35px;
+    margin-bottom: 50px;
+  }
+
+  .beerImageContainer {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+
+}
+
+
+@media (max-width: 665px) {
+  :root {
+    --text-width: 320px;
+    --mutual-width: 92%;
+    --title-font-size: 2.3rem;
+    --pretitle-font-size: 1.4rem;
+    --article-font-size: 1.3rem;
+    --section-margin: 100px;
+    --icon-size: 1.7rem;
+  }
+}
+
+
+@media (min-width: 765px) { 
+  :root {
+    --text-width: 320px;
+    --mutual-width: 76%;
+    --title-font-size: 2.3rem;
+    --pretitle-font-size: 1.4rem;
+    --article-font-size: 1.3rem;
+    --section-margin: 100px;
+    --icon-size: 1.7rem;
+  }
+
 }

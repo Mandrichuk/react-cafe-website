@@ -5,7 +5,6 @@ import styles from "../../styles/pages/cafe.module.css";
 
 import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";
-import BurgersCanvas from "./materials/BurgersCanvas";
 
 import { IoLocationSharp } from "react-icons/io5";
 import { BsArrowLeftShort, BsArrowRightShort, BsInstagram } from "react-icons/bs";
@@ -14,7 +13,7 @@ import { BsArrowLeftShort, BsArrowRightShort, BsInstagram } from "react-icons/bs
 export default function CreateCafe() {
   const scrollImagesRef = useRef(null);
 
-  const images = ["instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg"];
+  const images = ["instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg"];
 
   const scroll = (action) => {
     if (scrollImagesRef.current && action === "right") {
@@ -86,9 +85,6 @@ export default function CreateCafe() {
 
           <div className={`${styles.instagramGallery} text-black`}>
             <div className={`${styles.buttonRightContainer}`}>
-              <button className={`${styles.icon}`} onClick={() => scroll("left")}>
-                <BsArrowLeftShort />
-              </button>
             </div>
             <div className={`${styles.cover}`}>
               <div className={`${styles.scrollImages}`} ref={scrollImagesRef}>
@@ -101,9 +97,6 @@ export default function CreateCafe() {
               </div>
             </div>
             <div className={`${styles.buttonLeftContainer}`}>
-              <button className={`${styles.icon}`} onClick={() => scroll("right")}>
-                <BsArrowRightShort />
-              </button>
             </div>
           <div className={`${styles.instagramDetails}`}>
             <div className={`${styles.animatedLine} animatedLine`}></div>
@@ -118,11 +111,6 @@ export default function CreateCafe() {
         </section>
 
         <section className={`${styles.bestBurgersSection}`}>
-
-          {/* <div className={`${styles.modelContainer} h-full`}> */}
-            <BurgersCanvas />
-          {/* </div> */}
-
           <div className={`${styles.burgersDetails} text-black`}>
             <div className={`${styles.animatedLine} animatedLine`}></div>
             <div className={`${styles.burgerTitle} ${styles.titleText}`}>Наші бургери</div>
@@ -130,6 +118,9 @@ export default function CreateCafe() {
             <button className={`${styles.toMenuBtn} ${styles.articleText}`}>Переглянути в меню</button>
           </div>
 
+          <div className={`${styles.imageContainer}`}>
+            <img className={`${styles.burgerImage}`} src="images/decorations/hamburger.png"/>
+          </div>
 
         </section>
 

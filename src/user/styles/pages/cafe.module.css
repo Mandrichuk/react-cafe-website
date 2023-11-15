@@ -10,11 +10,13 @@
   --article-font-size: 1.1rem;
   --section-margin: 100px;
   --icon-size: 1.7rem;
+  --a-font-size: 1.3rem;
 }
 
 a {
   text-decoration: none;
   color: black;
+  font-size: 1.2rem;
 }
 
 main {
@@ -112,7 +114,6 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 
   margin-top: var(--section-margin);
   width: var(--mutual-width);
@@ -120,7 +121,7 @@ main {
 
 .mapResponsive {
   overflow: hidden;
-  padding-bottom: 20.25%;
+  padding-bottom: 40.25%;
   position: relative;
   width: 100%;
   height:500px;
@@ -140,7 +141,7 @@ main {
   max-width: 1000px;
 }
 
-.locationDetails {
+.sectionDetails {
   margin-right: 30px;
 }
 
@@ -172,12 +173,15 @@ main {
 .instagramGallery {
   margin-top: var(--section-margin);
   display: flex;
-  align-items: center;
-  width: 70%;
   min-width: 300px;
   height: 100%;
   position: relative;
 }
+
+.instagramDetails {
+  margin: 0 30px 0 10px;
+}
+
 
 .buttonRightContainer {
   position: absolute;
@@ -198,7 +202,7 @@ main {
 
 .cover {
   position: relative;
-  width: 100%;
+  width: 80%;
   height: 50%;
 }
 
@@ -264,11 +268,6 @@ main {
   opacity: 1;
 }
 
-.instagramDetails {
-  flex: 1;
-  margin-left: 10%;
-}
-
 .instagramNameContainer {
   display: flex;
   flex-direction: row;
@@ -311,21 +310,6 @@ main {
 }
 
 
-.burgersDetails {
-  margin-right: 20%;
-}
-
-.bestBurgersSection {
-  margin-top: var(--section-margin);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: var(--mutual-width);
-
-}
-
-
 .drinkAndBeerSection {
   display: flex;
   justify-content: center;
@@ -343,20 +327,6 @@ main {
   object-fit: cover;
 }
 
-.burgerImage {
-  width: 40%;
-  max-width: 450px;
-  min-width: 250px;
-}
-
-.toMenuBtn {
-  margin-top: 20px;
-  background-color: var(--custom-green);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 4px;
-  min-width: 200px;
-}
 
 .beerMainSection {
   width: var(--mutual-width);
@@ -441,19 +411,6 @@ main {
     height: 100%;
   }
 
-  .bestBurgersSection {
-    flex-direction: column;
-    align-items: flex-start;
-    width: var(--mutual-width);
-  }
-
-  .burgersDetails {
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 50px;
-  } 
-
-
   .imageContainer {
     display: flex;
     justify-content: center;
@@ -464,12 +421,6 @@ main {
     object-fit: cover;
   }
 
-  .burgerImage {
-    width: 100%;
-    max-width: 350px;
-    min-width: 250px;
-  }
- 
   .drinkAndBeerSection {
     justify-content: center;
     margin-top: calc(var(--section-margin));
@@ -502,31 +453,61 @@ main {
     margin-bottom: 40px;
   }
 
+  .instagramDetails {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
 }
 
 
 @media (max-width: 665px) {
   :root {
     --text-width: 320px;
-    --mutual-width: 92%;
+    --mutual-width: 90%;
     --title-font-size: 2.3rem;
     --pretitle-font-size: 1.4rem;
     --article-font-size: 1.3rem;
     --section-margin: 100px;
-    --icon-size: 1.7rem;
+    --icon-size: 1.9rem;
   }
 }
 
 
-@media (min-width: 765px) { 
+@media (min-width: 930px) { 
   :root {
     --text-width: 320px;
-    --mutual-width: 76%;
+    --mutual-width:84%;
     --title-font-size: 2.3rem;
     --pretitle-font-size: 1.4rem;
     --article-font-size: 1.3rem;
     --section-margin: 100px;
-    --icon-size: 1.7rem;
+    --icon-size: 2rem;
   }
+}
+
+@media (min-width: 1260px) { 
+  :root {
+    --text-width: 320px;
+    --mutual-width: 92%;
+    --title-font-size: 3rem;
+    --pretitle-font-size: 1.5rem;
+    --article-font-size: 1.4rem;
+    --section-margin: 100px;
+    --icon-size: 2.3rem;
+  }
+
+  .gridInfo {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .sectionDetails {
+    width: 700px;
+  }
+
+  .instagramGallery {
+    margin-top: 0
+  }
+
 
 }

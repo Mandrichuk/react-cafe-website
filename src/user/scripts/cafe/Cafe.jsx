@@ -7,13 +7,13 @@ import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";
 
 import { IoLocationSharp } from "react-icons/io5";
-import { BsArrowLeftShort, BsArrowRightShort, BsInstagram } from "react-icons/bs";
+import { BsInstagram } from "react-icons/bs";
 
 
 export default function CreateCafe() {
   const scrollImagesRef = useRef(null);
 
-  const images = ["instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg"];
+  const images = ["instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg"];
 
   const scroll = (action) => {
     if (scrollImagesRef.current && action === "right") {
@@ -60,7 +60,7 @@ export default function CreateCafe() {
 
 
         <section className={`${styles.location}`}>
-          <div className={`${styles.locationDetails} text-black`}>
+          <div className={`${styles.sectionDetails} text-black`}>
             <div className={`${styles.animatedLine} animatedLine`}></div>
             <div className={`${styles.titleText}`}> Наша геолокація</div>
             <div className={`${styles.cityContainer} ${styles.articleText}`}><IoLocationSharp className={`${styles.geoIcon}`}/> Запоріжжя</div>
@@ -84,8 +84,14 @@ export default function CreateCafe() {
         <section className={`${styles.instagramSection}`}>
 
           <div className={`${styles.instagramGallery} text-black`}>
-            <div className={`${styles.buttonRightContainer}`}>
-            </div>
+          <div className={`${styles.sectionDetails}`}>
+            <div className={`${styles.animatedLine} animatedLine`}></div>
+            <div className={`${styles.titleText}`}> Ми в Iнстаграмі</div>
+            <a target="_black" href="https://www.instagram.com/drink.food.zp/" className={`${styles.instagramNameContainer}`}>
+              <BsInstagram className={`${styles.instagramIcon}`}/>
+              <a href="https://www.instagram.com/drink.food.zp/" className={`${styles.articleText}`}> @drink.food.zp</a>
+            </a>
+          </div>
             <div className={`${styles.cover}`}>
               <div className={`${styles.scrollImages}`} ref={scrollImagesRef}>
                 {images.map((image, index) => (
@@ -96,39 +102,18 @@ export default function CreateCafe() {
                 ))}
               </div>
             </div>
-            <div className={`${styles.buttonLeftContainer}`}>
-            </div>
-          <div className={`${styles.instagramDetails}`}>
-            <div className={`${styles.animatedLine} animatedLine`}></div>
-            <div className={`${styles.titleText}`}> Ми в Iнстаграмі</div>
-            <a target="_black" href="https://www.instagram.com/drink.food.zp/" className={`${styles.instagramNameContainer}`}>
-              <BsInstagram className={`${styles.instagramIcon}`}/>
-              <a href="https://www.instagram.com/drink.food.zp/" className={`${styles.articleText}`}> @drink.food.zp</a>
-            </a>
-          </div>
+
           </div>
 
         </section>
 
-        <section className={`${styles.bestBurgersSection}`}>
-          <div className={`${styles.burgersDetails} text-black`}>
-            <div className={`${styles.animatedLine} animatedLine`}></div>
-            <div className={`${styles.burgerTitle} ${styles.titleText}`}>Наші бургери</div>
-            <div className={`${styles.burgerDescription} ${styles.articleText}`}> - це справжні шедеври кулінарного мистецтва!</div>
-            <button className={`${styles.toMenuBtn} ${styles.articleText}`}>Переглянути в меню</button>
-          </div>
 
-          <div className={`${styles.imageContainer}`}>
-            <img className={`${styles.burgerImage}`} src="images/decorations/hamburger.png"/>
-          </div>
-
-        </section>
 
 
         <section className={`${styles.drinkAndBeerSection} text-white`}>
           <section className={`${styles.beerMainSection}`}>
 
-            <div className={`${styles.beerDetails}`}>
+            <div className={`${styles.sectionDetails}`}>
               <div className={`${styles.titleText} ${styles.beerTitle}`}>Drink&Beer</div>
               <div className={`${styles.preTitleText}`}>Файні алкогольні напої</div>
               <div className={`${styles.articleText} ${styles.alcoholArticle}`}>Наш асортимент алкогольних напоїв - це вибір гурмана, де кожен келих - це справжній витвір мистецтва. Відберіть свій улюблений алкогольний напій і насолоджуйтеся багатогранністю смаку!</div>

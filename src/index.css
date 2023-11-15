@@ -5,8 +5,15 @@
 
 :root {
   --custom-green: #05442e;
-  --custom-orange: #ff9307;
+  --custom-orange: #ffbf00;
   --line-width: 175px;
+  --section-margin: 100px;
+  --title-font-size: 2rem;
+  --pretitle-font-size: 1.2rem;
+  --article-font-size: 1.1rem;
+  --section-margin: 100px;
+  --icon-size: 1.7rem;
+  --a-font-size: 1.3rem;
 }
 
 body {

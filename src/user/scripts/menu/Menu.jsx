@@ -15,9 +15,9 @@ export default function CreateMenu(props) {
     <>
       <Header />
       <main className={`${styles.main}`}>
-      <header className={`${styles.header}`}>
+      <header className={`${styles.header} w-full`}>
     
-        <div className={`${styles.headerSection} mt-[140px] w-[100%] mb-[100px]`}>
+        <div className={`${styles.headerSection} w-full`}>
           <div className={`${styles.headerTaglineContainer} w-[100%] h-[150px]`}>
             <div className="flex flex-row items-center">
             <div className={`${styles.menuText}`}>Меню</div>
@@ -39,12 +39,12 @@ export default function CreateMenu(props) {
 
 const MenuItems = (data, cart, handleCartChange) =>  {
   const menuItems = data.map(item => {
-    return <MenuItem 
+    return (<MenuItem 
       key={item.id}
       cart={cart}
       handleCartChange={handleCartChange}
       {...item}
-    />
+    />)
   });
   return menuItems;
 }

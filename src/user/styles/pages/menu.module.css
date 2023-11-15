@@ -18,7 +18,8 @@ body, * {
 }
 
 .headerTaglineContainer {
-  background: linear-gradient(to bottom, #05442e, #01110b);
+  height: 240px;
+  background: linear-gradient(to bottom, var(--custom-green), #01110b);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,7 +28,7 @@ body, * {
 
 
 .menuText {
-  font-size: 2rem;
+  font-size: var(--title-font-size);
   font-weight: bold;
 
   margin-left: 5%;
@@ -35,7 +36,7 @@ body, * {
 }
 
 .menuTaglineText {
-  font-size: 1rem;
+  font-size: var(--pretitle-font-size);
   margin-left: 5%;
 }
 
@@ -44,30 +45,25 @@ body, * {
   transition-duration: 300ms;
 }
 
-.footer {
-  border-top: 4px solid rgb(6, 113, 6); 
-}
-
-
-
-
 .accordion {
   display: flex;
   flex-direction: column;
   width: 96%;
   color: black;
   margin-right: 3%;
+  margin-top: 100px;
 }
 
 
 
 .accordion li {
+  background-color: rgb(251, 251, 244);
   list-style: none;
   width: 100%;
   margin: 7px;
   padding: 10px;
-  border: 2px solid rgb(224, 224, 224);
-  border-radius: 3px;
+  border: 1.6px solid rgb(230, 225, 216);
+  border-radius: 14px;
   box-shadow: 5px 5px 10px rgba(224, 216, 206, 0.6);
 }
 
@@ -137,19 +133,10 @@ input[type="radio"] {
   }
 }
 
-@media (max-width: 1300px) {
-  .headerSection {
-    margin-top: 70px;
-  }
-}
 
 @media (max-width: 850px) {
   .accordion li {
     margin: 5px;  
-  }
-
-  .headerSection {
-    margin-bottom: 50px;
   }
 
   .menuItemImg {

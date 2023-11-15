@@ -51,7 +51,7 @@ export default function CreateHeader(props) {
       {screenSettings &&
       <div className="screen-settings">
         <div className="main-settings flex flex-col items-center w-[80%]">
-          <div className="mb-[10px] mt-[10px text-[#1f4739d9] ">
+          <div className="mb-[10px] mt-[10px text-[#05442e] ">
             Основні
           </div>
 
@@ -59,7 +59,7 @@ export default function CreateHeader(props) {
         </div>
 
         <div className="main-settings flex flex-col items-center w-[80%] justify-center">
-          <div className="mb-[10px] mt-[10px] text-[#1f4739d9]">
+          <div className="mb-[10px] mt-[10px] text-[#05442e]">
             Соціальні мережи
           </div>
           <div className="text-info setting-text text-[1.3rem] mt-[2px] ">

@@ -130,8 +130,12 @@
 }
 
 
-@media (max-width: 520px) {
-  .menu-info-container {
+@media (max-width: 800px) {
+  .home-page-container {
+    display: none;
+  }
+
+    .menu-info-container {
     margin-right: 5px, 5px;
   }
 
@@ -155,13 +159,7 @@
   }
 }
 
-@media (max-width: 800px) {
-  .home-page-container {
-    display: none;
-  }
-}
-
-@media (min-width: 800px) {
+@media (min-width: 801px) {
   .text-info {
     font-size: 1.3rem;
   }
@@ -172,15 +170,5 @@
 
   .social-media-link {
     font-size: 1rem
-  }
-}
-
-@media (min-width: 1000px) {
-  .logo-container {
-    margin-left: 70px;
-  }
-
-  .extra-options {
-    margin-right: 70px;
   }
 }

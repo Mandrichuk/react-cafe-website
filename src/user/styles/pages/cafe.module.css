@@ -476,7 +476,7 @@ main {
   }
 
   .drinkAndBeerSection {
-    height: 640px;
+    height: 700px;
   }
 
   .drinkAndBeerSection .sectionDetails {
@@ -503,7 +503,6 @@ main {
   }
 
 }
-
 
 @media (min-width: 930px) { 
   :root {

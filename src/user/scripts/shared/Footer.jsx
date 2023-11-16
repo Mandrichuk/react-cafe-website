@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import styles from "../../styles/shared/footer.module.css";
@@ -8,29 +8,60 @@ import { SiInstagram } from "react-icons/si";
 
 
 export default function CreateFooter() {
+  const [Displayed, setDisplayed] = useState(true);
+
+  console.log(window.innerWidth)
+
+useEffect(() => {
+  const handleResize = () => {
+   console.log(window.innerWidth)
+  };
+
+  handleResize();
+    
+  window.addEventListener('resize', handleResize);
+
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);
+
+
   return (
-    <footer className={`${styles.footer} mt-[100px] relative w-[100%] h-[240px] flex flex-col items-center justify-center`}>
+    <footer className={`${styles.footer}`}>
 
-    <div className={`${styles.contentContainer} w-[90%] flex flex-row items-center justify-between`}>
-     <div className={`${styles.logoContainer} w-[40%]`}>
-      <img className={`${styles.logoImg} w-[120px] object-cover`} src="images/icons/brand-logo.png"/>
-     </div>
+      <div className={`${styles.imageContainer}`}>
+        <img className={`${styles.logoImg}`} src="images/icons/brand-logo.png" />
+      </div>
 
-    <div className={`${styles.textSosialContainer} flex flex-row justify-between flex-1`}>
-    <div className={`${styles.textContainer} flex flex-row items-center justify-between text-[1.3rem]`}>
-      <div className={`${styles.text} mr-[25px] cursor-pointer`}>Адреса</div>
-      <div className={`${styles.text} mr-[25px] cursor-pointer`}>Номер</div>
-      <div className={`${styles.text} mr-[25px] cursor-pointer`}>Геолокацiя</div>
-    </div>
+      <section className={`${styles.detailsSection}`}>
+      <div className={`${styles.coverSection}`}>
+        <div className={`${styles.subdivision}`}>
+          <div className={`${styles} mb-[10px] font-bold text-xl`}>Посилання</div>
+          <Link className={`${styles.link}`} to="/">Головна</Link>
+          <Link className={`${styles.link}`} to="/menu">Меню</Link>
+          <Link className={`${styles.link}`} to="/login">Увійти</Link>
+          <Link className={`${styles.link}`} to="/cart">Кошик</Link>
+        </div>
 
-    <div className={`${styles.socialContainer} flex flex-row text-[2.5rem]`}>
-      <BsTelegram className={`mr-[15px] cursor-pointer`}/>
-      <SiInstagram className={`cursor-pointer`}/>
-    </div>
+        <div className={`${styles.subdivision}`}>
+          <div className={`${styles} mb-[10px] font-bold text-xl`}>Посилання</div>
+          <Link className={`${styles.link}`} to="/">Головна</Link>
+          <Link className={`${styles.link}`} to="/menu">Меню</Link>
+          <Link className={`${styles.link}`} to="/login">Увійти</Link>
+          <Link className={`${styles.link}`} to="/cart">Кошик</Link>
+        </div>
 
-    </div>
+        <div className={`${styles.subdivision}`}>
+          <div className={`${styles} mb-[10px] font-bold text-xl`}>Посилання</div>
+          <Link className={`${styles.link}`} to="/">Головна</Link>
+          <Link className={`${styles.link}`} to="/menu">Меню</Link>
+          <Link className={`${styles.link}`} to="/login">Увійти</Link>
+          <Link className={`${styles.link}`} to="/cart">Кошик</Link>
+        </div>
 
-    </div>
+      </div>
+      </section>
 
     </footer>
   );

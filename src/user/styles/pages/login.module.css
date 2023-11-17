@@ -1,3 +1,25 @@
+  /* --title-font-size: 2rem;
+  --pretitle-font-size: 1.2rem;
+  --article-font-size: 1.1rem; */
+
+.mainContainer {
+  width: 100%;
+}
+
+.titleText {
+  font-size: var(--title-font-size);
+  font-weight: bold;
+}
+
+.pretitleText {
+  font-size: var(--pretitle-font-size);
+}
+
+
+.articleText {
+  font-size: var(--article-font-size);
+}
+
 .nameContainer {
   background-color: rgb(251, 251, 244);
 }
@@ -15,25 +37,40 @@
 }
 
 
-
-
 @media (max-width: 600px) {
   .ImgContainer {
-    width: 35%;
+    width: 0;
+  }
+
+  .mainContainer {
+    margin-top: 130px;
+    max-height: 550px;
   }
 
   .loginContainer {
     width: 65%;
+    justify-content: baseline;
   }
-}
 
+  .enterContainer {
+    width: 250px;
+  }
 
-@media (min-width: 600px) {
+  .input {
+    height: 35px;
+  }
+
+  .loginContainer {
+    padding: 0;
+    margin: 0;
+  }
   .tagline {
     margin-left: 10%;
     font-size: 1.2rem;
+    width: 86%;
   }
 }
+
 
 @media (min-width: 1250px) {
   .ImgContainer {
@@ -44,12 +81,12 @@
     width: 70%;
   }
 
-  .phoneInput {
+  .input {
     font-size: 1.6rem;
     width: 300px;
   }
 
-  .phoneInputLabel {
+  .inputLabel {
     font-size: 1.4rem;
   }
 
@@ -65,14 +102,8 @@
 }
 
 @media (max-width: 450px) {
-
-
-  .ImgContainer {
-    width: 0%;
-  }
-
   .loginContainer {
-    width: 100%;
+    width: 80%;
   }
 
   .nameContainer {
@@ -84,11 +115,11 @@
     font-size: 1.1rem;
   }
 
-  .phoneInputLabel {
+  .inputLabel {
     font-size: 1.5rem;
   }
 
-  .phoneInput {
+  .input {
     font-size: 1.5rem;
     width: 250px;
     padding-top: 7px;

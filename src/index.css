@@ -6,6 +6,7 @@
 :root {
   --custom-green: #05442e;
   --custom-orange: #ffbf00;
+  --link-color: rgb(0, 60, 255);
   --line-width: 175px;
   --section-margin: 100px;
   --title-font-size: 2rem;

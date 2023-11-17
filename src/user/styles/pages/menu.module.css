@@ -13,10 +13,6 @@ body, * {
   height: 100%;
 }
 
-.header {
-  height: 200px;
-}
-
 .headerTaglineContainer {
   height: 240px;
   background: linear-gradient(to bottom, var(--custom-green), #01110b);
@@ -38,6 +34,7 @@ body, * {
 .menuTaglineText {
   font-size: var(--pretitle-font-size);
   margin-left: 5%;
+  margin-right: 5%;
 }
 
 .menuItem:hover .menuItemImg {

@@ -1,41 +1,29 @@
-a {
-  font-size: 2rem;
+.mainEmptyContainer {
+  margin-top: 70px;
+  height: 89vh;
 }
 
-@media (max-width: 500px) {
+.emptyCartContainer {
 
-  .mainContainer {
-    width: 100%;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
-  .mealNameContainer,
-  .amountBtn,
-  .priceContainer,
-  .amoutText {
-    height: 44px;
-    font-size: 1.4rem;
-  }
-  
-  .priceContainer {
-    width: 80px;
-    font-size: 1.3rem;
-  }
-
-  .orderContainer {
-    width: 90%;
-  }
-
-  .orderCommentInput {
-    font-size: 1.2rem;
-  }
-
-  .totalCost {
-    font-size: 1.4rem;
-  }
-
-  .emptyCartContainer {
-    font-size: 1.8rem;
-  }
-
-  
+  width: 100%;
+  color: black;
+  font-size: var(--title-font-size);
 }
+
+.link {
+  color: var(--link-color);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.textContainer {
+  margin-bottom: 200px;
+  margin-left: 3%;
+  margin-right: 2%;
+}
+

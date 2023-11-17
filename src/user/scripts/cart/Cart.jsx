@@ -18,16 +18,16 @@ export default function CreateCart(props) {
     <>
       <Header />
     { props.cart.length === 0 ?
-    <main>
-      <div className={`${styles.emptyCartContainer} text-black h-[400px] mt-[80px] w-[100%] flex flex-col justify-center items-center text-[2rem]`}>
-        <div>
-          Кошик пустий, оберіть щось в&nbsp;<Link to="/menu" onClick={props.RerenderHeader} className="text-blue-700 underline cursor-pointer">меню</Link>
+    <main className={`${styles.mainEmptyContainer}`}>
+      <div className={`${styles.emptyCartContainer}`}>
+        <div className={`${styles.textContainer}`}>
+          Кошик пустий, оберіть щось в&nbsp;<Link to="/menu" onClick={props.RerenderHeader} 
+          className={styles.link}>меню</Link>
         </div>
-        <SiInstacart className="ml-[10px] "/>
       </div>
     </main> :
 
-    <main className={`${styles.mainContainer} mt-[80px] text-black mb-[50px]`}>
+    <main className={`${styles.mainContainer} w-full mt-[80px] text-black mb-[50px]`}>
       <div className={` w-[100%] flex flex-col items-center justify-center mt-[50px] p-[15px] pb-[5px]`}>
         {
           props.cart.map(item => (<Meal id={item.id} amount={item.amount} handleAmountChange={props.handleAmountChange} />))

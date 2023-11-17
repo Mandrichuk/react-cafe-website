@@ -12,7 +12,7 @@ export default function CreateMeal(props) {
   const currentMeal = getMealName(props.id);
 
   return (
-    <div className={`${styles.mainContainer} text-black flex flex-row items-center justify-center mb-[10px] w-[80%]`}>
+    <div className={`${styles.mainContainer} h-full text-black flex flex-row items-center justify-center mb-[10px] w-[80%]`}>
       <div className={`${styles.mealNameContainer} text-[1.7rem] flex-1 max-w-[400px] border border-gray-300 pl-[10px] pr-[10px] pt-[5px] pb-[5px] flex items-center justify-center mr-[10px]` }>
         {currentMeal.name}
       </div>

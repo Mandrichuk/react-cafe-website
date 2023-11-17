@@ -358,6 +358,13 @@ main {
 
 
 
+@media (max-width: 930px) { 
+  .beerImageContainer {
+    margin-right: 5%;
+    margin-left: 10%;
+  }
+}
+
 @media (max-width: 765px) { 
   :root {
     --text-width: 320px;
@@ -453,6 +460,11 @@ main {
   .cover {
     margin-top: 20px;
   }
+
+  .drinkAndBeerSection .sectionDetails {
+    margin: 0;
+  }
+
 }
 
 

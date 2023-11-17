@@ -376,6 +376,9 @@ main {
     --icon-size: 1.7rem;
   }
 
+  .sectionDetails {
+    margin-bottom: 20px;
+  }
 
   .gridInfo {
     grid-template-columns: 1fr;
@@ -396,7 +399,7 @@ main {
   }
 
   .mapResponsive {
-    padding-bottom: 60.25%;
+    padding-bottom: 80.25%;
     min-height: 300px;
   }
 
@@ -483,6 +486,10 @@ main {
     font-size: 1.6rem;
   }
 
+  .cover {
+    margin: 0;
+  }
+
   .nameContainer {
     font-size: 3.4rem;
   }
@@ -500,10 +507,6 @@ main {
     max-width: 380px;
     min-width: 230px;
     object-fit: cover;
-  }
-
-  .InfoSheet {
-    margin-top: 50px;
   }
 
   .coverContainer {

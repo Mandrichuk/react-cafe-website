@@ -14,7 +14,6 @@ export default function CreateMenu(props) {
   return (
     <>
       <Header />
-      <main className={`${styles.main}`}>
       <header className={`${styles.header} w-full`}>
     
         <div className={`${styles.headerSection} w-full`}>
@@ -27,15 +26,43 @@ export default function CreateMenu(props) {
           </div>
         </div>
       </header>
+      <main className={`${styles.main}`}>
+      <div className={`${styles.coverDiv} w-[90%]`}>
 
       <ul className={`${styles.accordion}`}>
         {MenuItems(menuData, props.cart, props.handleCartChange)}
       </ul>
+
+        <section className={`${styles.sectionContainer}`}>
+          <div className={`${styles.sectionDetails} text-black`}>
+            <div className={`${styles.animatedLine} animatedLine`}></div>
+            <div className={`${styles.titleText}`}> Якість продуктів</div>
+            <div className={`${styles.textContainer} ${styles.articleText}`}>
+              На кожному етапі готування ми ретельно відбираємо найвищу якість продуктів, щоб створити для вас неповторні   смакові враження.
+            </div>
+          </div>
+
+          <div className={`${styles.imageContainer}`}>
+            <img className={`${styles.productImage}`} src="images/decorations/product-quality.png"/>
+
+            <div className={`${styles.imageDetailsContainer} ${styles.iconFirst}`}>
+              <img className={`${styles.imageDetails} ${styles.imageDetailsFirst}`} src="images/decorations/coffee-beans.jpg" />
+            </div>
+            <div className={`${styles.imageDetailsContainer} ${styles.iconSecond}`}>
+              <img className={`${styles.imageDetails} ${styles.imageDetailsSecond}`} src="images/decorations/salad-leaves.jpg" />
+            </div>
+          </div>
+
+
+        </section>
+      </div>  
       </main>
       <Footer />
     </>
-  )
+  );
 }
+
+
 
 const MenuItems = (data, cart, handleCartChange) =>  {
   const menuItems = data.map(item => {

@@ -1,5 +1,5 @@
 :root {
-  --mutual-width: 90%;
+  --mutual-footer-width: 90%;
 }
 
 .footer {
@@ -18,19 +18,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: var(--mutual-width);
+  width: var(--mutual-footer-width);
 }
 
 .imageContainer {
   margin-top: 100px;
-  width: var(--mutual-width);
+  width: var(--mutual-footer-width);
 }
 
 .coverSection {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: var(--mutual-width);
+  width: var(--mutual-footer-width);
   height: 90%;
 }
 
@@ -68,7 +68,7 @@
 
 @media (max-width: 700px) {
   :root {
-  --mutual-width: 90%;
+  --mutual-footer-width: 90%;
   }
 
   .footer {

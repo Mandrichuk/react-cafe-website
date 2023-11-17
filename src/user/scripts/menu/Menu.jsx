@@ -27,7 +27,7 @@ export default function CreateMenu(props) {
         </div>
       </header>
       <main className={`${styles.main}`}>
-      <div className={`${styles.coverDiv} w-[90%]`}>
+      <div className={`${styles.coverContainer}`}>
 
       <ul className={`${styles.accordion}`}>
         {MenuItems(menuData, props.cart, props.handleCartChange)}
@@ -48,6 +48,7 @@ export default function CreateMenu(props) {
             <div className={`${styles.imageDetailsContainer} ${styles.iconFirst}`}>
               <img className={`${styles.imageDetails} ${styles.imageDetailsFirst}`} src="images/decorations/coffee-beans.jpg" />
             </div>
+            
             <div className={`${styles.imageDetailsContainer} ${styles.iconSecond}`}>
               <img className={`${styles.imageDetails} ${styles.imageDetailsSecond}`} src="images/decorations/salad-leaves.jpg" />
             </div>

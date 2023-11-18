@@ -3,6 +3,15 @@ body, * {
   padding: 0;
 }
 
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .articleText {
   font-size: var(--article-font-size);;
 }
@@ -150,6 +159,7 @@ input[type="radio"] {
   width: 100px;
   height: 100px;
   overflow: hidden;
+  animation: appear 450ms ease-out;
 }
 
 .iconFirst {
@@ -195,6 +205,8 @@ input[type="radio"] {
   right: -20px;
   top: 100px;
 }
+
+
 
 
 
@@ -317,6 +329,14 @@ input[type="radio"] {
     bottom: 85px;
     right: 170px;
   }
-  
+}
 
+@media (max-width: 400px) {
+  .coverContainer {
+    width: 95%;
+  }
+
+  .mealNameContainer {
+    max-width: 140px; 
+  }
 }

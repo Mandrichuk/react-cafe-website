@@ -13,7 +13,9 @@ import { BsInstagram } from "react-icons/bs";
 export default function CreateCafe() {
   const scrollImagesRef = useRef(null);
 
-  const images = ["instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg"];
+  const newsImages = ["5percent.jpg", "withkids.jpg", "bestcoffee.jpg"]
+
+  const instagramImages = ["instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg"];
 
   const scroll = (action) => {
     if (scrollImagesRef.current && action === "right") {
@@ -42,18 +44,13 @@ export default function CreateCafe() {
           <p className={`${styles.titleText} text-black`}>Актуальні новинки</p>
           <div className={`${styles.gridInfo}`}>
 
+          {
+          newsImages.map(newsImage => (
             <div className={`${styles.infoContainer}`}>
-              <img src="images/background/hotdogs.jpg"/>
-              <p className={`${styles.articleText}`}>new</p>
+              <img src={`images/background/${newsImage}`}/>
             </div>
-            <div className={`${styles.infoContainer}`}>
-              <img src="images/background/hotdogs.jpg"/>
-              <p className={`${styles.articleText}`}>new</p>
-            </div>
-            <div className={`${styles.infoContainer}`}>
-              <img src="images/background/hotdogs.jpg"/>
-              <p className={`${styles.articleText}`}>new</p>
-            </div>
+          ))
+          }
 
           </div>
         </section>
@@ -94,7 +91,7 @@ export default function CreateCafe() {
           </div>
             <div className={`${styles.cover}`}>
               <div className={`${styles.scrollImages}`} ref={scrollImagesRef}>
-                {images.map((image, index) => (
+                {instagramImages.map((image, index) => (
                   <a target="_blank" href="https://www.instagram.com/drink.food.zp/" className={`${styles.child}`} key={`image-${index}`}>
                     <img className={`${styles.childImg}`} src={`images/instagram/${image}`} alt={`image-${index}`} />
                     <BsInstagram className={`${styles.instagramIconAbsolute}`}/>

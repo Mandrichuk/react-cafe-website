@@ -64,11 +64,13 @@ function CreateProducts(products, cart, handleCartChange) {
   
   const productsHTML = products.map(item => {
     return (
-      <div key={item.id} className={`flex flex-row items-center justify-between pb-[20px] text-[1.3rem] pr-[10px] pl-[10px]`}>
-        {item.name}
+      <div key={item.id} className={`flex flex-row items-center justify-between pb-[20px] text-[1.3rem] px-[10px]`}>
+        <div className={`${styles.mealNameContainer}`}>
+          {item.name}
+        </div>
         <div className="flex flex-row items-center">
         <div className={`${styles.priceAndGrams} flex flex-col text-[1rem] font-bold text-black`}>
-          <div>{item.grams}гм</div>
+          <div>100{item.grams}гм</div>
           <div>{item.price}грн </div>
         </div>
           <div onClick={() => { handleCartChange(item.id); handleBoolChange(); }} className="w-[50px] h-[50px] flex items-center rounded justify-center border-[2px] ml-[20px] cursor-pointer"> 

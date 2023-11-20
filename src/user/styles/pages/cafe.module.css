@@ -529,6 +529,8 @@ main {
     --section-margin: 100px;
     --icon-size: 2rem;
   }
+
+
 }
 
 @media (min-width: 1260px) { 
@@ -552,5 +554,14 @@ main {
 
   .mapResponsive {
     padding-bottom: 24%;
+  }
+
+  .beerImageContainer {
+    margin: 0 0 0 10%;
+  }
+
+  .sectionDetails {
+    max-width: 500px;
+    margin: 0 10% 0 0;
   }
 }

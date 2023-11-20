@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import "./index.css";
 
 //* User Components
-import CafeUser from "./user/scripts/cafe/Cafe.jsx";
-import MenuUser from "./user/scripts/menu/Menu.jsx";
-import LoginUser from "./user/scripts/login/Login.jsx";
-import CartUser from "./user/scripts/cart/Cart.jsx";
-import ProfileUser from "./user/scripts/profile/Profile.jsx";
-import OrderUser from "./user/scripts/order/Order.jsx";
-import SuccessUser from "./user/scripts/success/Success.jsx";
-import SharedHeaderUser from "./user/scripts/shared/header/Header.jsx";
+import CafeUser from "./user/components/cafe/Cafe";
+import MenuUser from "./user/components/menu/Menu";
+import LoginUser from "./user/components/login/Login";
+import CartUser from "./user/components/cart/Cart";
+import ProfileUser from "./user/components/profile/Profile";
+import OrderUser from "./user/components/order/Order";
+import SuccessUser from "./user/components/success/Success";
 
 //* Super Admin Components
-import SharedHeaderSuperAdmin from "./superadmin/scripts/shared/header/Header.jsx";
-import LoginSuperAdmin from "./superadmin/scripts/login/Login.jsx";
-import NavigationSuperAdmin from "./superadmin/scripts/navigation/Navigation.jsx";
-import AdminSettingsSuperAdmin from "./superadmin/scripts/adminSettings/AdminSettings.jsx";
-import MenuSettingsSuperAdmin from "./superadmin/scripts/menuSettings/MenuSettings.jsx";
-import MealEdit from "./superadmin/scripts/mealEdit/MealEdit.jsx";
-import MenuSuccess from "./superadmin/scripts/menuSuccess/MenuSuccess.jsx";
-import MenuAdd from "./superadmin/scripts/menuAdd/MenuAdd.jsx";
+import SharedHeaderSuperAdmin from "./superadmin/components/shared/header/Header";
+import LoginSuperAdmin from "./superadmin/components/login/Login";
+import NavigationSuperAdmin from "./superadmin/components/navigation/Navigation";
+import AdminSettingsSuperAdmin from "./superadmin/components/adminSettings/AdminSettings";
+import MenuSettingsSuperAdmin from "./superadmin/components/menuSettings/MenuSettings";
+import MealEdit from "./superadmin/components/mealEdit/MealEdit";
+import MenuSuccess from "./superadmin/components/menuSuccess/MenuSuccess";
+import MenuAdd from "./superadmin/components/menuAdd/MenuAdd";
 
-import getTotalPrice from "./user/scripts/shared/getTotalPrice.js";
+import getTotalPrice from "./user/components/shared/getTotalPrice";
 
 
 
@@ -85,10 +84,6 @@ export default function CreateApp() {
 
   return (
     <div className="mt-[70px]">
-      {/* {!currentLink.includes("admin") && 
-        <SharedHeaderUser isLoggined={isLoggined} RerenderHeader={handleLinkChange} currentLink={currentLink} />
-      } */}
-
       {currentLink.includes("admin") && <SharedHeaderSuperAdmin currentLink={currentLink}/>}
       <Routes>
 

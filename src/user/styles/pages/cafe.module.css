@@ -550,9 +550,7 @@ main {
     width: 700px;
   }
 
-  .instagramGallery {
-    margin-top: 0
+  .mapResponsive {
+    padding-bottom: 24%;
   }
-
-
 }

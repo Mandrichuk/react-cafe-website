@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.screenSettingsTitle {
+  font-size: 2.4rem;
+}
+
+.screenSettingsText {
+  font-size: 2.2rem;
+}
+
 .screen_current-page {
   position: relative;
   text-decoration: none;
@@ -129,6 +138,40 @@
   margin-top: 20px;
 }
 
+
+
+
+@media (min-width: 450px) {
+  .screenSettingsTitle {
+    font-size: 2rem;
+  }
+
+  .screenSettingsText {
+    font-size: 1.8rem;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .screenSettingsTitle {
+    font-size: 2.1rem;
+  }
+
+  .screenSettingsText {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 450px) {
+  .screenSettingsTitle {
+    font-size: 2rem;
+  }
+
+  .screenSettingsText {
+    font-size: 1.8rem;
+  }
+
+}
 
 @media (max-width: 800px) {
   .home-page-container {

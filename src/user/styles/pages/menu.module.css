@@ -269,7 +269,7 @@ input[type="radio"] {
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .imageContainer {
     width: 350px;
   }
@@ -316,7 +316,6 @@ input[type="radio"] {
 @media (min-width: 1300px) {
   .sectionContainer {
     justify-content: space-between;
-    /* align-items: flex-start; */
     max-width: 1900px;
   }
 

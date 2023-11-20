@@ -51,7 +51,7 @@ export default function CreateHeader(props) {
       {screenSettings &&
       <div className="screen-settings">
         <div className="main-settings flex flex-col items-center w-[80%]">
-          <div className="mb-[10px] mt-[10px text-[#05442e] ">
+          <div className="mb-[10px] mt-[10px text-[#05442e] screenSettingsTitle">
             Основні
           </div>
 
@@ -59,15 +59,15 @@ export default function CreateHeader(props) {
         </div>
 
         <div className="main-settings flex flex-col items-center w-[80%] justify-center">
-          <div className="mb-[10px] mt-[10px] text-[#05442e]">
+          <div className="mb-[10px] mt-[10px] text-[#05442e] screenSettingsTitle">
             Соціальні мережи
           </div>
-          <div className="text-info setting-text text-[1.3rem] mt-[2px] ">
+          <div className="text-info setting-text screenSettingsText mt-[2px] ">
             <a target="_blank" href="https://t.me/Drink_Food_zp"  className="text-info text-black">
               Telegram
             </a>
           </div>
-          <div className="text-info setting-text text-[1.3rem] mt-[2px] mb-[15px] ">
+          <div className="text-info screenSettingsText mt-[2px] mb-[15px] ">
             <a target="_blank" href="https://www.instagram.com/drink.food.zp/?igshid=MzRlODBiNWFlZA%3D%3D"  className="text-info text-black">
               Instagram
             </a>

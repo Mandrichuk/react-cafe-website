@@ -12,6 +12,10 @@ import ProfileUser from "./user/components/profile/Profile";
 import OrderUser from "./user/components/order/Order";
 import SuccessUser from "./user/components/success/Success";
 
+//* Admin Components
+import AdminLoginUser from "./admin/components/loginUser/LoginUser";
+
+
 //* Super Admin Components
 import SharedHeaderSuperAdmin from "./superadmin/components/shared/header/Header";
 import LoginSuperAdmin from "./superadmin/components/login/Login";
@@ -24,7 +28,8 @@ import MenuAdd from "./superadmin/components/menuAdd/MenuAdd";
 
 import getTotalPrice from "./user/components/shared/getTotalPrice";
 
-
+// * Common
+import Error404 from "./common/error404/Error404";
 
 
 export default function CreateApp() {
@@ -84,7 +89,7 @@ export default function CreateApp() {
 
   return (
     <div className="mt-[70px]">
-      {currentLink.includes("admin") && <SharedHeaderSuperAdmin currentLink={currentLink}/>}
+      {currentLink.includes("superadmin") && <SharedHeaderSuperAdmin currentLink={currentLink}/>}
       <Routes>
 
 
@@ -100,6 +105,11 @@ export default function CreateApp() {
         <Route path="/order" element={<OrderUser history={history} />} />
         <Route path="/success" element={<SuccessUser cart={cart} handleHistoryAdd={handleHistoryAdd} />} />
 
+      // * Admin Components
+        <Route path="/admin/login/user" element={<AdminLoginUser />} />
+       
+
+
       //* Super Admin Components
 
         <Route path="/admin/login" element={<LoginSuperAdmin />}/> 
@@ -109,9 +119,11 @@ export default function CreateApp() {
         <Route path="/superadmin/menu/edit/meal/*" element={<MealEdit />} />
         <Route path="/superadmin/menu/success" element={<MenuSuccess />} />
         <Route path="/superadmin/menu/add/meal" element={<MenuAdd />} />
-      </Routes>
       
+      // * Common
+      <Route path="*" element={<Error404 />} />
 
+      </Routes>
     </div>
   );
 } 

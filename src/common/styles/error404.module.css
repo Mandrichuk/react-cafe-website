@@ -1,0 +1,33 @@
+.bgImage {
+  position: relative;
+  width: 500px;
+  object-fit: cover;
+}
+
+.returnBtn {
+  background-color: var(--custom-green);
+  color: white;
+}
+
+@media (min-width: 500px) {
+  .main {
+    height: 100vh;
+  }
+}
+
+
+@media (min-width: 900px) {
+  .main {
+    height: 90vh;
+  }
+  .bgImage {
+    width: 600px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .bgImage {
+    width: 320px;
+  }
+}

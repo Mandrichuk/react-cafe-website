@@ -28,6 +28,15 @@ body {
   margin: 0;
 }
 
+.btn {
+  background-color: var(--custom-green);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: var(--article-font-size);
+  cursor: pointer;
+}
+
 .animatedLine {
   width: 0; 
   height: 7px; 

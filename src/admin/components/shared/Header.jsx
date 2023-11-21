@@ -11,7 +11,7 @@ function Header() {
       <div className='flex justify-center items-center w-full'>
         <Link to="/admin/login/user" className='px-[10px] py-[15px]'>На головну</Link>
         <Link to="/admin/orders" className='px-[10px] py-[15px]'>Замовлення</Link>
-        <Link to="/admin/client" className='px-[10px] py-[15px]'>Клієнт</Link>
+        <Link to="/admin/client" className='px-[10px] py-[15px]'>Профіль кліента</Link>
       </div>
       <div className='hidden sm:block' />
     </div>

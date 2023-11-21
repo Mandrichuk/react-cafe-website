@@ -14,7 +14,7 @@ import SuccessUser from "./user/components/success/Success";
 
 //* Admin Components
 import AdminLoginUser from "./admin/components/loginUser/LoginUser";
-
+import AdminRegisterUser from "./admin/components/registerUser/RegisterUser";
 
 //* Super Admin Components
 import SharedHeaderSuperAdmin from "./superadmin/components/shared/header/Header";
@@ -107,6 +107,7 @@ export default function CreateApp() {
 
       // * Admin Components
         <Route path="/admin/login/user" element={<AdminLoginUser />} />
+        <Route path="/admin/register/user" element={<AdminRegisterUser />} />
        
 
 

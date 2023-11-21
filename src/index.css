@@ -28,6 +28,29 @@ body {
   margin: 0;
 }
 
+
+.titleText {
+  font-size: var(--title-font-size);
+  font-weight: bold;
+}
+
+.pretitleText {
+  font-size: var(--pretitle-font-size);
+}
+
+.articleText {
+  font-size: var(--article-font-size);
+}
+
+.input {
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: var(--article-font-size);
+  border: 2px solid black;
+  min-width: 100px;
+}
+
 .btn {
   background-color: var(--custom-green);
   color: white;
@@ -35,6 +58,7 @@ body {
   border-radius: 5px;
   font-size: var(--article-font-size);
   cursor: pointer;
+  min-width: 100px;
 }
 
 .animatedLine {
@@ -45,6 +69,7 @@ body {
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+
 
 @keyframes fillAnimation {
   to {

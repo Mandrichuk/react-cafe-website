@@ -15,7 +15,7 @@ export default function CreateScreenChapter(props) {
 
   return (
     <div className={`${currentPageStyle} screenSettingsText text-info mt-[2px]`}>
-      <Link onClick={() => {props.RerenderHeader(); props.handleChange();}} to={props.link} className={`${styleText} text-gray-600 pl-[4px] pr-[4px]`}>{props.name}</Link>
+      <Link onClick={props.handleChange} to={props.link} className={`${styleText} text-gray-600 pl-[4px] pr-[4px]`}>{props.name}</Link> 
     </div>
   );
 }

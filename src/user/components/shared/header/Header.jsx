@@ -22,7 +22,7 @@ export default function CreateHeader(props) {
   let [screenSettings, setScreenSettings] = useState(false);
   useEffect(() => {
     window.addEventListener("resize", () => {
-      if (window.innerWidth > 520) {
+      if (window.innerWidth > 800) {
         setScreenSettings(() => screenSettings = false)
       } 
     });

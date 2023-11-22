@@ -15,6 +15,7 @@
   --section-margin: 100px;
   --icon-size: 1.7rem;
   --a-font-size: 1.3rem;
+  --staff-width: 70vh;
 }
 
 body {
@@ -52,6 +53,8 @@ body {
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
   background-color: var(--custom-green);
   color: white;
   padding: 10px 15px;
@@ -70,10 +73,29 @@ body {
   border-bottom-left-radius: 10px;
 }
 
+.staffContent {
+  width: 80%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
 
 @keyframes fillAnimation {
   to {
     width: var(--line-width);
   }
 }
+
+@media (min-width: 800px) {
+  .staffContent {
+    width: 84vh;
+  }
+}
+
+@media (min-width: 1000px) {
+  .staffContent {
+    width: 100vh;
+  }
+}
+
 

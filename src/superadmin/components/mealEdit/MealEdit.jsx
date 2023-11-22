@@ -50,14 +50,15 @@ export default function CreateMealEdit() {
 
 
   return (
-    <div className={`${styles.mainContainer} flex flex-col items-center justify-between w-[100%] mt-[120px]`}>
+    <div className={`flex flex-col items-center justify-between w-full`}>
+      <div className='staffContent'>
 
       <div className={`${styles.categoryContainer}`}>
-        <div className={`${styles.specificationContainer}`}>
+        <div className={`${styles.specificationContainer} ${styles.inputSection} input rounded-none`}>
           <TbCategoryFilled className="text-custom-green mr-[10px]"/> Категорія
         </div>
         {editMode ?
-            <section id="unitsSection" className={`${styles.unitsSection}`}>
+            <section id="unitsSection" className={`${styles.unitsSection} ${styles.inputSection} input rounded-none`}>
             <select 
               onChange={handleFormChange} 
               id="unitSelector" 
@@ -72,12 +73,12 @@ export default function CreateMealEdit() {
               })}
             </select>
             </section>  :
-          <div className={`${styles.currentMealContainer}`}>{currentCategory.name}</div>
+          <div className={`${styles.currentMealContainer} ${styles.inputSection} input rounded-none`}>{currentCategory.name}</div>
         }
       </div>
 
       <div className={`${styles.categoryContainer}`}>
-        <div className={`${styles.specificationContainer}`}>
+        <div className={`${styles.specificationContainer} ${styles.inputSection} input rounded-none`}>
           <GiHotMeal className="text-custom-green mr-[10px]"/>
           Назва
         </div>
@@ -85,17 +86,17 @@ export default function CreateMealEdit() {
           <input 
           onChange={handleFormChange}
           placeholder="Введіть назву"
-          className={`${styles.changeMealInput}`}
+          className={`${styles.changeMealInput} ${styles.inputSection} input rounded-none`}
           type="text"
           name="name"
           value={formData.name}
           /> :
-          <div className={`${styles.currentMealContainer}`}>{currentMeal.name}</div> 
+          <div className={`${styles.currentMealContainer} ${styles.inputSection} input rounded-none`}>{currentMeal.name}</div> 
         }
       </div>
 
       <div className={`${styles.categoryContainer}`}>
-        <div className={`${styles.specificationContainer}`}>
+        <div className={`${styles.specificationContainer} ${styles.inputSection} input rounded-none`}>
           <RiScales2Line className="text-custom-green mr-[10px]"/>
           Об'єм
         </div>
@@ -103,26 +104,26 @@ export default function CreateMealEdit() {
           <input 
           onChange={handleFormChange}
           placeholder="Введіть об'єм"
-          className={`${styles.changeMealInput}`}
+          className={`${styles.changeMealInput} ${styles.inputSection} input rounded-none`}
           type="text"
           name="capacity"
           value={formData.capacity}
           /> :
-          <div className={`${styles.currentMealContainer}`}>{currentMeal.capacity}</div> 
+          <div className={`${styles.currentMealContainer} ${styles.inputSection} input rounded-none`}>{currentMeal.capacity}</div> 
         }
       </div>
 
       <div className={`${styles.categoryContainer}`}>
-        <div className={`${styles.specificationContainer}`}>
+        <div className={`${styles.specificationContainer} ${styles.inputSection} input rounded-none`}>
           <IoWaterOutline className="text-custom-green mr-[10px]"/>
           Одиниці виміру
         </div>
         {editMode ?
-          <section id="unitsSection" className={`${styles.unitsSection}`}>
+          <section id="unitsSection" className={`${styles.unitsSection} ${styles.inputSection} input rounded-none`}>
             <select 
               onChange={handleFormChange}
               id="unitSelector" 
-              className={`${styles.unitsSelect}`}
+              className={`${styles.unitsSelect} `}
               name="units"
               >
               <option value="{currentMeal.units}">{capitalize(currentMeal.units)}</option>
@@ -132,12 +133,12 @@ export default function CreateMealEdit() {
               } 
             </select>
           </section> :
-          <div className={`${styles.currentMealContainer}`}>{capitalize(currentMeal.units)}</div> 
+          <div className={`${styles.currentMealContainer} ${styles.inputSection} input rounded-none`}>{capitalize(currentMeal.units)}</div> 
         }
       </div>
 
       <div className={`${styles.categoryContainer}`}>
-        <div className={`${styles.specificationContainer}`}>
+        <div className={`${styles.specificationContainer} ${styles.inputSection} input rounded-none`}>
           <GiPriceTag className="text-custom-green mr-[10px]"/>
           Ціна
         </div>
@@ -145,35 +146,36 @@ export default function CreateMealEdit() {
           <input 
           onChange={handleFormChange}
           placeholder="Введіть ціну" 
-          className={`${styles.changeMealInput}`}
+          className={`${styles.changeMealInput} ${styles.inputSection} input rounded-none`}
           type="text"
           name="price"
           value={formData.price}
           /> :
-          <div className={`${styles.currentMealContainer}`}>{currentMeal.price}</div> 
+          <div className={`${styles.currentMealContainer} ${styles.inputSection} input rounded-none`}>{currentMeal.price}</div> 
         }
       </div>
 
       {!editMode &&
-        <div className={`${styles.btnsContainer} flex flex-row items-center justify-center`}>
-            <button onClick={handleModeChange} className={`${styles.btnActions} ${styles.changeBtn} flex flex-row items-center`}>
+        <div className={`${styles.btnsContainer} flex flex-row items-center justify-center w-full`}>
+            <button onClick={handleModeChange} className={`${styles.btnActions} ${styles.changeBtn} btn flex-1 flex flex-row items-center`}>
               <TbStatusChange className='mr-[10px]'/>
               Змінити
             </button>
         
-            <button className={`${styles.btnActions} ${styles.deleteBtn} flex flex-row items-center`}>
+            <button className={`${styles.btnActions} ${styles.deleteBtn} btn flex-1 flex flex-row items-center`}>
               <AiOutlineDelete className='mr-[10px]'/>
               Видалити
             </button>
         </div>
       }
       {editMode &&
-        <button onClick={handleModeChange}  className={`${styles.btnActions} ${styles.saveBtn} flex flex-row items-center`}>
+        <button onClick={handleModeChange}  className={`${styles.btnActions} ${styles.saveBtn} w-full btn flex flex-row items-center`}>
           <BiUpload className='mr-[10px]'/>
           Зберегти
         </button>
       }
 
+      </div>
     </div>
   )
 }

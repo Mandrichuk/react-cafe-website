@@ -12,6 +12,8 @@ import ProfileUser from "./user/components/profile/Profile";
 import OrderUser from "./user/components/order/Order";
 import SuccessUser from "./user/components/success/Success";
 
+import getTotalPrice from "./user/components/shared/getTotalPrice";
+
 //* Admin Components
 import AdminLoginUser from "./admin/components/loginUser/LoginUser";
 import AdminRegisterUser from "./admin/components/registerUser/RegisterUser";
@@ -25,8 +27,8 @@ import MenuSettingsSuperAdmin from "./superadmin/components/menuSettings/MenuSet
 import MealEdit from "./superadmin/components/mealEdit/MealEdit";
 import MenuSuccess from "./superadmin/components/menuSuccess/MenuSuccess";
 import MealAdd from "./superadmin/components/mealAdd/MealAdd";
+import CategoryAdd from "./superadmin/components/categoryAdd/CategoryAdd";
 
-import getTotalPrice from "./user/components/shared/getTotalPrice";
 
 // * Common
 import Error404 from "./common/error404/Error404";
@@ -120,6 +122,7 @@ export default function CreateApp() {
         <Route path="/superadmin/menu/edit/meal/*" element={<MealEdit />} />
         <Route path="/superadmin/menu/success" element={<MenuSuccess />} />
         <Route path="/superadmin/menu/add/meal" element={<MealAdd />} />
+        <Route path="/superadmin/menu/add/category" element={<CategoryAdd />} />
       
       // * Common
       <Route path="*" element={<Error404 />} />

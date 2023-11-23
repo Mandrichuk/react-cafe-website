@@ -1,0 +1,38 @@
+input:focus {
+  background-color: #f0f8ff;
+  border-top-right-radius: 10px;
+}
+
+.categoryContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+
+  margin-bottom: 20px;
+}
+
+.specificationContainer,
+.inputSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  flex: 1;
+}
+
+.btnActions {
+  justify-content: center;
+
+  color: white;
+  padding: 5px 40px;
+  background-color: rgb(66, 66, 66);
+}
+
+.deleteBtn {
+  background-color: rgb(173, 19, 19);
+}
+
+.saveBtn {
+  background-color: #05442E;
+}

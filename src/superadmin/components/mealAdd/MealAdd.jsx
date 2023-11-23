@@ -48,7 +48,6 @@ export default function CreateMealEdit() {
   }
   
   function handleModeChange() {setEditMode((prevEditMode) => !prevEditMode);}
-  function capitalize(str) {return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();}
 
 
   return (
@@ -64,7 +63,7 @@ export default function CreateMealEdit() {
             <select 
               onChange={handleFormChange} 
               id="unitSelector"  
-              className={`${styles.unitsSelect} `}
+              className={`${styles.unitsSelect} w-full flex justify-between`}
               name="catetory"
             >
             <option selected hidden value={0}>{"Оберіть категорію"}</option>
@@ -115,16 +114,17 @@ export default function CreateMealEdit() {
       <div className={`${styles.categoryContainer}`}>
         <div className={`${styles.specificationContainer} input rounded-none`}>
           <IoWaterOutline className="text-custom-green mr-[10px]"/>
-          Одиниці виміру
+          Вимір
         </div>
 
           <section id="unitsSection" className={`${styles.unitsSection} ${styles.inputSection} input rounded-none h-[45.6px]`}>
             <select 
               onChange={handleFormChange}
               id="unitSelector" 
-              className={`${styles.unitsSelect}`}
+              className={`${styles.unitsSelect} w-full flex justify-between`}
               name="units"
               >
+              <option selected hidden value={0}>{"Оберіть вимір"}</option>
               <option value="мг">Гр</option> 
               <option value="гм">Мг</option> 
             </select>

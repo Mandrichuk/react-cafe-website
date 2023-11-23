@@ -38,3 +38,10 @@ input:focus {
 .saveBtn {
   background-color: var(--custom-green);
 }
+
+.unitsSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

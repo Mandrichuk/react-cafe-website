@@ -31,9 +31,11 @@ export default function CreateMenuItem(props) {
     <li>
       <input type="radio" name="accordion" id={props.id}/>
       <label htmlFor={props.id} className={`flex items-center justify-between`}>
-        <MdOutlineKeyboardArrowDown className={`${styles.downArrow} text-black text-[2rem]`}/>
-        {props.name} 
-        <IconComponent className={`text-[2rem] ml-[10px] text-custom-green`}/> 
+        <div className={`${styles.labelTitle} flex items-center justify-between w-full `}>
+          <MdOutlineKeyboardArrowDown className={`${styles.downArrow} text-black`}/>
+          {props.name} 
+          <IconComponent className={`ml-[10px] text-custom-green`}/> 
+        </div>
       </label>
 
       <div className={`${styles.content}`}>

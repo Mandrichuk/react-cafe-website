@@ -36,7 +36,7 @@ export default function CreateMenu(props) {
         <section className={`${styles.sectionContainer}`}>
           <div className={`${styles.sectionDetails} text-black`}>
             <div className={`${styles.animatedLine} animatedLine`}></div>
-            <div className={`${styles.titleText}`}> Якість продуктів</div>
+            <div className={`titleText`}> Якість продуктів</div>
             <div className={`${styles.textContainer} ${styles.articleText}`}>
               На кожному етапі готування ми ретельно відбираємо найвищу якість продуктів, щоб створити для вас неповторні   смакові враження.
             </div>

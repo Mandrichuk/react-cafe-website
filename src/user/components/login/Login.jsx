@@ -42,12 +42,12 @@ export default function CreateLogin(props) {
             name="phone"
             value={phoneNumber}
             onChange={handleChange}
-            className={`${styles.input} ${styles.pretitleText} border border-gray-200 mb-[20px] pl-[5px]`}
+            className={`input mb-[10px]`}
             pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
             placeholder="+380.."
             required
           />
-          <button onClick={handleSubmit} className={`${styles.getCodeBtn, styles.btn} ${styles.pretitleText} p-[10px] border text-white transition-all `}>
+          <button onClick={handleSubmit} className={`btn p-[10px] border text-white transition-all `}>
             Отримати код
           </button>
         </div>
@@ -58,12 +58,12 @@ export default function CreateLogin(props) {
             type="tel"
             id="phone"
             name="phone"
-            className={`${styles.input} ${styles.pretitleText}  border border-gray-200 mb-[20px] pl-[5px]`}
+            className={`input mb-[10px]`}
             pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
             placeholder="####"
             required
           />
-          <button className={`${styles.loginBtn, styles.btn}  ${styles.pretitleText} p-[10px] border text-white transition-all `}>
+          <button className={`btn `}>
             Увійти
           </button>
         </div>

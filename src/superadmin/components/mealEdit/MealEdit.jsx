@@ -62,7 +62,7 @@ export default function CreateMealEdit() {
             <select 
               onChange={handleFormChange} 
               id="unitSelector" 
-              className={`${styles.unitsSelect}`}
+              className={`${styles.unitsSelect} w-full`}
               name="catetory"
             >
             <option key={currentCategory.name} value={currentCategory.name}>{currentCategory.name}</option>
@@ -116,14 +116,14 @@ export default function CreateMealEdit() {
       <div className={`${styles.categoryContainer}`}>
         <div className={`${styles.specificationContainer} ${styles.inputSection} input rounded-none`}>
           <IoWaterOutline className="text-custom-green mr-[10px]"/>
-          Одиниці виміру
+          Вимір
         </div>
         {editMode ?
           <section id="unitsSection" className={`${styles.unitsSection} ${styles.inputSection} input rounded-none`}>
             <select 
               onChange={handleFormChange}
               id="unitSelector" 
-              className={`${styles.unitsSelect} `}
+              className={`${styles.unitsSelect} w-full`}
               name="units"
               >
               <option value="{currentMeal.units}">{capitalize(currentMeal.units)}</option>

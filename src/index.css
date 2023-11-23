@@ -48,8 +48,8 @@ body {
   padding: 8px 12px;
   border-radius: 5px;
   font-size: var(--article-font-size);
-  border: 2px solid black;
-  min-width: 100px;
+  border: 2px solid rgb(202, 202, 202);
+  min-width: 150px;
 }
 
 .btn {
@@ -74,11 +74,21 @@ body {
 }
 
 .staffContent {
-  width: 80%;
+  width: 90%;
   margin-top: 100px;
   margin-bottom: 100px;
+  max-width: 900px;
+  min-width: 300px;
 }
 
+.section {
+  background-color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: var(--article-font-size);
+  border: 2px solid black;
+  min-width: 100px;
+} 
 
 @keyframes fillAnimation {
   to {
@@ -88,13 +98,13 @@ body {
 
 @media (min-width: 800px) {
   .staffContent {
-    width: 84vh;
+    width: 80%;
   }
 }
 
 @media (min-width: 1000px) {
   .staffContent {
-    width: 100vh;
+    width: 70%;
   }
 }
 

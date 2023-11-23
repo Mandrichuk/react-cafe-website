@@ -85,10 +85,12 @@ body, * {
   width: 100%;
   color: black;
   margin-top: 100px;
-  max-width: 900px;
+  max-width: 1100px;
 }
 
-
+.labelTitle {
+  font-size: 1.8rem;
+}
 
 .accordion li {
   background-color: rgb(251, 251, 244);
@@ -212,6 +214,10 @@ input[type="radio"] {
 
 
 @media (min-width: 801px) { 
+  .labelTitle {
+    font-size: 2rem;
+  }
+
   .sectionContainer {
     display: flex;
     flex-direction: row;
@@ -291,6 +297,10 @@ input[type="radio"] {
 }
 
 @media (min-width: 1050px) {
+  .labelTitle {
+    font-size: 2.2rem;
+  }
+
   .productImage {
     min-width: 600px;
     max-width: 600px;

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import menuData from "../../../data/menu/menuData";
 import MenuItem from "./materials/MenuItem";
 
-
+import styles from "../../styles/pages/menu.module.css";
 export default function CreateMenu(props) {
 
 
@@ -18,8 +18,11 @@ export default function CreateMenu(props) {
         <Link to="/superadmin/menu/add/meal" className={`flex justify-center btn mb-5`}> 
           Додати нову страву/напій
         </Link>
+        <Link to="/superadmin/menu/add/category" className={`flex justify-center btn mb-5`}> 
+          Додати нову категорію
+        </Link>
 
-        <ul className={`accordion`}>
+        <ul className={`${styles.accordion}`}>
           {MenuItems(menuData, props.cart, props.handleCartChange)}
         </ul>
       </div>

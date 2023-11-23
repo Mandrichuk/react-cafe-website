@@ -8,7 +8,7 @@ function Error404() {
     <>
       <Header />
       <div className={`${styles.main} flex flex-col items-center justify-center h-[80vh] w-full`}>
-        <img className={`${styles.bgImage}`} src="images/background/error404.png" />
+        <img className={`${styles.bgImage}`} src="/images/background/error404.png" />
         <Link to="/" className={`btn mt-[40px]`}>До головної </Link>
       </div>
     </>

@@ -34,10 +34,10 @@ export default function CreateHeader(props) {
 
 
   return (
-    <div className="header flex flex-row items-center h-[70px] w-[100%] bg-black justify-between">
+    <div className="header flex flex-row items-center h-[70px] w-[100%] bg-black justify-between max-w-[2300px]">
       <div className="logo-container w-[120px] ml-[30px] mr-[20px]">
         <Link to="/" className="text-white w-[100%] ">
-          <img src="images/icons/drink-food-logo.png" className=" h-[25px] object-cover"/>
+          <img src="/images/icons/drink-food-logo.png" className=" h-[25px] object-cover"/>
         </Link>
       </div>
         

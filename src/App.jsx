@@ -24,7 +24,7 @@ import AdminSettingsSuperAdmin from "./superadmin/components/adminSettings/Admin
 import MenuSettingsSuperAdmin from "./superadmin/components/menuSettings/MenuSettings";
 import MealEdit from "./superadmin/components/mealEdit/MealEdit";
 import MenuSuccess from "./superadmin/components/menuSuccess/MenuSuccess";
-import MenuAdd from "./superadmin/components/menuAdd/MenuAdd";
+import MealAdd from "./superadmin/components/mealAdd/MealAdd";
 
 import getTotalPrice from "./user/components/shared/getTotalPrice";
 
@@ -119,7 +119,7 @@ export default function CreateApp() {
         <Route path="/superadmin/menu" element={<MenuSettingsSuperAdmin />} />
         <Route path="/superadmin/menu/edit/meal/*" element={<MealEdit />} />
         <Route path="/superadmin/menu/success" element={<MenuSuccess />} />
-        <Route path="/superadmin/menu/add/meal" element={<MenuAdd />} />
+        <Route path="/superadmin/menu/add/meal" element={<MealAdd />} />
       
       // * Common
       <Route path="*" element={<Error404 />} />

@@ -59,6 +59,9 @@ body, * {
 
 }
 
+.mealNameContainer {
+  color: var(--custom-gray);
+}
 
 .menuText {
   font-size: var(--title-font-size);
@@ -208,11 +211,6 @@ input[type="radio"] {
   top: 100px;
 }
 
-
-
-
-
-
 @media (min-width: 801px) { 
   .labelTitle {
     font-size: 2rem;
@@ -259,6 +257,13 @@ input[type="radio"] {
     padding: 0px;
   }
 
+  .sectionContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .imageContainer {
     width: 460px;
   }
@@ -276,6 +281,10 @@ input[type="radio"] {
 
 
 @media (max-width: 450px) {
+  .mealContainer {
+    padding: 5px 0 5px 0;
+  }
+
   .imageContainer {
     width: 350px;
   }

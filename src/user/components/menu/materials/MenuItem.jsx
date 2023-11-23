@@ -66,7 +66,7 @@ function CreateProducts(products, cart, handleCartChange) {
   
   const productsHTML = products.map(item => {
     return (
-      <div key={item.id} className={`flex flex-row items-center justify-between pb-[20px] text-[1.3rem] px-[10px]`}>
+      <div key={item.id} className={`${styles.mealContainer}  flex flex-row items-center justify-between pb-[20px] text-[1.3rem] px-[10px]`}>
         <div className={`${styles.mealNameContainer}`}>
           {item.name}
         </div>

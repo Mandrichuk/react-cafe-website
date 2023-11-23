@@ -15,7 +15,7 @@ export default function CreateMenu(props) {
       
         <div className="text-black titleText font-bold mb-[30px]">Оберіть з меню страву для редагування або видалення</div>
 
-        <Link to="/superadmin/menu/add/meal" className={`flex justify-center btn mb-5`}> 
+        <Link to="/superadmin/menu/add/meal" className={`flex justify-center btn mb-2`}> 
           Додати нову страву/напій
         </Link>
         <Link to="/superadmin/menu/add/category" className={`flex justify-center btn mb-5`}> 

@@ -1,6 +1,5 @@
 import React, {useRef} from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import { Link } from "react-router-dom";
 import styles from "../../styles/pages/cafe.module.css";
 
 import Header from "../shared/header/Header.jsx";
@@ -113,7 +112,10 @@ export default function CreateCafe() {
             <div className={`${styles.sectionDetails}`}>
               <div className={`${styles.titleText} ${styles.beerTitle}`}>Drink&Beer</div>
               <div className={`${styles.preTitleText}`}>Файні алкогольні напої</div>
-              <div className={`${styles.articleText} ${styles.alcoholArticle}`}>Наш асортимент алкогольних напоїв - це вибір гурмана, де кожен келих - це справжній витвір мистецтва. Відберіть свій улюблений алкогольний напій і насолоджуйтеся багатогранністю смаку!</div>
+              <div className={`${styles.articleText} ${styles.alcoholArticle}`}>
+                Наш асортимент алкогольних напоїв - це вибір гурмана, де кожен келих - це справжній витвір мистецтва.
+              </div>
+              <Link to="/menu" className={`${styles.bgWhite} btn mt-6 max-w-[220px] md:max-w-[250px]`}>Переглянути меню</Link>
             </div>
 
             <div className={`${styles.beerImageContainer}`}>

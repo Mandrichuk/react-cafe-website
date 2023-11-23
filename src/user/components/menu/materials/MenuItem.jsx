@@ -75,16 +75,18 @@ function CreateProducts(products, cart, handleCartChange) {
           <div>100{item.grams}гм</div>
           <div>{item.price}грн </div>
         </div>
-          <div onClick={() => { handleCartChange(item.id); handleBoolChange(); }} className="w-[50px] h-[50px] flex items-center rounded justify-center border-[2px] ml-[20px] cursor-pointer"> 
-            <MdOutlineExposurePlus1 className="text-[1.8rem] text-black hover:text-gray-500 transition-all transition-200"/>
+          <div onClick={() => { handleCartChange(item.id); handleBoolChange(); }} className={` ${styles.iconContainer} w-[50px] h-[50px] flex items-center rounded justify-center border-[2px] ml-[20px] cursor-pointer`}> 
+            <MdOutlineExposurePlus1 className={`${styles.iconPlus} text-[1.8rem] text-black hover:text-gray-500 transition-all transition-200`}/>
           </div>
         </div>
-        {isAdded && <div className="bottom-[50px] fixed left-0 right-0 z-30 flex items-center justify-center">
+        {
+        isAdded && <div className="bottom-[50px] fixed left-0 right-0 z-30 flex items-center justify-center">
           <div className="flex flex-row items-center justify-center text-[1.4rem] max-w-[400px] bg-custom-green text-white p-[10px] pb-[20px] pt-[20px]">
             <MdOutlineDone className={`${styles.doneIcon} mr-[10px] text-[2rem]`}/>Додано до кошику
 
           </div>
-        </div>}
+        </div>
+        }
       </div>
     );
   });

@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
 import styles from "../../styles/shared/footer.module.css";
 
-import { BsTelegram } from "react-icons/bs";
-import { SiInstagram } from "react-icons/si";
 
-
-// small medium large
 
 export default function CreateFooter() {
   const [displayed, setDisplayed] = useState("medium");
-
 
   useEffect(() => {
     const handleResize = () => {

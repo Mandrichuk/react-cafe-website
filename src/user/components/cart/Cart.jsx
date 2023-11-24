@@ -27,32 +27,31 @@ export default function CreateCart(props) {
       </div>
     </main> :
 
-    <main className={`${styles.mainContainer} w-full mt-[80px] text-black mb-[50px]`}>
-      <div className={` w-[100%] flex flex-col items-center justify-center mt-[50px] p-[15px] pb-[5px]`}>
+    <main className={`w-full`}>
+      <div className={`${styles.mainContainer} text-black`}>
+      
+      <div className={` ${styles.allMeals} w-[100%] flex flex-col items-center justify-center mt-[50px] max-w-[800px] min-w-[450px]`}>
         {
           props.cart.map(item => (<Meal id={item.id} amount={item.amount} handleAmountChange={props.handleAmountChange} />))
         }
       </div>
       <div className={`${styles.orderContainer} flex flex-col text-[1.4rem] mt-[100px]`}>
         <label htmlFor="orderComment" className={`${styles} text-[1.2rem]`}>Коментар до замовлення</label>
-        <input name="orderComment" className={`${styles.orderCommentInput} border border-gray-400 p-[8px] mb-[20px]`} placeholder="Подвійна порція м'яса.."/>
+        <input name="orderComment" className={`input mb-[20px]`} placeholder="Подвійна порція м'яса.."/>
         <div className={`${styles.totalCost} border-b-[1px] border-black black p-[10px] mb-[80px]`}>
           Загальна сума замовлення: {totalPrice}грн
         </div>
 
         {props.isLoggined ? 
-        <Link onClick={props.RerenderHeader} to="/success" className="flex items-center justify-center">
-          <button className={`${styles.totalCost} bg-custom-green text-white p-[10px] mb-[40px]`}>
+        <Link onClick={props.RerenderHeader} to="/success" className="btn flex items-center justify-center">
             Оформити замовлення
-          </button>
         </Link> :
 
-        <Link onClick={props.RerenderHeader} to="/order" className="flex items-center justify-center">
-        <button className={`${styles.totalCost} bg-custom-green text-white p-[10px] mb-[40px]`}>
+        <Link onClick={props.RerenderHeader} to="/order" className="btn flex items-center justify-center">
           Оформити замовлення
-        </button>
       </Link>} 
 
+      </div>
       </div>
     </main>
     }

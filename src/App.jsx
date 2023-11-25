@@ -15,23 +15,27 @@ import SuccessUser from "./user/components/success/Success";
 import getTotalPrice from "./user/components/shared/getTotalPrice";
 
 //* Admin Components
-import AdminLoginUser from "./admin/components/loginUser/LoginUser";
-import AdminRegisterUser from "./admin/components/registerUser/RegisterUser";
+import LoginUserAdmin from "./admin/components/loginUser/LoginUser";
+import RegisterUserAdmin from "./admin/components/registerUser/RegisterUser";
+import NavigationAdmin from "./admin/components/navigation/Navigation";
+import MenuAdmin from "./admin/components/menu/Menu";
+import CartAdmin from "./admin/components/cart/Cart";
+
 
 //* Super Admin Components
 import SharedHeaderSuperAdmin from "./superadmin/components/shared/header/Header";
-import LoginSuperAdmin from "./superadmin/components/login/Login";
 import NavigationSuperAdmin from "./superadmin/components/navigation/Navigation";
 import AdminSettingsSuperAdmin from "./superadmin/components/adminSettings/AdminSettings";
 import MenuSettingsSuperAdmin from "./superadmin/components/menuSettings/MenuSettings";
-import MealEdit from "./superadmin/components/mealEdit/MealEdit";
-import MenuSuccess from "./superadmin/components/menuSuccess/MenuSuccess";
-import MealAdd from "./superadmin/components/mealAdd/MealAdd";
-import CategoryAdd from "./superadmin/components/categoryAdd/CategoryAdd";
+import MealEditSuperAdmin from "./superadmin/components/mealEdit/MealEdit";
+import MenuSuccessSuperAdmin from "./superadmin/components/menuSuccess/MenuSuccess";
+import MealAddSuperAdmin from "./superadmin/components/mealAdd/MealAdd";
+import CategoryAddSuperAdmin from "./superadmin/components/categoryAdd/CategoryAdd";
 
 
 // * Common
 import Error404 from "./common/error404/Error404";
+import StaffLogin from "./common/staffLogin/staffLogin";
 
 
 export default function CreateApp() {
@@ -96,7 +100,6 @@ export default function CreateApp() {
 
 
       //* User Components
-
         <Route path="/" element={<CafeUser />} />
         <Route path="/menu" element={<MenuUser cart={cart} handleCartChange={handleCartChange} />} />
         {isLoggined ? 
@@ -108,24 +111,26 @@ export default function CreateApp() {
         <Route path="/success" element={<SuccessUser cart={cart} handleHistoryAdd={handleHistoryAdd} />} />
 
       // * Admin Components
-        <Route path="/admin/login/user" element={<AdminLoginUser />} />
-        <Route path="/admin/register/user" element={<AdminRegisterUser />} />
-       
-
+        <Route path="/admin/nav" element={<NavigationAdmin />} />
+        <Route path="/admin/login/user" element={<LoginUserAdmin />} />
+        <Route path="/admin/register/user" element={<RegisterUserAdmin />} />
+        <Route path="/admin/menu" element={<MenuAdmin />} />
+        <Route path="/admin/user/cart" element={<CartAdmin />} />
+      
 
       //* Super Admin Components
-
-        <Route path="/admin/login" element={<LoginSuperAdmin />}/> 
-        <Route path="/superadmin" element={<NavigationSuperAdmin />} />
+        <Route path="/superadmin/nav" element={<NavigationSuperAdmin />} />
         <Route path="/superadmin/admin" element={<AdminSettingsSuperAdmin />} />
         <Route path="/superadmin/menu" element={<MenuSettingsSuperAdmin />} />
-        <Route path="/superadmin/menu/edit/meal/*" element={<MealEdit />} />
-        <Route path="/superadmin/menu/success" element={<MenuSuccess />} />
-        <Route path="/superadmin/menu/add/meal" element={<MealAdd />} />
-        <Route path="/superadmin/menu/add/category" element={<CategoryAdd />} />
+        <Route path="/superadmin/menu/edit/meal/*" element={<MealEditSuperAdmin />} />
+        <Route path="/superadmin/menu/success" element={<MenuSuccessSuperAdmin />} />
+        <Route path="/superadmin/menu/add/meal" element={<MealAddSuperAdmin />} />
+        <Route path="/superadmin/menu/add/category" element={<CategoryAddSuperAdmin />} />
       
       // * Common
-      <Route path="*" element={<Error404 />} />
+        <Route path="*" element={<Error404 />} />
+        <Route path="/admin" element={<StaffLogin />}/> 
+        <Route path="/superadmin" element={<StaffLogin />}/> 
 
       </Routes>
     </div>

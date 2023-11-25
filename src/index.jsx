@@ -1,13 +1,17 @@
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
-import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
-import App from './App.jsx';
-import logginsReducer from './features/loggins.js';
+import App from './App';
+import logginsReducer from './features/loggins';
+import cartsReducer from "./features/carts"
+
+
 
 const store = configureStore({
   reducer: {
     loggins: logginsReducer,
+    carts: cartsReducer,
   },
 });
 

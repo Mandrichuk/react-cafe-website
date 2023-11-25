@@ -1,0 +1,364 @@
+body, * {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.articleText {
+  font-size: var(--article-font-size);;
+}
+
+.redBtn {
+  background-color: rgb(153 27 27);
+}
+
+.grayBtn {
+  background-color: rgb(60, 60, 60);
+}
+
+
+
+.titleText {
+  font-size: var(--title-font-size);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.preTitleText {
+  color: var(--custom-orange);
+  font-size: var(--pretitle-font-size);
+  font-weight: bold;
+}
+
+.header {
+  color: white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.coverContainer {
+  width: var(--mutual-width);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.headerTaglineContainer {
+  height: 240px;
+  background: linear-gradient(to bottom, var(--custom-green), #01110b);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
+.menuText {
+  font-size: var(--title-font-size);
+  font-weight: bold;
+
+  margin-left: 5%;
+  margin-bottom: 15px; 
+}
+
+.menuTaglineText {
+  font-size: var(--pretitle-font-size);
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.menuItem:hover .menuItemImg {
+  transform: scale(1.1);
+  transition-duration: 300ms;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: black;
+  margin-top: 50px;
+  max-width: 1100px;
+}
+
+.mealNameContainer {
+  color: var(--custom-gray);
+}
+
+.labelTitle {
+  font-size: 1.8rem;
+}
+
+.accordion li {
+  background-color: rgb(251, 251, 244);
+  list-style: none;
+  width: 100%;
+  margin: 7px;
+  margin-left: 0;
+  padding: 10px;
+  border: 1.6px solid rgb(230, 225, 216);
+  border-radius: 14px;
+  box-shadow: 5px 5px 10px rgba(224, 216, 206, 0.6);
+}
+
+.accordion li label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.accordion .content {
+  color: #555;
+  padding: 0 10px;
+  line-height: 26px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s, padding 0.8s;
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+  max-height: 1000px;
+  padding: 10px;
+}
+
+.textContainer {
+  max-width: 640px;
+}
+
+.sectionContainer {
+  width: 100%;
+  margin-top: var(--section-margin);
+}
+
+.sectionDetails {
+  margin-bottom: 30px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 700px;
+}
+
+.imageDetailsContainer {
+  overflow: hidden;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--custom-orange);
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  animation: appear 450ms ease-out;
+}
+
+.iconFirst {
+  border-bottom-left-radius: 0;
+  transform: rotate(70deg);
+  top: 70px;
+  left: 170px;
+}
+
+
+.iconSecond {
+  border-top-right-radius: 0;
+  bottom: 70px;
+  left: 200px;
+}
+
+.imageDetails {
+  border-radius: 999px;
+  height: 94%;
+  width: 94%;
+  object-fit: cover;
+}
+
+.imageDetailsFirst {
+  transform: rotate(-70deg);
+}
+
+.imageDetailsSecond {
+  transform: rotate(20deg);
+}
+
+.productImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+.relativeContainer {
+  position: relative;
+}
+
+.absoluteContainer {
+  position: absolute;
+  right: -20px;
+  top: 100px;
+}
+
+
+
+
+
+
+@media (min-width: 801px) { 
+  .labelTitle {
+    font-size: 2rem;
+  }
+
+  .sectionContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .textContainer {
+    max-width: 400px;
+  }
+
+  .sectionDetails {
+    margin-right: 7%;
+    margin-bottom: 80px;
+  }
+
+  .productImage {
+    min-width: 500px;
+    max-width: 500px;
+  }
+  
+  .iconFirst {
+    top: 50px;
+    left: 140px;
+  }
+
+  .iconSecond {
+    bottom: 55px;
+    left: 260px;
+  }
+}
+
+@media (max-width: 800px) {
+  .accordion .content {
+    padding: 0;
+  }
+
+  .accordion input[type="radio"]:checked + label + .content {
+    max-height: 1000px;
+    padding: 0px;
+  }
+
+  .imageContainer {
+    width: 460px;
+  }
+
+  .iconFirst {
+    top: 60px;
+    left: 125px;
+  }
+
+  .iconSecond {
+    bottom: 40px;
+    left: 230px;
+  }
+}
+
+
+@media (max-width: 450px) {
+  .imageContainer {
+    width: 350px;
+  }
+
+  .iconFirst {
+    top: 50px;
+    left: 90px;
+  }
+
+  .iconSecond {
+    bottom: 16px;
+    left: 160px;
+  }
+
+  .imageDetailsContainer {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .labelTitle {
+    font-size: 2.2rem;
+  }
+
+  .productImage {
+    min-width: 600px;
+    max-width: 600px;
+  }
+  
+  .iconFirst {
+    top: 70px;
+    left: 160px;
+  }
+
+  .iconSecond {
+    bottom: 85px;
+    left: 330px;
+  }
+
+  .sectionDetails {
+    margin-right: 16%;
+    margin-bottom: 80px;
+  }
+}
+
+
+@media (min-width: 1300px) {
+  .sectionContainer {
+    justify-content: space-between;
+    max-width: 1900px;
+  }
+
+  .iconFirst {
+    top: 70px;
+    left: 160px;
+  }
+
+  .iconSecond {
+    bottom: 85px;
+    right: 170px;
+  }
+}
+
+@media (max-width: 400px) {
+  .coverContainer {
+    width: 95%;
+  }
+
+  .mealNameContainer {
+    max-width: 140px; 
+  }
+}

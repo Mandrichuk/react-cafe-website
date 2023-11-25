@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function CreateNavigation() {
+export default function Navigation() {
 
   return (
     <div className="w-full flex flex-col items-center justify-center">

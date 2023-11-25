@@ -1,10 +1,8 @@
 import React, {useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleAdminLogin, toggleSuperAdminLogin } from "../../../features/loggins.js";
-import loginsData from "../../../data/logins/logginsData.js";
-
-
+import { toggleAdminLogin, toggleSuperAdminLogin } from "../../features/loggins";
+import loginsData from "../../data/logins/logginsData";
 
 
 export default function CreateApp() {

@@ -45,12 +45,14 @@ body {
 }
 
 .input {
+  display: flex;
+  justify-content: center;
   background-color: white;
   padding: 8px 12px;
   border-radius: 5px;
   font-size: var(--article-font-size);
   border: 2px solid rgb(202, 202, 202);
-  min-width: 150px;
+  min-width: 120px;
 }
 
 .btn {

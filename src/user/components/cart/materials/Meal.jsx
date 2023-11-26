@@ -12,7 +12,6 @@ export default function CreateMeal(props) {
   const currentMeal = getMealName(props.id);
 
   const [isWideScreen, setIsWideScreen] = useState(window.innerWidth > 500);
-  // const [flex]
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,8 +23,6 @@ export default function CreateMeal(props) {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  console.log(isWideScreen)
 
   return (
     <div className={`${styles.mealContainer} input w-full flex items-center justify-between`}>

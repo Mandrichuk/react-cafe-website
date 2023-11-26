@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToAdminCart } from "../../../../features/carts";
 
-import { BiSolidEdit } from "react-icons/bi";
 import { MdOutlineExposurePlus1 } from "react-icons/md";
 import { MdOutlineDone } from "react-icons/md";
 
@@ -80,7 +79,7 @@ function CreateProducts(products, cart, handleCartChange) {
           <div>100{item.grams}гм</div>
           <div>{item.price}грн </div>
         </div>
-        <div onClick={() => {dispatch(addToAdminCart({ id: item.id }))}}>
+        <div onClick={() => {dispatch(addToAdminCart({ id: item.id, amount: 1 }));}}>
           <div className="w-[45px] h-[45px] flex items-center justify-center ml-[20px] cursor-pointer border-[2px] "> 
             <MdOutlineExposurePlus1 className="text-[2.2rem] text-black h-[80%] hover:text-gray-500 transition-all transition-200"/>
           </div>

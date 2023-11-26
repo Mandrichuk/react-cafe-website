@@ -20,6 +20,7 @@ import RegisterUserAdmin from "./admin/components/registerUser/RegisterUser";
 import NavigationAdmin from "./admin/components/navigation/Navigation";
 import MenuAdmin from "./admin/components/menu/Menu";
 import CartAdmin from "./admin/components/cart/Cart";
+import OrdersAdmin from "./admin/components/orders/Orders";
 
 
 //* Super Admin Components
@@ -116,6 +117,7 @@ export default function CreateApp() {
         <Route path="/admin/register/user" element={<RegisterUserAdmin />} />
         <Route path="/admin/menu" element={<MenuAdmin />} />
         <Route path="/admin/user/cart" element={<CartAdmin />} />
+        <Route path="/admin/orders" element={<OrdersAdmin />} />
       
 
       //* Super Admin Components

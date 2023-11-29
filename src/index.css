@@ -47,7 +47,6 @@ body {
 .input {
   display: flex;
   justify-content: center;
-  background-color: white;
   padding: 8px 12px;
   border-radius: 5px;
   font-size: var(--article-font-size);
@@ -112,5 +111,4 @@ body {
     margin-top: 100px;
   }
 }
-
 

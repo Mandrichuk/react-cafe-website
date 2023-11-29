@@ -25,8 +25,8 @@ export default function CreateMeal(props) {
   }, []);
 
   return (
-    <div className={`${styles.mealContainer} input w-full flex items-center justify-between`}>
-      <div className={`${styles.mealNameContainer} max-w-[300px] flex`}>
+    <div className={`${styles.mealContainer} input w-full flex items-center justify-between mb-[7px] mt-[7px]`}>
+      <div className={`${styles.mealNameContainer} max-w-[300px] flex min-w-[150px]`}>
         {currentMeal.name}
       </div>
       
@@ -43,7 +43,7 @@ export default function CreateMeal(props) {
               <AiOutlinePlus />
             </button>
           </div>
-          <div className={`${styles.priceContainer} flex flex-row justify-center items-center ml-[20px] h-[48px]`}>
+          <div className={`${styles.priceContainer} w-[70px] flex flex-row justify-center items-center ml-[20px] h-[48px]`}>
             {mealPrice}грн
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function CreateMeal(props) {
               <AiOutlinePlus />
             </button>
           </div>
-          <div className={`${styles.priceContainer} flex flex-row justify-center items-center  h-[48px]`}>
+          <div className={`${styles.priceContainer} flex flex-row justify-center items-center h-[48px] min-w-[100px]`}>
             {mealPrice}грн
           </div>
         </>

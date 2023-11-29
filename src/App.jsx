@@ -40,7 +40,7 @@ import StaffLogin from "./common/staffLogin/staffLogin";
 
 
 export default function CreateApp() {
-  const [isLoggined, setIsLoggined] = useState(false);
+  const [isLoggined, setIsLoggined] = useState(true);
   const [cart, setCart] = useState([]);
   const [history, setHistory] = useState([]);
   const [currentLink, setCurrentLink] = useState("/");
@@ -96,7 +96,6 @@ export default function CreateApp() {
 
   return (
     <div className="mt-[70px]">
-      {currentLink.includes("superadmin") && <SharedHeaderSuperAdmin currentLink={currentLink}/>}
       <Routes>
 
 

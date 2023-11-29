@@ -1,0 +1,15 @@
+.allInfoContainer {
+  width: var(--mutual-width);
+}
+
+.titleText {
+  font-size: var(--title-font-size);
+}
+
+.pretitleText {
+  font-size: var(--pretitle-font-size);
+}
+
+.articleText {
+  font-size: var(--article-font-size);
+}

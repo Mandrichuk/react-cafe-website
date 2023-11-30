@@ -11,7 +11,7 @@ export default function CreateHistory(props) {
         <div className={`${styles.dateContainer} flex items-center justify-center  w-full  titleText input rounded-r-none`}>
           {props.history.date}
         </div>
-        <div className={`${styles.priceContainer} flex items-center justify-center w-full input  rounded-l-none titleText `}>
+        <div className={`${styles.priceContainer} flex items-center justify-center w-full input  rounded-l-none titleText`}>
           {props.history.price}грн
         </div>
       </div>

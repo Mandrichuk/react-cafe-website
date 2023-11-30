@@ -2,6 +2,11 @@
   width: var(--mutual-width);
 }
 
+.labelTitle {
+  font-size: 1.6rem;
+}
+
+
 .titleText {
   font-size: var(--title-font-size);
 }
@@ -12,4 +17,36 @@
 
 .articleText {
   font-size: var(--article-font-size);
+}
+
+.dateContainer {
+  background-color: var(--custom-green);
+  color: white;
+  border-color: var(--custom-green);
+}
+
+.priceContainer {
+  background-color: var(--custom-green);
+  color: white;
+  border-color: var(--custom-green);
+}
+
+@media (min-width: 801px) { 
+  .labelTitle {
+    font-size: 1.8rem;
+  }
+
+  .iconsContainer {
+    height: 60.8px;
+  }
+}
+
+@media (min-width: 1050px) {
+  .labelTitle {
+    font-size: 2rem;
+  }
+
+  .iconsContainer {
+    height: 63.2px;
+  }
 }

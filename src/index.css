@@ -47,11 +47,13 @@ body {
 .input {
   display: flex;
   justify-content: center;
-  padding: 8px 12px;
-  border-radius: 5px;
+  padding: 12px 14px;
+  border-radius: 14px;
   font-size: var(--article-font-size);
-  border: 2px solid rgb(202, 202, 202);
+  background-color: rgb(251, 251, 244);;
+  border: 1.6px solid rgb(230, 225, 216);
   min-width: 120px;
+  box-shadow: 5px 5px 10px rgba(224, 216, 206, 0.6);
 }
 
 .btn {

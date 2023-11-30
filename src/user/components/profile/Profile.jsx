@@ -45,7 +45,10 @@ export default function CreateProfile(props) {
     <>
       <Header />
       <main className={`${styles.mainContainer} text-black w-full`}> 
-        <div className={`${styles.allInfoContainer} mt-[50px] max-w-[1100px] flex flex-col items-center`}>
+        <div className={`${styles.OrdersTextContainer} w-full flex flex-row justify-center items-center titleText mt-[40px]`}>
+          Ваш профіль:
+        </div>
+        <div className={`${styles.allInfoContainer} mt-[20px] max-w-[1100px] flex flex-col items-center`}>
 
           { editMode ? 
 

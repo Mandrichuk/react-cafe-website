@@ -8,6 +8,7 @@ import Footer from "../shared/Footer.jsx";
 import { IoLocationSharp } from "react-icons/io5";
 import { BsInstagram } from "react-icons/bs";
 
+import bgVideo from "../../../assets/cafe_video.mp4";
 
 export default function CreateCafe() {
   const scrollImagesRef = useRef(null);
@@ -31,16 +32,20 @@ export default function CreateCafe() {
       <main>
 
         <div className={`${styles.coverContainer}`}>
-          <div className={`${styles.introductionContainer}`}>
-            <div className={`${styles.welcomeContainer}`}>Ласкаво просимо</div>
-            <div className={`${styles.nameContainer}`}>Drink&Food</div>
+          <video src={bgVideo} autoPlay loop muted className="h-full w-full object-cover opacity-[0.3]" />
+          <div className={`${styles.absoluteIntroduction} absolute inset-0`}>
+            <div className={`${styles.introductionContainer}`}>
+              <div className={`${styles.welcomeContainer}`}>Ласкаво просимо</div>
+              <div className={`${styles.nameContainer}`}>Drink&Food</div>
+              <Link className={`${styles.buttonToMenu} btn`}>До меню</Link>
+            </div>
           </div>
         </div>
 
 
         <section className={`${styles.InfoSheet}`}>
           <div className={`${styles.animatedLine} animatedLine`}></div>
-          <p className={`${styles.titleText} text-black`}>Актуальні новинки</p>
+          <p className={`${styles.titleText} text-black`}>Актуальні новини</p>
           <div className={`${styles.gridInfo}`}>
 
           {
@@ -115,7 +120,7 @@ export default function CreateCafe() {
               <div className={`${styles.articleText} ${styles.alcoholArticle}`}>
                 Наш асортимент алкогольних напоїв - це вибір гурмана, де кожен келих - це справжній витвір мистецтва.
               </div>
-              <Link to="/menu" className={`${styles.bgWhite} btn mt-6 max-w-[220px] md:max-w-[250px]`}>Переглянути меню</Link>
+              <Link to="/menu" className={`${styles.bgWhite} font-bold btn mt-6 max-w-[220px] md:max-w-[250px]`}>Переглянути меню</Link>
             </div>
 
             <div className={`${styles.beerImageContainer}`}>

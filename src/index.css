@@ -50,13 +50,14 @@ body {
   padding: 12px 14px;
   border-radius: 14px;
   font-size: var(--article-font-size);
-  background-color: rgb(251, 251, 244);;
+  background-color: rgb(251, 251, 244);
   border: 1.6px solid rgb(230, 225, 216);
   min-width: 120px;
   box-shadow: 5px 5px 10px rgba(224, 216, 206, 0.6);
 }
 
 .btn {
+  position: relative;
   display: flex;
   justify-content: center;
   background-color: var(--custom-green);
@@ -66,6 +67,13 @@ body {
   font-size: var(--article-font-size);
   cursor: pointer;
   min-width: 100px;
+  overflow: hidden;
+  transition: transform 300ms;
+}
+
+.btn:hover {
+  /* opacity: 0.3; */
+  transform: scale(1.01);
 }
 
 .animatedLine {

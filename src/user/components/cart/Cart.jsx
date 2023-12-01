@@ -13,6 +13,20 @@ import { SiInstacart } from "react-icons/si";
 
 export default function CreateCart(props) {
   const totalPrice = getTotalPrice(props.cart);
+  const [commentInput, setCommentInput] = useState("");
+  const MaxSymbols = 100;
+
+  function handleInputChange(e) {
+    let inputValue = "";
+
+    if (e.target.value !== " ") inputValue = e.target.value;
+
+    if (inputValue.length <= MaxSymbols || inputValue === "Ваше ім'я") {
+      setCommentInput(inputValue);
+    }
+  }
+
+
 
   return (
     <>
@@ -30,14 +44,21 @@ export default function CreateCart(props) {
     <main className={`w-full`}>
       <div className={`${styles.mainContainer} text-black`}>
       
-      <div className={` ${styles.allMeals} w-[100%] flex flex-col items-center justify-center mt-[50px] max-w-[800px] min-w-[450px]`}>
+      <div className={` ${styles.allMeals} w-full flex flex-col items-center justify-center mt-[50px] max-w-[800px] min-w-[450px]`}>
         {
           props.cart.map(item => (<Meal id={item.id} amount={item.amount} handleAmountChange={props.handleAmountChange} />))
         }
       </div>
-      <div className={`${styles.orderContainer} flex flex-col text-[1.4rem] mt-[100px]`}>
-        <label htmlFor="orderComment" className={`${styles} text-[1.2rem]`}>Коментар до замовлення</label>
-        <input name="orderComment" className={`input mb-[20px]`} placeholder="Подвійна порція м'яса.."/>
+      <div className={`${styles.orderContainer} flex-1 max-w-[600px] flex flex-col text-[1.4rem] mt-[50px]`}>
+
+        <div className={`${styles.orderComment} w-full flex flex-row justify-between`}>
+          <label htmlFor="orderComment" className={`${styles} text-[1.2rem]`}>Коментар до замовлення</label>
+          <div className={`text-[1rem] mr-3 text-gray-500`}>
+            {commentInput.length}/{MaxSymbols}
+          </div>
+        
+        </div>
+        <input value={commentInput} onChange={handleInputChange}  name="orderComment" className={`input mb-[20px]`} placeholder="Подвійна порція м'яса.."/>
         <div className={`${styles.totalCost} border-b-[1px] border-black black p-[10px] mb-[80px]`}>
           Загальна сума замовлення: {totalPrice}грн
         </div>

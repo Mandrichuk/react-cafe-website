@@ -36,7 +36,7 @@ main {
 }
 
 .coverContainer {
-  height: 300px;
+  height: 350px;
   width: 100%;
 
 
@@ -75,7 +75,6 @@ main {
 .infoContainer,
 .infoContainer > img {
   position: relative;
-  cursor: pointer;
   border-radius: 4px;
 }
 
@@ -125,6 +124,7 @@ main {
   max-width: 200px;
   background-color: var(--custom-orange);
   color: black;
+  margin-top: 20px;
 }
 
 .mapResponsive > iframe {
@@ -383,10 +383,6 @@ main {
     --icon-size: 1.7rem;
   }
 
-  .buttonToMenu {
-    margin-top: 20px;
-  }
-
   .sectionDetails {
     margin-bottom: 20px;
   }
@@ -546,13 +542,6 @@ main {
   .coverContainer {
     height: 400px;
   }
-
-  .buttonToMenu {
-    margin-top: 20px;
-  }
-
-
-
 }
 
 @media (min-width: 1260px) { 

@@ -8,14 +8,13 @@ import History from "./materials/History.jsx"
 import { MdEdit } from "react-icons/md";
 import { MdOutlineDone } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
+import { Link } from "react-router-dom";
 
 export default function CreateProfile(props) {
 
   const [editMode, setEditMode] = useState(false);
   const [nameInput, setNameInput] = useState("Ваше ім'я");
 
-
-  console.log(props.history.length === 0)
 
   function handleNameChange() {
     setEditMode(nameChange => !nameChange);
@@ -85,8 +84,15 @@ export default function CreateProfile(props) {
 
 
           {props.history.length === 0 ? 
-             <div className={`${styles.bgImgContainer} mt-[50px] mb-[100px]`}> 
-              <img src="/images/background/empty-cart.png"/>
+             <div className={`${styles.bgImgContainer} mb-[0] flex flex-col items-center justify-center`}> 
+              <div className="mb-[60px]  max-w-[500px] articleText">
+                Упсс.. Ви поки що нічого <span className="font-bold">не замовляли</span>, для того, щоб бачити свої замовлення ви повинні бути зареєстровані та замовляти з сайту
+              </div>
+              <img src="/images/background/fishbone.png"/>
+              <div className="w-full flex flex-row items-center justify-center mt-[50px]"> 
+                <Link to="/menu" className="btn flex-1 mr-[5px]">До меню</Link>
+                <Link to="/cart" className="btn flex-1 ml-[5px]">До кошику</Link>
+              </div>
              </div> :
           
              props.history.map(historyItem => <History history={historyItem} />) 

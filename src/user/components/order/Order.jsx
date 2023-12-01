@@ -13,7 +13,6 @@ export default function CreateOrder(props) {
     setPhoneNumber(event.target.value);
   }
 
-
   return (
     <>
       <Header />
@@ -28,6 +27,7 @@ export default function CreateOrder(props) {
         <div className={`pretitleText mb-5`}>
           Підтвердіть ваше замовлення
         </div>
+
         <div className={`${styles} min-w-[400px] flex items-center justify-center flex-col`}>
         </div>
 

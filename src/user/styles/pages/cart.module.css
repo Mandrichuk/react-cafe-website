@@ -4,18 +4,20 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
 .mealContainer {
   width: var(--mutual-width);
 }
 
-
-
+.orderContainer {
+  width: var(--mutual-width);
+}
 
 .mainEmptyContainer {
   margin-top: 70px;
-  height: 89vh;
+  height: 100vh;
 }
 
 .emptyCartContainer {

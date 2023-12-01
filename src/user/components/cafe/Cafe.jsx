@@ -37,7 +37,7 @@ export default function CreateCafe() {
             <div className={`${styles.introductionContainer}`}>
               <div className={`${styles.welcomeContainer}`}>Ласкаво просимо</div>
               <div className={`${styles.nameContainer}`}>Drink&Food</div>
-              <Link className={`${styles.buttonToMenu} btn`}>До меню</Link>
+              <Link to="/menu" className={`${styles.buttonToMenu} btn`}>До меню</Link>
             </div>
           </div>
         </div>

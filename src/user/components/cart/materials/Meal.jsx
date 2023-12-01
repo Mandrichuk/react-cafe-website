@@ -33,13 +33,13 @@ export default function CreateMeal(props) {
       {isWideScreen ? (
         <div className={`flex flex-row items-center`}>
           <div className={`${styles.amoutContainer} flex flex-row items-center justify-between`}>
-            <button onClick={() => props.handleAmountChange(props.id, props.amount, false)} className={`${styles.amountBtn} flex items-center justify-center bg-gray-300 h-[48px] w-[50px]`}>
+            <button onClick={() => props.handleAmountChange(props.id, props.amount, false)} className={`${styles.amountBtn} flex items-center justify-center bg-gray-300 h-[48px] w-[50px] rounded-md`}>
               <AiOutlineMinus />
             </button>
-            <div className={`${styles.amoutText} flex items-center justify-center h-[48px] w-[50px] `}> 
+            <div className={` flex items-center justify-center h-[48px] w-[50px] pretitleText `}> 
               {props.amount}
             </div>
-            <button onClick={() => props.handleAmountChange(props.id, props.amount, true)} className={`flex items-center justify-center text-[1.7rem] bg-gray-300 h-[48px] w-[50px]`}>
+            <button onClick={() => props.handleAmountChange(props.id, props.amount, true)} className={`flex items-center justify-center text-[1.7rem] bg-gray-300 h-[48px] w-[50px] rounded-md`}>
               <AiOutlinePlus />
             </button>
           </div>

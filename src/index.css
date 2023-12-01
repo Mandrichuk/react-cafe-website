@@ -72,8 +72,7 @@ body {
 }
 
 .btn:hover {
-  /* opacity: 0.3; */
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
 
 .animatedLine {

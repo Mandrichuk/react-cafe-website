@@ -4,7 +4,6 @@ import styles from "../../styles/pages/cart.module.css";
 
 import Header from "../shared/header/Header";
 
-
 import Meal from "./materials/Meal.jsx";
 import getTotalPrice from "../shared/getTotalPrice.js";
 import menuData from "../../../data/menu/menuData.js";

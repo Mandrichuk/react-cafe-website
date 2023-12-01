@@ -3,6 +3,7 @@ import styles from "../../styles/pages/profile.module.css";
 
 import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";
+import Contact from "../shared/contact/Contact";
 
 import History from "./materials/History.jsx"
 import { MdEdit } from "react-icons/md";
@@ -43,6 +44,7 @@ export default function CreateProfile(props) {
   return (
     <>
       <Header />
+      <Contact />
       <main className={`${styles.mainContainer} text-black w-full`}> 
         <div className={`${styles.OrdersTextContainer} w-full flex flex-row justify-center items-center titleText mt-[40px]`}>
           Ваш профіль:

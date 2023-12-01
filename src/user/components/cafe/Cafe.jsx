@@ -4,6 +4,7 @@ import styles from "../../styles/pages/cafe.module.css";
 
 import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";
+import Contact from "../shared/contact/Contact";
 
 import { IoLocationSharp } from "react-icons/io5";
 import { BsInstagram } from "react-icons/bs";
@@ -47,7 +48,6 @@ export default function CreateCafe() {
           <div className={`${styles.animatedLine} animatedLine`}></div>
           <p className={`${styles.titleText} text-black`}>Актуальні новини</p>
           <div className={`${styles.gridInfo}`}>
-
           {
           newsImages.map(newsImage => (
             <div className={`${styles.infoContainer}`}>
@@ -55,7 +55,6 @@ export default function CreateCafe() {
             </div>
           ))
           }
-
           </div>
         </section>
 
@@ -67,6 +66,7 @@ export default function CreateCafe() {
             <div className={`${styles.cityContainer} ${styles.articleText}`}><IoLocationSharp className={`${styles.geoIcon}`}/> Запоріжжя</div>
             <div className={`${styles.locationTextContainer} ${styles.articleText}`}>Пр. Соборний 4-б</div>
           </div>
+
 
           <div className={`${styles.mapResponsive}`}>
             <iframe 
@@ -83,7 +83,6 @@ export default function CreateCafe() {
 
 
         <section className={`${styles.instagramSection}`}>
-
           <div className={`${styles.instagramGallery} text-black`}>
           <div className={`${styles.sectionDetails}`}>
             <div className={`${styles.animatedLine} animatedLine`}></div>
@@ -103,17 +102,12 @@ export default function CreateCafe() {
                 ))}
               </div>
             </div>
-
           </div>
-
         </section>
 
 
-
-
-        <section className={`${styles.drinkAndBeerSection} text-white`}>
+         <section className={`${styles.drinkAndBeerSection} text-white`}>
           <section className={`${styles.beerMainSection}`}>
-
             <div className={`${styles.sectionDetails}`}>
               <div className={`${styles.titleText} ${styles.beerTitle}`}>Drink&Beer</div>
               <div className={`${styles.preTitleText}`}>Файні алкогольні напої</div>
@@ -126,14 +120,10 @@ export default function CreateCafe() {
             <div className={`${styles.beerImageContainer}`}>
               <img className={`${styles.beerImage}`} src="images/decorations/beer-mug.png" />
             </div>
-
           </section>
         </section>        
 
-
       </main>
-
-
       <Footer />
     </>
   );

@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --text-width: 320px;
-  --mutual-width: 94%;
-}
-
-
 main {
   font-size: 1rem;
   color: white;

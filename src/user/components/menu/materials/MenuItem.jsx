@@ -23,7 +23,7 @@ const iconMap = {
   LiaHotdogSolid,
 };
 
-
+ 
 
 export default function CreateMenuItem(props) {
   const IconComponent = iconMap[props.icon];

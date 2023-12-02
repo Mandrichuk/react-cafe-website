@@ -15,23 +15,14 @@
   box-shadow: none;
 }
 
-.submitBtn {
+.sendBtn {
   color: black;
   background-color: #ffbc0d;
   font-weight: bold;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  padding: 12px 14px;
-  border-radius: 5px;
-  font-size: var(--article-font-size);
-  cursor: pointer;
-  min-width: 100px;
-  overflow: hidden;
   transition: transform 300ms;
 }
 
-.submitBtn:hover {
+.sendBtn:hover {
   transform: scale(1.01);
 }
 
@@ -65,6 +56,7 @@
 
   .details {
     width: 500px;
+    margin-right: 20px;
   }
 }
 

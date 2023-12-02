@@ -60,6 +60,7 @@ export default function CreateApp() {
     const formattedDate = `${today.getDate() < 10 ? '0' + today.getDate() : today.getDate()}/${today.getMonth()+1 < 10 ? '0' + today.getMonth()+1 : today.getMonth()+1}/${today.getFullYear()}`;
 
     const newHistoryEntry = {
+      id: Math.floor(1000 + Math.random() * 9000),
       date: formattedDate,
       price: getTotalPrice(cart),
       cart: cart

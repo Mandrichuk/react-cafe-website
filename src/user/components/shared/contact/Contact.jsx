@@ -9,30 +9,34 @@ function Contact() {
   const [emailInput, setEmailInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  function handleEmailChange(e) {
-    if (emailInput.length < 20 && e.target.value !== "e") setEmailInput(e.target.value);
+  function handleEmailChange(e) {setEmailInput(e.target.value);}
+
+  function isEmailValid() {
+    return emailInput.length > 10 && emailInput.includes("@") ? true : false;
   }
 
   const sendEmail = (e) => {
-    e.preventDefault();
-    setLoading(true);
+    if (isEmailValid) {
+      e.preventDefault();
+      setLoading(true);
 
-    emailjs.sendForm('service_tt4uwfq', 'template_a7f021c', formRef.current, 'O_emiMG-zC22X_eF2')
-      .then(() => {
-        setLoading(false);
-        setEmailInput("");
-        alert("Дякуем, що підписалися на ваші поновлення!");
-      })
-      .catch((error) => {
-        setLoading(false);
-        console.log(error);
-        alert("Упс.. Щось пішло не так, спробуйте знову");
-      });
+      emailjs.sendForm('service_tt4uwfq', 'template_a7f021c', formRef.current, 'O_emiMG-zC22X_eF2')
+        .then(() => {
+          setLoading(false);
+          setEmailInput("");
+          alert(`Тепер ви будете отримувати актуальні новини прямо на свою електронну скриньку "${emailInput}"\n\n Дякуємо, Drink&Food!`);
+        })
+        .catch((error) => {
+          setLoading(false);
+          console.log(error);
+          alert("Упс.. Щось пішло не так, спробуйте знову");
+        });
+    }
   };
 
 
   return (
-    <div className={`${styles.main} flex items-center justify-center`}>
+    <div className={`${styles.main} flex items-center justify-center mt-[100px]`}>
       <div className={`${styles.coverContainer}`}>
         <div className={`${styles.details} text-white`}>
           <div className='flex flex-row items-center titleText'>
@@ -43,7 +47,7 @@ function Contact() {
         </div>
         <form ref={formRef} onSubmit={sendEmail} className={`${styles.inputsContainer} flex flex-col flex-1 w-full`}>
           <input type="email" name="email" value={emailInput} onChange={handleEmailChange} placeholder='Введіть вашу пошту...' className={`${styles.inputEmail} input max-h-[50px] text-black`} />
-          <button type='submit' className={`${styles.submitBtn} mt-[15px] pretitleText flex flex-row items-center justify-center`}>
+          <button type='submit' className={`${styles.sendBtn} btn  mt-[15px] pretitleText flex flex-row items-center justify-center`}>
             {loading ? "Надсилається.." : "Відправити"}
           </button>
         </form>

@@ -8,7 +8,6 @@ import Meal from "./materials/Meal.jsx";
 import getTotalPrice from "../shared/getTotalPrice.js";
 import menuData from "../../../data/menu/menuData.js";
 
-import { SiInstacart } from "react-icons/si";
 
 export default function CreateCart(props) {
   const totalPrice = getTotalPrice(props.cart);

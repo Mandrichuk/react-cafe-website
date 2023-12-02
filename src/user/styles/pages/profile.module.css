@@ -2,10 +2,17 @@
   width: var(--mutual-width);
 }
 
-.labelTitle {
-  font-size: 1.6rem;
+.headerSection {
+  background: linear-gradient(to bottom, var(--custom-green), #01110b);
 }
 
+.labelTitle {
+  font-size: 1.3rem;
+}
+
+.ordersContainer {
+  width: var(--mutual-width);
+}
 
 .titleText {
   font-size: var(--title-font-size);
@@ -33,20 +40,114 @@
 
 @media (min-width: 801px) { 
   .labelTitle {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
   }
 
   .iconsContainer {
     height: 60.8px;
   }
+
+  .headerSection {
+    height: 250px;
+  }
 }
 
 @media (min-width: 1050px) {
   .labelTitle {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
   .iconsContainer {
     height: 63.2px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.labelTitle:hover {
+  transform: scale(1.01);
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: black;
+  max-width: 1100px;
+}
+
+.labelTitle {
+  font-size: 1.8rem;
+  transition: transform 300ms;
+}
+
+.accordion li {
+  background-color: rgb(251, 251, 244);
+  list-style: none;
+  width: 100%;
+  margin: 7px;
+  margin-left: 0;
+  padding: 10px;
+  border: 1.6px solid rgb(230, 225, 216);
+  border-radius: 14px;
+  box-shadow: 5px 5px 10px rgba(224, 216, 206, 0.6);
+}
+
+.accordion li label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.accordion .content {
+  color: #555;
+  padding: 0 10px;
+  line-height: 26px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.8s, padding 0.8s;
+}
+
+.accordion input[type="radio"]:checked + label + .content {
+  max-height: 100px;
+  padding: 10px;
+}
+
+@media (min-width: 801px) { 
+  .labelTitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .accordion .content {
+    padding: 0;
+  }
+
+  .accordion input[type="radio"]:checked + label + .content {
+    max-height: 1000px;
+    padding: 0px;
   }
 }

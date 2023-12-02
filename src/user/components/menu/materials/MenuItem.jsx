@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import styles from "../../../styles/pages/menu.module.css";
+import { Link } from "react-router-dom";
 
 import { MdOutlineExposurePlus1 } from "react-icons/md";
 import { MdOutlineDone } from "react-icons/md";
@@ -56,7 +57,7 @@ function CreateProducts(products, cart, handleCartChange) {
   
     setTimeout(() => {
       setIsAdded(false);
-    }, 1200);
+    }, 2500);
   }
 
 
@@ -81,10 +82,9 @@ function CreateProducts(products, cart, handleCartChange) {
         </div>
         {
         isAdded && <div className="bottom-[50px] fixed left-0 right-0 z-30 flex items-center justify-center">
-          <div className="flex flex-row items-center justify-center text-[1.4rem] max-w-[400px] bg-custom-green text-white p-[10px] pb-[20px] pt-[20px]">
-            <MdOutlineDone className={`${styles.doneIcon} mr-[10px] text-[2rem]`}/>Додано до кошику
-
-          </div>
+          <Link to="/cart" className="flex flex-row items-center justify-center text-[1.4rem] max-w-[400px] bg-custom-green text-white p-[20px] rounded-md">
+            Додано до&nbsp;<span className="font-bold">кошику</span>
+          </Link>
         </div>
         }
       </div>

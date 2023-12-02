@@ -50,7 +50,7 @@ body, * {
 }
 
 .headerTaglineContainer {
-  height: 240px;
+  height: 250px;
   background: linear-gradient(to bottom, var(--custom-green), #01110b);
   display: flex;
   flex-direction: column;
@@ -218,6 +218,7 @@ input[type="radio"] {
   top: 100px;
 }
 
+
 @media (min-width: 801px) { 
   .labelTitle {
     font-size: 2rem;
@@ -286,7 +287,12 @@ input[type="radio"] {
   }
 }
 
-
+@media (max-width: 800px) {
+  .headerTaglineContainer {
+    height: 320px;
+  }
+}
+ 
 @media (max-width: 450px) {
   .mealContainer {
     padding: 5px 0 5px 0;

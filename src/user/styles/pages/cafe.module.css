@@ -497,7 +497,7 @@ main {
   }
 
   .drinkAndBeerSection {
-    height: 700px;
+    height: 740px;
   }
 
   .drinkAndBeerSection .sectionDetails {
@@ -505,11 +505,10 @@ main {
   }
 
   .beerImageContainer {
-    width: 75%;
     max-width: 360px;
     min-width: 230px;
     object-fit: cover;
-    height: 300px;
+    height: 340px;
   }
 
   .coverContainer {

@@ -22,7 +22,9 @@ export default function CreateMenu(props) {
             <div className={`${styles.menuText}`}>Меню</div>
             <ImSpoonKnife className="text-[2rem] mb-[14px] ml-[10px]" />
             </div>
-            <div className={`${styles.menuTaglineText}`}>Обертайте сторінку та обирайте, що смачного пригостити разом із  нами!</div>
+            <div className={`${styles.menuTaglineText}`}>
+              Починайте свій день з наших вишуканих кавових напоїв. Підкріпіться нашими неповторними бургерами. Завершіть свій візит коктейлем. 
+            </div>
           </div>
         </div>
       </header>

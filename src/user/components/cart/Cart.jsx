@@ -26,7 +26,6 @@ export default function CreateCart(props) {
   }
 
 
-
   return (
     <>
       <Header />
@@ -58,16 +57,16 @@ export default function CreateCart(props) {
         
         </div>
         <input value={commentInput} onChange={handleInputChange}  name="orderComment" className={`input mb-[20px]`} placeholder="Подвійна порція м'яса.."/>
-        <div className={`${styles.totalCost} border-b-[1px] border-black black p-[10px] mb-[80px]`}>
+        <div className={`${styles.totalCost} border-b-[1px] border-black black p-[10px] mb-[50px]`}>
           Загальна сума замовлення: {totalPrice}грн
         </div>
 
         {props.isLoggined ? 
-        <Link onClick={props.RerenderHeader} to="/success" className="btn flex items-center justify-center">
+        <Link onClick={props.RerenderHeader} to="/success" className="mb-[100px] btn flex items-center justify-center">
             Оформити замовлення
         </Link> :
 
-        <Link onClick={props.RerenderHeader} to="/order" className="btn flex items-center justify-center">
+        <Link onClick={props.RerenderHeader} to="/order" className="mb-[100px] btn flex items-center justify-center">
           Оформити замовлення
       </Link>} 
 

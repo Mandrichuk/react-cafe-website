@@ -2,6 +2,25 @@
   width: var(--mutual-width);
 }
 
+.buttonChoice {
+  padding: 0;
+}
+
+.inputContainer {
+  background-color: var(--bg-color);
+}
+
+.infoContainer {
+  padding: 22px;
+  border-radius: 14px;
+}
+
+.changeInfoContainer {
+  padding: 18px;
+  border-radius: 14px;
+
+}
+
 .headerSection {
   background: linear-gradient(to bottom, var(--custom-green), #01110b);
 }

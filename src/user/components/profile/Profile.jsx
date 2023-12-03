@@ -19,7 +19,7 @@ import { FaUser } from "react-icons/fa6";
 export default function CreateProfile(props) {
 
   const [editMode, setEditMode] = useState(false);
-  const [nameInput, setNameInput] = useState("Ваше ім'я");
+  const [nameInput, setNameInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
 
 
@@ -32,7 +32,7 @@ export default function CreateProfile(props) {
 
     if (e.target.value !== " ") inputValue = e.target.value;
 
-    if (inputValue.length < 12 || inputValue === "Ваше ім'я") {
+    if (inputValue.length < 16 || inputValue === "") {
       setNameInput(inputValue);
     }
   }
@@ -42,7 +42,6 @@ export default function CreateProfile(props) {
   }
 
   function toInitialValue() {
-    setNameInput("Ваше ім'я");
     setEditMode(false);
   }
 
@@ -73,22 +72,21 @@ export default function CreateProfile(props) {
 
             { editMode ? 
 
-              <div className={`w-full h-full flex flex-row justify-between`}> 
+              <div className={`${styles.changeInfoContainer}   input w-full h-full flex flex-row justify-between items-center mb-[10px]`}> 
                 <input
                   placeholder="Введіть нове ім'я..." 
-                  className={`${styles.infoContainer} rounded-r-none flex flex-row items-center h-full  w-full input mb-[10px] ${styles.labelTitle}`} 
+                  className={`rounded-r-none flex flex-row items-center h-full w-full ${styles.labelTitle} mr-[10px] py-[10px] ${styles.inputContainer}`} 
                     type="text" 
                     value={nameInput} 
                     onChange={handleInputChange} 
                   /> 
-                <div className={`${styles.iconsContainer}  flex flex-row items-center justify-between w-[30px] h-[56px] text-[2.4rem] input rounded-l-none`}> 
-                  <MdOutlineDone onClick={isNameValid}  className={`${styles.icon} text-custom-green cursor-pointer`}/>
-                  <RxCross1 onClick={toInitialValue}  className={`${styles.icon} text-red-800 cursor-pointer`}/>
+                <div className={`flex flex-row items-center justify-between rounded-l-none`}> 
+                  <MdOutlineDone onClick={isNameValid}  className={`${styles.icon} text-custom-green cursor-pointer text-[2.8rem]`}/>
+                  <RxCross1 onClick={toInitialValue}  className={`${styles.icon} text-red-800 cursor-pointer text-[2.5rem]`}/>
                 </div>
               </div> :
-
               <div className={`${styles.infoContainer} flex flex-row items-center h-full w-full input mb-[10px] ${styles.labelTitle}`}>
-                <div className=" flex-1 ml-[3%]">{nameInput}</div>
+                <div className=" flex-1 ml-[3%]">Ваше ім'я</div>
                 <MdEdit onClick={handleNameChange} className={`${styles.titleText} mr-[3%] cursor-pointer text-[#05442e] `} />
               </div>
             }

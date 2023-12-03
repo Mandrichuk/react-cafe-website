@@ -102,7 +102,7 @@ export default function CreateProfile(props) {
         </div>
         </div>
 
-          <div className={`${styles.ordersContainer} mt-[100px]  w-full `}>
+          <div className={`${styles.ordersContainer} mt-[100px] w-full flex flex-col items-center justify-center `}>
 
 
             {props.history.length === 0 ? 
@@ -120,12 +120,13 @@ export default function CreateProfile(props) {
                   <Link to="/cart" className="btn flex-1 ml-[5px] max-w-[300px]">До кошику</Link>
                 </div>
               </div> :
-              <div className=" ">
+              <div className="w-full flex flex-col justify-center max-w-[1100px]">
                 <div className="animatedLine"></div>
                 <div className={`${styles.OrdersTextContainer} mb-[10px]  w-full flex flex-row titleText`}>
                   Ваші замовлення:
                 </div>
-                <ul className={`${styles.accordion}`}>
+                
+                <ul className={`${styles.accordion} w-full`}>
                   {props.history.map(historyItem => <History history={historyItem} />)} 
                 </ul>
               </div>

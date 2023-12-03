@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { MdOutlineExposurePlus1 } from "react-icons/md";
 import { MdOutlineDone } from "react-icons/md";
 
+import { MdKeyboardArrowUp } from "react-icons/md";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { BiSolidCoffeeBean } from "react-icons/bi";
 import { PiCoffeeFill, PiHamburgerFill } from "react-icons/pi";
@@ -23,23 +24,33 @@ const iconMap = {
   LiaHotdogSolid,
 };
 
- 
 
 export default function CreateMenuItem(props) {
   const IconComponent = iconMap[props.icon];
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
 
   return ( 
     <li>
-      <input type="radio" name="accordion" id={props.id}/>
-      <label htmlFor={props.id} className={`flex items-center justify-between`}>
-        <div className={`${styles.labelTitle} flex items-center justify-between w-full `}>
-          <MdOutlineKeyboardArrowDown className={`${styles.downArrow} text-black`}/>
-          {props.name} 
-          <IconComponent className={`ml-[10px] text-custom-green`}/> 
-        </div>
-      </label>
-
-      <div className={`${styles.content}`}>
+      <div className={`${styles.labelTitle} flex items-center justify-between p-[10px]  font-bold`} onClick={toggleAccordion}>
+        {isOpen ?
+          <MdKeyboardArrowUp
+            className={`${styles.downArrow} text-black`}
+          /> :
+          <MdOutlineKeyboardArrowDown
+            className={`${styles.downArrow} text-black`}
+          /> 
+        }
+        {props.name} 
+        <IconComponent className={`ml-[10px] text-custom-green`} /> 
+      </div>
+      <div
+        className={`${styles.content}`}
+        style={{ maxHeight: isOpen ? "1500px" : "0", padding: isOpen ? "6px" : "0" }}
+      >
         {CreateProducts(props.products, props.cart, props.handleCartChange)}
       </div>
     </li>
@@ -83,7 +94,7 @@ function CreateProducts(products, cart, handleCartChange) {
         {
         isAdded && <div className="bottom-[50px] fixed left-0 right-0 z-30 flex items-center justify-center">
           <Link to="/cart" className="flex flex-row items-center justify-center text-[1.4rem] max-w-[400px] bg-custom-green text-white p-[20px] rounded-md">
-            Додано до&nbsp;<span className="font-bold">кошику</span>
+            Додано до&nbsp;<span className="font-bold underline">кошику</span>
           </Link>
         </div>
         }

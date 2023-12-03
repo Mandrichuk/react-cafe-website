@@ -62,22 +62,6 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .labelTitle:hover {
   transform: scale(1.01);
 }
@@ -121,18 +105,17 @@ input[type="radio"] {
   display: none;
 }
 
+.liContainer {
+  padding: 50px;
+}
+
 .accordion .content {
   color: #555;
   padding: 0 10px;
   line-height: 26px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.8s, padding 0.8s;
-}
-
-.accordion input[type="radio"]:checked + label + .content {
-  max-height: 100px;
-  padding: 10px;
+  transition: max-height 0.5s, padding 0.5s;
 }
 
 @media (min-width: 801px) { 
@@ -146,8 +129,4 @@ input[type="radio"] {
     padding: 0;
   }
 
-  .accordion input[type="radio"]:checked + label + .content {
-    max-height: 1000px;
-    padding: 0px;
-  }
 }

@@ -5,32 +5,34 @@ import getMealName from "../../shared/getMeal.js";
 import getTotalPrice from "../../shared/getTotalPrice.js";
 
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowUp } from "react-icons/md";
 
 
 export default function History(props) {
-  console.log(props.history.price)
-
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleAccordion = () => {
     setIsOpen(!isOpen);
   };
 
-  return ( 
-    <li>
-      <input type="radio" name="accordion" id={`radio-${props.history.id}`} checked={isOpen} onChange={toggleAccordion}/>
-      <label htmlFor={`radio-${props.history.id}`} className={`flex items-center justify-between ${styles.labelTitle}`}>
-        <div className={`${styles.labelTitle} flex items-center justify-between w-full `} onClick={toggleAccordion}>
-          <MdOutlineKeyboardArrowDown className={`${styles.downArrow} text-black`} />
-          <div>
-            {props.history.price}грн
-          </div>
-          <div>
-            {props.history.date} 
-          </div>
-        </div>
-      </label>
-      <div className={`${styles.content}`} style={{ maxHeight: isOpen ? '1500px' : '0', padding: isOpen ? '10px' : '0' }}>
+  return (
+    <li className={`${styles.liContainer}`}>
+      <div className={`${styles.labelTitle} flex items-center justify-between p-[10px] font-bold`} onClick={toggleAccordion}>
+        { isOpen ?
+          <MdKeyboardArrowUp
+            className={`${styles.downArrow} text-black`}
+          /> :
+          <MdOutlineKeyboardArrowDown
+            className={`${styles.downArrow} text-black`}
+          /> 
+        }
+        <div>{props.history.date}</div>
+        <div>{props.history.price}грн</div>
+      </div>
+      <div
+        className={`${styles.content}`}
+        style={{ maxHeight: isOpen ? "1500px" : "0", padding: isOpen ? "6px" : "0" }}
+      >
         {HistoryItem(props.history.cart)}
       </div>
     </li>
@@ -45,9 +47,16 @@ function HistoryItem(products) {
   }
   
   const productsHTML = products.map(item => {
+    const mealName = getMealName(item.id)["name"];
+
     return (
       <div key={item.id} className={`${styles.mealContainer} text-black  flex flex-row items-center justify-between pb-[20px] text-[1.3rem] px-[10px]`}>
-        hello
+        <div className={`${styles.mealNameContainer}`}>
+          {mealName}
+        </div>
+        <div className={`${styles.amountContainer}`}>
+          {item.amount}
+        </div>
       </div>
     );
   });

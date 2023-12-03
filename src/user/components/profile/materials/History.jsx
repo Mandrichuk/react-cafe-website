@@ -17,7 +17,7 @@ export default function History(props) {
 
   return (
     <li className={`${styles.liContainer}`}>
-      <div className={`${styles.labelTitle} flex items-center justify-between p-[10px] font-bold`} onClick={toggleAccordion}>
+      <div className={`flex items-center justify-between p-[10px] font-bold`} onClick={toggleAccordion}>
         { isOpen ?
           <MdKeyboardArrowUp
             className={`${styles.downArrow} text-black`}
@@ -26,8 +26,8 @@ export default function History(props) {
             className={`${styles.downArrow} text-black`}
           /> 
         }
-        <div>{props.history.date}</div>
-        <div>{props.history.price}грн</div>
+        <div className={`${styles.labelTitle}`}> {props.history.date}</div>
+        <div className={`text-[1.2rem]`} >{props.history.price}грн</div>
       </div>
       <div
         className={`${styles.content}`}

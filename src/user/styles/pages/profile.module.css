@@ -7,7 +7,7 @@
 }
 
 .labelTitle {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .ordersContainer {
@@ -40,7 +40,7 @@
 
 @media (min-width: 801px) { 
   .labelTitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
 
   .iconsContainer {
@@ -54,7 +54,7 @@
 
 @media (min-width: 1050px) {
   .labelTitle {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .iconsContainer {
@@ -75,7 +75,7 @@
 }
 
 .labelTitle {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   transition: transform 300ms;
 }
 
@@ -120,7 +120,7 @@ input[type="radio"] {
 
 @media (min-width: 801px) { 
   .labelTitle {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 }
 

@@ -1,3 +1,16 @@
+.header {
+  color: white;
+}
+
+.headerTaglineContainer {
+  height: 250px;
+  background: linear-gradient(to bottom, var(--custom-green), #01110b);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
 .mainContainer {
   width: var(--mutual-width);
   display: flex;
@@ -6,7 +19,7 @@
   align-items: center;
 }
 
-.mealContainer {
+.allMeals {
   width: var(--mutual-width);
 }
 
@@ -14,9 +27,12 @@
   width: var(--mutual-width);
 }
 
+.amoutContainer {
+  width: var(--mutual-width);
+}
+
 .mainEmptyContainer {
   margin-top: 70px;
-  height: 100vh;
 }
 
 .emptyCartContainer {
@@ -31,6 +47,20 @@
   font-size: var(--title-font-size);
 }
 
+.menuText {
+  font-size: var(--title-font-size);
+  font-weight: bold;
+
+  margin-left: 5%;
+  margin-bottom: 15px; 
+}
+
+.menuTaglineText {
+  font-size: var(--pretitle-font-size);
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
 .link {
   color: var(--link-color);
   text-decoration: underline;
@@ -43,6 +73,13 @@
   margin-right: 2%;
 }
 
+@media (max-width: 800px) {
+  .headerTaglineContainer {
+    height: 300px;
+  }
+}
+ 
+
 @media (max-width: 500px) {
   .mainContainer {
     width: 96%;
@@ -50,5 +87,21 @@
 
   .mealNameContainer {
     width: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --text-width: 320px;
+    --mutual-width: 96%;
+    --title-font-size: 2.2rem;
+    --pretitle-font-size: 1.4rem;
+    --article-font-size: 1.3rem;
+    --section-margin: 100px;
+    --icon-size: 1.7rem;
+  }
+
+  .mealNameContainer {
+    min-width: 86px;
   }
 }

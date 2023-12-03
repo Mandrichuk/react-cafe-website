@@ -49,7 +49,7 @@ export default function CreateProfile(props) {
   return (
     <>
       <Header />
-      <div className={`${styles.headerSection} w-full flex flex-col items-center justify-center text-white h-[320px]`}>
+      <div className={`${styles.headerSection} w-full flex flex-col items-center justify-center text-white h-[300px]`}>
         <div className={`${styles.ordersContainer} w-full`}>
           <div className={`${styles.headerTitle} titleText flex flex-row items-center mb-[15px]`}>
             <div>Профіль</div>
@@ -64,7 +64,7 @@ export default function CreateProfile(props) {
 
       <main className={`${styles.mainContainer} text-black w-full flex flex-col items-center justify-center`}> 
 
-        <div className={`${styles.ordersContainer} w-full mt-[70px] flex flex-col items-center justify-center`}>
+        <div className={`${styles.ordersContainer} w-full mt-[100px] flex flex-col items-center justify-center`}>
           <div className={`max-w-[1100px] flex flex-col w-full`}>
             <div className="animatedLine"></div>
             <div className={`${styles.OrdersTextContainer} w-full flex flex-row mb-[10px]  titleText`}>

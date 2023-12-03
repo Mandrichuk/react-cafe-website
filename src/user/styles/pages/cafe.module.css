@@ -366,6 +366,7 @@ main {
   }
 }
 
+
 @media (max-width: 765px) { 
   :root {
     --text-width: 320px;

@@ -15,7 +15,6 @@ export default function CreateMenu(props) {
     <>
       <Header />
       <header className={`${styles.header} w-full`}>
-    
         <div className={`${styles.headerSection} w-full`}>
           <div className={`${styles.headerTaglineContainer} w-[100%] h-[150px]`}>
             <div className="flex flex-row items-center">

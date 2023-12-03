@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import styles from "../../styles/pages/cart.module.css";
 
 import Header from "../shared/header/Header";
-
 import Meal from "./materials/Meal.jsx";
+
 import getTotalPrice from "../shared/getTotalPrice.js";
 import menuData from "../../../data/menu/menuData.js";
 
+import { SiInstacart } from "react-icons/si";
 
 export default function CreateCart(props) {
   const totalPrice = getTotalPrice(props.cart);
@@ -27,7 +28,22 @@ export default function CreateCart(props) {
 
   return (
     <>
-      <Header />
+    <Header />
+      <header className={`${styles.header} w-full`}>
+      <div className={`${styles.headerSection} w-full`}>
+        <div className={`${styles.headerTaglineContainer} w-[100%] h-[150px]`}>
+          <div className="flex flex-row items-center">
+          <div className={`${styles.menuText}`}>Кошик</div>
+          <SiInstacart className="text-[2rem] mb-[14px] ml-[10px]" />
+          </div>
+          <div className={`${styles.menuTaglineText}`}>
+            Модифікуйте своє замовлення. Додайте, видаляйте, публійте коментар до вашого замовлення!
+          </div>
+        </div>
+      </div>
+      
+    </header>
+
     { props.cart.length === 0 ?
     <main className={`${styles.mainEmptyContainer}`}>
       <div className={`${styles.emptyCartContainer}`}>
@@ -41,7 +57,7 @@ export default function CreateCart(props) {
     <main className={`w-full`}>
       <div className={`${styles.mainContainer} text-black`}>
       
-      <div className={` ${styles.allMeals} w-full flex flex-col items-center justify-center mt-[50px] max-w-[800px] min-w-[450px]`}>
+      <div className={` ${styles.allMeals} flex flex-col items-center justify-center mt-[50px] max-w-[800px]`}>
         {
           props.cart.map(item => (<Meal id={item.id} amount={item.amount} handleAmountChange={props.handleAmountChange} />))
         }
@@ -61,11 +77,11 @@ export default function CreateCart(props) {
         </div>
 
         {props.isLoggined ? 
-        <Link onClick={props.RerenderHeader} to="/success" className="mb-[100px] btn flex items-center justify-center">
+        <Link onClick={props.RerenderHeader} to="/success" className="mb-[100px] font-bold btn flex items-center justify-center">
             Оформити замовлення
         </Link> :
 
-        <Link onClick={props.RerenderHeader} to="/order" className="mb-[100px] btn flex items-center justify-center">
+        <Link onClick={props.RerenderHeader} to="/order" className="mb-[100px] font-bold btn flex items-center justify-center">
           Оформити замовлення
       </Link>} 
 

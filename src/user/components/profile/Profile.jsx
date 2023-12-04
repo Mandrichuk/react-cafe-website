@@ -105,21 +105,20 @@ export default function CreateProfile(props) {
 
 
             {props.history.length === 0 ? 
-              <div className={`${styles.bgImgContainer} mb-[0] flex flex-col items-center justify-center`}> 
-                <div className="mb-[60px] max-w-[600px] articleText">
+              <div className={`${styles.bgImgContainer} mb-[0] flex flex-col items-center justify-center max-w-[1100px]`}> 
+                <div className="mb-[60px] articleText">
                   <div className="animatedLine"></div>
                   <div className={`${styles.OrdersTextContainer} mb-[10px]  w-full flex flex-row titleText`}>
                     Ваші замовлення:
                   </div>
                   Упсс.. Ви поки що нічого <span className="font-bold">не замовляли</span>, для того, щоб бачити свої замовлення ви повинні бути зареєстровані та замовляти з сайту
                 </div>
-                <img src="/images/background/fishbone.png"/>
-                <div className="w-full flex flex-row items-center justify-center mt-[50px]"> 
-                  <Link to="/menu" className="btn flex-1 mr-[5px] max-w-[300px]">До меню</Link>
+                <div className={`${styles.btnsContainer} w-full flex flex-row items-center justify-center`}> 
+                  <Link to="/menu" className={`${styles.upperBtn} btn flex-1 mr-[5px] max-w-[300px]`}>До меню</Link>
                   <Link to="/cart" className="btn flex-1 ml-[5px] max-w-[300px]">До кошику</Link>
                 </div>
               </div> :
-              <div className="w-full flex flex-col justify-center max-w-[1100px]">
+              <div className={`w-full flex flex-col justify-center max-w-[1100px]`}>
                 <div className="animatedLine"></div>
                 <div className={`${styles.OrdersTextContainer} mb-[10px]  w-full flex flex-row titleText`}>
                   Ваші замовлення:

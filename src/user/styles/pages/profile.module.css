@@ -82,7 +82,11 @@
   }
 }
 
-.labelTitle:hover {
+.scale {
+  transition: transform 300ms;
+}
+
+.scale:hover {
   transform: scale(1.01);
 }
 
@@ -96,7 +100,6 @@
 
 .labelTitle {
   font-size: 1.5rem;
-  transition: transform 300ms;
 }
 
 .accordion li {
@@ -148,5 +151,26 @@ input[type="radio"] {
   .accordion .content {
     padding: 0;
   }
+}
 
+@media (min-width: 1250px) {
+  .bgImgContainer {
+    flex-direction: row;
+  }
+
+  .btnsContainer {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .btnsContainer a {
+    max-width: none;
+    width: 70%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .upperBtn {
+    margin-bottom: 15px;
+  }
 }

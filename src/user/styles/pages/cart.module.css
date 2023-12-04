@@ -9,7 +9,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
 
 .mainContainer {
@@ -92,17 +91,45 @@
 }
 
 @media (max-width: 400px) {
-  :root {
-    --text-width: 320px;
-    --mutual-width: 96%;
-    --title-font-size: 2.2rem;
-    --pretitle-font-size: 1.4rem;
-    --article-font-size: 1.3rem;
-    --section-margin: 100px;
-    --icon-size: 1.7rem;
-  }
-
   .mealNameContainer {
     min-width: 86px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .allMeals {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .headerTaglineContainer {
+    margin-bottom: var(--section-margin);
+  }
+
+  .mainContainer {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .allMeals, 
+  .orderContainer {
+    margin: 0;
+  }
+
+  .allMeals {
+    margin-right: 20px;
+  }
+
+  .orderContainer {
+    margin-left: 20px;
+  }
+
+  .mainContainer {
+    margin-bottom: 100px;
+  }
+
+  .allMeals {
+    max-width: 700px;
   }
 }

@@ -370,7 +370,7 @@ main {
 @media (max-width: 765px) { 
   :root {
     --text-width: 320px;
-    --mutual-width: 80%;
+    --mutual-width: 84%;
     --title-font-size: 2.2rem;
     --pretitle-font-size: 1.3rem;
     --article-font-size: 1.2rem;

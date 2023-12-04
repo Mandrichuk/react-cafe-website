@@ -57,12 +57,12 @@ export default function CreateCart(props) {
     <main className={`w-full`}>
       <div className={`${styles.mainContainer} text-black`}>
       
-      <div className={` ${styles.allMeals} flex flex-col items-center justify-center mt-[50px] max-w-[800px]`}>
+      <div className={` ${styles.allMeals} flex flex-col items-center justify-center mt-[50px] max-w-[700px]`}>
         {
           props.cart.map(item => (<Meal id={item.id} amount={item.amount} handleAmountChange={props.handleAmountChange} />))
         }
       </div>
-      <div className={`${styles.orderContainer} flex-1 max-w-[600px] flex flex-col text-[1.4rem] mt-[50px]`}>
+      <div className={`${styles.orderContainer} flex-1 max-w-[700px] flex flex-col text-[1.4rem] mt-[50px]`}>
 
         <div className={`${styles.orderComment} w-full flex flex-row justify-between`}>
           <label htmlFor="orderComment" className={`${styles} text-[1.2rem]`}>Коментар до замовлення</label>

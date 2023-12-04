@@ -23,6 +23,7 @@
 
 .headerSection {
   background: linear-gradient(to bottom, var(--custom-green), #01110b);
+  box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.7);
 }
 
 .labelTitle {

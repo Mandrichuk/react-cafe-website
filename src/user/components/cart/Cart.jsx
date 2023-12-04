@@ -29,7 +29,17 @@ export default function CreateCart(props) {
   return (
     <>
     <Header />
-      <header className={`${styles.header} w-full`}>
+    { props.cart.length === 0 ?
+    <main className={`${styles.mainEmptyContainer}`}>
+      <div className={`${styles.emptyCartContainer}`}>
+        <div className={`${styles.textContainer}`}>
+          Кошик пустий, оберіть щось в&nbsp;<Link to="/menu" onClick={props.RerenderHeader} 
+          className={styles.link}>меню</Link>
+        </div>
+      </div>
+    </main> :
+    <>
+    <header className={`${styles.header} w-full`}>
       <div className={`${styles.headerSection} w-full`}>
         <div className={`${styles.headerTaglineContainer} w-[100%] h-[150px]`}>
           <div className="flex flex-row items-center">
@@ -43,16 +53,6 @@ export default function CreateCart(props) {
       </div>
       
     </header>
-
-    { props.cart.length === 0 ?
-    <main className={`${styles.mainEmptyContainer}`}>
-      <div className={`${styles.emptyCartContainer}`}>
-        <div className={`${styles.textContainer}`}>
-          Кошик пустий, оберіть щось в&nbsp;<Link to="/menu" onClick={props.RerenderHeader} 
-          className={styles.link}>меню</Link>
-        </div>
-      </div>
-    </main> :
 
     <main className={`w-full`}>
       <div className={`${styles.mainContainer} text-black`}>
@@ -88,6 +88,7 @@ export default function CreateCart(props) {
       </div>
       </div>
     </main>
+    </>
     }
     </>
   );

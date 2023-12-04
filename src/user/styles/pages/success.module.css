@@ -1,0 +1,14 @@
+.mainContainer{
+  width: var(--mutual-width);
+}
+
+.gradientBg {
+  background-color: #ffbc0d;
+}
+
+@media (max-width: 450px) {
+  .successContainer {
+    font-size: 1.8rem;
+  }
+  
+}

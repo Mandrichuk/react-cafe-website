@@ -19,7 +19,7 @@ import { FaUser } from "react-icons/fa6";
 export default function CreateProfile(props) {
 
   const [editMode, setEditMode] = useState(false);
-  const [nameInput, setNameInput] = useState("");
+  const [nameInput, setNameInput] = useState("Им'я");
   const [emailInput, setEmailInput] = useState("");
 
 
@@ -42,6 +42,7 @@ export default function CreateProfile(props) {
   }
 
   function toInitialValue() {
+    setNameInput("Им'я")
     setEditMode(false);
   }
 
@@ -86,7 +87,7 @@ export default function CreateProfile(props) {
                 </div>
               </div> :
               <div className={`${styles.infoContainer} flex flex-row items-center h-full w-full input mb-[10px] ${styles.labelTitle}`}>
-                <div className=" flex-1 ml-[3%]">Ваше ім'я</div>
+                <div className=" flex-1 ml-[3%]">{nameInput}</div>
                 <MdEdit onClick={handleNameChange} className={`${styles.titleText} mr-[3%] cursor-pointer text-[#05442e] `} />
               </div>
             }

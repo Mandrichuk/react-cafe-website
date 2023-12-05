@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 
 import Meal from "./materials/Meal";
 import getTotalPrice from "../../../user/components/shared/getTotalPrice";
-import menuData from "../../../data/menu/menuData";
+import menuData from "../../../data/menuData";
 
 import { SiInstacart } from "react-icons/si";
 

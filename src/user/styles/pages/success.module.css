@@ -3,12 +3,13 @@
 }
 
 .gradientBg {
-  background-color: #ffbc0d;
+  box-shadow: 0 10px 10px rgba(255, 187, 15, 0.2);
+  background-color: rgb(255, 187, 15);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 500px) {
   .successContainer {
-    font-size: 1.8rem;
+    font-size: 2.1rem;
   }
   
 }

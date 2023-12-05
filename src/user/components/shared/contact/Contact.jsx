@@ -47,7 +47,7 @@ function Contact() {
         </div>
         <form ref={formRef} onSubmit={sendEmail} className={`${styles.inputsContainer} flex flex-col flex-1 w-full`}>
           <input type="email" name="email" value={emailInput} onChange={handleEmailChange} placeholder='Введіть вашу пошту...' className={`${styles.inputEmail} input max-h-[50px] text-black`} />
-          <button type='submit' className={`${styles.sendBtn} btn  mt-[15px] pretitleText flex flex-row items-center justify-center`}>
+          <button type='submit' className={`${styles.submBtn} mt-[15px] pretitleText flex flex-row items-center justify-center`}>
             {loading ? "Надсилається.." : "Відправити"}
           </button>
         </form>

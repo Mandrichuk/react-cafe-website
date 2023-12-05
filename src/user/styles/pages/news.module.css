@@ -1,0 +1,53 @@
+.cover {
+  width: 100%;
+}
+
+.main {
+  width: var(--mutual-width);
+}
+
+.infoContainer,
+.infoContainer > img {
+  position: relative;
+  border-radius: 4px;
+}
+
+.infoContainer {
+  overflow: hidden;
+}
+
+.headerSection {
+  width: 100%;
+  height: 300px; /* Set the desired height */
+  background-image: url('../../../../public/images/background/seeds-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.infoContainer > img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms; 
+}
+
+
+.infoContainer > p {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+}
+
+@media (min-width: 900px) {
+  .infoContainer {
+    min-width: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .headerText {
+    padding: 0;
+  }
+}

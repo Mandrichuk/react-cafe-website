@@ -470,7 +470,6 @@ main {
   .drinkAndBeerSection .sectionDetails {
     margin: 0;
   }
-
 }
 
 
@@ -517,7 +516,7 @@ main {
   }
 
   .introductionContainer {
-    margin-top: 80px;
+    margin-bottom: 80px;
   }
 
 }
@@ -525,7 +524,7 @@ main {
 @media (min-width: 930px) { 
   :root {
     --text-width: 320px;
-    --mutual-width:84%;
+    --mutual-width:90%;
     --title-font-size: 2.6rem;
     --pretitle-font-size: 1.4rem;
     --article-font-size: 1.3rem;

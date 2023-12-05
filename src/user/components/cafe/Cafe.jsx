@@ -50,9 +50,9 @@ export default function CreateCafe() {
           <div className={`${styles.gridInfo}`}>
           {
           newsImages.map(newsImage => (
-            <div className={`${styles.infoContainer}`}>
+            <Link to="/news" className={`${styles.infoContainer} cursor-pointer`}>
               <img src={`images/background/${newsImage}`}/>
-            </div>
+            </Link>
           ))
           }
           </div>

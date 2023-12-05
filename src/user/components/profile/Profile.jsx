@@ -53,7 +53,7 @@ export default function CreateProfile(props) {
         <div className={`${styles.ordersContainer} w-full`}>
           <div className={`${styles.headerTitle} titleText flex flex-row items-center mb-[15px]`}>
             <div>Профіль</div>
-            <FaUser className="ml-[10px]" />
+            <FaUser className="ml-[10px] text-[2rem]" />
           </div>
           <div className="pretitleText">
           Тут знаходиться вся ваша персональна інформація. Можете дізнатися кількість бонусівабо переглянути свою історію замовлень.
@@ -114,8 +114,8 @@ export default function CreateProfile(props) {
                   Упсс.. Ви поки що нічого <span className="font-bold">не замовляли</span>, для того, щоб бачити свої замовлення ви повинні бути зареєстровані та замовляти з сайту
                 </div>
                 <div className={`${styles.btnsContainer} w-full flex flex-row items-center justify-center`}> 
-                  <Link to="/menu" className={`${styles.upperBtn} btn flex-1 mr-[5px] max-w-[300px]`}>До меню</Link>
-                  <Link to="/cart" className="btn flex-1 ml-[5px] max-w-[300px]">До кошику</Link>
+                  <Link to="/menu" className={`${styles.upperBtn} font-bold  btn flex-1 mr-[5px] max-w-[300px]`}>До меню</Link>
+                  <Link to="/cart" className="font-bold btn flex-1 ml-[5px] max-w-[300px]">До кошику</Link>
                 </div>
               </div> :
               <div className={`w-full flex flex-col justify-center max-w-[1100px]`}>

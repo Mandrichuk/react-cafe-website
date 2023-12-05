@@ -4,7 +4,7 @@
 
 
 :root {
-  --bg-color: rgb(251, 251, 244);
+  --bg-color: #fbfbf4;
   --custom-green: #05442e;
   --custom-orange: #ffbc0d;
   --link-color: rgb(0, 60, 255);
@@ -126,20 +126,6 @@ body {
 }
 
 
-
-@media (max-width: 400px) {
-  :root {
-    --text-width: 320px;
-    --mutual-width: 94%;
-    --title-font-size: 2.2rem;
-    --pretitle-font-size: 1.4rem;
-    --article-font-size: 1.3rem;
-    --section-margin: 100px;
-    --icon-size: 1.7rem;
-  }
-}
-
-
 @media (max-width: 930px) { 
   .beerImageContainer {
     margin-right: 5%;
@@ -151,7 +137,7 @@ body {
 @media (max-width: 765px) { 
   :root {
     --text-width: 320px;
-    --mutual-width: 80%;
+    --mutual-width: 84%;
     --title-font-size: 2.2rem;
     --pretitle-font-size: 1.5rem;
     --article-font-size: 1.2rem;

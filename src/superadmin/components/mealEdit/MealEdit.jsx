@@ -9,7 +9,7 @@ import { IoWaterOutline } from "react-icons/io5";
 import { AiOutlineDelete } from "react-icons/ai";
 import { BiUpload } from "react-icons/bi";
 
-import menuData from '../../../data/menu/menuData';
+import menuData from '../../../data/menuData';
 
 export default function CreateMealEdit() {
   const getAllCategoriesName = menuData.map(item => item.name);

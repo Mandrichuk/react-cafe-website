@@ -1,4 +1,4 @@
-import menuData from "../../../data/menu/menuData.js";
+import menuData from "../../../data/menuData.js";
 
 export default function getMealPrice(id, amount) {
   let mealPrice = 0;

@@ -3,7 +3,7 @@ import "../../styles/pages/menu.module.css";
 import styles from "../../styles/pages/menu.module.css";
 
 import MenuItem from "./materials/MenuItem.jsx";
-import menuData from "../../../data/menu/menuData.js";
+import menuData from "../../../data/menuData.js";
 import { ImSpoonKnife } from 'react-icons/im';
 
 import Header from "../shared/header/Header.jsx";

@@ -15,14 +15,25 @@
   box-shadow: none;
 }
 
-.sendBtn {
+.submBtn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  color: white;
+  padding: 12px 14px;
+  border-radius: 5px;
+  font-size: var(--article-font-size);
+  cursor: pointer;
+  min-width: 100px;
+  overflow: hidden;
+  transition: transform 300ms;
   color: black;
   background-color: #ffbc0d;
   font-weight: bold;
   transition: transform 300ms;
 }
 
-.sendBtn:hover {
+.submBtn:hover {
   transform: scale(1.01);
 }
 

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import styles from "../../../styles/pages/cart.module.css";
 
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"; 
-import menuData from "../../../../data/menu/menuData.js";
+import menuData from "../../../../data/menuData.js";
 import getMealPrice from "../../shared/getMealPrice.js";
 import getMealName from "../../shared/getMeal.js";
 
@@ -26,7 +26,7 @@ export default function CreateMeal(props) {
 
   return (
     <div className={`${styles.mealContainer} input w-full flex items-center justify-between mb-[7px] mt-[7px]`}>
-      <div className={`${styles.mealNameContainer} max-w-[300px] flex-1 min-w-[100px]`}>
+      <div className={`${styles.mealNameContainer} pretitleText max-w-[300px] flex-1 min-w-[100px]`}>
         {currentMeal.name}
       </div>
       
@@ -60,7 +60,7 @@ export default function CreateMeal(props) {
               <AiOutlinePlus />
             </button>
           </div>
-          <div className={`${styles.priceContainer} flex flex-row justify-center items-center h-[48px] min-w-[100px]`}>
+          <div className={`${styles.priceContainer} flex flex-row justify-center items-center h-[48px] min-w-[80px]`}>
             {mealPrice}грн
           </div>
         </>

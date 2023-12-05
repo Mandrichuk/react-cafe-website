@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { removeFromAdminCart, addToAdminCart } from "../../../../features/carts";
 
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai"; 
-import menuData from "../../../../data/menu/menuData";
+import menuData from "../../../../data/menuData";
 import getMealPrice from "../../../../user/components/shared/getMealPrice";
 import getMealName from "../../../../user/components/shared/getMeal";
 

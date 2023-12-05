@@ -11,6 +11,7 @@ import CartUser from "./user/components/cart/Cart";
 import ProfileUser from "./user/components/profile/Profile";
 import OrderUser from "./user/components/order/Order";
 import SuccessUser from "./user/components/success/Success";
+import NewsUser from "./user/components/news/News";
 
 import getTotalPrice from "./user/components/shared/getTotalPrice";
 
@@ -110,6 +111,7 @@ export default function CreateApp() {
         <Route path="/cart" element={<CartUser cart={cart} handleAmountChange={handleAmountChange} handleHistoryAdd={handleHistoryAdd} isLoggined={isLoggined} RerenderHeader={handleLinkChange} />} />
         <Route path="/order" element={<OrderUser history={history} />} />
         <Route path="/success" element={<SuccessUser cart={cart} handleHistoryAdd={handleHistoryAdd} />} />
+        <Route path="/news" element={<NewsUser />} />
 
       // * Admin Components
         <Route path="/admin/nav" element={<NavigationAdmin />} />

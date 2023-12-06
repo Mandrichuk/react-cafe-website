@@ -55,7 +55,7 @@ export default function CreateCart(props) {
         </div>
         <div className={`${styles.btnsContainer} w-full flex flex-row items-center justify-center mt-[40px]`}> 
           <Link to="/" className={`${styles.upperBtn} font-bold btn flex-1 mr-2`}>До головної</Link>
-          <Link to="/menu" className=" font-bold btn flex-1 mr-2">До кошику</Link>
+          <Link to="/menu" className=" font-bold btn flex-1 mr-2">До меню</Link>
         </div>
       </div>
     </main> :

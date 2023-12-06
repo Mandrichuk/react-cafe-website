@@ -64,7 +64,7 @@ export default function CreateProfile(props) {
 
       <main className={`${styles.mainContainer} text-black w-full flex flex-col items-center justify-center`}> 
 
-        <div className={`${styles.ordersContainer} w-full mt-[100px] flex flex-col items-center justify-center`}>
+        <div className={`${styles.ordersContainer} ${styles.customMargin} w-full flex flex-col items-center justify-center`}>
           <div className={`max-w-[1100px] flex flex-col w-full`}>
             <div className="animatedLine"></div>
             <div className={`${styles.OrdersTextContainer} w-full flex flex-row mb-[10px]  titleText`}>
@@ -101,7 +101,7 @@ export default function CreateProfile(props) {
         </div>
         </div>
 
-          <div className={`${styles.ordersContainer} mt-[100px] w-full flex flex-col items-center justify-center `}>
+          <div className={`${styles.ordersContainer} ${styles.customMargin} w-full flex flex-col items-center justify-center `}>
 
 
             {props.history.length === 0 ? 

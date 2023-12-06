@@ -36,7 +36,7 @@ function Contact() {
 
 
   return (
-    <div className={`${styles.main} flex items-center justify-center mt-[100px]`}>
+    <div className={`${styles.main} flex items-center justify-center`}>
       <div className={`${styles.coverContainer}`}>
         <div className={`${styles.details} text-white`}>
           <div className='flex flex-row items-center titleText'>

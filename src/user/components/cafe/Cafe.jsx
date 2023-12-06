@@ -10,6 +10,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { BsInstagram } from "react-icons/bs";
 
 import bgVideo from "../../../assets/cafe_video.mp4";
+import newsData from "../../../data/newsData";
 
 export default function CreateCafe() {
   const scrollImagesRef = useRef(null);
@@ -49,12 +50,15 @@ export default function CreateCafe() {
           <p className={`${styles.titleText} text-black`}>Актуальні новини</p>
           <div className={`${styles.gridInfo}`}>
           {
-          newsImages.map(newsImage => (
-            <Link to="/news" className={`${styles.infoContainer} cursor-pointer`}>
-              <img src={`images/background/${newsImage}`}/>
+          newsData.map(newsImage => (
+            <Link id={`#${newsImage.id}`} to="/news" className={`${styles.infoContainer} cursor-pointer`}>
+              <img src={`images/background/${newsImage.image}`}/>
             </Link>
           ))
           }
+          <div className="w-full flex flex-col items-center justify-center">
+            <Link to="/news" className={`${styles.btnMore} font-bold  w-full flex flex-col items-center justify-center btn max-w-[180px]`} >Детальніше</Link>
+          </div>
           </div>
         </section>
 

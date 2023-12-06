@@ -11,5 +11,11 @@
   .successContainer {
     font-size: 2.1rem;
   }
-  
 }
+
+@media (min-width: 900px) {
+  .mainContainer {
+    max-width: 800px;
+  }
+}
+

@@ -1,9 +1,32 @@
+@media (max-width: 665px) {
+  :root {
+    --text-width: 320px;
+    --mutual-width: 90%;
+    --title-font-size: 2.2rem;
+    --pretitle-font-size: 1.5rem;
+    --article-font-size: 1.2rem;
+    --icon-size: 1.9rem;
+  }
+
+  .itemContainer {
+    --section-margin: 70px;
+  }
+
+  .headerSection {
+    max-height: 100px;
+  }
+}
+
 .cover {
   width: 100%;
 }
 
 .main {
   width: var(--mutual-width);
+}
+
+.itemContainer {
+  margin-top: var(--section-margin);
 }
 
 .infoContainer,
@@ -18,13 +41,14 @@
 
 .headerSection {
   width: 100%;
-  height: 300px; /* Set the desired height */
+  height: 300px;
   background-image: url('../../../../public/images/background/seeds-background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
 }
+
 
 .infoContainer > img {
   width: 100%; 
@@ -51,3 +75,4 @@
     padding: 0;
   }
 }
+

@@ -1,6 +1,9 @@
 import React, {useRef} from "react";
 import { Link } from "react-router-dom";
+import {motion} from "framer-motion";
 import styles from "../../styles/pages/cafe.module.css";
+
+
 
 import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";

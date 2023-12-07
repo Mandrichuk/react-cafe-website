@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom'; // Import BrowserRouter
+import { BrowserRouter as Router, useLocation } from 'react-router-dom'; // Import BrowserRouter
 import ScrollToTop from './common/ScrollToTop';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';

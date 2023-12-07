@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/pages/menu.module.css";
 import styles from "../../styles/pages/menu.module.css";
+import {motion} from "framer-motion";
 
 import MenuItem from "./materials/MenuItem.jsx";
 import menuData from "../../../data/menuData.js";

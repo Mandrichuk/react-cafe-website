@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 
 import "./index.css";
 
@@ -95,10 +96,10 @@ export default function CreateApp() {
     });
   }
 
-
   return (
     <div className="mt-[70px]">
-      <Routes>
+    <AnimatePresence>
+      <Routes location={location} key={location.pathname}>
 
 
       //* User Components
@@ -137,6 +138,7 @@ export default function CreateApp() {
         <Route path="/superadmin" element={<StaffLogin />}/> 
 
       </Routes>
+    </AnimatePresence>
     </div>
   );
 } 

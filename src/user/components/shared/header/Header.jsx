@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+
 import '../../../styles/shared/header.css';
 
 import { FaBars } from 'react-icons/fa';
@@ -7,11 +9,16 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { BsTelegram } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
 
+import Lottie, {LottieRefCurrentProps} from "lottie-react";
+import animationData from "../../../../assets/open-close.json";
+
 import Chapter from "./materials/CreateChapter.jsx";
 import ScreenChapter from "./materials/CreateScreenChapter.jsx";
 
 
 export default function CreateHeader(props) {
+  const closeRef = useRef(null);
+  let [screenSettings, setScreenSettings] = useState(false);
   const chapterNamesArr = [
     {link: "/", name: "Головна"}, 
     {link: "/menu", name: "Меню"},
@@ -19,7 +26,6 @@ export default function CreateHeader(props) {
     {link: "/cart", name: "Кошик"}
   ];
   
-  let [screenSettings, setScreenSettings] = useState(false);
   useEffect(() => {
     window.addEventListener("resize", () => {
       if (window.innerWidth > 800) {
@@ -42,10 +48,33 @@ export default function CreateHeader(props) {
       </div>
         
 
-      <div className="tribar hidden text-[1.5rem] mr-[35px]"
+      <div className="tribar hidden text-[1.5rem] mr-[35px] cursor-pointer"
       onClick={handleChange}
       >
-        {screenSettings ? <AiOutlineClose className="cursor-pointer text-white"/> : <FaBars className="cursor-pointer text-white"/>}
+
+        <Lottie
+          onClick={() => {
+            if (screenSettings) {
+              closeRef.current?.stop();
+              closeRef.current?.setDirection(1);
+              closeRef.current?.goToAndPlay(0, true);
+            
+            } else {
+              // closeRef.current?.stop();
+              closeRef.current?.setDirection(1);
+              closeRef.current?.goToAndPlay(0, true);
+
+            }
+          }}
+          lottieRef={closeRef}
+          animationData={animationData}
+          className="h-[50px] object-cover"
+          loop={false}
+          onComplete={() => {
+            console.log('Animation completed');
+          }}
+        />
+
       </div>
 
       {screenSettings &&
@@ -55,7 +84,7 @@ export default function CreateHeader(props) {
             Основні
           </div>
 
-          {chapterNamesArr.map(chaterName => <ScreenChapter {...chaterName} {...props} handleChange={handleChange} />)}
+          {chapterNamesArr.map(chapterName => <ScreenChapter {...chapterName} {...props} handleChange={handleChange} />)}
         </div>
 
         <div className="main-settings flex flex-col items-center w-[80%] justify-center">

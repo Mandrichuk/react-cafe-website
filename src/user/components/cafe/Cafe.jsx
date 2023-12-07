@@ -56,9 +56,6 @@ export default function CreateCafe() {
             </Link>
           ))
           }
-          <div className="w-full flex flex-col items-center justify-center">
-            <Link to="/news" className={`${styles.btnMore} font-bold  w-full flex flex-col items-center justify-center btn max-w-[180px]`} >Детальніше</Link>
-          </div>
           </div>
         </section>
 

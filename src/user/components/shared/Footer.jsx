@@ -34,7 +34,7 @@ export default function CreateFooter() {
 
 
   return (
-    <footer className={`${styles.footer}`}>
+    <footer className={`${styles.footer} mt-[100px]`}>
 
       {displayed !== "large" && 
       <div className={`${styles.imageContainer}`}>

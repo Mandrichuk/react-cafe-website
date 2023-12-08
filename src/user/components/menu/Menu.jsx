@@ -9,6 +9,7 @@ import { ImSpoonKnife } from 'react-icons/im';
 
 import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";
+import AnimatedLine from "../../../motion/AnimatedLine";
 
 
 export default function CreateMenu(props) {
@@ -37,7 +38,7 @@ export default function CreateMenu(props) {
 
         <section className={`${styles.sectionContainer}`}>
           <div className={`${styles.sectionDetails} text-black`}>
-            <div className={`${styles.animatedLine} animatedLine`}></div>
+            <AnimatedLine />
             <div className={`titleText`}> Якість продуктів</div>
             <div className={`${styles.textContainer} ${styles.articleText}`}>
               На кожному етапі готування ми ретельно відбираємо найвищу якість продуктів, щоб створити для вас неповторні   смакові враження.
@@ -55,8 +56,7 @@ export default function CreateMenu(props) {
               <img className={`${styles.imageDetails} ${styles.imageDetailsSecond}`} src="images/decorations/salad-leaves.jpg" />
             </div>
           </div>
-
-
+          
         </section>
       </div>  
       </main>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import {Link} from "react-router-dom";
 import styles from "../../styles/pages/order.module.css";
 
-
+import AnimatedLine from "../../../motion/AnimatedLine";
 import Header from "../shared/header/Header.jsx";
 
 
@@ -18,8 +18,8 @@ export default function CreateOrder(props) {
       <Header />
       <main className={`${styles.main} text-black`}>
 
-        <div className={`${styles.loginContainer} w-[55%] h-[100vh] flex flex-col justify-center items-center`}>
-
+        <div className={`${styles.loginContainer} w-[55%] h-[80vh] flex flex-col justify-center items-center`}>
+        <AnimatedLine />
         <div className={`${styles.nameContainer}`}>
         <p className={`titleText`}>Останій крок!</p>
         </div>

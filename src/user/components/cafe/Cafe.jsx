@@ -2,9 +2,10 @@ import React, {useRef, useEffect} from "react";
 import { Link } from "react-router-dom";
 import styles from "../../styles/pages/cafe.module.css";
 
+
 import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";
-import Contact from "../shared/contact/Contact";
+import AnimatedLine from "../../../motion/AnimatedLine";
 
 import { IoLocationSharp } from "react-icons/io5";
 import { BsInstagram } from "react-icons/bs";
@@ -39,12 +40,14 @@ export default function CreateCafe() {
 
 
         <section className={`${styles.InfoSheet}`}>
-          <div className={`${styles.animatedLine} animatedLine opacity-1`}></div>
+          <AnimatedLine />
+
+
           <p className={`${styles.titleText} text-black`}>Актуальні новини</p>
           <div className={`${styles.gridInfo}`}>
           {
           newsData.map(newsImage => (
-            <Link id={`#${newsImage.id}`} to="/news" className={`${styles.infoContainer} cursor-pointer`}>
+            <Link id={`${newsImage.id}`} to={`/news#${newsImage.id}`} className={`${styles.infoContainer} cursor-pointer`}>
               <img src={`images/background/${newsImage.image}`}/>
             </Link>
           ))
@@ -55,7 +58,7 @@ export default function CreateCafe() {
 
         <section className={`${styles.location}`}>
           <div className={`${styles.sectionDetails} text-black`}>
-            <div className={`${styles.animatedLine} animatedLine`}></div>
+            <AnimatedLine />
             <div className={`${styles.titleText}`}> Наша геолокація</div>
             <div className={`${styles.cityContainer} ${styles.articleText}`}><IoLocationSharp className={`${styles.geoIcon}`}/> Запоріжжя</div>
             <div className={`${styles.locationTextContainer} ${styles.articleText}`}>Пр. Соборний 4-б</div>
@@ -79,7 +82,8 @@ export default function CreateCafe() {
         <section className={`${styles.instagramSection}`}>
           <div className={`${styles.instagramGallery} text-black`}>
           <div className={`${styles.sectionDetails}`}>
-            <div className={`${styles.animatedLine} animatedLine`}></div>
+          <AnimatedLine />
+  
             <div className={`${styles.titleText}`}> Ми в Iнстаграмі</div>
             <a target="_black" href="https://www.instagram.com/drink.food.zp/" className={`${styles.instagramNameContainer}`}>
               <BsInstagram className={`${styles.instagramIcon}`}/>

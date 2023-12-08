@@ -9,7 +9,7 @@
   --custom-orange: #ffbc0d;
   --link-color: rgb(0, 60, 255);
   --custom-gray: rgb(91, 91, 91);
-  --line-width: 175px;
+  --line-width: 150px;
   --section-margin: 100px;
   --title-font-size: 2rem;
   --pretitle-font-size: 1.2rem;
@@ -21,7 +21,6 @@
   --text-width: 320px;
   --mutual-width: 94%;
 }
-
 
 body {
   font-family: Arial;
@@ -80,11 +79,10 @@ body {
 }
 
 .animatedLine {
-  width: 100px;
-  /* width: 0;  */
+  width: 0; 
   height: 7px; 
   background-color: var(--custom-green); 
-  /* animation: fillAnimation 500ms forwards ease-in-out;  */
+  animation: fillAnimation 500ms forwards ease-in-out; 
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
@@ -157,6 +155,7 @@ body {
     --article-font-size: 1.2rem;
     --section-margin: 70px;
     --icon-size: 1.9rem;
+    --line-width: 175px;
   }
 }
 

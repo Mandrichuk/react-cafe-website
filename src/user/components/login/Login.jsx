@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../../styles/pages/login.module.css";
 
 import Header from "../shared/header/Header.jsx";
-
+import AnimatedLine from "../../../motion/AnimatedLine";
 
 export default function CreateLogin(props) {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -27,7 +27,8 @@ export default function CreateLogin(props) {
       <div className={`${styles.loginContainer} w-[55%] h-[100vh] flex flex-col justify-center items-center pl-[5%] pr-[5%]`}>
 
         <div className={`${styles.nameContainer} p-[5px] text-[3rem] `}>
-        <p className={`${styles.titleText}`}>Регестрація</p>
+          <AnimatedLine />
+          <p className={`${styles.titleText}`}>Регестрація</p>
         </div>
 
         <div className={`${styles.tagline} ${styles.articleText} mb-[40px] text-gray-500`}>

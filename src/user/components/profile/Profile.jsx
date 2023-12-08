@@ -4,6 +4,7 @@ import styles from "../../styles/pages/profile.module.css";
 import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";
 import Contact from "../shared/contact/Contact";
+import AnimatedLine from "../../../motion/AnimatedLine";
 
 import History from "./materials/History.jsx"
 import { MdEdit } from "react-icons/md";
@@ -66,7 +67,7 @@ export default function CreateProfile(props) {
 
         <div className={`${styles.ordersContainer} ${styles.customMargin} w-full flex flex-col items-center justify-center`}>
           <div className={`max-w-[1100px] flex flex-col w-full`}>
-            <div className="animatedLine"></div>
+            <AnimatedLine />
             <div className={`${styles.OrdersTextContainer} w-full flex flex-row mb-[10px]  titleText`}>
               Ваші дані:
             </div>
@@ -107,7 +108,7 @@ export default function CreateProfile(props) {
             {props.history.length === 0 ? 
               <div className={`${styles.bgImgContainer} mb-[0] flex flex-col items-center justify-center max-w-[1100px]`}> 
                 <div className="mb-[60px] articleText">
-                  <div className="animatedLine"></div>
+                  <AnimatedLine />
                   <div className={`${styles.OrdersTextContainer} mb-[10px]  w-full flex flex-row titleText`}>
                     Ваші замовлення:
                   </div>
@@ -119,7 +120,7 @@ export default function CreateProfile(props) {
                 </div>
               </div> :
               <div className={`w-full flex flex-col justify-center max-w-[1100px]`}>
-                <div className="animatedLine"></div>
+                <AnimatedLine />
                 <div className={`${styles.OrdersTextContainer} mb-[10px]  w-full flex flex-row titleText`}>
                   Ваші замовлення:
                 </div>

@@ -5,6 +5,7 @@ import styles from "../../styles/pages/cart.module.css";
 import Header from "../shared/header/Header";
 import Footer from "../shared/Footer";
 import Meal from "./materials/Meal.jsx";
+import AnimatedLine from "../../../motion/AnimatedLine";
 
 import getTotalPrice from "../shared/getTotalPrice.js";
 import menuData from "../../../data/menuData.js";
@@ -47,6 +48,7 @@ export default function CreateCart(props) {
     { props.cart.length === 0 ?
     <main className={`${styles.mainEmptyContainer} w-full flex-col items-center justify-center h-[50vh]`}>
       <div className={`${styles.emptyCartContainer}`}>
+        <AnimatedLine />
         <div className={`${styles.textContainer} titleText`}>
           Кошик пустий
         </div>

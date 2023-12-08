@@ -1,9 +1,6 @@
-import React, {useRef} from "react";
+import React, {useRef, useEffect} from "react";
 import { Link } from "react-router-dom";
-import {motion} from "framer-motion";
 import styles from "../../styles/pages/cafe.module.css";
-
-
 
 import Header from "../shared/header/Header.jsx";
 import Footer from "../shared/Footer.jsx";
@@ -15,19 +12,12 @@ import { BsInstagram } from "react-icons/bs";
 import bgVideo from "../../../assets/cafe_video.mp4";
 import newsData from "../../../data/newsData";
 
+
+
 export default function CreateCafe() {
   const scrollImagesRef = useRef(null);
 
-  const newsImages = ["5percent.jpg", "withkids.jpg", "bestcoffee.jpg"]
-
   const instagramImages = ["instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg", "instagram-image.jpg"];
-
-  const scroll = (action) => {
-    if (scrollImagesRef.current && action === "right") {
-      scrollImagesRef.current.scrollBy({ left: 200, behavior: 'smooth' });
-    }
-    else scrollImagesRef.current.scrollBy({ left: -200, behavior: 'smooth' });
-  };
 
 
   return (
@@ -49,7 +39,7 @@ export default function CreateCafe() {
 
 
         <section className={`${styles.InfoSheet}`}>
-          <div className={`${styles.animatedLine} animatedLine`}></div>
+          <div className={`${styles.animatedLine} animatedLine opacity-1`}></div>
           <p className={`${styles.titleText} text-black`}>Актуальні новини</p>
           <div className={`${styles.gridInfo}`}>
           {

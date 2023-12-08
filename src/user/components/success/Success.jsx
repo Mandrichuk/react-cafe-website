@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "../../styles/pages/success.module.css";
 import { PiConfettiFill } from 'react-icons/pi';
@@ -7,6 +7,7 @@ import Header from "../shared/header/Header.jsx";
 
 
 export default function CreateSuccess(props) {
+  const cookingRef = useRef(null);
   useEffect(() => {
     props.handleHistoryAdd("comment");
   }, []);

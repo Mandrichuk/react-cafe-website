@@ -17,7 +17,7 @@ export default function CreateMenu(props) {
       <Header />
       <header id="top" className={`${styles.header} w-full`}>
         <div className={`${styles.headerSection} w-full`}>
-          <div className={`${styles.headerTaglineContainer} w-[100%] h-[150px]`}>
+          <div className={`${styles.headerTaglineContainer} w-[100%] h-[250px]`}>
             <div className="flex flex-row items-center">
             <div className={`${styles.menuText}`}>Меню</div>
             <ImSpoonKnife className="text-[2rem] mb-[14px] ml-[10px]" />

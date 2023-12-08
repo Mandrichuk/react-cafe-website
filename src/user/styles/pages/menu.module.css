@@ -51,7 +51,6 @@ body, * {
 }
 
 .headerTaglineContainer {
-  height: 250px;
   background: linear-gradient(to bottom, var(--custom-green), #01110b);
   display: flex;
   flex-direction: column;
@@ -288,12 +287,19 @@ input[type="radio"] {
   }
 }
 
+
 @media (max-width: 800px) {
   .headerTaglineContainer {
     height: 300px;
   }
 }
  
+@media (max-width: 600px) {
+  .headerTaglineContainer {
+    height: 320px;
+  }
+}
+
 @media (max-width: 450px) {
   .mealContainer {
     padding: 5px 0 5px 0;

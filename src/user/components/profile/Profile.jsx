@@ -50,13 +50,13 @@ export default function CreateProfile(props) {
     <>
       <Header />
       <div className={`${styles.headerSection} w-full flex flex-col items-center justify-center text-white h-[300px]`}>
-        <div className={`${styles.ordersContainer} w-full`}>
+        <div className={`mx-[5%] w-full`}>
           <div className={`${styles.headerTitle} titleText flex flex-row items-center mb-[15px]`}>
-            <div>Профіль</div>
+            <div className="mx-[5%]">Профіль</div>
             <FaUser className="ml-[10px] text-[2rem]" />
           </div>
-          <div className="pretitleText">
-          Тут знаходиться вся ваша персональна інформація. Можете дізнатися кількість бонусівабо переглянути свою історію замовлень.
+          <div className="pretitleText mx-[5%]">
+          Тут знаходиться вся ваша персональна інформація. Можете дізнатися кількість бонусів або переглянути свою історію замовлень.
           </div>
         
         </div>

@@ -80,10 +80,11 @@ body {
 }
 
 .animatedLine {
-  width: 0; 
+  width: 100px;
+  /* width: 0;  */
   height: 7px; 
   background-color: var(--custom-green); 
-  animation: fillAnimation 500ms forwards ease-in-out; 
+  /* animation: fillAnimation 500ms forwards ease-in-out;  */
   border-top-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }

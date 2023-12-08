@@ -6,10 +6,10 @@ import '../../../styles/shared/header.css';
 
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
-import { BsTelegram } from "react-icons/bs";
+import { BsPhoneVibrateFill, BsTelegram } from "react-icons/bs";
 import { SiInstagram } from "react-icons/si";
 
-import Lottie, {LottieRefCurrentProps} from "lottie-react";
+import Lottie from "lottie-react";
 import animationData from "../../../../assets/open-close.json";
 
 import Chapter from "./materials/CreateChapter.jsx";
@@ -39,6 +39,11 @@ export default function CreateHeader(props) {
   }
 
 
+  useEffect(() => {
+    closeRef.current?.setDirection(-1);
+    closeRef.current?.goToAndPlay(55, true);
+  }, []);
+
   return (
     <div className="header flex flex-row items-center h-[70px] w-[100%] bg-black justify-between max-w-[2300px]">
       <div className="logo-container w-[120px] ml-[30px] mr-[20px]">
@@ -48,33 +53,24 @@ export default function CreateHeader(props) {
       </div>
         
 
-      <div className="tribar hidden text-[1.5rem] mr-[35px] cursor-pointer"
-      onClick={handleChange}
-      >
-
-        <Lottie
-          onClick={() => {
-            if (screenSettings) {
-              closeRef.current?.stop();
-              closeRef.current?.setDirection(1);
-              closeRef.current?.goToAndPlay(0, true);
-            
-            } else {
-              // closeRef.current?.stop();
-              closeRef.current?.setDirection(1);
-              closeRef.current?.goToAndPlay(0, true);
-
-            }
-          }}
-          lottieRef={closeRef}
-          animationData={animationData}
-          className="h-[50px] object-cover"
-          loop={false}
-          onComplete={() => {
-            console.log('Animation completed');
-          }}
-        />
-
+      <div className="tribar hidden text-[1.5rem] mr-[35px] cursor-pointer" onClick={handleChange} >
+<Lottie
+      onClick={() => {
+        if (!screenSettings) {
+          closeRef.current?.stop();
+          closeRef.current?.setDirection(1);
+          closeRef.current?.goToAndPlay(25, true);
+        } else {
+          closeRef.current?.setDirection(-1);
+          closeRef.current?.goToAndPlay(55, true);
+        }
+      }}
+      lottieRef={closeRef}
+      animationData={animationData}
+      className="h-[50px] object-cover"
+      loop={false}
+      autoplay={false}
+    />
       </div>
 
       {screenSettings &&

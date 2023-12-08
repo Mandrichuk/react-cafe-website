@@ -90,6 +90,13 @@
     height: 250px;
   }
 }
+ 
+@media (max-width: 500px) {
+  .headerSection {
+    height: 320px;
+  }
+}
+
 
 @media (min-width: 1050px) {
   .labelTitle {

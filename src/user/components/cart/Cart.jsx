@@ -33,7 +33,7 @@ export default function CreateCart(props) {
     <Header />
     <header className={`${styles.header} w-full`}>
       <div className={`${styles.headerSection} w-full`}>
-        <div className={`${styles.headerTaglineContainer} w-[100%] h-[150px]`}>
+        <div className={`${styles.headerTaglineContent} w-[100%] h-[150px]`}>
           <div className="flex flex-row items-center">
           <div className={`${styles.menuText}`}>Кошик</div>
           <SiInstacart className="text-[2rem] mb-[14px] ml-[10px]" />
@@ -46,7 +46,7 @@ export default function CreateCart(props) {
       
     </header>
     { props.cart.length === 0 ?
-    <main className={`${styles.mainEmptyContainer} w-full flex-col items-center justify-center h-[50vh]`}>
+    <main className={`${styles.mainEmptyContainer} w-full flex-col items-center justify-center h-[60vh]`}>
       <div className={`${styles.emptyCartContainer}`}>
         <AnimatedLine />
         <div className={`${styles.textContainer} titleText`}>

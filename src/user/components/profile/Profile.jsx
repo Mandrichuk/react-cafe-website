@@ -53,7 +53,7 @@ export default function CreateProfile(props) {
       <div className={`${styles.headerSection} w-full flex flex-col items-center justify-center text-white h-[300px]`}>
         <div className={`mx-[5%] w-full`}>
           <div className={`${styles.headerTitle} titleText flex flex-row items-center mb-[15px]`}>
-            <div className="mx-[5%]">Профіль</div>
+            <div className="ml-[5%]">Профіль</div>
             <FaUser className="ml-[10px] text-[2rem]" />
           </div>
           <div className="pretitleText mx-[5%]">
@@ -63,7 +63,7 @@ export default function CreateProfile(props) {
         </div>
       </div>
 
-      <main className={`${styles.mainContainer} text-black w-full flex flex-col items-center justify-center`}> 
+      <main className={`${styles.mainProfileContainer} text-black w-full flex flex-col items-center justify-center`}> 
 
         <div className={`${styles.ordersContainer} ${styles.customMargin} w-full flex flex-col items-center justify-center`}>
           <div className={`max-w-[1100px] flex flex-col w-full`}>

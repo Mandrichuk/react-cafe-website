@@ -69,7 +69,7 @@ export default function CreateHeader(props) {
       animationData={animationData}
       className="h-[50px] object-cover"
       loop={false}
-      autoplay={false}
+      autoplay={false} 
     />
       </div>
 

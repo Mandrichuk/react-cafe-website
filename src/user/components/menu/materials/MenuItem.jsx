@@ -94,7 +94,7 @@ function CreateProducts(products, cart, handleCartChange) {
         {
         isAdded && <div className="bottom-[50px] fixed left-0 right-0 z-30 flex items-center justify-center">
           <Link to="/cart" className="flex flex-row items-center justify-center text-[1.4rem] max-w-[400px] bg-custom-green text-white p-[20px] rounded-md">
-            Додано до&nbsp;<span className="font-bold underline">кошику</span>
+            Додано до&nbsp;кошику
           </Link>
         </div>
         }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../../styles/pages/menu.module.css";
+import styles from "../menu.module.css";
 import { useDispatch } from "react-redux";
 import { addToAdminCart } from "../../../../features/carts";
 import { MdOutlineExposurePlus1 } from "react-icons/md";

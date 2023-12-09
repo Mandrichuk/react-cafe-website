@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "../../../styles/pages/cart.module.css";
+import styles from "../cart.module.css";
 import { useDispatch } from "react-redux";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import getMealPrice from "../../../../utils/getMealPrice";

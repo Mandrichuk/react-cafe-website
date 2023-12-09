@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "../../styles/pages/orders.module.css";
+import styles from "./orders.module.css";
 import Order from "./materials/Order";
-import Header from "../shared/Header";
+import Header from "../header/Header";
+
 
 function Orders() {
   return (

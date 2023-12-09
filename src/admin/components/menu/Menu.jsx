@@ -5,8 +5,8 @@ import { clearAdminCart } from "../../../features/carts";
 import { useSelector } from "react-redux";
 import menuData from "../../../data/menuData";
 import MenuItem from "./materials/MenuItem";
-import styles from "../../styles/pages/menu.module.css";
-import Header from "../shared/Header";
+import styles from "./menu.module.css";
+import Header from "../header/Header";
 
 
 export default function CreateMenu() {

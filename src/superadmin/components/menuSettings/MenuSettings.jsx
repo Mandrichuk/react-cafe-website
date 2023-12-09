@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import menuData from "../../../data/menuData";
 import MenuItem from "./materials/MenuItem";
-import styles from "../../styles/pages/menu.module.css";
+import styles from "./menuSettings.module.css";
 
 
 export default function CreateMenu(props) {

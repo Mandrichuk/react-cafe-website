@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import styles from "../../styles/pages/registerUser.module.css";
-import Header from "../shared/Header";
+import styles from "./registerUser.module.css";
+import Header from "../../header/Header";
 
 
 export default function RegisterUser(props) {

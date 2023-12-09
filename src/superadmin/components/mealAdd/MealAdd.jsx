@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../styles/pages/mealAdd.module.css";
+import styles from "./mealAdd.module.css";
 import { TbCategoryFilled } from "react-icons/tb";
 import { GiHotMeal, GiPriceTag } from "react-icons/gi";
 import { RiScales2Line } from "react-icons/ri";

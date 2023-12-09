@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../../styles/pages/menu.module.css";
+import styles from "../menuSettings.module.css";
 import { Link } from "react-router-dom";
 import { BiSolidEdit } from "react-icons/bi";
 import { MdOutlineDone } from "react-icons/md";

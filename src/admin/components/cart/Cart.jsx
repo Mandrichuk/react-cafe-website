@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import styles from "../../styles/pages/cart.module.css";
-import Header from "../shared/Header";
+import styles from "./cart.module.css";
+import Header from "../header/Header";
 import { useSelector } from "react-redux";
 import Meal from "./materials/Meal";
 import getTotalPrice from "../../../utils/getTotalPrice";

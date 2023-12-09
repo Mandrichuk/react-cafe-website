@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "../../styles/pages/categoryAdd.module.css";
+import styles from "./categoryAdd.module.css";
 import { GiHotMeal } from "react-icons/gi";
 import { FaImage } from "react-icons/fa6";
 import { AiOutlineDelete } from "react-icons/ai";

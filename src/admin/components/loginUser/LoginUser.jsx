@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../shared/Header";
-import styles from "../../styles/pages/loginUser.module.css";
+import Header from "../header/Header";
+import styles from "./loginUser.module.css";
 
 function LoginUser() {
   return (

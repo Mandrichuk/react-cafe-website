@@ -3,23 +3,16 @@ import { Link } from "react-router-dom";
 import styles from "./cafe.module.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import AnimatedLine from "../../../motion/AnimatedLine";
+import AnimatedLine from "../../../animations/AnimatedLine";
 import { IoLocationSharp } from "react-icons/io5";
 import { BsInstagram } from "react-icons/bs";
-import bgVideo from "../../../assets/cafe_video.mp4";
-import newsData from "../../../data/newsData";
+import images from "../../../constants/index";
+import { newsData } from "../../../constants/index";
+import { instagramData } from "../../../constants/index";
+
 
 export default function CreateCafe() {
   const scrollImagesRef = useRef(null);
-
-  const instagramImages = [
-    "instagram-image.jpg",
-    "instagram-image.jpg",
-    "instagram-image.jpg",
-    "instagram-image.jpg",
-    "instagram-image.jpg",
-    "instagram-image.jpg",
-  ];
 
   return (
     <>
@@ -28,7 +21,7 @@ export default function CreateCafe() {
       <main>
         <div className={`${styles.coverContainer}`}>
           <video
-            src={bgVideo}
+            src={images.cafeFootage}
             autoPlay
             loop
             muted
@@ -52,13 +45,14 @@ export default function CreateCafe() {
 
           <p className={`${styles.titleText} text-black`}>Актуальні новини</p>
           <div className={`${styles.gridInfo}`}>
-            {newsData.map((newsImage) => (
+            {newsData.map((image, index) => (
               <Link
-                id={`${newsImage.id}`}
-                to={`/news#${newsImage.id}`}
+                id={`${image.id}`}
+                to={`/news#${image.id}`}
                 className={`${styles.infoContainer} cursor-pointer`}
+                key={`newsData-${index}`}
               >
-                <img src={`images/background/${newsImage.image}`} />
+                <img src={`${image.image}`} />
               </Link>
             ))}
           </div>
@@ -83,9 +77,9 @@ export default function CreateCafe() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5356.    322301039576!2d35.        13915552683983!3d47.    83647133144654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.           1!3m3!1m2!1s0x40dc674c7cb00001%3A0xe5cbd4c1addf2d25!2z0L_RgNC-0YHQvy4g0KH Qv tCx0L7RgNC90YvQ  uSwgNN         CxLCDQl9Cw0L_QvtGA0L7QttGM0LUsINCX0LDQv9C-0YDQvtC20YHQutCw0Y8g0L7QsdC70LD  Rg dGC0YwsINCj0LrR  gNCw0L        jQvdCwLCA2OTAwMA!5e0!3m2!1sru!2ssk!4v1699205503641!5m2!1sru!2ssk"
               width="600"
               height="450"
-              allowfullscreen=""
+              allowFullScreen
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </section>
@@ -106,24 +100,23 @@ export default function CreateCafe() {
                   href="https://www.instagram.com/drink.food.zp/"
                   className={`${styles.articleText}`}
                 >
-                  {" "}
                   @drink.food.zp
                 </a>
               </a>
             </div>
             <div className={`${styles.cover}`}>
               <div className={`${styles.scrollImages}`} ref={scrollImagesRef}>
-                {instagramImages.map((image, index) => (
+                {instagramData.map((obj, index) => (
                   <a
                     target="_blank"
-                    href="https://www.instagram.com/drink.food.zp/"
+                    href={obj.link}
                     className={`${styles.child}`}
-                    key={`image-${index}`}
+                    key={`instagram-image-${index}`}
                   >
                     <img
                       className={`${styles.childImg}`}
-                      src={`images/instagram/${image}`}
-                      alt={`image-${index}`}
+                      src={obj.image}
+                      alt={`instagram-image-${index}`}
                     />
                     <BsInstagram
                       className={`${styles.instagramIconAbsolute}`}
@@ -157,10 +150,7 @@ export default function CreateCafe() {
             </div>
 
             <div className={`${styles.beerImageContainer}`}>
-              <img
-                className={`${styles.beerImage}`}
-                src="images/decorations/beer-mug.png"
-              />
+              <img className={`${styles.beerImage}`} src={images.beerMug} />
             </div>
           </section>
         </section>

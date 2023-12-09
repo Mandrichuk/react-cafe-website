@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "./menu.module.css";
 import MenuItem from "./materials/MenuItem";
-import menuData from "../../../data/menuData";
 import { ImSpoonKnife } from "react-icons/im";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import AnimatedLine from "../../../motion/AnimatedLine";
+import AnimatedLine from "../../../animations/AnimatedLine";
+import images from "../../../constants/index";
+import { menuData } from "../../../constants/index" 
+
 
 
 export default function CreateMenu(props) {
@@ -47,7 +49,8 @@ export default function CreateMenu(props) {
             <div className={`${styles.imageContainer}`}>
               <img
                 className={`${styles.productImage}`}
-                src="images/decorations/product-quality.png"
+                src={images.unitedCoffeeBurger}
+                alt="product-quality"
               />
 
               <div
@@ -55,7 +58,8 @@ export default function CreateMenu(props) {
               >
                 <img
                   className={`${styles.imageDetails} ${styles.imageDetailsFirst}`}
-                  src="images/decorations/coffee-beans.jpg"
+                  src={images.coffeeBeans}
+                  alt="coffee-beans"
                 />
               </div>
 
@@ -64,7 +68,8 @@ export default function CreateMenu(props) {
               >
                 <img
                   className={`${styles.imageDetails} ${styles.imageDetailsSecond}`}
-                  src="images/decorations/salad-leaves.jpg"
+                  src={images.saladLeaves}
+                  alt="salad-leaves"
                 />
               </div>
             </div>

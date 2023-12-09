@@ -110,6 +110,18 @@ body {
   }
 }
 
+@media (max-width: 450px) {
+  :root {
+    --text-width: 320px;
+    --mutual-width: 84%;
+    --title-font-size: 2rem;
+    --pretitle-font-size: 1.3rem;
+    --article-font-size: 1.1rem;
+    --section-margin: 100px;
+    --icon-size: 1.7rem;
+  }
+}
+
 @media (min-width: 800px) {
   .staffContent {
     width: 80%;

@@ -3,7 +3,7 @@ import styles from "./profile.module.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Contact from "../contact/Contact";
-import AnimatedLine from "../../../motion/AnimatedLine";
+import AnimatedLine from "../../../animations/AnimatedLine";
 import History from "./materials/History";
 import { MdEdit } from "react-icons/md";
 import { MdOutlineDone } from "react-icons/md";
@@ -53,7 +53,7 @@ export default function CreateProfile(props) {
             <div className="ml-[5%]">Профіль</div>
             <FaUser className="ml-[10px] text-[2rem]" />
           </div>
-          <div className="pretitleText mx-[5%]">
+          <div className={`${styles.menuTaglineText} pretitleText mx-[5%]`}>
             Тут знаходиться вся ваша персональна інформація. Можете дізнатися
             кількість бонусів або переглянути свою історію замовлень.
           </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./login.module.css";
 import Header from "../header/Header";
-import AnimatedLine from "../../../motion/AnimatedLine";
+import AnimatedLine from "../../../animations/AnimatedLine";
 
 
 export default function CreateLogin(props) {

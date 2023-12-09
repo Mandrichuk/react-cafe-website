@@ -219,6 +219,12 @@ input[type="radio"] {
 }
 
 
+@media (max-width: 385px) { 
+  .labelTitle {
+    font-size: 1.7rem;
+  }
+}
+
 @media (min-width: 801px) { 
   .labelTitle {
     font-size: 2rem;
@@ -297,6 +303,10 @@ input[type="radio"] {
 @media (max-width: 600px) {
   .headerTaglineContainer {
     height: 320px;
+  }
+
+  .menuTaglineText {
+    font-size: 1.3rem;
   }
 }
 

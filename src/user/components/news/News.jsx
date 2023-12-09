@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import styles from "./news.module.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
-import newsData from "../../../data/newsData";
-import AnimatedLine from "../../../motion/AnimatedLine";
+import AnimatedLine from "../../../animations/AnimatedLine";
+import images, { newsData } from "../../../constants/index";
+
 
 
 function News() {
@@ -26,15 +27,15 @@ function News() {
       </div>
       <img
         className={`mt-[10px] w-full object-fit`}
-        src="/images/background/fries.svg"
+        src={images.friesSVG}
       />
 
       <div
         className={`${styles.cover} flex flex-col items-center justify-center`}
       >
         <div className={`${styles.main}`}>
-          {newsData.map((newsItem) => (
-            <CreateNewsItem {...newsItem} />
+          {newsData.map((obj) => (
+            <CreateNewsItem {...obj} />
           ))}
         </div>
       </div>
@@ -45,6 +46,9 @@ function News() {
 
 function CreateNewsItem(props) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+
+  const newsImage = props.image;
+  console.log(newsImage)
 
   useEffect(() => {
     const handleResize = () => {
@@ -67,7 +71,11 @@ function CreateNewsItem(props) {
             {props.name}
           </div>
           <div className={`${styles.infoContainer} mb-[20px]`}>
-            <img id={`${props.id}`} src={`images/background/${props.image}`} />
+            <img 
+              id={`${props.id}`} 
+              src={newsImage} 
+              alt={"news-img"} 
+            />
           </div>
           <div className={`${styles.articleContainer} articleText`}>
             {props.article}
@@ -80,8 +88,9 @@ function CreateNewsItem(props) {
           >
             <img
               id={`${props.id}`}
-              src={`images/background/${props.image}`}
+              src={newsImage}
               className={`object-cover`}
+              alt={"news-img"}
             />
           </div>
           <div

@@ -77,6 +77,12 @@
   border-color: var(--custom-green);
 }
 
+@media (max-width: 600px) {
+  .menuTaglineText {
+    font-size: 1.3rem;
+  }
+}
+
 @media (min-width: 801px) { 
   .labelTitle {
     font-size: 1.2rem;

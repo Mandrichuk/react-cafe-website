@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styles from "./success.module.css";
 import Header from "../header/Header";
-
+import images from "../../../constants";
 
 export default function CreateSuccess(props) {
 
@@ -26,7 +26,7 @@ export default function CreateSuccess(props) {
             Замовлення прийнято
           </div>
 
-          <img src={`/images/background/fries.svg`} />
+          <img src={images.friesSVG} />
 
           <div
             className={`${styles.tagline} pretitleText w-full flex flex-col items-center justify-center text-gray-600`}

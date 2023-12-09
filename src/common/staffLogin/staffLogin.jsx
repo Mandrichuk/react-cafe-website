@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import loginsData from "../../data/logginsData";
 import {
   toggleAdminLogin,
   toggleSuperAdminLogin,
@@ -15,24 +14,24 @@ export default function CreateApp() {
   const [loginInput, setLoginInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
 
-  const { admin, superadmin } = loginsData.logins;
+  // const { admin: adminLoggined, superadmin: superAdminLoggined } = logginsData.logins;
 
-  function userDataValid() {
-    if (loginInput === admin.login && passwordInput === admin.password) {
-      dispatch(toggleSuperAdminLogin(false));
-      dispatch(toggleAdminLogin(true));
-      navigate("/admin");
-    }
+  // function userDataValid() {
+  //   if (loginInput === adminLoggined.login && passwordInput === adminLoggined.password) {
+  //     dispatch(toggleSuperAdminLogin(false));
+  //     dispatch(toggleAdminLogin(true));
+  //     navigate("/admin");
+  //   }
 
-    if (
-      loginInput === superadmin.login &&
-      passwordInput === superadmin.password
-    ) {
-      dispatch(toggleAdminLogin(false));
-      dispatch(toggleSuperAdminLogin(true));
-      navigate("/superadmin");
-    }
-  }
+  //   if (
+  //     loginInput === superAdminLoggined.login &&
+  //     passwordInput === superAdminLoggined.password
+  //   ) {
+  //     dispatch(toggleAdminLogin(false));
+  //     dispatch(toggleSuperAdminLogin(true));
+  //     navigate("/superadmin");
+  //   }
+  // }
 
   return (
     <div className="w-full flex items-center justify-center">
@@ -46,7 +45,7 @@ export default function CreateApp() {
             Введіть логін
           </label>
           <input
-            onChange={(event) => setLoginInput(event.target.value)}
+            // onChange={(event) => setLoginInput(event.target.value)}
             placeholder="Логін"
             id="login"
             className="input"
@@ -58,13 +57,13 @@ export default function CreateApp() {
             Введіть пароль
           </label>
           <input
-            onChange={(event) => setPasswordInput(event.target.value)}
+            // onChange={(event) => setPasswordInput(event.target.value)}
             placeholder="Пароль"
             id="password"
             className="input border-black"
           />
         </div>
-        <button onClick={userDataValid} className="btn w-[100%]">
+        <button className="btn w-[100%]">
           Увійти
         </button>
       </div>

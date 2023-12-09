@@ -4,7 +4,7 @@ import styles from "./cart.module.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import Meal from "./materials/Meal";
-import AnimatedLine from "../../../motion/AnimatedLine";
+import AnimatedLine from "../../../animations/AnimatedLine";
 import getTotalPrice from "../../../utils/getTotalPrice";
 import { SiInstacart } from "react-icons/si";
 

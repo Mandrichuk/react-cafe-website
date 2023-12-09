@@ -46,8 +46,10 @@ main {
 }
 
 .welcomeContainer {
+  font-family: "Bad Script";
   font-size: 2rem;
   margin-bottom: 3px;
+  margin-left: 10px;
   padding-top: 10px;
 }
 
@@ -156,7 +158,6 @@ main {
 .instagramSection {
   display: flex;
   flex-direction: row;
-
   width: var(--mutual-width);
   max-width: var(--mutual-width);
 }
@@ -575,5 +576,15 @@ main {
   .sectionDetails {
     max-width: 500px;
     margin: 0 10% 0 0;
+  }
+}
+
+@media (min-width: 800px) { 
+  .instagramGallery {
+    width: 100%;
+  }
+
+  .scrollImages {
+    justify-content: right;
   }
 }

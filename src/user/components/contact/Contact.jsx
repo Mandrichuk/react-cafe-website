@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import styles from "../../../styles/shared/contact.module.css";
+import styles from "./contact.module.css";
 import emailjs from "@emailjs/browser";
 import { HiOutlineMail } from "react-icons/hi";
 import { GrSend } from "react-icons/gr";

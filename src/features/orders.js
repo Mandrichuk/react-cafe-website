@@ -2,9 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialStateValue = {
   userAdmin: [],
-
 }
-
 
 export const logginsSlice = createSlice({
   name: "logins",

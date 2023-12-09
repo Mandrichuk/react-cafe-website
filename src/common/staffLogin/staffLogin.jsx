@@ -1,8 +1,11 @@
-import React, {useState} from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { toggleAdminLogin, toggleSuperAdminLogin } from "../../features/loggins";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import loginsData from "../../data/logginsData";
+import {
+  toggleAdminLogin,
+  toggleSuperAdminLogin,
+} from "../../features/loggins";
 
 
 export default function CreateApp() {
@@ -21,13 +24,15 @@ export default function CreateApp() {
       navigate("/admin");
     }
 
-    if (loginInput === superadmin.login && passwordInput === superadmin.password) {
+    if (
+      loginInput === superadmin.login &&
+      passwordInput === superadmin.password
+    ) {
       dispatch(toggleAdminLogin(false));
       dispatch(toggleSuperAdminLogin(true));
       navigate("/superadmin");
     }
   }
-
 
   return (
     <div className="w-full flex items-center justify-center">
@@ -36,18 +41,32 @@ export default function CreateApp() {
           <p className={`font-bold`}>Drink&Food</p>
         </div>
 
-          <div className="flex flex-col mb-[20px] w-full">
-            <label forHTML="login" className="text-[1.2rem] text-gray-600">Введіть логін</label>
-            <input onChange={(event) => setLoginInput(event.target.value)} placeholder="Логін" id="login" className="input"/>
-          </div>
+        <div className="flex flex-col mb-[20px] w-full">
+          <label forHTML="login" className="text-[1.2rem] text-gray-600">
+            Введіть логін
+          </label>
+          <input
+            onChange={(event) => setLoginInput(event.target.value)}
+            placeholder="Логін"
+            id="login"
+            className="input"
+          />
+        </div>
 
-          <div className="flex flex-col mb-[30px] w-full">
-            <label forHTML="password" className="text-[1.2rem] text-gray-600">Введіть пароль</label>
-            <input onChange={(event) => setPasswordInput(event.target.value)} placeholder="Пароль" id="password" className="input border-black"/>
-
-        </div> 
-          <button onClick={userDataValid} className="btn w-[100%]">Увійти</button>
-
+        <div className="flex flex-col mb-[30px] w-full">
+          <label forHTML="password" className="text-[1.2rem] text-gray-600">
+            Введіть пароль
+          </label>
+          <input
+            onChange={(event) => setPasswordInput(event.target.value)}
+            placeholder="Пароль"
+            id="password"
+            className="input border-black"
+          />
+        </div>
+        <button onClick={userDataValid} className="btn w-[100%]">
+          Увійти
+        </button>
       </div>
     </div>
   );

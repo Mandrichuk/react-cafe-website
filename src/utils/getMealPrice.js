@@ -1,13 +1,13 @@
-import menuData from "../../../data/menuData.js";
+import menuData from "../data/menuData";
 
 export default function getMealPrice(id, amount) {
   let mealPrice = 0;
-  menuData.forEach(item => {
-    item.products.forEach(menuMeal => {
+  menuData.forEach((item) => {
+    item.products.forEach((menuMeal) => {
       if (id === menuMeal.id) {
         mealPrice = menuMeal.price * amount;
       }
-    })
+    });
   });
   return mealPrice;
 }

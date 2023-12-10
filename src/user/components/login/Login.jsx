@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./login.module.css";
 import Header from "../header/Header";
 import AnimatedLine from "../../../animations/AnimatedLine";
-
+import images from "../../../constants/index";
 
 export default function CreateLogin(props) {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -19,19 +19,19 @@ export default function CreateLogin(props) {
     <>
       <Header />
       <div
-        className={`${styles.mainContainer} flex flex-row items-center justify-center`}
+        className={`${styles.mainContainer} h-[80vh] flex flex-row items-center justify-center`}
       >
         <div className={`${styles.ImgContainer} w-[45%] h-[100vh]`}>
           <img
             className={`${styles.bgImg} w-[100%] h-[100%] object-cover`}
-            src="images/decorations/hot-dog-login.jpg"
+            src={images.hotDog}
           />
         </div>
 
         <div
           className={`${styles.loginContainer} w-[55%] h-[100vh] flex flex-col justify-center items-center pl-[5%] pr-[5%]`}
         >
-          <div className={`${styles.nameContainer} p-[5px] text-[3rem] `}>
+          <div className={`${styles.nameContainer} p-[5px] text-[3rem] flex flex-col items-center justify-center`}>
             <AnimatedLine />
             <p className={`${styles.titleText}`}>Регестрація</p>
           </div>
@@ -39,6 +39,7 @@ export default function CreateLogin(props) {
           <div
             className={`${styles.tagline} ${styles.articleText} mb-[40px] text-gray-500`}
           >
+          {/* <img src={images.friesSVG} className={``}  alt={"fries-decoration"}/> */}
             Реєструйтесь та отримуй 5% бонусних накопичень з кожного заказу!
           </div>
 

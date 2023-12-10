@@ -306,7 +306,7 @@ input[type="radio"] {
   }
 
   .menuTaglineText {
-    font-size: 1.3rem;
+    font-size: 1.3serem;
   }
 }
 
@@ -361,11 +361,16 @@ input[type="radio"] {
   }
 }
 
+@media (max-width: 600px) {
+  .menuTaglineText {
+    font-size: 1.3rem;
+  }
+}
 
 @media (min-width: 1300px) {
   .sectionContainer {
     justify-content: space-between;
-    max-width: 1900px;
+    max-width: var(--max-width-section);
   }
 
   .iconFirst {

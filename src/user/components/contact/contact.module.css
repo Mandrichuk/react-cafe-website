@@ -6,9 +6,12 @@
 
 .main {
   background-color: var(--custom-green);
+  position: relative;
   margin-top: var(--section-margin);
   height: 250px;
   width: 100%;
+  margin-bottom: var(--wavy-height);
+  margin-top: calc(var(--section-margin) + var(--wavy-height));
 }
 
 .coverContainer {

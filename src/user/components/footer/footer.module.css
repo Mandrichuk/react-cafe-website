@@ -12,6 +12,7 @@
   height: 300px;
   border-top: 4px solid var(--custom-green);
   margin-bottom: 60px;
+  margin-top: var(--section-margin);
 }
 
 .detailsSection {
@@ -78,7 +79,7 @@
   }
 
   .footer {
-    margin-top: var(--section-margin);
+    margin-top: 70px;
   }
 }
 
@@ -88,8 +89,8 @@
   }
 
   .footer {
-    height: 500px;
-    margin: 100px 0 0 0;
+    height: 400px;
+    margin-bottom: 20px;
   }
 
   .imageContainer {
@@ -100,6 +101,7 @@
 @media (max-width: 500px) {
   .footer {
     height: 420px;
+    margin-bottom: 20px;
   }
 }
 
@@ -109,7 +111,7 @@
     height: 300px;
   }
 
-    .imageContainer {
+  .imageContainer {
     margin-top: 40px;
   }
 }

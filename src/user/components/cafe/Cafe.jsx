@@ -39,7 +39,7 @@ export default function CreateCafe() {
             </div>
           </div>
         </div>
-
+        
         <section className={`${styles.InfoSheet}`}>
           <AnimatedLine />
 
@@ -128,32 +128,38 @@ export default function CreateCafe() {
           </div>
         </section>
 
-        <section className={`${styles.drinkAndBeerSection} text-white`}>
-          <section className={`${styles.beerMainSection}`}>
-            <div className={`${styles.sectionDetails}`}>
-              <div className={`${styles.titleText} ${styles.beerTitle}`}>
-                Drink&Beer
-              </div>
-              <div className={`${styles.preTitleText}`}>
-                Файні алкогольні напої
-              </div>
-              <div className={`${styles.articleText} ${styles.alcoholArticle}`}>
+        <section className={`${styles.posterSection} text-white`}>
+          <div className={`topWavyBox`} />
+          
+          <div className={`${styles.sectionsCover}`}>
+            <div className={`${styles.leftSection} flex-1 flex flex-col `}>
+              <div className={`titleText`}>Drink&Beer</div>
+              <div className={`${styles.preTitleText}`}>Файні алкогольні напої </div>
+              <div className={`${styles.articleText} ${styles.alcoholArticle} max-w-[800px]`}>
                 Наш асортимент алкогольних напоїв - це вибір гурмана, де кожен
                 келих - це справжній витвір мистецтва.
               </div>
               <Link
                 to="/menu"
-                className={`${styles.bgWhite} font-bold btn mt-6 max-w-[220px] md:max-w-[250px]`}
+                className={`${styles.orangeBtn} font-bold btn mt-6 md:max-w-[250px]`}
               >
                 Переглянути меню
               </Link>
             </div>
 
-            <div className={`${styles.beerImageContainer}`}>
-              <img className={`${styles.beerImage}`} src={images.beerMug} />
+
+
+            <div className={`${styles.rightSection} flex-1 h-full w-full object-cover flex items-center`}>
+              <img src={images.beerMug} className={`${styles.posterImg} object-cover`} />
+
             </div>
-          </section>
+
+          </div>
+
+
+          <div className={`bottomWavyBox`} />
         </section>
+
       </main>
       <Footer />
     </>

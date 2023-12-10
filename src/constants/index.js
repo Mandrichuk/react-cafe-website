@@ -21,7 +21,10 @@ import curcledLogo from "../assets/icons/curcledLogo.png";
 import textLogo from "../assets/icons/textLogo.png";
 
 // instagram
-import coffeeInstagram from "../assets/instagram/coffeeInstagram.jpg";
+import coffeeInstagram from "../assets/instagram/coffeeInstagram.jpg";  
+import burgerInstagram from "../assets/instagram/burgerInstagram.jpg";  
+import drinkCoffeeInstagram from "../assets/instagram/drinkCoffeeInstagram.jpg";  
+import cocktailInstagram from "../assets/instagram/cocktailInstagram.jpg";  
 
 // lotties
 import openClose from "../assets/lotties/openClose.json";
@@ -50,6 +53,9 @@ export default {
   curcledLogo,
   textLogo,
   coffeeInstagram,
+  burgerInstagram,
+  drinkCoffeeInstagram,
+  cocktailInstagram,
   openClose,
   cooking,
   cafeFootage,
@@ -85,12 +91,17 @@ export const instagramData = [
   {
     id: 2,
     link: "https://www.instagram.com/drink.food.zp/",
-    image: coffeeInstagram,
+    image: burgerInstagram,
   },
   {
     id: 3,
     link: "https://www.instagram.com/drink.food.zp/",
-    image: coffeeInstagram,
+    image: drinkCoffeeInstagram,
+  },
+  {
+    id: 4,
+    link: "https://www.instagram.com/drink.food.zp/",
+    image: cocktailInstagram,
   },
 ];
 

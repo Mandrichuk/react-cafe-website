@@ -16,10 +16,6 @@
   font-size: var(--article-font-size);
 }
 
-.nameContainer {
-  background-color: rgb(251, 251, 244);
-}
-
 .nameContainer button:hover {
   background-color: red;
 }
@@ -32,15 +28,17 @@
   opacity: 0.8;
 }
 
-
-@media (max-width: 600px) {
-  .ImgContainer {
-    width: 0;
-  }
-
+@media (min-width: 600px) {
   .mainContainer {
-    margin-top: 130px;
-    max-height: 550px;
+    height: 100vh;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .ImgContainer {
+    display: none;
   }
 
   .loginContainer {
@@ -61,9 +59,8 @@
     margin: 0;
   }
   .tagline {
-    margin-left: 10%;
     font-size: 1.2rem;
-    width: 86%;
+    width: var(--mutual-width);
   }
 }
 
@@ -107,10 +104,6 @@
 
   .nameContainer {
     font-size: 3.5rem;
-  }
-
-  .mainContainer {
-    margin-top: 180px;
   }
 
   .tagline {

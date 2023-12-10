@@ -33,7 +33,7 @@ export default function CreateFooter() {
   }, []);
 
   return (
-    <footer className={`${styles.footer} mt-[100px]`}>
+    <footer className={`${styles.footer}`}>
       {displayed !== "large" && (
         <div className={`${styles.imageContainer}`}>
           <img className={`${styles.logoImg}`} src={images.curcledLogo} />
@@ -96,8 +96,8 @@ export default function CreateFooter() {
               <div className={`${styles} mb-[10px] font-bold text-xl`}>
                 Більше інформації
               </div>
-              <Link className={`${styles.link}`} to="/about">
-                Про нас
+              <Link className={`${styles.link}`} to="/news">
+                Новини
               </Link>
             </div>
           )}
@@ -108,8 +108,8 @@ export default function CreateFooter() {
             <div className={`${styles} mb-[10px] font-bold text-xl`}>
               Більше інформації
             </div>
-            <Link className={`${styles.link}`} to="/about">
-              Про нас
+            <Link to="/news" className={`${styles.link}`}>
+              Новини
             </Link>
           </div>
         )}

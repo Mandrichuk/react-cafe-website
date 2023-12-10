@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/error404.module.css";
 import Header from "../../user/components/header/Header";
+import images from "../../constants/index";
 
 function Error404() {
   return (
@@ -12,10 +13,10 @@ function Error404() {
       >
         <img
           className={`${styles.bgImage}`}
-          src="/images/background/error404.png"
+          src={images.error404}
         />
         <Link to="/" className={`btn mt-[40px]`}>
-          До головної{" "}
+          До головної
         </Link>
       </div>
     </>

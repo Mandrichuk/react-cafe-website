@@ -36,23 +36,27 @@ function Contact() {
 
 
   return (
-    <div className={`${styles.main} flex items-center justify-center`}>
-      <div className={`${styles.coverContainer}`}>
-        <div className={`${styles.details} text-white`}>
-          <div className='flex flex-row items-center titleText'>
-            <HiOutlineMail />
-            <div className='ml-2 w-full'>Розсилка новин</div>
+    <>
+      <div className={`${styles.main} flex items-center justify-center`}>
+      <div className="topWavyBox" />
+        <div className={`${styles.coverContainer}`}>
+          <div className={`${styles.details} text-white`}>
+            <div className='flex flex-row items-center titleText'>
+              <HiOutlineMail />
+              <div className='ml-2 w-full'>Розсилка новин</div>
+            </div>
+            <div className={`pretitleText mb-4 w-full`}>Будьте <span className='font-bold'>першим</span>, хто дізнається про всі наші новини.</div>
           </div>
-          <div className={`pretitleText mb-4 w-full`}>Будьте <span className='font-bold'>першим</span>, хто дізнається про всі наші новини.</div>
+          <form ref={formRef} onSubmit={sendEmail} className={`${styles.inputsContainer} flex flex-col flex-1 w-full`}>
+            <input type="email" name="email" value={emailInput} onChange={handleEmailChange} placeholder='Введіть вашу пошту...' className={`${styles.inputEmail} input max-h-[50px] text-black`} />
+            <button type='submit' className={`${styles.submBtn} mt-[15px] pretitleText flex flex-row items-center justify-center`}>
+              {loading ? "Надсилається.." : "Відправити"}
+            </button>
+          </form>
         </div>
-        <form ref={formRef} onSubmit={sendEmail} className={`${styles.inputsContainer} flex flex-col flex-1 w-full`}>
-          <input type="email" name="email" value={emailInput} onChange={handleEmailChange} placeholder='Введіть вашу пошту...' className={`${styles.inputEmail} input max-h-[50px] text-black`} />
-          <button type='submit' className={`${styles.submBtn} mt-[15px] pretitleText flex flex-row items-center justify-center`}>
-            {loading ? "Надсилається.." : "Відправити"}
-          </button>
-        </form>
+      <div className="bottomWavyBox" />
       </div>
-    </div>
+    </>
   );
 }
 

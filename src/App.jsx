@@ -38,7 +38,7 @@ import Error404 from "./common/error404/Error404";
 import StaffLogin from "./common/staffLogin/staffLogin";
 
 export default function CreateApp() {
-  const [isLoggined, setIsLoggined] = useState(true);
+  const [isLoggined, setIsLoggined] = useState(false);
   const [cart, setCart] = useState([]);
   const [history, setHistory] = useState([]);
   const [currentLink, setCurrentLink] = useState("/");

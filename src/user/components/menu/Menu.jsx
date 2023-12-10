@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useRef, useState, useEffect} from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import styles from "./menu.module.css";
 import MenuItem from "./materials/MenuItem";
 import { ImSpoonKnife } from "react-icons/im";
@@ -9,8 +10,16 @@ import images from "../../../constants/index";
 import { menuData } from "../../../constants/index" 
 
 
-
 export default function CreateMenu(props) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {once: true});
+  const mainControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) mainControls.start("visible");
+  }, [isInView, mainControls]);
+
+
   return (
     <>
       <Header />
@@ -53,7 +62,15 @@ export default function CreateMenu(props) {
                 alt="product-quality"
               />
 
-              <div
+              <motion.div
+                ref={ref}
+                variants={{
+                  hidden: { opacity: 0},
+                  visible: { opacity: 1},
+                }}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                transition={{ duration: 0.3, delay: 0.3 }}
                 className={`${styles.imageDetailsContainer} ${styles.iconFirst}`}
               >
                 <img
@@ -61,9 +78,17 @@ export default function CreateMenu(props) {
                   src={images.coffeeBeans}
                   alt="coffee-beans"
                 />
-              </div>
+              </motion.div>
 
-              <div
+              <motion.div
+                ref={ref}
+                variants={{
+                  hidden: { opacity: 0},
+                  visible: { opacity: 1},
+                }}
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"}
+                transition={{ duration: 0.3, delay: 0.5 }}
                 className={`${styles.imageDetailsContainer} ${styles.iconSecond}`}
               >
                 <img
@@ -71,7 +96,9 @@ export default function CreateMenu(props) {
                   src={images.saladLeaves}
                   alt="salad-leaves"
                 />
-              </div>
+              </motion.div>
+
+
             </div>
           </section>
         </div>

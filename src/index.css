@@ -20,6 +20,8 @@
   --staff-width: 70vh;
   --text-width: 320px;
   --mutual-width: 94%;
+  --wavy-height: 25px;
+  --max-width-section: 2000px;
 }
 
 body {
@@ -32,7 +34,6 @@ body {
 * {
   margin: 0;
 }
-
 
 .titleText {
   font-size: var(--title-font-size);
@@ -87,6 +88,14 @@ body {
   border-bottom-left-radius: 10px;
 }
 
+.fullCover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: var(--max-width-section);
+}
+
 .staffContent {
   width: 90%;
   margin-top: 80px;
@@ -103,6 +112,51 @@ body {
   border: 2px solid black;
   min-width: 100px;
 } 
+
+.topWavyBox {
+  --wavy-height: 25px;
+  height: var(--wavy-height);
+  width: 100%;
+  top: calc(var(--wavy-height) * -1 + 1px);
+  background-color: var(--custom-green);
+  background-color: var(--custom-green);
+  position: absolute;
+  border: none;
+  --mask:
+    radial-gradient(33.54px at 50% 45.00px,#000 99%,#0000 101%) calc(50% - 30px) 0/60px 100%,
+    radial-gradient(33.54px at 50% -30px,#0000 99%,#000 101%) 50% 15px/60px 100% repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+
+.bottomWavyBox {
+  --wavy-height: 25px;
+  height: var(--wavy-height);
+  width: 100%;
+  bottom: calc(var(--wavy-height) * -1 + 1px);
+  background-color: var(--custom-green);
+  background-color: var(--custom-green);
+  position: absolute;
+  border: none;
+  --mask:
+    radial-gradient(33.54px at 50% calc(100% - 45.00px),#000 99%,#0000 101%) calc(50% - 30px) 0/60px 100%,
+    radial-gradient(33.54px at 50% calc(100% + 30.00px),#0000 99%,#000 101%) 50% calc(100% - 15px)/60px 100% repeat-x;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+}
+
+.infoContainer > p {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+}
+
+
+.infoContainer > p {
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+}
 
 @keyframes fillAnimation {
   to {

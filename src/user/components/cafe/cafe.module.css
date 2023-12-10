@@ -89,18 +89,12 @@ main {
   transform: scale(1.04);
 }
 
-
-.infoContainer > p {
-  position: absolute;
-  bottom: 15px;
-  left: 10px;
-}
-
 .location {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 
+  max-width: var(--max-width-section);
   margin-top: var(--section-margin);
   width: var(--mutual-width);
 }
@@ -215,20 +209,15 @@ main {
 
 .child {
   background-color: gray;
-  min-width: 180px;
-  height: 300px;
+  min-width: 170px;
+  height: 280px;
   margin: 1px 5px;
   cursor: pointer;
-  border: 1px solid rgba(207, 201, 201, .3);
+  border: 1px solid none;
   overflow: hidden;
-  border-radius: 5px;
+  border-radius: 7px;
   position: relative;
   transition: background-color 250ms;
-}
-
-.bgWhite {
-  background-color: white;
-  color: black;
 }
 
 .childImg {
@@ -236,6 +225,24 @@ main {
   height: 100%;
   object-fit: cover;
   transition: opacity 250ms;
+}
+
+.childImg:hover {
+  opacity: 0.45;
+}
+
+.child:hover {
+  background-color: black;
+}
+
+.child:hover .instagramIconAbsolute {
+  display: inline-block;
+  opacity: 1;
+}
+
+.orangeBtn {
+  background-color: var(--custom-orange);
+  color: black;
 }
 
 .instagramIconAbsolute {
@@ -251,18 +258,6 @@ main {
   transition: opacity 250ms;
   }
 
-.childImg:hover {
-  opacity: 0.45;
-}
-
-.child:hover {
-  background-color: black;
-}
-
-.child:hover .instagramIconAbsolute {
-  display: inline-block;
-  opacity: 1;
-}
 
 .instagramNameContainer {
   display: flex;
@@ -305,15 +300,19 @@ main {
   left: 80px;
 }
 
+.sectionsCover {
+  height: 100%;
+}
 
-.drinkAndBeerSection {
+.posterSection {
+  background-color: var(--custom-green);
   display: flex;
   justify-content: center;
-  margin-top: calc(var(--section-margin));
   width: 100%;
-  height: 500px;
-  background-color: var(--custom-green);
+  height: 350px;
   position: relative;
+  margin-bottom: var(--wavy-height);
+  margin-top: calc(var(--section-margin) + var(--wavy-height));
 }
 
 .imageContainer {
@@ -323,50 +322,63 @@ main {
   object-fit: cover;
 }
 
-
-.beerMainSection {
-  width: var(--mutual-width);
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.beerImageContainer {
-  margin-right: 5%;
-  margin-left: 25%;
-  width: 80%;
-  max-width: 350px;
-  min-width: 230px;
-  object-fit: cover;
-}
-
 .beerDetails {
   margin-left: 10%;
   min-width: 250px;
 }
 
-.alcoholArticle {
-  min-width: 350px;
-  max-width: 500px;
-  margin-top: 25px;
+.sectionsCover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.beerTitle {
-  margin-bottom: 20px;
+.rightSection {
+  justify-content: flex-end;
+}
+
+.posterImg {
+  max-height: 300px;
 }
 
 
+@media (max-width: 600px) { 
+  :root {
+    --text-width: 320px;
+    --mutual-width: 84%;
+    --title-font-size: 2.2rem;
+    --pretitle-font-size: 1.3rem;
+    --article-font-size: 1.2rem;
+    --section-margin: 100px;
+    --icon-size: 1.7rem;
+  }
 
-@media (max-width: 930px) { 
-  .beerImageContainer {
-    margin-right: 5%;
-    margin-left: 10%;
-    width: 100%;
+  .posterSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 630px;
+  }
+
+  .orangeBtn {
+    max-width: 250px;
+    margin-bottom: 20px;
+  }
+
+  .sectionsCover {
+    height: 90%;
+    flex-direction:column;
+  }
+
+  .rightSection {
+    justify-content: center;
+  }
+
+  .posterImg {
+    max-height: 280px;
   }
 }
-
 
 @media (max-width: 765px) { 
   :root {
@@ -377,6 +389,20 @@ main {
     --article-font-size: 1.2rem;
     --section-margin: 100px;
     --icon-size: 1.7rem;
+  }
+  
+  .posterImg {
+    max-height: 280px;
+  }
+
+  .orangeBtn {
+    max-width: 230px;
+    margin-bottom: 20px;
+  }
+
+  .child {
+    min-width: 180px;
+    height: 300px;
   }
 
   .sectionDetails {
@@ -428,37 +454,6 @@ main {
     width: 100%;
     object-fit: cover;
   }
-
-  .drinkAndBeerSection {
-    justify-content: center;
-    margin-top: calc(var(--section-margin));
-    width: 100%;
-    height: 770px;
-    background-color: var(--custom-green);
-    position: relative;
-  }
-
-  .beerMainSection {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .beerDetails {
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .beerImageContainer {
-    height: 400px;
-    width: 100%;
-    margin: 0;
-    margin-top: 40px;
-  }
-
   .instagramDetails {
     margin: 0;
     margin-bottom: 10px;
@@ -467,12 +462,20 @@ main {
   .cover {
     margin-top: 20px;
   }
-
-  .drinkAndBeerSection .sectionDetails {
-    margin: 0;
-  }
 }
 
+.sectionsCover {
+    margin-left: 10%;
+    margin-right: 10%;
+
+}
+
+@media (max-width: 800px) {
+  .sectionsCover {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
 
 @media (max-width: 665px) {
   :root {
@@ -512,13 +515,6 @@ main {
     margin: 0;
   }
 
-  .beerImageContainer {
-    max-width: 360px;
-    min-width: 230px;
-    object-fit: cover;
-    height: 340px;
-  }
-
   .coverContainer {
     height: 350px;
   }
@@ -540,8 +536,21 @@ main {
     --icon-size: 2rem;
   }
 
+  .posterSection {
+    height: 400px;
+  }
+
+  .posterImg {
+    max-height: 340px;
+  }
+
   .coverContainer {
     height: 400px;
+  }
+
+  .child {
+    height: 350px;
+    width: 240px;
   }
 }
 
@@ -556,6 +565,14 @@ main {
     --icon-size: 2.3rem;
   }
 
+  .sectionsCover {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .posterImg {
+    max-height: 360px;
+  }
 
   .gridInfo {
     grid-template-columns: repeat(3, 1fr);
@@ -569,22 +586,25 @@ main {
     padding-bottom: 24%;
   }
 
-  .beerImageContainer {
-    margin: 0 0 0 10%;
-  }
-
   .sectionDetails {
     max-width: 500px;
     margin: 0 10% 0 0;
   }
 }
 
-@media (min-width: 800px) { 
+@media (min-width: 1200px) { 
   .instagramGallery {
     width: 100%;
   }
 
   .scrollImages {
     justify-content: right;
+  }
+}
+
+@media (max-width: 500px) { 
+  .child {
+    min-width: 150px;
+    height: 250px;
   }
 }

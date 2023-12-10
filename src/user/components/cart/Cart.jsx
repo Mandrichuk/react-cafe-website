@@ -76,10 +76,11 @@ export default function CreateCart(props) {
               <div
                 className={` ${styles.allMeals} w-full flex flex-col items-center justify-center mt-[100px] max-w-[700px]`}
               >
-                {props.cart.map((item) => (
+                {props.cart.map((item, index) => (
                   <Meal
                     id={item.id}
                     amount={item.amount}
+                    key={`cart-item-${index}`}
                     handleAmountChange={props.handleAmountChange}
                   />
                 ))}

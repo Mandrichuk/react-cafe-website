@@ -8,13 +8,23 @@ import Lottie from "lottie-react";
 import images from "../../../constants/index";
 import Chapter from "./materials/CreateChapter";
 import ScreenChapter from "./materials/CreateScreenChapter";
-import { navInfo } from "../../../constants/index";
+import { useSelector } from "react-redux";
 
 
 export default function CreateHeader(props) {
   const openClose = images.openClose;
   const closeRef = useRef(null);
   let [screenSettings, setScreenSettings] = useState(false);
+
+  const userLogin = useSelector((state) => state.loggins.value.userLoggined);
+  console.log(userLogin);
+  const isUserLogginedNav = userLogin ? { link: "/profile", name: "Профіль"}  : { link: "/login", name: "Увійти" };
+  const navInfo = [
+    { link: "/", name: "Головна" },
+    { link: "/menu", name: "Меню" },
+    isUserLogginedNav,
+    { link: "/cart", name: "Кошик" },
+  ];
 
   function handleChange() {
     setScreenSettings(!screenSettings);
@@ -92,7 +102,7 @@ export default function CreateHeader(props) {
               Соціальні мережи
             </div>
 
-            <div className="text-info screenSettingsText mt-[2px] mb-[15px] ">
+            <div className="text-info screenSettingsText mt-[2px]">
               <span className="text-info text-black">
                 <a
                   target="_blank"
@@ -103,7 +113,7 @@ export default function CreateHeader(props) {
               </span>
             </div>
 
-            <div className="text-info screenSettingsText mt-[2px] mb-[15px] ">
+            <div className="text-info screenSettingsText mt-[2px]">
               <span className="text-info text-black">
                 <a
                   target="_blank"

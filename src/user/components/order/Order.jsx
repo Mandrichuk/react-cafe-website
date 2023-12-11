@@ -17,7 +17,7 @@ export default function CreateOrder(props) {
       <Header />
       <main className={`${styles.main} text-black`}>
         <div
-          className={`${styles.loginContainer} w-[55%] h-[80vh] flex flex-col justify-center items-center`}
+          className={`${styles.loginContainer} h-[80vh] flex flex-col justify-center items-center`}
         >
           <AnimatedLine />
           <div className={`${styles.nameContainer}`}>
@@ -31,19 +31,19 @@ export default function CreateOrder(props) {
           ></div>
 
           <div
-            className={`${styles.enterPhoneContainer} flex flex-col  mb-[40px]`}
+            className={`${styles.enterContainer} flex flex-col  mb-[40px]`}
           >
             <label htmlFor="phone" className={`pretitleText`}>
               Номер телефону:
             </label>
-            <div className="text-[1.3rem] flex flex-row items-center justify-center mb-[20px]">
+            <div className="w-full text-[1.3rem] flex flex-row items-center justify-center mb-[20px]">
               <input
                 type="tel"
                 id="phone"
                 name="phone"
                 value={phoneNumber}
                 onChange={handleInputChange}
-                className={`input`}
+                className={`input w-full`}
                 pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                 placeholder="+380.."
                 required
@@ -56,7 +56,7 @@ export default function CreateOrder(props) {
               Отримати код
             </button>
           </div>
-          <div className={`${styles.enterPhoneContainer} flex flex-col`}>
+          <div className={`${styles.enterContainer} flex flex-col`}>
             <label htmlFor="phone" className={`pretitleText`}>
               Код з СМС:
             </label>

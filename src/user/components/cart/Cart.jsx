@@ -110,7 +110,7 @@ export default function CreateCart(props) {
                     placeholder="Подвійна порція м'яса.."
                   />
                   <div
-                    className={`${styles.totalCost} border-b-[1px] pretitileText border-black black p-[10px] mb-[50px]`}
+                    className={`${styles.lable} border-b-[1px] pretitileText border-black black p-[10px] mb-[50px]`}
                   >
                     Загальна сума замовлення: {totalPrice}грн
                   </div>

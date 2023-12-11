@@ -7,6 +7,7 @@ import hotdog from "../assets/background/hotdog.jpg";
 import tableBg from "../assets/background/tableBg.jpg";
 import kidsBunner from "../assets/background/kidsBunner.jpg";
 import seedsBg from "../assets/background/seedsBg.jpg";
+import coffeeGif from "../assets/background/coffeeGif.gif";
 
 // decorations
 import beerMug from "../assets/decorations/beerMug.png";
@@ -34,7 +35,6 @@ import cooking from "../assets/lotties/cooking.json";
 import cafeFootage from "../assets/videos/cafeFootage.mp4";
 
 
-
 export default {
   percentBunner,
   coffeeBunner,
@@ -44,6 +44,7 @@ export default {
   tableBg,
   kidsBunner,
   seedsBg,
+  coffeeGif,
   beerMug,
   coffeeBeans,
   hotDog,
@@ -103,13 +104,6 @@ export const instagramData = [
     link: "https://www.instagram.com/drink.food.zp/",
     image: cocktailInstagram,
   },
-];
-
-export const navInfo = [
-  { link: "/", name: "Головна" },
-  { link: "/menu", name: "Меню" },
-  { link: "/login", name: "Профіль" },
-  { link: "/cart", name: "Кошик" },
 ];
 
 export const menuData = [

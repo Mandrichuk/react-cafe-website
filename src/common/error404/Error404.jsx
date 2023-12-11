@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "../styles/error404.module.css";
+import styles from "./error404.module.css";
 import Header from "../../user/components/header/Header";
 import images from "../../constants/index";
 

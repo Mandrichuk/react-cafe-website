@@ -7,11 +7,13 @@
   margin-top: var(--section-margin);
 }
 
+.labelTitle {
+  font-size: 1.5rem;
+}
+
 .mealContainer {
   border-radius: 14px;
-  padding: 12px;
-  padding-left: 18px;
-  padding-right: 18px;
+  padding: 22px;
 }
 
 .headerTaglineContent {
@@ -72,17 +74,8 @@
     font-size: 2.1rem;
   }
 
-  .mealContainer {
-    padding-left: 12px;
-    padding-right: 0px;
-  }
-
   .mealNameContainer {
     width: 120px;
-  }
-
-  .priceContainer {
-    width: 60px;
   }
 }
 
@@ -145,5 +138,45 @@
 @media (min-width: 385px) {
   .mainEmptyContainer {
     height: 40vh;
+  }
+}
+
+
+
+@media (min-width: 1050px) {
+  .labelTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 801px) { 
+  .labelTitle {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 650px) { 
+  .labelTitle {
+    font-size: 1.3rem;
+  }
+
+  .mealContainer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .mealNameContainer {
+     max-width: 140px;
+  
+  }
+
+  .priceContainer {
+    width: 70px;
+  }
+
+  .amountBtn,
+  .amoutText {
+    height: 45px;
+    width: 45px;
   }
 }

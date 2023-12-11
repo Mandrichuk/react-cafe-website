@@ -14,9 +14,24 @@
   opacity: 0.8;
 }
 
+.enterContainer {
+  width: 500px;
+}
 
 @media (min-width: 600px) {
   .loginContainer {
     height: 80vh;
+  }
+}
+
+@media (min-width: 40px) and (max-width: 500px) {
+  .enterContainer {
+    width: 300px;
+  }
+}
+
+@media (max-width: 800px) {
+  .enterContainer {
+    width: 400px;
   }
 }

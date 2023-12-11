@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit"; 
 
-const initialStateValue = {
+export const initialStateValue = {
   userLoggined: false,
   adminLoggined: false,
   superAdminLoggined: false,
 }
 
 
-export const logginsSlice = createSlice({
+const logginsSlice = createSlice({
   name: "logins",
   initialState: { value: initialStateValue },
   reducers: {
@@ -21,7 +21,7 @@ export const logginsSlice = createSlice({
       state.value = action.payload;
     },
   }
-})
+});
 
 
 export const {toggleUserLogin, toggleAdminLogin, toggleSuperAdminLogin} = logginsSlice.actions;

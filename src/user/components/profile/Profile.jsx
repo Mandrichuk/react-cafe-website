@@ -10,12 +10,20 @@ import { MdOutlineDone } from "react-icons/md";
 import { RxCross1 } from "react-icons/rx";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 
 export default function CreateProfile(props) {
+  const userLogin = useSelector((state) => state.loggins.value.userLoggined);
+  const navigate = useNavigate();
   const [editMode, setEditMode] = useState(false);
   const [nameInput, setNameInput] = useState("Им'я");
-  const [emailInput, setEmailInput] = useState("");
+
+
+  useEffect(() => {
+    if (!userLogin) navigate("/login")
+  }, [navigate, userLogin]);
 
   function handleNameChange() {
     setEditMode((editMode) => !editMode);

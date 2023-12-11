@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-
+import { useSelector } from "react-redux";
 import "./index.css";
 
 //* User Components
@@ -34,15 +34,15 @@ import MealAddSuperAdmin from "./superadmin/components/mealAdd/MealAdd";
 import CategoryAddSuperAdmin from "./superadmin/components/categoryAdd/CategoryAdd";
 
 // * Common
+import Loader from "./common/loader/Loader";
 import Error404 from "./common/error404/Error404";
 import StaffLogin from "./common/staffLogin/staffLogin";
 
 export default function CreateApp() {
-  const [isLoggined, setIsLoggined] = useState(false);
+  const loading = useSelector((state) => state.loading.value);
   const [cart, setCart] = useState([]);
   const [history, setHistory] = useState([]);
   const [currentLink, setCurrentLink] = useState("/");
-
   const location = useLocation();
 
   useEffect(() => {
@@ -104,77 +104,79 @@ export default function CreateApp() {
 
   return (
     <div className="mt-[70px]">
-      <AnimatePresence>
-        <Routes location={location} key={location.pathname}>
-          //* User Components
-          <Route path="/" element={<CafeUser />} />
-          <Route
-            path="/menu"
-            element={
-              <MenuUser cart={cart} handleCartChange={handleCartChange} />
-            }
-          />
-          {isLoggined ? (
-            <Route path="/login" element={<ProfileUser history={history} />} />
-          ) : (
-            <Route path="/login" element={<LoginUser />} />
-          )}
-          <Route
-            path="/cart"
-            element={
-              <CartUser
-                cart={cart}
-                handleAmountChange={handleAmountChange}
-                handleHistoryAdd={handleHistoryAdd}
-                isLoggined={isLoggined}
-                RerenderHeader={handleLinkChange}
-              />
-            }
-          />
-          <Route path="/order" element={<OrderUser history={history} />} />
-          <Route
-            path="/success"
-            element={
-              <SuccessUser cart={cart} handleHistoryAdd={handleHistoryAdd} />
-            }
-          />
-          <Route path="/news" element={<NewsUser />} />
-          // * Admin Components
-          <Route path="/admin/nav" element={<NavigationAdmin />} />
-          <Route path="/admin/login/user" element={<LoginUserAdmin />} />
-          <Route path="/admin/register/user" element={<RegisterUserAdmin />} />
-          <Route path="/admin/menu" element={<MenuAdmin />} />
-          <Route path="/admin/user/cart" element={<CartAdmin />} />
-          <Route path="/admin/orders" element={<OrdersAdmin />} />
-          //* Super Admin Components
-          <Route path="/superadmin/nav" element={<NavigationSuperAdmin />} />
-          <Route
-            path="/superadmin/admin"
-            element={<AdminSettingsSuperAdmin />}
-          />
-          <Route path="/superadmin/menu" element={<MenuSettingsSuperAdmin />} />
-          <Route
-            path="/superadmin/menu/edit/meal/*"
-            element={<MealEditSuperAdmin />}
-          />
-          <Route
-            path="/superadmin/menu/success"
-            element={<MenuSuccessSuperAdmin />}
-          />
-          <Route
-            path="/superadmin/menu/add/meal"
-            element={<MealAddSuperAdmin />}
-          />
-          <Route
-            path="/superadmin/menu/add/category"
-            element={<CategoryAddSuperAdmin />}
-          />
-          // * Common
-          <Route path="*" element={<Error404 />} />
-          <Route path="/admin" element={<StaffLogin />} />
-          <Route path="/superadmin" element={<StaffLogin />} />
-        </Routes>
-      </AnimatePresence>
+      { loading ?
+        <Loader /> :
+        
+        <AnimatePresence>
+          <Routes location={location} key={location.pathname}>
+            //* User Components
+            <Route path="/" element={<CafeUser />} />
+            <Route
+              path="/menu"
+              element={
+                <MenuUser cart={cart} handleCartChange={handleCartChange} />
+              }
+            />
+
+          <Route path="/profile" element={<ProfileUser history={history} />} />
+          <Route path="/login" element={<LoginUser />} />
+
+            <Route
+              path="/cart"
+              element={
+                <CartUser
+                  cart={cart}
+                  handleAmountChange={handleAmountChange}
+                  handleHistoryAdd={handleHistoryAdd}
+                  RerenderHeader={handleLinkChange}
+                />
+              }
+            />
+            <Route path="/order" element={<OrderUser history={history} />} />
+            <Route
+              path="/success"
+              element={
+                <SuccessUser cart={cart} handleHistoryAdd={handleHistoryAdd} />
+              }
+            />
+            <Route path="/news" element={<NewsUser />} />
+            // * Admin Components
+            <Route path="/admin/nav" element={<NavigationAdmin />} />
+            <Route path="/admin/login/user" element={<LoginUserAdmin />} />
+            <Route path="/admin/register/user" element={<RegisterUserAdmin />} />
+            <Route path="/admin/menu" element={<MenuAdmin />} />
+            <Route path="/admin/user/cart" element={<CartAdmin />} />
+            <Route path="/admin/orders" element={<OrdersAdmin />} />
+            //* Super Admin Components
+            <Route path="/superadmin/nav" element={<NavigationSuperAdmin />} />
+            <Route
+              path="/superadmin/admin"
+              element={<AdminSettingsSuperAdmin />}
+            />
+            <Route path="/superadmin/menu" element={<MenuSettingsSuperAdmin />} />
+            <Route
+              path="/superadmin/menu/edit/meal/*"
+              element={<MealEditSuperAdmin />}
+            />
+            <Route
+              path="/superadmin/menu/success"
+              element={<MenuSuccessSuperAdmin />}
+            />
+            <Route
+              path="/superadmin/menu/add/meal"
+              element={<MealAddSuperAdmin />}
+            />
+            <Route
+              path="/superadmin/menu/add/category"
+              element={<CategoryAddSuperAdmin />}
+            />
+            // * Common
+            <Route path="*" element={<Error404 />} />
+            <Route path="/admin" element={<StaffLogin />} />
+            <Route path="/superadmin" element={<StaffLogin />} />
+          </Routes>
+        </AnimatePresence>
+      }
     </div>
   );
 }

@@ -33,7 +33,6 @@
 .changeInfoContainer {
   padding: 18px;
   border-radius: 14px;
-
 }
 
 .headerSection {
@@ -86,7 +85,7 @@
 @media (min-width: 801px) { 
   .labelTitle {
     font-size: 1.2rem;
-  }
+}
 
   .iconsContainer {
     height: 60.8px;

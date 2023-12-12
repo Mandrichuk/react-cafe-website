@@ -7,7 +7,6 @@ import hotdog from "../assets/background/hotdog.jpg";
 import tableBg from "../assets/background/tableBg.jpg";
 import kidsBunner from "../assets/background/kidsBunner.jpg";
 import seedsBg from "../assets/background/seedsBg.jpg";
-import coffeeGif from "../assets/background/coffeeGif.gif";
 
 // decorations
 import beerMug from "../assets/decorations/beerMug.png";
@@ -33,6 +32,9 @@ import cooking from "../assets/lotties/cooking.json";
 
 // videos
 import cafeFootage from "../assets/videos/cafeFootage.mp4";
+
+// gifs
+import coffeeGif from "../assets/gifs/coffeeGif.gif";
 
 
 export default {
@@ -60,6 +62,7 @@ export default {
   openClose,
   cooking,
   cafeFootage,
+  coffeeGif,
 };
 
 export const newsData = [

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "../menu.module.css";
 import { Link } from "react-router-dom";
+import { motion, useInView, useAnimation } from "framer-motion";
 import { MdOutlineExposurePlus1 } from "react-icons/md";
 import { MdOutlineDone } from "react-icons/md";
 import { MdKeyboardArrowUp } from "react-icons/md";
@@ -11,6 +12,8 @@ import { FaCocktail } from "react-icons/fa";
 import { TbBrandCakephp } from "react-icons/tb";
 import { LuSandwich } from "react-icons/lu";
 import { LiaHotdogSolid } from "react-icons/lia";
+
+
 
 const iconMap = {
   BiSolidCoffeeBean,
@@ -60,8 +63,17 @@ export default function CreateMenuItem(props) {
   );
 }
 
+
 function CreateProducts(products, cart, handleCartChange) {
   const [isAdded, setIsAdded] = useState(false);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const mainControls = useAnimation();
+
+
+  useEffect(() => {
+    if (isInView) mainControls.start("visible");
+  }, [mainControls, isInView]);
 
   function handleBoolChange() {
     setIsAdded(true);
@@ -103,12 +115,22 @@ function CreateProducts(products, cart, handleCartChange) {
         </div>
         {isAdded && (
           <div className="bottom-[50px] fixed left-0 right-0 z-30 flex items-center justify-center">
+
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }}  
+            animate={{ opacity: 1, y: 0 }}  
+            transition={{ duration: 0.2 }}
+            className={`w-full flex flex-col items-center justify-center`}
+          >
             <Link
               to="/cart"
               className="flex flex-row items-center justify-center text-[1.4rem] max-w-[400px] bg-custom-green text-white p-[20px] rounded-md"
             >
-              Додано до&nbsp;кошику
+              Додано до&nbsp;<span className={`underline font-bold`}>кошику</span>
             </Link>
+          </motion.div>
+
           </div>
         )}
       </div>

@@ -4,12 +4,13 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import AnimatedLine from "../../../animations/AnimatedLine";
 import images, { newsData } from "../../../constants/index";
-
+import TabTitle from "../../../common/TabTitle";
 
 
 function News() {
   return (
     <>
+      <TabTitle title={"Новини"} />
       <Header />
 
       <div

@@ -7,10 +7,12 @@ import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import AnimatedLine from "../../../animations/AnimatedLine";
 import images from "../../../constants/index";
-import { menuData } from "../../../constants/index" 
+import { menuData } from "../../../constants/index";
+import TabTitle from "../../../common/TabTitle";
 
 
 export default function CreateMenu(props) {
+
   const ref = useRef(null);
   const isInView = useInView(ref, {once: true});
   const mainControls = useAnimation();
@@ -22,6 +24,7 @@ export default function CreateMenu(props) {
 
   return (
     <>
+      <TabTitle title={"Меню"} />
       <Header />
       <header id="top" className={`${styles.header} w-full`}>
         <div className={`${styles.headerSection} w-full`}>

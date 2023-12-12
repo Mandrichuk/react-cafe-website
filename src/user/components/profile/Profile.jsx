@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import TabTitle from "../../../common/TabTitle";
 
 
 export default function CreateProfile(props) {
@@ -50,6 +51,7 @@ export default function CreateProfile(props) {
 
   return (
     <>
+      <TabTitle title={"Профіль"} />
       <Header />
       <div
         className={`${styles.headerSection} w-full flex flex-col items-center justify-center text-white h-[300px]`}

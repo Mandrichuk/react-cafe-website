@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { toggleUserLogin } from "../../../features/loggins";
 import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
+import TabTitle from "../../../common/TabTitle";
 
 
 export default function CreateLogin(props) {
@@ -16,8 +17,6 @@ export default function CreateLogin(props) {
   const navigate = useNavigate();
   const [phoneNumber, setPhoneNumber] = useState("");
   const userLogin = useSelector((state) => state.loggins.value.userLoggined);
-  console.log(userLogin);
-
 
   useEffect(() => {
     if (userLogin) {
@@ -36,6 +35,7 @@ export default function CreateLogin(props) {
 
   return (
     <>
+      <TabTitle title={"Увійти"} />
       <Header />
       <div
         className={`${styles.mainContainer} w-full flex flex-col justify-center items-center`}

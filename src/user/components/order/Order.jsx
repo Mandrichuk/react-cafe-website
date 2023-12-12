@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./order.module.css";
 import AnimatedLine from "../../../animations/AnimatedLine";
 import Header from "../header/Header";
-
+import TabTitle from "../../../common/TabTitle";
 
 export default function CreateOrder(props) {
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -15,6 +15,8 @@ export default function CreateOrder(props) {
   return (
     <>
       <Header />
+      <TabTitle title={"Замовлення"} />
+
       <main className={`${styles.main} text-black`}>
         <div
           className={`${styles.loginContainer} h-[80vh] flex flex-col justify-center items-center`}

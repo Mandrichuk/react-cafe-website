@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import styles from "./success.module.css";
 import Header from "../header/Header";
 import images from "../../../constants";
+import TabTitle from "../../../common/TabTitle";
+
 
 export default function CreateSuccess(props) {
-
   return (
     <>
+      <TabTitle title={"Прийнято!"} />
       <Header />
       <div
         className={`${styles.gradientBg} font-bold h-[50px] w-full flex flex-row items-center justify-center text-[1.4rem]`}

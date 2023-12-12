@@ -9,6 +9,7 @@ import { BsInstagram } from "react-icons/bs";
 import images from "../../../constants/index";
 import { newsData } from "../../../constants/index";
 import { instagramData } from "../../../constants/index";
+import TabTitle from "../../../common/TabTitle";
 
 
 export default function CreateCafe() {
@@ -16,8 +17,8 @@ export default function CreateCafe() {
 
   return (
     <>
+      <TabTitle title={"Drink&Food"} />
       <Header />
-
       <main>
         <div className={`${styles.coverContainer}`}>
           <video

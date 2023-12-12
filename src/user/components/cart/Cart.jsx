@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./cart.module.css";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
@@ -7,6 +7,7 @@ import Meal from "./materials/Meal";
 import AnimatedLine from "../../../animations/AnimatedLine";
 import getTotalPrice from "../../../utils/getTotalPrice";
 import { SiInstacart } from "react-icons/si";
+import TabTitle from "../../../common/TabTitle";
 
 
 export default function CreateCart(props) {
@@ -26,6 +27,7 @@ export default function CreateCart(props) {
 
   return (
     <>
+      <TabTitle title={"Кошик"} /> 
       <Header />
       <header className={`${styles.header} w-full`}>
         <div className={`${styles.headerSection} w-full`}>

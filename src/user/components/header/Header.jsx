@@ -15,9 +15,7 @@ export default function CreateHeader(props) {
   const openClose = images.openClose;
   const closeRef = useRef(null);
   let [screenSettings, setScreenSettings] = useState(false);
-
   const userLogin = useSelector((state) => state.loggins.value.userLoggined);
-  console.log(userLogin);
   const isUserLogginedNav = userLogin ? { link: "/profile", name: "Профіль"}  : { link: "/login", name: "Увійти" };
   const navInfo = [
     { link: "/", name: "Головна" },
@@ -36,9 +34,7 @@ export default function CreateHeader(props) {
         setScreenSettings(false);
       }
     };
-
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };

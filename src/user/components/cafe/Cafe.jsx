@@ -97,12 +97,11 @@ export default function CreateCafe() {
                 className={`${styles.instagramNameContainer}`}
               >
                 <BsInstagram className={`${styles.instagramIcon}`} />
-                <a
-                  href="https://www.instagram.com/drink.food.zp/"
+                <span
                   className={`${styles.articleText}`}
                 >
                   @drink.food.zp
-                </a>
+                </span>
               </a>
             </div>
             <div className={`${styles.cover}`}>

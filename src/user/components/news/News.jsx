@@ -36,7 +36,7 @@ function News() {
       >
         <div className={`${styles.main}`}>
           {newsData.map((obj) => (
-            <CreateNewsItem {...obj} />
+            <CreateNewsItem key={`news-item-${obj.id}`} {...obj} />
           ))}
         </div>
       </div>
@@ -45,12 +45,11 @@ function News() {
   );
 }
 
+
 function CreateNewsItem(props) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
-
   const newsImage = props.image;
-  console.log(newsImage)
-
+  
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 800);

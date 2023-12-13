@@ -7,6 +7,8 @@ import { IoWaterOutline } from "react-icons/io5";
 import { AiOutlineDelete } from "react-icons/ai";
 import { BiUpload } from "react-icons/bi";
 import menuData from "../../../data/menuData";
+import Header from "../header/Header";
+import AnimatedLine from "../../../animations/AnimatedLine";
 
 
 export default function CreateMealEdit() {
@@ -53,7 +55,12 @@ export default function CreateMealEdit() {
     <div
       className={`${styles.mainContainer} flex flex-col items-center justify-between w-full`}
     >
+      <Header />
       <div className="staffContent">
+
+        <AnimatedLine />
+        <div className={`titleText mb-3`}>Додання нової страви</div>
+
         <div className={`${styles.categoryContainer}`}>
           <div
             className={`${styles.specificationContainer} input rounded-none`}

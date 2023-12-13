@@ -8,6 +8,8 @@ import { IoWaterOutline } from "react-icons/io5";
 import { AiOutlineDelete } from "react-icons/ai";
 import { BiUpload } from "react-icons/bi";
 import menuData from "../../../data/menuData";
+import Header from "../header/Header";
+import AnimatedLine from "../../../animations/AnimatedLine";
 
 
 export default function CreateMealEdit() {
@@ -53,7 +55,11 @@ export default function CreateMealEdit() {
 
   return (
     <div className={`flex flex-col items-center justify-between w-full`}>
+      <Header />
       <div className="staffContent">
+
+        <AnimatedLine />
+        <div className="titleText mb-3">Зміна даних страви</div>
         <div className={`${styles.categoryContainer}`}>
           <div
             className={`${styles.specificationContainer} ${styles.inputSection} input rounded-none`}
@@ -213,14 +219,14 @@ export default function CreateMealEdit() {
           >
             <button
               onClick={handleModeChange}
-              className={`${styles.btnActions} ${styles.changeBtn} btn flex-1 flex flex-row items-center`}
+              className={`${styles.btnActions} ${styles.changeBtn} mr-[4px] btn flex-1 flex flex-row items-center`}
             >
               <TbStatusChange className="mr-[10px]" />
               Змінити
             </button>
 
             <button
-              className={`${styles.btnActions} ${styles.deleteBtn} btn flex-1 flex flex-row items-center`}
+              className={`${styles.btnActions} ${styles.deleteBtn}  ml-[4px] btn flex-1 flex flex-row items-center`}
             >
               <AiOutlineDelete className="mr-[10px]" />
               Видалити

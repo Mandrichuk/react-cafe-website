@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import menuData from "../../../data/menuData";
 import MenuItem from "./materials/MenuItem";
 import styles from "./menuSettings.module.css";
+import Header from "../header/Header";
+import AnimatedLine from "../../../animations/AnimatedLine";
 
 
 export default function CreateMenu(props) {
   return (
     <main className={`w-full flex flex-col items-center justify-center`}>
+      <Header />
       <div className="staffContent">
+        <AnimatedLine />
         <div className="text-black titleText font-bold mb-[30px]">
           Оберіть з меню страву для редагування або видалення
         </div>
@@ -19,13 +23,6 @@ export default function CreateMenu(props) {
         >
           Додати нову страву/напій
         </Link>
-        <Link
-          to="/superadmin/menu/add/category"
-          className={`flex justify-center btn mb-5`}
-        >
-          Додати нову категорію
-        </Link>
-
         <ul className={`${styles.accordion}`}>
           {MenuItems(menuData, props.cart, props.handleCartChange)}
         </ul>

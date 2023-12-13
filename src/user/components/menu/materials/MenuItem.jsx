@@ -13,7 +13,6 @@ import { LuSandwich } from "react-icons/lu";
 import { LiaHotdogSolid } from "react-icons/lia";
 
 
-
 const iconMap = {
   BiSolidCoffeeBean,
   PiCoffeeFill,
@@ -23,7 +22,6 @@ const iconMap = {
   LuSandwich,
   LiaHotdogSolid,
 };
-
 
 export default function CreateMenuItem(props) {
   const IconComponent = iconMap[props.icon];

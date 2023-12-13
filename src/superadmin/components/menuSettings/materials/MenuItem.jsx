@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../menuSettings.module.css";
 import { Link } from "react-router-dom";
 import { BiSolidEdit } from "react-icons/bi";
@@ -10,6 +10,7 @@ import { FaCocktail } from "react-icons/fa";
 import { TbBrandCakephp } from "react-icons/tb";
 import { LuSandwich } from "react-icons/lu";
 import { LiaHotdogSolid } from "react-icons/lia";
+import { MdKeyboardArrowUp } from "react-icons/md";
 
 const iconMap = {
   BiSolidCoffeeBean,
@@ -24,40 +25,42 @@ const iconMap = {
 
 export default function CreateMenuItem(props) {
   const IconComponent = iconMap[props.icon];
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleAccordion = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <li>
-      <input type="radio" name="accordion" id={props.id} />
-      <label htmlFor={props.id} className={`flex items-center justify-between`}>
-        <div
-          className={`${styles.labelTitle} flex items-center justify-between w-full `}
-        >
+      <div
+        className={`${styles.labelTitle} flex items-center justify-between p-[10px]  font-bold`}
+        onClick={toggleAccordion}
+      >
+        {isOpen ? (
+          <MdKeyboardArrowUp className={`${styles.downArrow} text-black`} />
+        ) : (
           <MdOutlineKeyboardArrowDown
             className={`${styles.downArrow} text-black`}
           />
-          {props.name}
-          <IconComponent className={`ml-[10px] text-custom-green`} />
-        </div>
-      </label>
-
-      <div className={`${styles.content}`}>
-        {CreateProducts(props.products, props.cart, props.handleCartChange)}
+        )}
+        {props.name}
+        <IconComponent className={`ml-[10px] text-custom-green`} />
+      </div>
+      <div
+        className={`${styles.content}`}
+        style={{
+          maxHeight: isOpen ? "1500px" : "0",
+          padding: isOpen ? "6px" : "0",
+        }}
+      >
+        {CreateProducts(props.products, props.cart)}
       </div>
     </li>
   );
 }
 
-function CreateProducts(products, cart, handleCartChange) {
-  const [isAdded, setIsAdded] = useState(false);
-
-  function handleBoolChange() {
-    setIsAdded(true);
-
-    setTimeout(() => {
-      setIsAdded(false);
-    }, 1200);
-  }
-
+function CreateProducts(products, cart) {
   if (!products) {
     return null;
   }
@@ -66,7 +69,7 @@ function CreateProducts(products, cart, handleCartChange) {
     return (
       <div
         key={item.id}
-        className={`text-black flex flex-row items-center justify-between pb-[20px] text-[1.3rem] px-[10px]`}
+        className={`${styles.mealContainer}  flex flex-row items-center justify-between pb-[20px] text-[1.3rem] px-[10px]`}
       >
         <div className={`${styles.mealNameContainer}`}>{item.name}</div>
         <div className="flex flex-row items-center">
@@ -76,22 +79,16 @@ function CreateProducts(products, cart, handleCartChange) {
             <div>100{item.grams}гм</div>
             <div>{item.price}грн </div>
           </div>
-          <Link to={`/superadmin/menu/edit/meal/${item.id}`}>
-            <div className="w-[45px] h-[45px] flex items-center justify-center ml-[20px] cursor-pointer">
-              <BiSolidEdit className="text-[2.2rem] text-black h-[80%] hover:text-gray-500 transition-all transition-200" />
-            </div>
+
+          <Link
+            to={`/superadmin/menu/edit/meal/${item.id}`}
+            className={` ${styles.iconContainer} w-[50px] h-[50px] flex items-center rounded-md justify-center border-[2px] ml-[20px] cursor-pointer`}
+          >
+            <BiSolidEdit
+              className={`${styles.iconPlus} text-[1.8rem] text-black hover:text-gray-500 transition-all transition-200`}
+            />
           </Link>
         </div>
-        {isAdded && (
-          <div className="bottom-[50px] fixed left-0 right-0 z-30 flex items-center justify-center">
-            <div className="flex flex-row items-center justify-center text-[1.4rem] max-w-[400px] bg-custom-green text-white p-[10px] pb-[20px] pt-[20px]">
-              <MdOutlineDone
-                className={`${styles.doneIcon} mr-[10px] text-[2rem]`}
-              />
-              Додано до кошику
-            </div>
-          </div>
-        )}
       </div>
     );
   });

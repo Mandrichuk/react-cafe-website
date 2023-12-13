@@ -15,7 +15,6 @@ import SuccessUser from "./user/components/success/Success";
 import NewsUser from "./user/components/news/News";
 
 //* Admin Components
-import RegisterUserAdmin from "./admin/components/registerUser/RegisterUser";
 import NavigationAdmin from "./admin/components/navigation/Navigation";
 import OrdersAdmin from "./admin/components/orders/Orders";
 
@@ -26,7 +25,6 @@ import MenuSettingsSuperAdmin from "./superadmin/components/menuSettings/MenuSet
 import MealEditSuperAdmin from "./superadmin/components/mealEdit/MealEdit";
 import MenuSuccessSuperAdmin from "./superadmin/components/menuSuccess/MenuSuccess";
 import MealAddSuperAdmin from "./superadmin/components/mealAdd/MealAdd";
-import CategoryAddSuperAdmin from "./superadmin/components/categoryAdd/CategoryAdd";
 
 // * Common
 import Loader from "./common/loader/Loader";
@@ -154,7 +152,6 @@ export default function CreateApp() {
               adminLoggined && 
               <>
               <Route path="/admin/nav" element={<NavigationAdmin />} />
-              <Route path="/admin/register/user" element={<RegisterUserAdmin />} />
               <Route path="/admin/orders" element={<OrdersAdmin />} />
               </>
             }
@@ -180,10 +177,6 @@ export default function CreateApp() {
               <Route
                 path="/superadmin/menu/add/meal"
                 element={<MealAddSuperAdmin />}
-              />
-              <Route
-                path="/superadmin/menu/add/category"
-                element={<CategoryAddSuperAdmin />}
               />
               </>
             }

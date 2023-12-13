@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "../header/Header";
+
 
 export default function MenuSuccess() {
   return (
     <div className={`flex flex-col items-center justify-center h-[70vh]`}>
+      <Header />
       <div className={`text-[1.8rem]`}>
         <div>Страва оновлена успішно! </div>
         <div>

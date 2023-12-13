@@ -21,10 +21,10 @@ import curcledLogo from "../assets/icons/curcledLogo.png";
 import textLogo from "../assets/icons/textLogo.png";
 
 // instagram
-import coffeeInstagram from "../assets/instagram/coffeeInstagram.jpg";  
-import burgerInstagram from "../assets/instagram/burgerInstagram.jpg";  
-import drinkCoffeeInstagram from "../assets/instagram/drinkCoffeeInstagram.jpg";  
-import cocktailInstagram from "../assets/instagram/cocktailInstagram.jpg";  
+import coffeeInstagram from "../assets/instagram/coffeeInstagram.jpg";
+import burgerInstagram from "../assets/instagram/burgerInstagram.jpg";
+import drinkCoffeeInstagram from "../assets/instagram/drinkCoffeeInstagram.jpg";
+import cocktailInstagram from "../assets/instagram/cocktailInstagram.jpg";
 
 // lotties
 import openClose from "../assets/lotties/openClose.json";
@@ -35,7 +35,6 @@ import cafeFootage from "../assets/videos/cafeFootage.mp4";
 
 // gifs
 import coffeeGif from "../assets/gifs/coffeeGif.gif";
-
 
 export default {
   percentBunner,
@@ -65,24 +64,31 @@ export default {
   coffeeGif,
 };
 
+
+export const adminData = { login: "admin", password: "admin123" };
+export const superAdminData = { login: "superadmin", password: "superadmin123" };
+
 export const newsData = [
   {
     id: 1,
     name: "Бонусні накопичення",
     image: percentBunner,
-    article: "За кожним замовленням у нас, ви автоматично отримуєте 5% бонусних накопичень. Ці бонуси можна використовувати як реальні гроші для зниження вартості вашого наступного візиту до нашого кафе.",
+    article:
+      "За кожним замовленням у нас, ви автоматично отримуєте 5% бонусних накопичень. Ці бонуси можна використовувати як реальні гроші для зниження вартості вашого наступного візиту до нашого кафе.",
   },
   {
     id: 2,
     name: "Сімейне кафе",
     image: kidsBunner,
-    article: "Завітайте до нас з вашими малятами! Ми завжди щасливі вас прийняти, нагодувати смачними стравами та створити затишну атмосферу у будь-який час доби.",
+    article:
+      "Завітайте до нас з вашими малятами! Ми завжди щасливі вас прийняти, нагодувати смачними стравами та створити затишну атмосферу у будь-який час доби.",
   },
   {
     id: 3,
     name: "Наша кава",
     image: coffeeBunner,
-    article: "Поширюються слухи, що у нас в місті найсмачніша кава. Завітай і переконайся, що ці чутки - не просто слова. Наші баристи завжди готові пригостити вас вишуканою кавою та створити неперевершений смаковий досвід.",
+    article:
+      "Поширюються слухи, що у нас в місті найсмачніша кава. Завітай і переконайся, що ці чутки - не просто слова. Наші баристи завжди готові пригостити вас вишуканою кавою та створити неперевершений смаковий досвід.",
   },
 ];
 

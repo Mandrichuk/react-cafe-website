@@ -1,18 +1,17 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useRef, useEffect} from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import styles from "./menu.module.css";
 import MenuItem from "./materials/MenuItem";
-import { ImSpoonKnife } from "react-icons/im";
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
 import AnimatedLine from "../../../animations/AnimatedLine";
 import images from "../../../constants/index";
 import { menuData } from "../../../constants/index";
+import { ImSpoonKnife } from "react-icons/im";
 import TabTitle from "../../../common/TabTitle";
 
 
 export default function CreateMenu(props) {
-
   const ref = useRef(null);
   const isInView = useInView(ref, {once: true});
   const mainControls = useAnimation();

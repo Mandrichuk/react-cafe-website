@@ -17,13 +17,17 @@ export default function History(props) {
         className={`${styles.scale} flex items-center justify-between p-[10px] font-bold`}
         onClick={toggleAccordion}
       >
-        {isOpen ? (
-          <MdKeyboardArrowUp className={`${styles.downArrow} text-black`} />
-        ) : (
-          <MdOutlineKeyboardArrowDown
-            className={`${styles.downArrow} text-black`}
-          />
-        )}
+        <div className={`flex items-center`}>
+          {isOpen ? (
+            <MdKeyboardArrowUp className={`${styles.downArrow} text-[2rem] text-black`} />
+          ) : (
+            <MdOutlineKeyboardArrowDown
+              className={`${styles.downArrow} text-[2rem] text-black`}
+            />
+          )}
+          <div className={`text-[1.2rem] ml-3`}> {props.history.time}</div>
+        </div>
+
         <div className={`${styles.labelTitle}`}> {props.history.date}</div>
         <div className={`text-[1.2rem]`}>{props.history.price}грн</div>
       </div>

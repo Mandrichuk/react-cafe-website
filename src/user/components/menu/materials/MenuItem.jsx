@@ -3,7 +3,6 @@ import styles from "../menu.module.css";
 import { Link } from "react-router-dom";
 import { motion, useInView, useAnimation } from "framer-motion";
 import { MdOutlineExposurePlus1 } from "react-icons/md";
-import { MdOutlineDone } from "react-icons/md";
 import { MdKeyboardArrowUp } from "react-icons/md";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { BiSolidCoffeeBean } from "react-icons/bi";

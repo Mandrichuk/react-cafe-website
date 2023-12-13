@@ -8,9 +8,11 @@ import AnimatedLine from "../../../animations/AnimatedLine";
 import getTotalPrice from "../../../utils/getTotalPrice";
 import { SiInstacart } from "react-icons/si";
 import TabTitle from "../../../common/TabTitle";
+import { useSelector } from "react-redux";
 
 
 export default function CreateCart(props) {
+  const userLogin = useSelector((state) => state.loggins.value.userLoggined);
   const totalPrice = getTotalPrice(props.cart);
   const [commentInput, setCommentInput] = useState("");
   const MaxSymbols = 100;
@@ -117,9 +119,9 @@ export default function CreateCart(props) {
                     Загальна сума замовлення: {totalPrice}грн
                   </div>
 
-                  {props.isLoggined ? (
+                  {userLogin ? (
                     <Link
-                      onClick={props.RerenderHeader}
+                      onClick={() => {props.RerenderHeader(); props.handleHistoryAdd();}}
                       to="/success"
                       className="font-bold btn flex items-center justify-center"
                     >

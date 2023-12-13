@@ -1,55 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialCarts = {
-  userCart: [],
-  adminCart: [],
+  adminCart: []
 }
 
 export const cartsSlice = createSlice({
   name: "carts",
   initialState: { value: initialCarts },
   reducers: {
-    addToUserCart: (state, action) => {
-      const { id, amount } = action.payload;
-      const index = state.value.userCart.findIndex(item => item.id === id);
-
-      if (index !== -1) {
-        state.value.userCart[index] = {
-          ...state.value.userCart[index],
-          amount: state.value.userCart[index].amount + amount,
-        };
-      } else {
-        state.value.userCart = [
-          ...state.value.userCart,
-          { id, amount },
-        ];
-      }
-    },
-    clearUserCart: (state) => {
-      state.value.userCart = [];
-    },
-    removeFromUserCart: (state, action) => {
-      const { id, amount } = action.payload;
-      const index = state.value.userCart.findIndex(item => item.id === id);
-
-      if ( state.value.userCart[index].amount <= 1) {
-        state.value.userCart.splice(index, 1);
-      } else {
-        if (index !== -1) {
-          state.value.userCart[index] = {
-            ...state.value.userCart[index],
-            amount: state.value.userCart[index].amount - amount,
-          };
-        } else {
-          state.value.userCart = [
-            ...state.value.userCart,
-            { id, amount },
-          ];
-        }
-      }
-    },
-
-
     addToAdminCart: (state, action) => {
       const { id, amount } = action.payload;
       const index = state.value.adminCart.findIndex(item => item.id === id);
@@ -92,5 +50,5 @@ export const cartsSlice = createSlice({
   }
 });
 
-export const { addToUserCart, addToAdminCart, clearUserCart, clearAdminCart, removeFromAdminCart } = cartsSlice.actions;
+export const { addToAdminCart, clearAdminCart, removeFromAdminCart } = cartsSlice.actions;
 export default cartsSlice.reducer;

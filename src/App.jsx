@@ -14,14 +14,9 @@ import OrderUser from "./user/components/order/Order";
 import SuccessUser from "./user/components/success/Success";
 import NewsUser from "./user/components/news/News";
 
-import getTotalPrice from "./utils/getTotalPrice";
-
 //* Admin Components
-import LoginUserAdmin from "./admin/components/loginUser/LoginUser";
 import RegisterUserAdmin from "./admin/components/registerUser/RegisterUser";
 import NavigationAdmin from "./admin/components/navigation/Navigation";
-import MenuAdmin from "./admin/components/menu/Menu";
-import CartAdmin from "./admin/components/cart/Cart";
 import OrdersAdmin from "./admin/components/orders/Orders";
 
 //* Super Admin Components
@@ -38,12 +33,21 @@ import Loader from "./common/loader/Loader";
 import Error404 from "./common/error404/Error404";
 import StaffLogin from "./common/staffLogin/staffLogin";
 
+// * Utils
+import getTotalPrice from "./utils/getTotalPrice";
+
+
 export default function CreateApp() {
+  const loggins = useSelector((state) => state.loggins.value);
+  const userLoggined = loggins.userLoggined;
+  const adminLoggined = loggins.adminLoggined;
+  const superAdminLoggined = loggins.superAdminLoggined;
   const loading = useSelector((state) => state.loading.value);
   const [cart, setCart] = useState([]);
   const [history, setHistory] = useState([]);
   const [currentLink, setCurrentLink] = useState("/");
   const location = useLocation();
+
 
   useEffect(() => {
     handleLinkChange();
@@ -53,7 +57,7 @@ export default function CreateApp() {
     setCurrentLink(location.pathname);
   }
 
-  function handleHistoryAdd(comment) {
+  function handleHistoryAdd() {
     const today = new Date();
     const formattedDate = `${
       today.getDate() < 10 ? "0" + today.getDate() : today.getDate()
@@ -62,10 +66,12 @@ export default function CreateApp() {
         ? "0" + today.getMonth() + 1
         : today.getMonth() + 1
     }/${today.getFullYear()}`;
+    const currentTime = today.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
 
     const newHistoryEntry = {
       id: Math.floor(1000 + Math.random() * 9000),
       date: formattedDate,
+      time: currentTime,
       price: getTotalPrice(cart),
       cart: cart,
     };
@@ -87,10 +93,14 @@ export default function CreateApp() {
 
   function handleAmountChange(id, amount, sign) {
     setCart((cart) => {
-      return cart.map((item) =>
-        item.id === id
-          ? { ...item, amount: item.amount + (sign ? 1 : -1) }
-          : item
+      return cart.map((item) => {
+        if (item.amount < 10) {
+          return item.id === id
+            ? { ...item, amount: item.amount + (sign ? 1 : -1) }
+            : item
+        }
+        return item; 
+      }
       );
     });
     validAmount();
@@ -109,6 +119,7 @@ export default function CreateApp() {
         
         <AnimatePresence>
           <Routes location={location} key={location.pathname}>
+
             //* User Components
             <Route path="/" element={<CafeUser />} />
             <Route
@@ -117,10 +128,8 @@ export default function CreateApp() {
                 <MenuUser cart={cart} handleCartChange={handleCartChange} />
               }
             />
-
-          <Route path="/profile" element={<ProfileUser history={history} />} />
-          <Route path="/login" element={<LoginUser />} />
-
+            <Route path="/profile" element={<ProfileUser history={history} />} />
+            <Route path="/login" element={<LoginUser />} />
             <Route
               path="/cart"
               element={
@@ -130,50 +139,61 @@ export default function CreateApp() {
                   handleHistoryAdd={handleHistoryAdd}
                   RerenderHeader={handleLinkChange}
                 />
-              }
-            />
-            <Route path="/order" element={<OrderUser history={history} />} />
+                }
+              />
+            <Route path="/order" element={<OrderUser history={history} handleHistoryAdd={handleHistoryAdd} />} />
             <Route
               path="/success"
-              element={
-                <SuccessUser cart={cart} handleHistoryAdd={handleHistoryAdd} />
-              }
+              element={<SuccessUser cart={cart} />}
             />
             <Route path="/news" element={<NewsUser />} />
+
+
             // * Admin Components
-            <Route path="/admin/nav" element={<NavigationAdmin />} />
-            <Route path="/admin/login/user" element={<LoginUserAdmin />} />
-            <Route path="/admin/register/user" element={<RegisterUserAdmin />} />
-            <Route path="/admin/menu" element={<MenuAdmin />} />
-            <Route path="/admin/user/cart" element={<CartAdmin />} />
-            <Route path="/admin/orders" element={<OrdersAdmin />} />
+            {
+              adminLoggined && 
+              <>
+              <Route path="/admin/nav" element={<NavigationAdmin />} />
+              <Route path="/admin/register/user" element={<RegisterUserAdmin />} />
+              <Route path="/admin/orders" element={<OrdersAdmin />} />
+              </>
+            }
+
             //* Super Admin Components
-            <Route path="/superadmin/nav" element={<NavigationSuperAdmin />} />
-            <Route
-              path="/superadmin/admin"
-              element={<AdminSettingsSuperAdmin />}
-            />
-            <Route path="/superadmin/menu" element={<MenuSettingsSuperAdmin />} />
-            <Route
-              path="/superadmin/menu/edit/meal/*"
-              element={<MealEditSuperAdmin />}
-            />
-            <Route
-              path="/superadmin/menu/success"
-              element={<MenuSuccessSuperAdmin />}
-            />
-            <Route
-              path="/superadmin/menu/add/meal"
-              element={<MealAddSuperAdmin />}
-            />
-            <Route
-              path="/superadmin/menu/add/category"
-              element={<CategoryAddSuperAdmin />}
-            />
-            // * Common
+            {
+              superAdminLoggined &&
+              <>
+              <Route path="/superadmin/nav" element={<NavigationSuperAdmin />} />
+              <Route
+                path="/superadmin/admin"
+                element={<AdminSettingsSuperAdmin />}
+              />
+              <Route path="/superadmin/menu" element={<MenuSettingsSuperAdmin />} />
+              <Route
+                path="/superadmin/menu/edit/meal/*"
+                element={<MealEditSuperAdmin />}
+              />
+              <Route
+                path="/superadmin/menu/success"
+                element={<MenuSuccessSuperAdmin />}
+              />
+              <Route
+                path="/superadmin/menu/add/meal"
+                element={<MealAddSuperAdmin />}
+              />
+              <Route
+                path="/superadmin/menu/add/category"
+                element={<CategoryAddSuperAdmin />}
+              />
+              </>
+            }
+
+            // * Common Components
             <Route path="*" element={<Error404 />} />
             <Route path="/admin" element={<StaffLogin />} />
             <Route path="/superadmin" element={<StaffLogin />} />
+
+
           </Routes>
         </AnimatePresence>
       }

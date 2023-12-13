@@ -61,6 +61,7 @@ body {
 }
 
 .btn {
+  font-weight: bold;
   position: relative;
   display: flex;
   justify-content: center;

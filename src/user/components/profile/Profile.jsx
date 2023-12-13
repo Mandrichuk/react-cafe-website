@@ -16,10 +16,12 @@ import TabTitle from "../../../common/TabTitle";
 
 
 export default function CreateProfile(props) {
+  const history = [...props.history].reverse(); 
   const userLogin = useSelector((state) => state.loggins.value.userLoggined);
   const navigate = useNavigate();
   const [editMode, setEditMode] = useState(false);
   const [nameInput, setNameInput] = useState("Им'я");
+
 
 
   useEffect(() => {
@@ -181,7 +183,7 @@ export default function CreateProfile(props) {
               </div>
 
               <ul className={`${styles.accordion} w-full`}>
-                {props.history.map((historyItem) => (
+                {history.map((historyItem) => (
                   <History history={historyItem} />
                 ))}
               </ul>

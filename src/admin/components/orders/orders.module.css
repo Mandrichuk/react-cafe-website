@@ -1,0 +1,14 @@
+.timeContainer {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.orderContainer,
+.priceContainer {
+  border-radius: 0;
+}
+
+.statusContainer {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}

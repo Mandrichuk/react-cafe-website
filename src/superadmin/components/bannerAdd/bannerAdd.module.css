@@ -14,10 +14,12 @@ input:focus {
 
 .specificationContainer,
 .inputSection {
+  height: 45.6px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-items: center;
+
   flex: 1;
 }
 
@@ -30,15 +32,22 @@ input:focus {
 }
 
 .deleteBtn {
-  background-color: rgb(173, 19, 19);
+  background-color: rgb(153, 27, 27);
 }
 
 .saveBtn {
-  background-color: #05442E;
+  background-color: var(--custom-green);
 }
 
-@media (min-width: 930px) {
+.unitsSection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 600px) {
   .inputSection {
-    height: 58.4px;
+    height: 52px;
   }
 }

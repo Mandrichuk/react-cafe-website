@@ -25,6 +25,8 @@ import MenuSettingsSuperAdmin from "./superadmin/components/menuSettings/MenuSet
 import MealEditSuperAdmin from "./superadmin/components/mealEdit/MealEdit";
 import MenuSuccessSuperAdmin from "./superadmin/components/menuSuccess/MenuSuccess";
 import MealAddSuperAdmin from "./superadmin/components/mealAdd/MealAdd";
+import AddBannerSuperAdmin from "./superadmin/components/bannerAdd/BannerAdd";
+import BannerEditSuperAdmin from "./superadmin/bannerEdit/bannerEdit";
 
 // * Common
 import Loader from "./common/loader/Loader";
@@ -46,7 +48,6 @@ export default function CreateApp() {
   const [currentLink, setCurrentLink] = useState("/");
   const location = useLocation();
 
-
   useEffect(() => {
     handleLinkChange();
   }, [location.pathname]);
@@ -64,7 +65,10 @@ export default function CreateApp() {
         ? "0" + today.getMonth() + 1
         : today.getMonth() + 1
     }/${today.getFullYear()}`;
-    const currentTime = today.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
+    const currentTime = today.toLocaleTimeString("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
 
     const newHistoryEntry = {
       id: Math.floor(1000 + Math.random() * 9000),
@@ -95,11 +99,10 @@ export default function CreateApp() {
         if (item.amount < 10) {
           return item.id === id
             ? { ...item, amount: item.amount + (sign ? 1 : -1) }
-            : item
+            : item;
         }
-        return item; 
-      }
-      );
+        return item;
+      });
     });
     validAmount();
   }
@@ -112,12 +115,11 @@ export default function CreateApp() {
 
   return (
     <div className="mt-[70px]">
-      { loading ?
-        <Loader /> :
-        
+      {loading ? (
+        <Loader />
+      ) : (
         <AnimatePresence>
           <Routes location={location} key={location.pathname}>
-
             //* User Components
             <Route path="/" element={<CafeUser />} />
             <Route
@@ -126,7 +128,10 @@ export default function CreateApp() {
                 <MenuUser cart={cart} handleCartChange={handleCartChange} />
               }
             />
-            <Route path="/profile" element={<ProfileUser history={history} />} />
+            <Route
+              path="/profile"
+              element={<ProfileUser history={history} />}
+            />
             <Route path="/login" element={<LoginUser />} />
             <Route
               path="/cart"
@@ -137,59 +142,70 @@ export default function CreateApp() {
                   handleHistoryAdd={handleHistoryAdd}
                   RerenderHeader={handleLinkChange}
                 />
-                }
-              />
-            <Route path="/order" element={<OrderUser history={history} handleHistoryAdd={handleHistoryAdd} />} />
-            <Route
-              path="/success"
-              element={<SuccessUser cart={cart} />}
+              }
             />
+            <Route
+              path="/order"
+              element={
+                <OrderUser
+                  history={history}
+                  handleHistoryAdd={handleHistoryAdd}
+                />
+              }
+            />
+            <Route path="/success" element={<SuccessUser cart={cart} />} />
             <Route path="/news" element={<NewsUser />} />
-
-
             // * Admin Components
-            {
-              adminLoggined && 
+            {adminLoggined && (
               <>
-              <Route path="/admin/nav" element={<NavigationAdmin />} />
-              <Route path="/admin/orders" element={<OrdersAdmin />} />
+                <Route path="/admin/nav" element={<NavigationAdmin />} />
+                <Route path="/admin/orders" element={<OrdersAdmin />} />
               </>
-            }
-
+            )}
             //* Super Admin Components
-            {
-              superAdminLoggined &&
+            {superAdminLoggined && (
               <>
-              <Route path="/superadmin/nav" element={<NavigationSuperAdmin />} />
-              <Route
-                path="/superadmin/admin"
-                element={<AdminSettingsSuperAdmin />}
-              />
-              <Route path="/superadmin/menu" element={<MenuSettingsSuperAdmin />} />
-              <Route
-                path="/superadmin/menu/edit/meal/*"
-                element={<MealEditSuperAdmin />}
-              />
-              <Route
-                path="/superadmin/menu/success"
-                element={<MenuSuccessSuperAdmin />}
-              />
-              <Route
-                path="/superadmin/menu/add/meal"
-                element={<MealAddSuperAdmin />}
-              />
+                <Route
+                  path="/superadmin/nav"
+                  element={<NavigationSuperAdmin />}
+                />
+                <Route
+                  path="/superadmin/admin"
+                  element={<AdminSettingsSuperAdmin />}
+                />
+                <Route
+                  path="/superadmin/menu"
+                  element={<MenuSettingsSuperAdmin />}
+                />
+                <Route
+                  path="/superadmin/menu/edit/meal/*"
+                  element={<MealEditSuperAdmin />}
+                />
+                <Route
+                  path="/superadmin/menu/success"
+                  element={<MenuSuccessSuperAdmin />}
+                />
+                <Route
+                  path="/superadmin/menu/add/meal"
+                  element={<MealAddSuperAdmin />}
+                />
+                <Route
+                  path="/superadmin/add/banner"
+                  element={<AddBannerSuperAdmin />}
+                />
+                <Route
+                  path="/superadmin/edit/banner/*"
+                  element={<BannerEditSuperAdmin />}
+                />
               </>
-            }
-
+            )}
             // * Common Components
             <Route path="*" element={<Error404 />} />
             <Route path="/admin" element={<StaffLogin />} />
             <Route path="/superadmin" element={<StaffLogin />} />
-
-
           </Routes>
         </AnimatePresence>
-      }
+      )}
     </div>
   );
 }

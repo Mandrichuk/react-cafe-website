@@ -16,7 +16,7 @@ export default function CreateMealEdit() {
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
     catetory: "",
-    name: "",
+    title: "",
     capacity: "",
     units: "",
     price: "",
@@ -40,7 +40,7 @@ export default function CreateMealEdit() {
   function deleteChanges() {
     setFormData({
       catetory: "",
-      name: "",
+      title: "",
       capacity: "",
       units: "",
       price: "",
@@ -71,12 +71,12 @@ export default function CreateMealEdit() {
 
           <section
             id="unitsSection"
-            className={`${styles.unitsSection} ${styles.inputSection} input rounded-none h-[45.6px]`}
+            className={`${styles.unitsSection} ${styles.inputSection} input rounded-none h-[53.6px]`}
           >
             <select
               onChange={handleFormChange}
               id="unitSelector"
-              className={`${styles.unitsSelect} w-full flex justify-between`}
+              className={`${styles.unitsSelect} w-full h-full flex justify-between`}
               name="catetory"
             >
               <option selected hidden value={0}>
@@ -141,7 +141,7 @@ export default function CreateMealEdit() {
 
           <section
             id="unitsSection"
-            className={`${styles.unitsSection} ${styles.inputSection} input rounded-none h-[45.6px]`}
+            className={`${styles.unitsSection} ${styles.inputSection} input rounded-none h-[53.6px]`}
           >
             <select
               onChange={handleFormChange}

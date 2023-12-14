@@ -15,9 +15,11 @@ export default function Navigation() {
         <Link to="/superadmin/menu" className="flex mb-[10px] btn">
           Налаштування "Меню"
         </Link>
-
-        <Link to="/superadmin/admin" className="flex btn">
+        <Link to="/superadmin/admin" className="flex btn mb-[10px]">
           Налаштування "Адміністратора"
+        </Link>
+        <Link to="/news" className="flex btn mb-[10px]">
+          Налаштування "Баннеров"
         </Link>
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"; 
 
 export const initialStateValue = {
-  userLoggined: true,
+  userLoggined: false,
   adminLoggined: true,
   superAdminLoggined: true,
 }

@@ -20,6 +20,7 @@
   overflow: hidden;
 }
 
+
 .headerSection {
   width: 100%;
   height: 300px;
@@ -30,14 +31,15 @@
   overflow: hidden;
 }
 
-
 .infoContainer > img {
   width: 100%; 
-  height: 100%;
   object-fit: cover;
   transition: transform 300ms; 
 }
 
+.addBanner {
+  margin-top: var(--section-margin);
+}
 
 .infoContainer > p {
   position: absolute;
@@ -77,3 +79,30 @@
   }
 }
 
+@media (min-width: 800px) {
+  .EditBtn,
+  .addBannerBtn {
+    width: 350px;
+  }
+}
+
+@media (min-width: 900px) {
+  .EditBtn,
+  .addBannerBtn {
+    width: 400px;
+  }
+}
+
+@media (min-width: 1640px) {
+  .EditBtn, 
+  .addBannerBtn{
+    width: 624px;
+  }
+}
+
+@media (min-width: 1830px) {
+  .EditBtn,
+  .addBannerBtn {
+    width: 700px;
+  }
+}

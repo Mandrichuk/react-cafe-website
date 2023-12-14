@@ -24,7 +24,7 @@ export default function CreateMealEdit() {
   const [editMode, setEditMode] = useState(false);
   const [formData, setFormData] = useState({
     catetory: currentMeal,
-    name: currentMeal.name,
+    title: currentMeal.name,
     capacity: currentMeal.capacity,
     units: currentMeal,
     price: currentMeal.price,

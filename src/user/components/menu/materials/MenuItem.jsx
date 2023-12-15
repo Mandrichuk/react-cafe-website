@@ -2,16 +2,18 @@ import React, { useState, useEffect, useRef } from "react";
 import styles from "../menu.module.css";
 import { Link } from "react-router-dom";
 import { motion, useInView, useAnimation } from "framer-motion";
-import { MdOutlineExposurePlus1 } from "react-icons/md";
-import { MdKeyboardArrowUp } from "react-icons/md";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { BiSolidCoffeeBean } from "react-icons/bi";
+import {
+  MdOutlineExposurePlus1,
+  MdKeyboardArrowUp,
+  MdOutlineKeyboardArrowDown,
+} from "react-icons/md";
+import { BiSolidCoffeeBean, BiSolidEdit } from "react-icons/bi";
 import { PiCoffeeFill, PiHamburgerFill } from "react-icons/pi";
 import { FaCocktail } from "react-icons/fa";
 import { TbBrandCakephp } from "react-icons/tb";
 import { LuSandwich } from "react-icons/lu";
 import { LiaHotdogSolid } from "react-icons/lia";
-
+import { useSelector } from "react-redux";
 
 const iconMap = {
   BiSolidCoffeeBean,
@@ -60,13 +62,15 @@ export default function CreateMenuItem(props) {
   );
 }
 
-
 function CreateProducts(products, cart, handleCartChange) {
+  const superAdminLoggined = useSelector(
+    (state) => state.loggins.value.superAdminLoggined
+  );
+
   const [isAdded, setIsAdded] = useState(false);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
-
 
   useEffect(() => {
     if (isInView) mainControls.start("visible");
@@ -98,36 +102,47 @@ function CreateProducts(products, cart, handleCartChange) {
             <div>100{item.grams}гм</div>
             <div>{item.price}грн </div>
           </div>
-          <div
-            onClick={() => {
-              handleCartChange(item.id);
-              handleBoolChange();
-            }}
-            className={` ${styles.iconContainer} w-[50px] h-[50px] flex items-center rounded-md justify-center border-[2px] ml-[20px] cursor-pointer`}
-          >
-            <MdOutlineExposurePlus1
-              className={`${styles.iconPlus} text-[1.8rem] text-black hover:text-gray-500 transition-all transition-200`}
-            />
-          </div>
+
+          {superAdminLoggined ? (
+            <Link
+              to={`/superadmin/menu/edit/meal/${item.id}`}
+              className={` ${styles.iconContainer} w-[50px] h-[50px] flex items-center rounded-md justify-center border-[2px] ml-[20px] cursor-pointer`}
+            >
+              <BiSolidEdit
+                className={`${styles.iconPlus} text-[1.8rem] text-black hover:text-gray-500 transition-all transition-200`}
+              />
+            </Link>
+          ) : (
+            <div
+              onClick={() => {
+                handleCartChange(item.id);
+                handleBoolChange();
+              }}
+              className={` ${styles.iconContainer} w-[50px] h-[50px] flex items-center rounded-md justify-center border-[2px] ml-[20px] cursor-pointer`}
+            >
+              <MdOutlineExposurePlus1
+                className={`${styles.iconPlus} text-[1.8rem] text-black hover:text-gray-500 transition-all transition-200`}
+              />
+            </div>
+          )}
         </div>
         {isAdded && (
           <div className="bottom-[50px] fixed left-0 right-0 z-30 flex items-center justify-center">
-
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 50 }}  
-            animate={{ opacity: 1, y: 0 }}  
-            transition={{ duration: 0.2 }}
-            className={`w-full flex flex-col items-center justify-center`}
-          >
-            <Link
-              to="/cart"
-              className="flex flex-row items-center justify-center text-[1.4rem] max-w-[400px] bg-custom-green text-white p-[20px] rounded-md"
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.2 }}
+              className={`w-full flex flex-col items-center justify-center`}
             >
-              Додано до&nbsp;<span className={`underline font-bold`}>кошику</span>
-            </Link>
-          </motion.div>
-
+              <Link
+                to="/cart"
+                className="flex flex-row items-center justify-center text-[1.4rem] max-w-[400px] bg-custom-green text-white p-[20px] rounded-md"
+              >
+                Додано до&nbsp;
+                <span className={`underline font-bold`}>кошику</span>
+              </Link>
+            </motion.div>
           </div>
         )}
       </div>

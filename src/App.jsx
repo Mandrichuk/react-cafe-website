@@ -22,11 +22,9 @@ import OrdersAdmin from "./admin/components/orders/Orders";
 //* Super Admin Components
 import NavigationSuperAdmin from "./superadmin/components/navigation/Navigation";
 import AdminSettingsSuperAdmin from "./superadmin/components/adminSettings/AdminSettings";
-import MenuSettingsSuperAdmin from "./superadmin/components/menuSettings/MenuSettings";
 import MealEditSuperAdmin from "./superadmin/components/mealEdit/MealEdit";
-import MenuSuccessSuperAdmin from "./superadmin/components/menuSuccess/MenuSuccess";
 import MealAddSuperAdmin from "./superadmin/components/mealAdd/MealAdd";
-import AddBannerSuperAdmin from "./superadmin/components/bannerAdd/BannerAdd";
+import BannerAddSuperAdmin from "./superadmin/components/bannerAdd/BannerAdd";
 import BannerEditSuperAdmin from "./superadmin/components/bannerEdit/BannerEdit";
 
 // * Common
@@ -190,16 +188,8 @@ export default function CreateApp() {
                   element={<AdminSettingsSuperAdmin />}
                 />
                 <Route
-                  path="/superadmin/menu"
-                  element={<MenuSettingsSuperAdmin />}
-                />
-                <Route
                   path="/superadmin/menu/edit/meal/*"
                   element={<MealEditSuperAdmin />}
-                />
-                <Route
-                  path="/superadmin/menu/success"
-                  element={<MenuSuccessSuperAdmin />}
                 />
                 <Route
                   path="/superadmin/menu/add/meal"
@@ -207,7 +197,7 @@ export default function CreateApp() {
                 />
                 <Route
                   path="/superadmin/add/banner"
-                  element={<AddBannerSuperAdmin />}
+                  element={<BannerAddSuperAdmin />}
                 />
                 <Route
                   path="/superadmin/edit/banner/*"

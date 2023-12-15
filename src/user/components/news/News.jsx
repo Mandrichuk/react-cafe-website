@@ -11,8 +11,11 @@ import { MdModeEditOutline } from "react-icons/md";
 import { MdOutlinePlaylistAdd } from "react-icons/md";
 
 
-
 function News() {
+  const isSuperAdminLoggined = useSelector(
+    (state) => state.loggins.value.superAdminLoggined
+  );
+
   return (
     <>
       <TabTitle title={"Новини"} />
@@ -35,20 +38,20 @@ function News() {
       <div
         className={`${styles.cover} flex flex-col items-center justify-center`}
       >
-
         <div className={`${styles.main}`}>
-
-          <div className={`${styles.addBanner}`}>
-            <AnimatedLine />
-            <div className={`titleText`} >
-              Додати нову новину
+          {isSuperAdminLoggined && (
+            <div className={`${styles.addBanner}`}>
+              <AnimatedLine />
+              <div className={`titleText`}>Додати нову новину</div>
+              <Link
+                to={`/superadmin/add/banner`}
+                className={`${styles.addBannerBtn} btn flex flex-row items-center justify-center`}
+              >
+                Додати
+                <MdOutlinePlaylistAdd className={`ml-[5px] text-[1.6rem]`} />
+              </Link>
             </div>
-
-          <Link to={`/superadmin/add/banner`} className={`${styles.addBannerBtn} btn flex flex-row items-center justify-center`}>
-            Додати
-            <MdOutlinePlaylistAdd  className={`ml-[5px] text-[1.6rem]`}/>
-          </Link>
-        </div>
+          )}
 
           {newsData.map((obj) => (
             <CreateNewsItem key={`news-item-${obj.id}`} {...obj} />
@@ -101,7 +104,13 @@ function CreateNewsItem(props) {
               className={`${styles.EditBtn} btn flex flex-row items-center justify-center mt-4`}
             >
               Редагувати новину
-              <MdModeEditOutline style={{ color: "white", marginLeft: "5px", fontSize: "1.6rem" }} />
+              <MdModeEditOutline
+                style={{
+                  color: "white",
+                  marginLeft: "5px",
+                  fontSize: "1.6rem",
+                }}
+              />
             </Link>
           )}
         </>
@@ -124,7 +133,13 @@ function CreateNewsItem(props) {
                   className={`${styles.EditBtn} btn flex flex-row items-center justify-center mt-4`}
                 >
                   Редагувати новину
-                  <MdModeEditOutline style={{ color: "white", marginLeft: "5px", fontSize: "1.6rem" }} />
+                  <MdModeEditOutline
+                    style={{
+                      color: "white",
+                      marginLeft: "5px",
+                      fontSize: "1.6rem",
+                    }}
+                  />
                 </Link>
               )}
             </div>

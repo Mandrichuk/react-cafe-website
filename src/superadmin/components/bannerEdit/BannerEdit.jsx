@@ -7,9 +7,13 @@ import { BiUpload } from "react-icons/bi";
 import { newsData } from "../../../constants/index";
 import Header from "../header/Header";
 import AnimatedLine from "../../../animations/AnimatedLine";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 export default function CreateMealEdit() {
+  const navigation = useNavigate();
+  const [isFormLegit, setIsFormLegit] = useState(false);
   const currentNewsId = Number(window.location.href.split("/").slice(-1)[0]);
   const [editMode, setEditMode] = useState(false);
   let currentNewsData = newsData.filter((item) => {
@@ -29,6 +33,14 @@ export default function CreateMealEdit() {
     setArticleSymbols(formData.article.length);
   }, [formData.article]);
 
+
+  function handleFormSubmit() {
+    if (formData.image && formData.title && formData.article) {
+    console.log('hello')
+      navigation("/news");
+
+    }
+  }
 
   function handleFormChange(event) {
     const { name, value, files } = event.target;
@@ -94,7 +106,7 @@ export default function CreateMealEdit() {
               id="file"
               type="file"
               name="image"
-              accept="image/*"
+              accept="image/png, image/jpeg, image/jpg"
               onChange={handleFormChange}
               className={`${styles.changeMealInput}`}
             />
@@ -142,13 +154,13 @@ export default function CreateMealEdit() {
             Видалити зміни
           </button>
 
-          <button
-            onClick={handleModeChange}
+          <Link
+            onClick={handleFormSubmit}
             className={`${styles.inputSection} btn flex-1 ml-[4px] flex items-center`}
           >
             <BiUpload className="mr-[10px] mt-[5px]" />
             Змінити новину
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import AnimatedLine from "../../animations/AnimatedLine";
-import EmptyHeader from "../../common/EmptyHeader";
+import EmptyHeader from "../EmptyHeader";
 import { adminData, superAdminData } from "../../constants/index";
-import { toggleAdminLogin, toggleSuperAdminLogin } from "../../features/loggins";
+import {
+  toggleAdminLogin,
+  toggleSuperAdminLogin,
+} from "../../features/loggins";
 
 
 export default function CreateApp() {
@@ -18,7 +21,6 @@ export default function CreateApp() {
       loginInput === adminData.login &&
       passwordInput === adminData.password
     ) {
-      dispatch(toggleSuperAdminLogin(false));
       dispatch(toggleAdminLogin(true));
       navigate("/admin/nav");
     }
@@ -27,7 +29,6 @@ export default function CreateApp() {
       loginInput === superAdminData.login &&
       passwordInput === superAdminData.password
     ) {
-      dispatch(toggleAdminLogin(false));
       dispatch(toggleSuperAdminLogin(true));
       navigate("/superadmin/nav");
     }

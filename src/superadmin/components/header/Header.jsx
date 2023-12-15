@@ -24,6 +24,9 @@ export default function Header() {
           <Link to="/superadmin/admin" className="px-[10px] py-[15px]">
             Адміністратор
           </Link>
+          <Link to="/superadmin/admin" className="px-[10px] py-[15px]">
+            Баннери
+          </Link>
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"; 
 
 export const initialStateValue = {
-  userLoggined: false,
-  adminLoggined: true,
-  superAdminLoggined: true,
+  userLoggined: true,
+  adminLoggined: false,
+  superAdminLoggined: false,
 }
 
 const logginsSlice = createSlice({
@@ -12,12 +12,18 @@ const logginsSlice = createSlice({
   reducers: {
     toggleUserLogin: (state, action) => {
       state.value.userLoggined = action.payload;
+      state.value.adminLoggined = false;
+      state.value.superAdminLoggined = false;
     },
     toggleAdminLogin: (state, action) => {
       state.value.adminLoggined = action.payload;
+      state.value.userLoggined = false;
+      state.value.superAdminLoggined = false;
     },
     toggleSuperAdminLogin: (state, action) => {
       state.value.superAdminLoggined = action.payload;
+      state.value.userLoggined = false;
+      state.value.adminLoggined = false;
     },
   }
 });

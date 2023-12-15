@@ -98,7 +98,7 @@ function CreateNewsItem(props) {
           {isSuperAdminLoggined && (
             <Link
               to={`/superadmin/edit/banner/${props.id}`}
-              className={`${styles.EditBtn} btn flex flex-row items-center justify-center mt-3`}
+              className={`${styles.EditBtn} btn flex flex-row items-center justify-center mt-4`}
             >
               Редагувати новину
               <MdModeEditOutline style={{ color: "white", marginLeft: "5px", fontSize: "1.6rem" }} />
@@ -117,7 +117,18 @@ function CreateNewsItem(props) {
                 className={`object-cover`}
                 alt={"news-img"}
               />
+
+              {isSuperAdminLoggined && (
+                <Link
+                  to={`/superadmin/edit/banner/${props.id}`}
+                  className={`${styles.EditBtn} btn flex flex-row items-center justify-center mt-4`}
+                >
+                  Редагувати новину
+                  <MdModeEditOutline style={{ color: "white", marginLeft: "5px", fontSize: "1.6rem" }} />
+                </Link>
+              )}
             </div>
+
             <div
               className={`${styles.allTextContainer} flex flex-col max-w-[800px] ml-[5%]`}
             >
@@ -130,15 +141,6 @@ function CreateNewsItem(props) {
               </div>
             </div>
           </div>
-          {isSuperAdminLoggined && (
-            <Link
-              to={`/superadmin/edit/banner/${props.id}`}
-              className={`${styles.EditBtn} btn flex flex-row items-center justify-center`}
-            >
-              Редагувати новину
-              <MdModeEditOutline style={{ color: "white", marginLeft: "5px", fontSize: "1.6rem" }} />
-            </Link>
-          )}
         </>
       )}
     </>

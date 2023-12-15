@@ -1,23 +1,34 @@
 import React, { useState, useEffect } from "react";
-import styles from "./bannerAdd.module.css";
+import styles from "./bannerEdit.module.css";
 import { FaRegImage } from "react-icons/fa6";
 import { MdOutlineTitle } from "react-icons/md";
 import { MdOutlineArticle } from "react-icons/md";
 import { BiUpload } from "react-icons/bi";
-import menuData from "../../../data/menuData";
+import { newsData } from "../../../constants/index";
 import Header from "../header/Header";
 import AnimatedLine from "../../../animations/AnimatedLine";
 
 
 export default function CreateMealEdit() {
+  const currentNewsId = Number(window.location.href.split("/").slice(-1)[0]);
   const [editMode, setEditMode] = useState(false);
+  let currentNewsData = newsData.filter((item) => {
+    return item.id === currentNewsId;
+  });
   const [maxSymbols, setMaxSymbols] = useState(300); 
   const [articleSymbols, setArticleSymbols] = useState(0);
+  const formattedNewsData = currentNewsData.slice(0)[0];
   const [formData, setFormData] = useState({
-    image: "",
-    title: "",
-    article: "",
+    image: formattedNewsData.image,
+    title: formattedNewsData.name,
+    article: formattedNewsData.article,
   });
+
+
+  useEffect(() => {
+    setArticleSymbols(formData.article.length);
+  }, [formData.article]);
+
 
   function handleFormChange(event) {
     const { name, value, files } = event.target;
@@ -32,10 +43,6 @@ export default function CreateMealEdit() {
     }));
   }
 
-  useEffect(() => {
-    setArticleSymbols(formData.article.length);
-  }, [formData.article]);
-
   function deleteChanges() {
     setFormData({
       image: "",
@@ -48,17 +55,14 @@ export default function CreateMealEdit() {
     setEditMode((prevEditMode) => !prevEditMode);
   }
 
-
   return (
     <div
       className={`${styles.mainContainer} flex flex-col items-center justify-between w-full`}
     >
       <Header />
       <div className="staffContent">
-
         <AnimatedLine />
-        <div className={`titleText mb-3`}>Додання нового банера</div>
-
+        <div className={`titleText mb-3`}>Редагування банера</div>
 
         <div className={`${styles.categoryContainer}`}>
           <div
@@ -78,26 +82,27 @@ export default function CreateMealEdit() {
           />
         </div>
 
-        <div className={`${styles.categoryContainer}`}>
-            <div className={`${styles.specificationContainer} input rounded-none`}>
-              <FaRegImage className="text-custom-green mr-[10px]" />
-              Зображення банера
-            </div>
 
-            <div className={`${styles.inputSection} input rounded-none`}>
-              <input
-                id="file"
-                type="file"
-                name="image"
-                accept="image/*"
-                onChange={handleFormChange}
-                className={`${styles.changeMealInput}`}
-              />
-              <label htmlFor="file" className={`${styles.labelChooseImage} cursor-pointer`}>
-                Оберіть фото
-              </label>
-            </div>
+        <div className={`${styles.categoryContainer}`}>
+          <div className={`${styles.specificationContainer} input rounded-none`}>
+            <FaRegImage className="text-custom-green mr-[10px]" />
+            Зображення банера
           </div>
+
+          <div className={`${styles.inputSection} input rounded-none`}>
+            <input
+              id="file"
+              type="file"
+              name="image"
+              accept="image/*"
+              onChange={handleFormChange}
+              className={`${styles.changeMealInput}`}
+            />
+            <label htmlFor="file" className={`${styles.labelChooseImage}`}>
+            Оберіть нове фото
+            </label>
+          </div>
+        </div>
 
         <div className={`${styles.categoryContainerContainer}`}>
           <div
@@ -142,7 +147,7 @@ export default function CreateMealEdit() {
             className={`${styles.inputSection} btn flex-1 ml-[4px] flex items-center`}
           >
             <BiUpload className="mr-[10px] mt-[5px]" />
-            Додати до новин
+            Змінити новину
           </button>
         </div>
       </div>

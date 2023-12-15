@@ -66,6 +66,7 @@ export default {
 
 
 export const adminData = { login: "admin", password: "admin123" };
+
 export const superAdminData = { login: "superadmin", password: "superadmin123" };
 
 export const newsData = [

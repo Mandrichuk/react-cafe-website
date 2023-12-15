@@ -35,6 +35,20 @@ body {
   margin: 0;
 }
 
+.staffIndificator {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  overflow: hidden;
+}
+
 .titleText {
   font-size: var(--title-font-size);
   font-weight: bold;

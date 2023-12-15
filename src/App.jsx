@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "./index.css";
 
 //* User Components
@@ -26,12 +27,12 @@ import MealEditSuperAdmin from "./superadmin/components/mealEdit/MealEdit";
 import MenuSuccessSuperAdmin from "./superadmin/components/menuSuccess/MenuSuccess";
 import MealAddSuperAdmin from "./superadmin/components/mealAdd/MealAdd";
 import AddBannerSuperAdmin from "./superadmin/components/bannerAdd/BannerAdd";
-import BannerEditSuperAdmin from "./superadmin/bannerEdit/bannerEdit";
+import BannerEditSuperAdmin from "./superadmin/components/bannerEdit/BannerEdit";
 
 // * Common
 import Loader from "./common/loader/Loader";
 import Error404 from "./common/error404/Error404";
-import StaffLogin from "./common/staffLogin/staffLogin";
+import StaffLogin from "./common/staffLogin/StaffLogin";
 
 // * Utils
 import getTotalPrice from "./utils/getTotalPrice";
@@ -47,6 +48,8 @@ export default function CreateApp() {
   const [history, setHistory] = useState([]);
   const [currentLink, setCurrentLink] = useState("/");
   const location = useLocation();
+
+  console.log(userLoggined, adminLoggined, superAdminLoggined);
 
   useEffect(() => {
     handleLinkChange();
@@ -119,6 +122,19 @@ export default function CreateApp() {
         <Loader />
       ) : (
         <AnimatePresence>
+
+          {adminLoggined && 
+            <Link  to="/admin/nav" className={`staffIndificator fixed bottom-5 right-5 z-50`}> 
+              Адміністратор 
+            </Link >
+          }
+
+          {superAdminLoggined && 
+            <Link to="/superadmin/nav" className={`staffIndificator fixed bottom-5 right-5 z-50`}> 
+              Супер Адміністратор 
+            </Link >
+          }
+
           <Routes location={location} key={location.pathname}>
             //* User Components
             <Route path="/" element={<CafeUser />} />

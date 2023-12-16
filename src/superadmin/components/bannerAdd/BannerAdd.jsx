@@ -4,14 +4,14 @@ import { FaRegImage } from "react-icons/fa6";
 import { MdOutlineTitle } from "react-icons/md";
 import { MdOutlineArticle } from "react-icons/md";
 import { BiUpload } from "react-icons/bi";
-import menuData from "../../../data/menuData";
+import { menuData } from "../../../constants/index";
 import Header from "../header/Header";
 import AnimatedLine from "../../../animations/AnimatedLine";
 
 
 export default function CreateMealEdit() {
   const [editMode, setEditMode] = useState(false);
-  const [maxSymbols, setMaxSymbols] = useState(300); 
+  const [maxSymbols, setMaxSymbols] = useState(300);
   const [articleSymbols, setArticleSymbols] = useState(0);
   const [formData, setFormData] = useState({
     image: "",
@@ -48,17 +48,14 @@ export default function CreateMealEdit() {
     setEditMode((prevEditMode) => !prevEditMode);
   }
 
-
   return (
     <div
       className={`${styles.mainContainer} flex flex-col items-center justify-between w-full`}
     >
       <Header />
       <div className="staffContent">
-
         <AnimatedLine />
         <div className={`titleText mb-3`}>Додання нового банера</div>
-
 
         <div className={`${styles.categoryContainer}`}>
           <div
@@ -79,31 +76,35 @@ export default function CreateMealEdit() {
         </div>
 
         <div className={`${styles.categoryContainer}`}>
-            <div className={`${styles.specificationContainer} input rounded-none`}>
-              <FaRegImage className="text-custom-green mr-[10px]" />
-              Зображення банера
-            </div>
-
-            <div className={`${styles.inputSection} input rounded-none`}>
-              <input
-                id="file"
-                type="file"
-                name="image"
-                accept="image/*"
-                onChange={handleFormChange}
-                className={`${styles.changeMealInput}`}
-              />
-              <label htmlFor="file" className={`${styles.labelChooseImage} cursor-pointer`}>
-                Оберіть фото
-              </label>
-            </div>
+          <div
+            className={`${styles.specificationContainer} input rounded-none`}
+          >
+            <FaRegImage className="text-custom-green mr-[10px]" />
+            Зображення банера
           </div>
+
+          <div className={`${styles.inputSection} input rounded-none`}>
+            <input
+              id="file"
+              type="file"
+              name="image"
+              accept="image/*"
+              onChange={handleFormChange}
+              className={`${styles.changeMealInput}`}
+            />
+            <label
+              htmlFor="file"
+              className={`${styles.labelChooseImage} cursor-pointer`}
+            >
+              Оберіть фото
+            </label>
+          </div>
+        </div>
 
         <div className={`${styles.categoryContainerContainer}`}>
           <div
             className={`${styles.specificationContainer} input rounded-none flex flex-row items-center justify-between`}
           >
-
             <div />
             <div className={`flex flex-row items-center`}>
               <MdOutlineArticle className="text-custom-green mr-[10px]" />

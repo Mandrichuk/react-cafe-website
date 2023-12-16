@@ -6,7 +6,7 @@ import { RiScales2Line } from "react-icons/ri";
 import { IoWaterOutline } from "react-icons/io5";
 import { AiOutlineDelete } from "react-icons/ai";
 import { BiUpload } from "react-icons/bi";
-import menuData from "../../../data/menuData";
+import { menuData } from "../../../constants/index";
 import Header from "../header/Header";
 import AnimatedLine from "../../../animations/AnimatedLine";
 

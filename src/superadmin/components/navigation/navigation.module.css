@@ -1,8 +1,5 @@
 .logoutBtn {
   background-color: var(--custom-red);
   max-width: 200px;
-}
-
-.noYMargin {
-  margin: 0;
+  margin-top: 100px;
 }

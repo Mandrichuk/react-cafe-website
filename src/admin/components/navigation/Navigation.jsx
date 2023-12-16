@@ -5,23 +5,22 @@ import styles from "./navigation.module.css";
 import AnimatedLine from "../../../animations/AnimatedLine";
 import isPhoneValid from "../../../utils/isPhoneValid";
 import images from "../../../constants/index";
-
+import { useDispatch } from "react-redux";
+import { toggleAdminLogin } from "../../../features/loggins";
 
 export default function Navigation() {
-    const [phoneNumber, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const dispatch = useDispatch();
+  function handleChange(event) {
+    setPhoneNumber(event.target.value);
+  }
 
-    function handleChange(event) {
-      setPhoneNumber(event.target.value);
-    }
-
-    function handleSubmit() {
-      isPhoneValid(phoneNumber);
-    }
+  function handleSubmit() {
+    isPhoneValid(phoneNumber);
+  }
 
   return (
   <>
-
-
       <div className="w-full flex flex-col justify-center items-center">
       <Header />
       <div className={`staffContent`}>
@@ -33,7 +32,7 @@ export default function Navigation() {
         Замовлення
       </div>
 
-      <div className={`${styles.loginContainer} flex flex-col items-center`}>
+      <div className={`${styles.loginContainer} flex flex-col`}>
         <div className={`pretitleText w-full mb-3 font-medium`}>
           Всі онлайн замовлення
         </div>
@@ -111,9 +110,22 @@ export default function Navigation() {
             Увійти
           </button>
         </div>
-
         </div>
       </div>
+
+
+      <div className={`w-full flex items-center justify-center`}> 
+      
+        <div className={`staffContent ${styles.noYMargin}`}> 
+          <Link 
+            to="/" className={`${styles.logoutBtn} flex btn mb-[10px]`}
+            onClick={() => { dispatch(toggleAdminLogin(false)); }}
+          >
+            Вихід
+          </Link>
+        </div>
+      </div>
+
     </>
   );
 }

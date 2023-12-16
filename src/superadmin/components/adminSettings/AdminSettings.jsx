@@ -11,7 +11,7 @@ export default function CreateAdminSettings() {
       <div className="staffContent">
         <div className={`titleText mb-3`}>
           <AnimatedLine />
-          Нові дані для адміністратора
+          Нові дан ідля адміністратора
         </div>
 
         <div className="flex flex-col mb-[15px]  ">

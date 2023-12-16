@@ -78,9 +78,9 @@ export default function CreateHeader(props) {
       </div>
 
       {screenSettings && (
-        <div className="screen-settings">
+        <div className={`screen-settings ${screenSettings ? "open" : ""}`}>
           <div className="main-settings flex flex-col items-center w-[80%]">
-            <div className="mb-[10px] mt-[10px text-[#05442e] screenSettingsTitle">
+            <div className="mb-[10px] mt-[10px] text-[#05442e] screenSettingsTitle">
               Основні
             </div>
 

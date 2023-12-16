@@ -122,13 +122,13 @@ export default function CreateApp() {
         <AnimatePresence>
 
           {adminLoggined && 
-            <Link  to="/admin/nav" className={`staffIndificator fixed bottom-5 right-5 z-50`}> 
+            <Link  to="/admin/nav" className={`staffIndificator fixed bottom-3 right-1 z-50`}> 
               Адміністратор 
             </Link >
           }
 
           {superAdminLoggined && 
-            <Link to="/superadmin/nav" className={`staffIndificator fixed bottom-5 right-5 z-50`}> 
+            <Link to="/superadmin/nav" className={`staffIndificator fixed bottom-3 right-1 z-50`}> 
               Супер Адміністратор 
             </Link >
           }

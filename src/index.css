@@ -9,6 +9,7 @@
   --custom-orange: #ffbc0d;
   --link-color: rgb(0, 60, 255);
   --custom-gray: rgb(91, 91, 91);
+  --custom-red: rgb(159, 31, 31);
   --line-width: 150px;
   --section-margin: 100px;
   --title-font-size: 2rem;
@@ -42,9 +43,9 @@ body {
   position: relative;
   display: flex;
   justify-content: center;
-  border-radius: 5px;
-  padding: 8px;
-  font-size: 1.1rem;
+  border-radius: 3px;
+  padding: 4px;
+  font-size: 0.8rem;
   cursor: pointer;
   overflow: hidden;
 }

@@ -36,9 +36,7 @@ export default function CreateMealEdit() {
 
   function handleFormSubmit() {
     if (formData.image && formData.title && formData.article) {
-    console.log('hello')
       navigation("/news");
-
     }
   }
 

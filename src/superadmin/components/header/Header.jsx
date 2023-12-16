@@ -18,7 +18,7 @@ export default function Header() {
           <Link to="/superadmin/nav" className="px-[10px] py-[15px]">
             Головна
           </Link>
-          <Link to="/superadmin/menu" className="px-[10px] py-[15px]">
+          <Link to="/menu" className="px-[10px] py-[15px]">
             Меню
           </Link>
           <Link to="/superadmin/admin" className="px-[10px] py-[15px]">

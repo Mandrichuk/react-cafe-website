@@ -4,8 +4,11 @@ import styles from "./order.module.css";
 import AnimatedLine from "../../../animations/AnimatedLine";
 import Header from "../header/Header";
 import TabTitle from "../../../common/TabTitle";
+import { useDispatch } from "react-redux";
+import { toggleUserLogin } from "../../../features/loggins";
 
 export default function CreateOrder(props) {
+  const dispatch = useDispatch();
   const [phoneNumber, setPhoneNumber] = useState("");
 
   function handleInputChange(event) {
@@ -71,7 +74,14 @@ export default function CreateOrder(props) {
               placeholder="####"
               required
             />
-            <Link to="/success" className="btn w-full">
+            <Link
+              to="/success"
+              className="btn w-full"
+              onClick={() => {
+                dispatch(toggleUserLogin(true));
+                props.handleHistoryAdd();
+              }}
+            >
               Підтвердити
             </Link>
           </div>

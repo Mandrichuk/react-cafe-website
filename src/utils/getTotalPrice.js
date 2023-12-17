@@ -1,4 +1,4 @@
-import menuData from "../constants/index";
+import { menuData } from "../constants/index";
 
 export default function getTotalPrice(arr) {
   let totalPrice = 0;

@@ -14,6 +14,7 @@ import { TbBrandCakephp } from "react-icons/tb";
 import { LuSandwich } from "react-icons/lu";
 import { LiaHotdogSolid } from "react-icons/lia";
 import { useSelector } from "react-redux";
+import { MdModeEditOutline } from "react-icons/md";
 
 const iconMap = {
   BiSolidCoffeeBean,
@@ -108,7 +109,7 @@ function CreateProducts(products, cart, handleCartChange) {
               to={`/superadmin/menu/edit/meal/${item.id}`}
               className={` ${styles.iconContainer} w-[50px] h-[50px] flex items-center rounded-md justify-center border-[2px] ml-[20px] cursor-pointer`}
             >
-              <BiSolidEdit
+              <MdModeEditOutline
                 className={`${styles.iconPlus} text-[1.8rem] text-black hover:text-gray-500 transition-all transition-200`}
               />
             </Link>

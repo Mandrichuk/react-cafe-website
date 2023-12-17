@@ -10,22 +10,29 @@ import { BiUpload } from "react-icons/bi";
 import { menuData } from "../../../constants/index";
 import Header from "../header/Header";
 import AnimatedLine from "../../../animations/AnimatedLine";
+import isFormValid from "../../../utils/isFormValid";
+import { useNavigate } from "react-router-dom";
 
 export default function CreateMealEdit() {
+  const navigation = useNavigate();         
+  const [isForm, setIsForm] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(false);
   const getAllCategoriesName = menuData.map((item) => item.name);
   const currentPath = window.location.pathname;
   const pathSegments = currentPath.split("/");
   const lastSegment = Number(pathSegments[pathSegments.length - 1]);
-
   let currentMeal = mealById(lastSegment);
   const currentCategory = menuData[currentMeal.categoryId - 1];
-
   const [editMode, setEditMode] = useState(false);
+  let mealCategory = menuData.filter((item) => {
+    return (item.id === currentMeal.categoryId);
+  });
+  const currentMealCategory = mealCategory[0].name;
   const [formData, setFormData] = useState({
-    catetory: currentMeal,
+    category: currentMealCategory,
     title: currentMeal.name,
     capacity: currentMeal.capacity,
-    units: currentMeal,
+    units: currentMeal.units,
     price: currentMeal.price,
   });
 
@@ -42,6 +49,19 @@ export default function CreateMealEdit() {
         [event.target.name]: value,
       };
     });
+  }
+
+  function handleFormSubmit() {
+    const valid = isFormValid(formData);
+    setIsForm(valid);
+    
+    console.log(isForm);
+
+    if (isForm) {
+      navigation("/superadmin/menu");
+    } else {
+      setErrorMessage(true);
+    }
   }
 
   function handleModeChange() {
@@ -112,8 +132,8 @@ export default function CreateMealEdit() {
               placeholder="Введіть назву"
               className={`${styles.changeMealInput} ${styles.inputSection} input rounded-none`}
               type="text"
-              name="name"
-              value={formData.name}
+              name="title"
+              value={formData.title}
             />
           ) : (
             <div
@@ -233,7 +253,7 @@ export default function CreateMealEdit() {
         )}
         {editMode && (
           <button
-            onClick={handleModeChange}
+            onClick={() => {handleModeChange(); handleFormSubmit();}}
             className={`${styles.btnActions} ${styles.saveBtn} w-full btn flex flex-row items-center`}
           >
             <BiUpload className="mr-[10px]" />

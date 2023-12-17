@@ -1,4 +1,4 @@
-import menuData from "../constants/index";
+import { menuData } from "../constants/index";
 
 export default function getMealPrice(id, amount) {
   let mealPrice = 0;

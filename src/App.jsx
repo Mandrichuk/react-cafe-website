@@ -8,7 +8,7 @@ import "./index.css";
 //* User Components
 import CafeUser from "./user/components/cafe/Cafe";
 import MenuUser from "./user/components/menu/Menu";
-import LoginUser from "./user/components/login/Login";
+import LoginUser from "./user/components/menu/login/Login";
 import CartUser from "./user/components/cart/Cart";
 import ProfileUser from "./user/components/profile/Profile";
 import OrderUser from "./user/components/order/Order";
@@ -47,10 +47,10 @@ export default function CreateApp() {
   const [currentLink, setCurrentLink] = useState("/");
   const location = useLocation();
 
-  console.log(userLoggined, adminLoggined, superAdminLoggined);
 
   useEffect(() => {
     handleLinkChange();
+    console.log(userLoggined, adminLoggined, superAdminLoggined);
   }, [location.pathname]);
 
   function handleLinkChange() {
@@ -122,13 +122,13 @@ export default function CreateApp() {
         <AnimatePresence>
 
           {adminLoggined && 
-            <Link  to="/admin/nav" className={`staffIndificator fixed bottom-3 right-1 z-50`}> 
+            <Link  to="/admin/nav" className={`staffIndificator fixed bottom-3 right-3 z-50`}> 
               Адміністратор 
             </Link >
           }
 
           {superAdminLoggined && 
-            <Link to="/superadmin/nav" className={`staffIndificator fixed bottom-3 right-1 z-50`}> 
+            <Link to="/superadmin/nav" className={`staffIndificator fixed bottom-3 right-3 z-50`}> 
               Супер Адміністратор 
             </Link >
           }

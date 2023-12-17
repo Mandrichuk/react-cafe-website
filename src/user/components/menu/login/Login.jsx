@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import styles from "./login.module.css";
-import Header from "../header/Header";
-import Footer from "../footer/Footer";
-import AnimatedLine from "../../../animations/AnimatedLine";
+import Header from "../../header/Header";
+import Footer from "../../footer/Footer";
+import AnimatedLine from "../../../../animations/AnimatedLine";
 import { FaUser } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { toggleUserLogin } from "../../../features/loggins";
+import { toggleUserLogin } from "../../../../features/loggins";
 import { useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
-import TabTitle from "../../../common/TabTitle";
+import TabTitle from "../../../../common/TabTitle";
 
 
 export default function CreateLogin(props) {

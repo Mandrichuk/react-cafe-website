@@ -1,15 +1,13 @@
-import menuData from "../constants/index";
+import { menuData } from "../constants/index";
 
 export default function mealById(id) {
-  let currectMeal;
-  menuData.forEach((item) => {
-    item.products.forEach((meal) => {
+  for (const item of menuData) {
+    for (const meal of item.products) {
       if (meal.id === id) {
-        currectMeal = meal;
-        return;
+        return meal;
       }
-    });
-  });
-
-  return currectMeal;
+    }
+  }
+  return null;
 }
+

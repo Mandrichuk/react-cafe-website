@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"; 
 
 export const initialStateValue = {
-  userLoggined: true,
+  userLoggined: false,
   adminLoggined: false,
-  superAdminLoggined: true,
+  superAdminLoggined: false,
 }
 
 const logginsSlice = createSlice({
@@ -27,7 +27,6 @@ const logginsSlice = createSlice({
     },
   }
 });
-
 
 
 export const {toggleUserLogin, toggleAdminLogin, toggleSuperAdminLogin} = logginsSlice.actions;

@@ -12,6 +12,18 @@ import { MdOutlinePlaylistAdd } from "react-icons/md";
 
 
 function News() {
+
+  useEffect(() => {
+    const idFromUrl = window.location.hash.substring(1);
+    console.log(idFromUrl);
+
+    const targetElement = document.getElementById(idFromUrl);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+
+  }, []);
+
   const isSuperAdminLoggined = useSelector(
     (state) => state.loggins.value.superAdminLoggined
   );
@@ -80,19 +92,19 @@ function CreateNewsItem(props) {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [window.location.pathname]);
 
   return (
     <>
       {isMobile ? (
         <>
           <div className={`${styles.itemContainer} w-full flex flex-col`}>
-            <div className={`${styles.textTitle} flex flex-col titleText`}>
+            <div id={`${props.id}`} className={`${styles.textTitle} flex flex-col titleText`}>
               <AnimatedLine />
               {props.name}
             </div>
             <div className={`${styles.infoContainer} mb-[20px]`}>
-              <img id={`${props.id}`} src={newsImage} alt={"news-img"} />
+              <img src={newsImage} alt={"news-img"} />
             </div>
             <div className={`${styles.articleContainer} articleText`}>
               {props.article}

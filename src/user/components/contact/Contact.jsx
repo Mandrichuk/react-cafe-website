@@ -3,8 +3,10 @@ import styles from "./contact.module.css";
 import emailjs from "@emailjs/browser";
 import { HiOutlineMail } from "react-icons/hi";
 import { GrSend } from "react-icons/gr";
+import { useSelector } from "react-redux";
 
 function Contact() {
+  const userLogin = useSelector((state) => state.loggins.value.userLoggined);
   const formRef = useRef();
   const [emailInput, setEmailInput] = useState("");
   const [loading, setLoading] = useState(false);
@@ -47,12 +49,15 @@ function Contact() {
             </div>
             <div className={`pretitleText mb-4 w-full`}>Будьте <span className='font-bold'>першим</span>, хто дізнається про всі наші новини.</div>
           </div>
-          <form ref={formRef} onSubmit={sendEmail} className={`${styles.inputsContainer} flex flex-col flex-1 w-full`}>
-            <input type="email" name="email" value={emailInput} onChange={handleEmailChange} placeholder='Введіть вашу пошту...' className={`${styles.inputEmail} input max-h-[50px] text-black`} />
-            <button type='submit' className={`${styles.submBtn} mt-[15px] pretitleText flex flex-row items-center justify-center`}>
-              {loading ? "Надсилається.." : "Відправити"}
-            </button>
-          </form>
+          {userLogin ? 
+            <form ref={formRef} onSubmit={sendEmail} className={`${styles.inputsContainer} flex flex-col flex-1 w-full`}>
+              <input type="email" name="email" value={emailInput} onChange={handleEmailChange} placeholder='Введіть вашу пошту...' className={`${styles.inputEmail} input max-h-[50px] text-black`} />
+              <button type='submit' className={`${styles.submBtn} mt-[15px] pretitleText flex flex-row items-center justify-center`}>
+                {loading ? "Надсилається.." : "Відправити"}
+              </button>
+            </form> :
+            <div></div>
+          }
         </div>
       <div className="bottomWavyBox" />
       </div>
